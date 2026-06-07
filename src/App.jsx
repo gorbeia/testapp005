@@ -6,6 +6,7 @@ import {
   getEncouragement,
   getStreakEncouragement,
   getUnlockedLessonIds,
+  isAnswerCorrect,
   recordResult,
 } from './lessonLogic'
 
@@ -478,7 +479,7 @@ function HomeScreen({ progress, tab, onChangeTab, onSelectLesson, onResetProgres
 }
 
 // =============================================================================
-// Multiple choice exercise screen
+// Exercise screen — multiple choice and typed-answer questions
 // =============================================================================
 
 function createExerciseState(verb, tense) {
@@ -524,6 +525,60 @@ function AnswerOption({ option, status, disabled, onSelect }) {
   )
 }
 
+// Typed-answer questions (`type-verb` / `type-pronoun`, identifiable by having
+// no `options`) swap the option list for a text field — same idle/correct/
+// incorrect palette as `AnswerOption` (down to reusing the flash/shake
+// animations), so the feedback reads consistently across both interaction
+// styles even though one is a button grid and the other a form field. As with
+// multiple choice, an incorrect submission doesn't reveal the right spelling —
+// the learner has to actually recall it when the question resurfaces.
+const TYPED_INPUT_STYLES = {
+  active: 'border-gray-200 bg-white text-gray-800 focus:border-green-400',
+  correct: 'border-green-500 bg-green-50 text-green-700 animate-flash',
+  incorrect: 'border-red-500 bg-red-50 text-red-700 animate-shake',
+}
+
+function TypedAnswerInput({ value, status, onChange, onSubmit }) {
+  const isAnswered = status !== 'active'
+  return (
+    <form
+      onSubmit={(event) => {
+        event.preventDefault()
+        onSubmit()
+      }}
+      className="flex flex-col gap-3"
+    >
+      <input
+        type="text"
+        inputMode="text"
+        autoComplete="off"
+        autoCapitalize="off"
+        autoCorrect="off"
+        spellCheck="false"
+        placeholder="Idatzi erantzuna…"
+        aria-label="Type your answer"
+        value={value}
+        disabled={isAnswered}
+        onChange={(event) => onChange(event.target.value)}
+        style={{ minHeight: 48 }}
+        className={`w-full rounded-2xl border-2 px-5 py-4 text-lg font-semibold transition focus:outline-none ${TYPED_INPUT_STYLES[status]} ${
+          isAnswered ? 'cursor-default' : ''
+        }`}
+      />
+      {!isAnswered && (
+        <button
+          type="submit"
+          disabled={value.trim() === ''}
+          style={{ minHeight: 48 }}
+          className="w-full rounded-2xl bg-green-500 px-5 py-4 text-lg font-extrabold tracking-wide text-white uppercase transition hover:bg-green-600 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          Check
+        </button>
+      )}
+    </form>
+  )
+}
+
 // Renders an example sentence with the conjugated verb redacted — the `___`
 // placeholder in the data becomes a visual blank the learner fills in by
 // picking an option below, rather than a literal "___" in running text.
@@ -538,20 +593,21 @@ function SentenceWithBlank({ sentence }) {
   )
 }
 
-// `generateQuestions` mixes three question styles: bare-form recognition
-// ("hura → ?"), and — where the verb has the supporting data for that
-// person/tense — two sentence-completion variants sharing the same blanked
-// layout: filling in the conjugated verb ("Hura medikua ___." → ?, `kind:
-// 'sentence'`) or the correctly-declined pronoun ("___ etxe bat du." → ?,
-// `kind: 'pronoun'`). All three test recognising the right Basque form, just
-// framed differently.
+// `generateQuestions` mixes five question styles, but they only differ in two
+// independent ways: how the prompt is framed (bare person/label pair, or a
+// sentence with a blank — keyed off `question.sentence` rather than listing
+// every blanked `kind`, so this stays correct as new blanked framings are
+// added) and how the answer is given (multiple choice when `question.options`
+// is present, typed in otherwise — see `ExerciseScreen`). Every combination
+// still tests recognising/recalling the right Basque form, just packaged
+// differently.
 function QuestionPrompt({ verb, tenseMeta, question }) {
   return (
     <>
       <p className="text-sm font-semibold tracking-wide text-gray-400 uppercase">
         {verb.verb} — {verb.meaning} · {tenseMeta.label}
       </p>
-      {question.kind === 'sentence' || question.kind === 'pronoun' ? (
+      {question.sentence ? (
         <SentenceWithBlank sentence={question.sentence} />
       ) : (
         <>
@@ -567,6 +623,8 @@ const QUESTION_PROMPTS = {
   form: 'Which form is correct?',
   sentence: 'Which word completes the sentence?',
   pronoun: 'Which pronoun completes the sentence?',
+  'type-verb': 'Type the word that completes the sentence.',
+  'type-pronoun': 'Type the pronoun that completes the sentence.',
 }
 
 function FeedbackBar({ status, isLast, streakEncouragement, onContinue }) {
@@ -654,10 +712,14 @@ function rollStreakNudgeChance() {
   return Math.random() < STREAK_NUDGE_CHANCE
 }
 
-function MultipleChoiceScreen({ verb, tense, onExit, onComplete, canShowStreakNudge, onStreakNudgeShown }) {
+function ExerciseScreen({ verb, tense, onExit, onComplete, canShowStreakNudge, onStreakNudgeShown }) {
   const [state, dispatch] = useReducer(exerciseReducer, undefined, () => createExerciseState(verb, tense))
   const [finished, setFinished] = useState(false)
   const [streakEncouragement, setStreakEncouragement] = useState(null)
+  // Only used by typed-answer questions (`question.options` absent) — reset
+  // whenever a new question comes up so the field doesn't carry over what was
+  // typed for the previous one.
+  const [typedValue, setTypedValue] = useState('')
 
   const total = state.total
   const question = state.queue[0]
@@ -669,25 +731,33 @@ function MultipleChoiceScreen({ verb, tense, onExit, onComplete, canShowStreakNu
   const tenseMeta = TENSE_META[tense]
   const progressValue = (state.total - state.queue.length + (state.status === 'correct' ? 1 : 0)) / total
 
-  function handleSelect(option) {
-    if (isAnswered) return
+  // Shared by both interaction styles — a clicked multiple-choice option and a
+  // typed-and-submitted string both resolve to "an answer was given for the
+  // current question", compared the same forgiving way (`isAnswerCorrect`).
+  function submitAnswer(value) {
+    if (isAnswered || value === '') return
     // Decided here, at answer time, rather than during render: it rolls the
     // dice, and React render functions must stay pure/idempotent. Gated by
     // the session-level cooldown `App` tracks, plus a chance check, so a
     // milestone streak doesn't *always* trigger a nudge — it should read as
     // an occasional surprise, not a mechanical popup.
-    const isCorrect = option === question.correct
+    const isCorrect = isAnswerCorrect(value, question.correct)
     const milestone = isCorrect ? getStreakEncouragement(state.streak + 1) : null
     const showEncouragement = milestone !== null && canShowStreakNudge && rollStreakNudgeChance()
     setStreakEncouragement(showEncouragement ? milestone : null)
     if (showEncouragement) onStreakNudgeShown()
-    dispatch({ type: 'answer', option })
+    dispatch({ type: 'answer', option: value })
+  }
+
+  function handleSubmitTyped() {
+    submitAnswer(typedValue.trim())
   }
 
   function handleContinue() {
     if (isLast) {
       setFinished(true)
     } else {
+      setTypedValue('')
       dispatch({ type: 'next' })
     }
   }
@@ -727,17 +797,21 @@ function MultipleChoiceScreen({ verb, tense, onExit, onComplete, canShowStreakNu
         <QuestionPrompt verb={verb} tenseMeta={tenseMeta} question={question} />
 
         <p className="mt-8 mb-3 text-base font-semibold text-gray-700">{QUESTION_PROMPTS[question.kind]}</p>
-        <div className="flex flex-col gap-3">
-          {question.options.map((option) => (
-            <AnswerOption
-              key={option}
-              option={option}
-              status={getOptionStatus(option, question, state)}
-              disabled={isAnswered}
-              onSelect={() => handleSelect(option)}
-            />
-          ))}
-        </div>
+        {question.options ? (
+          <div className="flex flex-col gap-3">
+            {question.options.map((option) => (
+              <AnswerOption
+                key={option}
+                option={option}
+                status={getOptionStatus(option, question, state)}
+                disabled={isAnswered}
+                onSelect={() => submitAnswer(option)}
+              />
+            ))}
+          </div>
+        ) : (
+          <TypedAnswerInput value={typedValue} status={state.status} onChange={setTypedValue} onSubmit={handleSubmitTyped} />
+        )}
       </div>
 
       <FeedbackBar status={state.status} isLast={isLast} streakEncouragement={streakEncouragement} onContinue={handleContinue} />
@@ -777,7 +851,7 @@ export default function App() {
     const lesson = LESSONS.find((l) => l.id === activeLessonId)
     const verb = VERBS.find((v) => v.id === lesson.verbId)
     return (
-      <MultipleChoiceScreen
+      <ExerciseScreen
         key={lesson.id}
         verb={verb}
         tense={lesson.tense}

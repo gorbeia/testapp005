@@ -6,6 +6,7 @@ import {
   getEncouragement,
   getStreakEncouragement,
   getUnlockedLessonIds,
+  isAnswerCorrect,
   recordResult,
   shuffle,
 } from './lessonLogic'
@@ -68,6 +69,21 @@ describe('getStreakEncouragement', () => {
       expect(headline).toBeTruthy()
       expect(message).toBeTruthy()
     })
+  })
+})
+
+describe('isAnswerCorrect', () => {
+  it('matches an exactly equal submission', () => {
+    expect(isAnswerCorrect('dut', 'dut')).toBe(true)
+  })
+
+  it('ignores case and surrounding whitespace, so typed answers are not marked wrong over those', () => {
+    expect(isAnswerCorrect('  Dut ', 'dut')).toBe(true)
+    expect(isAnswerCorrect('hark', 'Hark')).toBe(true)
+  })
+
+  it('rejects a different form even if it is plausible', () => {
+    expect(isAnswerCorrect('duk', 'dut')).toBe(false)
   })
 })
 
@@ -258,6 +274,80 @@ describe('generateQuestions', () => {
       })
     })
   })
+
+  describe('with typed-answer framings', () => {
+    // Both `sentences` and `pronouns`/`pronounSentences` present, for every
+    // person, so `availableKinds` always has all four special framings —
+    // `['sentence', 'type-verb', 'pronoun', 'type-pronoun']` — and a fixed
+    // roll deterministically lands on whichever index it maps to.
+    const verbWithBoth = {
+      ...verb,
+      sentences: {
+        present: {
+          ni: 'Ni irakaslea ___.',
+          hi: 'Hi ikaslea ___.',
+          hura: 'Hura medikua ___.',
+          gu: 'Gu lagunak ___.',
+          zuek: 'Zuek azkarrak ___.',
+          haiek: 'Haiek euskaldunak ___.',
+        },
+      },
+      pronouns: { ni: 'Nik', hi: 'Hik', hura: 'Hark', gu: 'Guk', zuek: 'Zuek', haiek: 'Haiek' },
+      pronounSentences: {
+        present: {
+          ni: '___ liburu bat dut.',
+          hi: '___ auto bat duk.',
+          hura: '___ etxe bat du.',
+          gu: '___ denbora dugu.',
+          zuek: '___ arazo bat duzue.',
+          haiek: '___ aukera bat dute.',
+        },
+      },
+    }
+    const sentenced = verbWithBoth.sentences.present
+    const pronounSentenced = verbWithBoth.pronounSentences.present
+
+    it('frames a question as typing the verb form into the sentence blank when the roll favours it', () => {
+      // [0, 0.5) split into four equal slices of 0.125 — 0.2 lands in the
+      // second one, i.e. index 1 of the available-kinds list: 'type-verb'.
+      vi.spyOn(Math, 'random').mockReturnValue(0.2)
+
+      generateQuestions(verbWithBoth, 'present').forEach((question) => {
+        expect(question).toMatchObject({
+          kind: 'type-verb',
+          sentence: sentenced[question.person],
+          correct: verbWithBoth.conjugations.present[question.person],
+        })
+        expect(question.sentence).toContain('___')
+        expect(question).not.toHaveProperty('options')
+      })
+    })
+
+    it('frames a question as typing the declined pronoun into the sentence blank when the roll favours it', () => {
+      // 0.4 lands in the fourth slice ([0.375, 0.5)), index 3: 'type-pronoun'.
+      vi.spyOn(Math, 'random').mockReturnValue(0.4)
+
+      generateQuestions(verbWithBoth, 'present').forEach((question) => {
+        expect(question).toMatchObject({
+          kind: 'type-pronoun',
+          sentence: pronounSentenced[question.person],
+          correct: verbWithBoth.pronouns[question.person],
+        })
+        expect(question.sentence).toContain('___')
+        expect(question).not.toHaveProperty('options')
+      })
+    })
+
+    it('falls back to the bare form when the roll does not favour a special framing', () => {
+      vi.spyOn(Math, 'random').mockReturnValue(0.99)
+
+      generateQuestions(verbWithBoth, 'present').forEach((question) => {
+        expect(question.kind).toBe('form')
+        expect(question).not.toHaveProperty('sentence')
+        expect(question.options).toContain(question.correct)
+      })
+    })
+  })
 })
 
 describe('shuffle', () => {
@@ -287,6 +377,12 @@ describe('exerciseReducer', () => {
     const next = exerciseReducer(baseState, { type: 'answer', option: 'naiz' })
 
     expect(next).toMatchObject({ status: 'correct', selected: 'naiz', correctCount: 1, streak: 1 })
+  })
+
+  it('marks a typed answer correct regardless of case or surrounding whitespace', () => {
+    const next = exerciseReducer(baseState, { type: 'answer', option: '  Naiz ' })
+
+    expect(next).toMatchObject({ status: 'correct', correctCount: 1, streak: 1 })
   })
 
   it('marks an incorrect answer, awards no score, and resets the streak', () => {

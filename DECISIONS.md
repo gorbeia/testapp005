@@ -4,6 +4,49 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-07 — Typing exercises are two more question kinds, not a separate mode, and reuse the sentence data
+
+**Decision:** Added `kind: 'type-verb'` and `kind: 'type-pronoun'` —
+typed-answer siblings of the existing `sentence` and `pronoun` multiple-choice
+kinds. They reuse exactly the same blanked-sentence data (`verb.sentences` /
+`verb.pronouns` + `verb.pronounSentences`) and roll into the same
+`availableKinds` pool in `generateQuestions`, so a verb that already supports
+one framing automatically supports its typed sibling with no new data fields.
+A typed question carries `correct` but no `options` — `ExerciseScreen` (renamed
+from `MultipleChoiceScreen`, since "multiple choice" no longer described every
+question) uses `Boolean(question.options)` to pick between the option-button
+grid and a new `TypedAnswerInput` text field, and `QuestionPrompt` now keys its
+blanked-sentence layout off `Boolean(question.sentence)` rather than an
+explicit list of "sentence-flavoured" kinds, so it didn't need to learn about
+the two new kinds at all. Correctness for typed answers is judged by a new
+`isAnswerCorrect` (trims and case-folds both sides) — also adopted by
+`exerciseReducer` for *all* answers, since multiple-choice options are always
+exact strings from the same lookup table the correct answer comes from, so
+normalising them is a no-op. `rollQuestionKind` was simplified from two
+`Math.random` calls (one "is it special", one "which one") to a single roll
+that partitions `[0, SPECIAL_QUESTION_CHANCE)` into equal slices, one per
+available kind — same distribution, easier to reason about, and makes every
+available kind individually reachable by mocking `Math.random` to a constant
+(the old two-roll scheme couldn't reach the second half of the kinds list that
+way, which is why this also unblocked writing deterministic tests for the new
+framings).
+
+**Why:** Asked for an exercise type where the learner types the verb or the
+pronoun instead of picking it. Folding it into the existing (verb × tense)
+lessons as two more *question kinds* — rather than a parallel typing-mode
+lesson type — keeps it consistent with every other "new question style"
+decision in this log: no changes to lesson identity, unlocking, progress
+storage, or the exercise state machine, and learners get organic variety
+within a lesson. Requiring sentence context for both typed kinds (rather than
+e.g. a bare "type the form for `hura`") isn't just data reuse for its own
+sake — typing without that anchor is ambiguous for pronouns in particular
+(which declined form depends on which argument and case the sentence calls
+for), and staying consistent between the verb and pronoun typed framings felt
+better than making one contextual and the other not. Keeping the correct
+answer hidden on an incorrect typed submission (matching the existing
+multiple-choice behaviour, see below) means the learner still has to recall
+the spelling when the question resurfaces, rather than being handed it.
+
 ## 2026-06-07 — Pronoun-fill questions reuse the sentence-completion machinery as a third question kind
 
 **Decision:** Added a second "fill the blank" flavour alongside the existing

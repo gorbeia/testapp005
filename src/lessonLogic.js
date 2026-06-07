@@ -85,6 +85,18 @@ export function getUnlockedLessonIds(lessons, progress) {
   return unlocked
 }
 
+function normalizeAnswer(value) {
+  return value.trim().toLowerCase()
+}
+
+// Shared correctness check for both interaction styles: picking an option
+// (always an exact string from the same lookup table the correct answer comes
+// from, so normalising is a no-op) and typing one in (where a learner
+// shouldn't be marked wrong over capitalisation or stray whitespace).
+export function isAnswerCorrect(submitted, correct) {
+  return normalizeAnswer(submitted) === normalizeAnswer(correct)
+}
+
 export function shuffle(items) {
   const copy = [...items]
   for (let i = copy.length - 1; i > 0; i -= 1) {
@@ -101,9 +113,17 @@ export function shuffle(items) {
 // styles rather than being uniformly one or the other.
 const SPECIAL_QUESTION_CHANCE = 0.5
 
+// A single roll decides both *whether* a question gets a special framing and,
+// if so, *which* one: `[0, SPECIAL_QUESTION_CHANCE)` is divided into one equal
+// slice per available kind, `[SPECIAL_QUESTION_CHANCE, 1)` falls back to
+// `form`. Equivalent in distribution to rolling "is it special?" and "which
+// one?" separately, but with a single `Math.random` call to reason about.
 function rollQuestionKind(availableKinds) {
-  if (availableKinds.length === 0 || Math.random() >= SPECIAL_QUESTION_CHANCE) return 'form'
-  return availableKinds[Math.floor(Math.random() * availableKinds.length)]
+  if (availableKinds.length === 0) return 'form'
+  const roll = Math.random()
+  if (roll >= SPECIAL_QUESTION_CHANCE) return 'form'
+  const slice = SPECIAL_QUESTION_CHANCE / availableKinds.length
+  return availableKinds[Math.floor(roll / slice)]
 }
 
 // Builds the options for a multiple-choice question from a person → form
@@ -118,15 +138,23 @@ function buildOptions(table, persons, person) {
   return { correct, options: shuffle([correct, ...distractors]) }
 }
 
-// One question per grammatical person, framed one of three ways:
+// One question per grammatical person, framed one of five ways — the first
+// three are multiple-choice (an `options` array to pick from), the last two
+// ask the learner to type the answer instead (`correct` only, no `options`):
 //   - `form`: recognise the bare conjugated form ("hura → ?")
 //   - `sentence`: fill the verb into an example sentence ("Hura medikua ___.")
 //   - `pronoun`: fill the correctly-declined pronoun into a sentence whose verb
 //     is already given ("___ etxe bat du." → "Hark")
-// `sentence` needs `verb.sentences[tense][person]`; `pronoun` needs both
-// `verb.pronouns` and `verb.pronounSentences[tense][person]`. Persons missing
-// that supporting data always fall back to the bare form, so verbs can adopt
-// either (or both) extra framings incrementally.
+//   - `type-verb`: type the verb into the same blanked sentence as `sentence`
+//   - `type-pronoun`: type the pronoun into the same blanked sentence as `pronoun`
+// The typed framings reuse exactly the same example-sentence data as their
+// multiple-choice counterparts (`sentence` needs `verb.sentences[tense][person]`;
+// `pronoun`/`type-pronoun` need both `verb.pronouns` and
+// `verb.pronounSentences[tense][person]`) — typing only makes sense with that
+// sentence context to anchor what's being asked for, and reusing the data means
+// a verb that already supports one framing automatically supports its typed
+// sibling. Persons missing that supporting data always fall back to the bare
+// `form` question, so verbs can adopt any of the framings incrementally.
 export function generateQuestions(verb, tense) {
   const table = verb.conjugations[tense]
   const sentences = verb.sentences?.[tense] ?? {}
@@ -135,17 +163,26 @@ export function generateQuestions(verb, tense) {
   return shuffle(persons).map((person) => {
     const sentence = sentences[person]
     const pronounSentence = verb.pronouns && pronounSentences[person]
-    const availableKinds = [sentence && 'sentence', pronounSentence && 'pronoun'].filter(Boolean)
+    const availableKinds = [
+      sentence && 'sentence',
+      sentence && 'type-verb',
+      pronounSentence && 'pronoun',
+      pronounSentence && 'type-pronoun',
+    ].filter(Boolean)
 
     switch (rollQuestionKind(availableKinds)) {
       case 'sentence': {
         const { correct, options } = buildOptions(table, persons, person)
         return { kind: 'sentence', person, sentence, correct, options }
       }
+      case 'type-verb':
+        return { kind: 'type-verb', person, sentence, correct: table[person] }
       case 'pronoun': {
         const { correct, options } = buildOptions(verb.pronouns, persons, person)
         return { kind: 'pronoun', person, sentence: pronounSentence, correct, options }
       }
+      case 'type-pronoun':
+        return { kind: 'type-pronoun', person, sentence: pronounSentence, correct: verb.pronouns[person] }
       default: {
         const { correct, options } = buildOptions(table, persons, person)
         return { kind: 'form', person, correct, options }
@@ -166,7 +203,7 @@ export function exerciseReducer(state, action) {
     case 'answer': {
       if (state.status !== 'active') return state
       const question = state.queue[0]
-      const isCorrect = action.option === question.correct
+      const isCorrect = isAnswerCorrect(action.option, question.correct)
       const countsTowardScore = isCorrect && !question.retry
       return {
         ...state,
