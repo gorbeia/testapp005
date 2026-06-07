@@ -34,12 +34,15 @@ synthetic verbs (§15, "Aditz trinkoak"); a PDF on rarer/non-standard synthetic
 verbs (§9, "trinko-ezohiko-batzuk", euskarians.wordpress.com, 2012) that
 rounded out full present/past paradigms for `iraun`, `jario`, `irudi`, and
 `etzan` — the entire former 🔍-partial roster of §9. §14/§15 mostly serve as
-*cross-checks* on material already here, though §14's compact NOR-NORI row
-templates also got re-mined a second time to fill out §5's present/past grids
-(the `haiek` column, plus missing `hiri`/`zuri`/`zuei` rows); §9's new source
-instead grows verbs that were previously fragmentary, sample-only, or barely
-sourced at all — see each section's own notes for exactly what each
-contributed.
+*cross-checks* on material already here — though §14's compact NOR-NORI row
+templates ended up doing real generative work of their own: re-mined twice
+over, they grew §5 from a `NOR ∈ {hura, haiek}` citation slice into the full
+seven-by-seven `NORI`×`NOR` grid (present and past), mechanically applying
+the same `-zki-`/`K-N`↔`A-NA` regularities already trusted elsewhere in this
+document — see §5's own notes for the formula and its one remaining gap
+(`NOR = zuek`). §9's new source instead grows verbs that were previously
+fragmentary, sample-only, or barely sourced at all — see each section's own
+notes for exactly what each contributed.
 
 ---
 
@@ -261,56 +264,85 @@ same shape `VERBS` already uses for `ukan` itself (§2):
 Used with intransitive verbs that take an indirect object — `gustatu`,
 `iruditu`, etc. (`VERB_COVERAGE.md` §2 covers why this pattern usually rides
 on `izan`'s own auxiliary paradigm rather than a standalone lexical verb).
-Laid out as a grid (`NORI` rows × `NOR` columns) rather than one-`NOR`-at-a-
-time, like §4 — `NOR` only takes the singular/plural-object contrast here, so
-the columns line up directly with §4's "further moods" pairing. Once you lay
-it out this way, the `NOR = haiek` column visibly **= the `NOR = hura` column
-with `-zki-` infixed** (`zait → zaizkit`, `zaio → zaizkio`, …) — a clean,
-regular pattern, for whatever that's worth from an unverified 📖 source.
+Laid out as a grid (`NORI` rows × `NOR` columns) — and, like §4's `ukan`
+grid, the *full* picture varies `NOR` across all seven persons, not just
+`hura`/`haiek`. The citation slice most relevant to `gustatu`-class verbs
+("it pleases me", "they please me" — `NOR` is the 3rd-person stimulus) sits
+in the `hura`/`haiek` columns; the rest of the grid is this *same* auxiliary
+wearing its other hat — "I am to him" (`natzaio`, cited in
+`VERB_COVERAGE.md` §2 as the synthetic engine behind e.g. `jarraitzen
+natzaio`, "I follow him") and its kin across all persons.
+
+§14's compact NOR-NORI row-template spells out, mechanically, how to build
+*any* cell: `[NOR person's prefix + stem(+zki if plural)] + [NORI person's
+suffix] (+ -n in the past)` — e.g. present `Zai|O` (hura-stem `zai-` +
+hari-suffix `-o`) → `zaio`, or `NA tzai|O` (ni-stem `na-tzai-` + hari-suffix
+`-o`) → `natzaio`. Three regularities fall straight out of that formula, and
+all three are corroborated by patterns this document already relies on
+elsewhere:
+
+- **`-zki-` marks a plural `NOR`** — not just for `haiek` (the only plural
+  option visible in the old 2-column framing) but for `gu`/`zu`/`zuek` too
+  (`gatzaizkio`, `zatzaizkio`, …) — the same infix §4's grid and §9 already
+  use for plural absolutive arguments generally.
+- **The `K/N` ↔ `A/NA` mirroring** — the masc./fem. split tied to a `hi`
+  argument — surfaces in the `NORI = hiri` row in exactly the present ↔ past
+  pairing already named for §4: `zaik`/`zain` (present) ↔ `zitzaian`/
+  `zitzainan` (past). §14's own template spells out `A/NA` for this row,
+  *independently corroborating* the 🔍-flagged guess this document made for
+  that very form just one revision ago — nice to see a guess confirmed.
+- **Reflexive gaps** sit on the same kind of diagonal §4 leaves blank — `ni`-
+  to-`niri`, `hi`-to-`hiri`, `gu`-to-`guri`, `zu`-to-`zuri`, `zuek`-to-`zuei`
+  ("I am to myself", …) — marked `*(refl.)*` rather than invented. (`hura`-
+  to-`hari` and `haiek`-to-`haiei` *aren't* reflexive gaps — "it"/"they" are
+  open referential slots that can differ from their dative counterpart, hence
+  `zaio`/`zaizkie` are perfectly ordinary attested forms.)
+
+**One honest gap remains: `NOR = zuek`.** `izan`'s own paradigm marks `zuek`
+with a final `-te` that `zu` lacks (`zara` → `zarete`), and §14's linearized
+template shows a stray `te` in that row too — but *where it slots* relative
+to the `NORI` suffix (`za-tzai-zki-`**`X`**`-te` ? `za-tzai-zki-te-`**`X`** ?
+something else?) isn't recoverable with any confidence from flattened PDF
+text — exactly the kind of column-linearization noise §14's own intro warns
+makes this source "error-prone to transcribe wholesale." Rather than guess
+and risk teaching a wrong form in a *learning app's* reference doc, that
+whole column is left blank: a sourcing gap, not a claim the forms don't
+exist — same convention as §4's empty `hi`-as-object column.
 
 ### Present
 
-| NORI ↓ ╲ NOR → | hura ("it") | haiek ("they") |
-|---|---|---|
-| niri | zait | zaizkit |
-| hiri | zaik *(masc.)* / zain *(fem.)* | zaizkik *(masc.)* / zaizkin *(fem.)* |
-| hari | zaio | zaizkio |
-| guri | zaigu | zaizkigu |
-| zuri | zaizu | zaizkizu |
-| zuei | zaizue | zaizkizue |
-| haiei | zaie | zaizkie |
+| NORI ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
+|---|---|---|---|---|---|---|---|
+| niri | *(refl.)* | hatzait | zait | gatzaizkit | zatzaizkit |  | zaizkit |
+| hiri | natzaik *(masc.)* / natzain *(fem.)* | *(refl.)* | zaik *(masc.)* / zain *(fem.)* | gatzaizkik *(masc.)* / gatzaizkin *(fem.)* | zatzaizkik *(masc.)* / zatzaizkin *(fem.)* |  | zaizkik *(masc.)* / zaizkin *(fem.)* |
+| hari | natzaio | hatzaio | zaio | gatzaizkio | zatzaizkio |  | zaizkio |
+| guri | natzaigu | hatzaigu | zaigu | *(refl.)* | zatzaizkigu |  | zaizkigu |
+| zuri | natzaizu | hatzaizu | zaizu | gatzaizkizu | *(refl.)* |  | zaizkizu |
+| zuei | natzaizue | hatzaizue | zaizue | gatzaizkizue | zatzaizkizue |  | zaizkizue |
+| haiei | natzaie | hatzaie | zaie | gatzaizkie | zatzaizkie |  | zaizkie |
 
 ### Past
 
-| NORI ↓ ╲ NOR → | hura ("it") | haiek ("they") |
-|---|---|---|
-| niri | zitzaidan | zitzaizkidan |
-| hiri | zitzaian *(masc.)* / zitzainan *(fem.)* | zitzaizkian *(masc.)* / zitzaizkinan *(fem.)* |
-| hari | zitzaion | zitzaizkion |
-| guri | zitzaigun | zitzaizkigun |
-| zuri | zitzaizun | zitzaizkizun |
-| zuei | zitzaizuen | zitzaizkizuen |
-| haiei | zitzaien | zitzaizkien |
+| NORI ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
+|---|---|---|---|---|---|---|---|
+| niri | *(refl.)* | hintzaidan | zitzaidan | gintzaizkidan | zintzaizkidan |  | zitzaizkidan |
+| hiri | nintzaian *(masc.)* / nintzainan *(fem.)* | *(refl.)* | zitzaian *(masc.)* / zitzainan *(fem.)* | gintzaizkian *(masc.)* / gintzaizkinan *(fem.)* | zintzaizkian *(masc.)* / zintzaizkinan *(fem.)* |  | zitzaizkian *(masc.)* / zitzaizkinan *(fem.)* |
+| hari | nintzaion | hintzaion | zitzaion | gintzaizkion | zintzaizkion |  | zitzaizkion |
+| guri | nintzaigun | hintzaigun | zitzaigun | *(refl.)* | zintzaizkigun |  | zitzaizkigun |
+| zuri | nintzaizun | hintzaizun | zitzaizun | gintzaizkizun | *(refl.)* |  | zitzaizkizun |
+| zuei | nintzaizuen | hintzaizuen | zitzaizuen | gintzaizkizuen | zintzaizkizuen |  | zitzaizkizuen |
+| haiei | nintzaien | hintzaien | zitzaien | gintzaizkien | zintzaizkien |  | zitzaizkien |
 
-The blanks that used to sit in both grids are now filled in by re-mining §14
-(the big "Euskal aditz laguntzailea" chart), which lays out the NOR-NORI
-present and past paradigms as compact row templates (one row per `NORI`
-person, each row encoding that person's marker in *both* the `NOR` and `NORI`
-roles at once — not a literal combined word). Two derivations at different
-confidence levels:
-
-- **Present `haiek` column + past `haiek` column as a whole** (`zaizkik`,
-  `zaizkizu`, `zaizkizue`, `zitzaizkidan`, `zitzaizkion`, …): plain
-  applications of the **already-stated `-zki-` infixion** (`NOR = haiek` ⇒
-  `NOR = hura` + `-zki-`) that this section opens with — and the past
-  template's own `… tzai (zki) …` row shape corroborates that the infix
-  slots into past forms the same way. 📖, low-risk.
-- **`hiri` row in the past grid** (`zitzaian` / `zitzainan`, and their `-zki-`
-  counterparts): 🔍, more speculative — derived by carrying the present
-  tense's masc./fem. `-k` / `-n` alternation into the past as `-a` / `-na`
-  (the same K/N ↔ A/NA mirroring discussed for §4), rather than read directly
-  off an attested past-tense `hiri` form. Flagging it rather than silently
-  presenting it as equally solid.
+**On confidence:** every cell outside the original `hura`/`haiek` columns
+(plus the `hiri`-row masc./fem. split, already covered above) is *generated*
+by the formula at the top of this section rather than individually attested
+— treat it as 📖-via-systematic-derivation from §14's template, not
+📖-via-citation from a dictionary entry. Basque's verb agreement is regular
+enough that this is a fairly low-risk way to fill out a paradigm — it's the
+same kind of move the `-zki-` and `K/N`↔`A/NA` regularities above already
+licensed, just applied across the *whole* grid instead of one column/row —
+but it *is* derivation, not citation, and worth flagging as such for anyone
+cross-checking against a source that only lists citation forms.
 
 ## 6. `ukan` with dative — NOR-NORI-NORK system · 📖
 
