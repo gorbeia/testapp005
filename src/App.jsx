@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useReducer, useState } from 'react'
+import { useCallback, useEffect, useMemo, useReducer, useState } from 'react'
 import {
   computeStars,
   exerciseReducer,
@@ -435,13 +435,9 @@ function AnswerOption({ option, status, disabled, onSelect }) {
   )
 }
 
-function FeedbackBar({ status, isLast, streak, onContinue }) {
+function FeedbackBar({ status, isLast, streakEncouragement, onContinue }) {
   if (status === 'active') return null
   const isCorrect = status === 'correct'
-  // A streak milestone takes over the feedback line entirely (rather than
-  // stacking alongside it) — both are "you got it right" affirmations, and
-  // showing two at once would just be noise.
-  const streakEncouragement = isCorrect ? getStreakEncouragement(streak) : null
   return (
     <div className={`px-5 pt-4 pb-6 ${isCorrect ? 'bg-green-50' : 'bg-red-50'}`}>
       <p className={`mb-3 flex items-center gap-2 text-lg font-extrabold ${isCorrect ? 'text-green-700' : 'text-red-700'}`}>
@@ -502,9 +498,32 @@ function LessonResultsScreen({ verb, tense, correctCount, total, onDone }) {
   )
 }
 
-function MultipleChoiceScreen({ verb, tense, onExit, onComplete }) {
+// Showing a streak nudge every single time someone hits a milestone would
+// get mechanical fast, so it's gated two ways: a session-level cooldown
+// (tracked by `App` in lessons, reset to a random span once a nudge is
+// shown) and, even once eligible, only a chance of actually firing — so it
+// reads as an occasional surprise rather than a predictable popup.
+const STREAK_NUDGE_COOLDOWN_RANGE = [2, 4] // lessons to wait before the next one
+const STREAK_NUDGE_CHANCE = 0.6
+
+function randomStreakNudgeCooldown() {
+  const [min, max] = STREAK_NUDGE_COOLDOWN_RANGE
+  return min + Math.floor(Math.random() * (max - min + 1))
+}
+
+// Pulled out to its own (impure) function — the `react-hooks/purity` rule
+// forbids `Math.random` calls written directly inside component bodies, even
+// inside event handlers, since it can't always tell render code from event
+// code apart. Calling it from `handleSelect`, in response to an answer, is
+// fine: that's an event, not a render.
+function rollStreakNudgeChance() {
+  return Math.random() < STREAK_NUDGE_CHANCE
+}
+
+function MultipleChoiceScreen({ verb, tense, onExit, onComplete, canShowStreakNudge, onStreakNudgeShown }) {
   const [state, dispatch] = useReducer(exerciseReducer, undefined, () => createExerciseState(verb, tense))
   const [finished, setFinished] = useState(false)
+  const [streakEncouragement, setStreakEncouragement] = useState(null)
 
   const total = state.total
   const question = state.queue[0]
@@ -518,6 +537,16 @@ function MultipleChoiceScreen({ verb, tense, onExit, onComplete }) {
 
   function handleSelect(option) {
     if (isAnswered) return
+    // Decided here, at answer time, rather than during render: it rolls the
+    // dice, and React render functions must stay pure/idempotent. Gated by
+    // the session-level cooldown `App` tracks, plus a chance check, so a
+    // milestone streak doesn't *always* trigger a nudge — it should read as
+    // an occasional surprise, not a mechanical popup.
+    const isCorrect = option === question.correct
+    const milestone = isCorrect ? getStreakEncouragement(state.streak + 1) : null
+    const showEncouragement = milestone !== null && canShowStreakNudge && rollStreakNudgeChance()
+    setStreakEncouragement(showEncouragement ? milestone : null)
+    if (showEncouragement) onStreakNudgeShown()
     dispatch({ type: 'answer', option })
   }
 
@@ -581,7 +610,7 @@ function MultipleChoiceScreen({ verb, tense, onExit, onComplete }) {
         </div>
       </div>
 
-      <FeedbackBar status={state.status} isLast={isLast} streak={state.streak} onContinue={handleContinue} />
+      <FeedbackBar status={state.status} isLast={isLast} streakEncouragement={streakEncouragement} onContinue={handleContinue} />
     </div>
   )
 }
@@ -594,10 +623,18 @@ export default function App() {
   const [progress, setProgress] = useState(loadProgress)
   const [tab, setTab] = useState('home')
   const [activeLessonId, setActiveLessonId] = useState(null)
+  // Session-level gate for the mid-lesson streak nudge: counts down once a
+  // nudge has been shown, so the next one waits a few lessons rather than
+  // popping up again the moment another milestone streak comes around.
+  const [streakNudgeCooldown, setStreakNudgeCooldown] = useState(0)
 
   useEffect(() => {
     saveProgress(progress)
   }, [progress])
+
+  const handleStreakNudgeShown = useCallback(() => {
+    setStreakNudgeCooldown(randomStreakNudgeCooldown())
+  }, [])
 
   function handleResetProgress() {
     if (typeof window !== 'undefined' && !window.confirm('Reset all lesson progress? This cannot be undone.')) {
@@ -615,8 +652,11 @@ export default function App() {
         verb={verb}
         tense={lesson.tense}
         onExit={() => setActiveLessonId(null)}
+        canShowStreakNudge={streakNudgeCooldown === 0}
+        onStreakNudgeShown={handleStreakNudgeShown}
         onComplete={(result) => {
           setProgress((previous) => recordResult(previous, lesson.id, result))
+          setStreakNudgeCooldown((cooldown) => Math.max(0, cooldown - 1))
           setActiveLessonId(null)
         }}
       />
