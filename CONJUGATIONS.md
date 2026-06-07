@@ -32,10 +32,11 @@ a professionally-typeset paradigm-chart PDF covering Batua/Bizkaiera/Zuberera
 (§14, "Euskal aditz laguntzailea"); a 2011 classroom handout covering ten
 synthetic verbs (§15, "Aditz trinkoak"); a PDF on rarer/non-standard synthetic
 verbs (§9, "trinko-ezohiko-batzuk", euskarians.wordpress.com, 2012) that
-filled out `jario`'s paradigm and supplied `etzan`'s from scratch. §14/§15
-mostly serve as *cross-checks* on material already here; §9's new source
-instead grows verbs that were previously fragmentary or single-form-only —
-see each section's own notes for exactly what each contributed.
+filled out full present/past paradigms for `jario`, `irudi`, and `etzan`.
+§14/§15 mostly serve as *cross-checks* on material already here; §9's new
+source instead grows verbs that were previously fragmentary, sample-only, or
+barely sourced at all — see each section's own notes for exactly what each
+contributed.
 
 ---
 
@@ -439,18 +440,17 @@ other.)
 
 ## 9. `iraun`, `jario`, `esan`, `irudi`, `etzan` · 🔍 / 📖
 
-`iraun`/`irudi` are unchanged from the original research pass — see
-`VERB_COVERAGE.md` for full context and sourcing, still partial/🔍. `esan` no
-longer belongs in that company: §15 filled it in completely (📖, full table
-below) — kept here rather than relocated, since it's still the same verb
-this section was already tracking. `jario` and `etzan` have grown the same
-way, courtesy of a new PDF dedicated to rarer/non-standard synthetic verbs
-("trinko-ezohiko-batzuk", euskarians.wordpress.com, 2012): it spells out
-`jario`'s full present/past `NOR-NORI` paradigm (templated, below — far more
-than the fragment that was here before) and supplies `etzan`'s complete `nor`
-paradigm from scratch (it previously had only its bare 3sg `datza` confirmed —
-`VERB_COVERAGE.md` flags it as a rare, "recognise it when you see it" verb
-that native teaching materials steer learners away from).
+`iraun` is unchanged from the original research pass — see `VERB_COVERAGE.md`
+for full context and sourcing, still partial/🔍. `esan` no longer belongs in
+that company: §15 filled it in completely (📖, full table below) — kept here
+rather than relocated, since it's still the same verb this section was
+already tracking. `jario`, `irudi`, and `etzan` have now grown the same way,
+courtesy of a new PDF dedicated to rarer/non-standard synthetic verbs
+("trinko-ezohiko-batzuk", euskarians.wordpress.com, 2012): full present/past
+paradigms for all three, replacing what had been a fragment (`jario`), a
+two-cell sample (`irudi`), or nothing beyond a single confirmed form
+(`etzan` — `VERB_COVERAGE.md` flags it as a rare, "recognise it when you see
+it" verb that native teaching materials steer learners away from).
 
 ### `iraun` — "to last / endure" (present only)
 
@@ -516,11 +516,23 @@ NORK varying — the same "citation paradigm" shape `VERBS` already uses for
 
 ### `irudi` — "to seem / give the impression" (nor-nork — *not* `iruditu`'s nor-nori)
 
-- **dirudi**, **dirudizu**… A false-friend pairing flagged in
-  `VERB_COVERAGE.md`: `iruditu` ("iruditzen zait" = "it seems to me",
-  subjective opinion, nor-nori) vs. `irudi` ("dirudizu" = "you give the
-  impression", external appearance, nor-nork) — cognates that drifted apart in
-  both meaning *and* agreement.
+A false-friend pairing flagged in `VERB_COVERAGE.md`: `iruditu` ("iruditzen
+zait" = "it seems to me", subjective opinion, nor-nori) vs. `irudi`
+("dirudizu" = "you give the impression", external appearance, nor-nork) —
+cognates that drifted apart in both meaning *and* agreement. The same new PDF
+behind `jario` (above) and `etzan` (below) supplies `irudi`'s full present
+and past `nor-nork` paradigm too — confirming `dirudi`/`dirudizu` and adding
+everything around them, including the past tense that wasn't sourced before:
+
+| Person | Present (oraina) | Past (lehena) |
+|---|---|---|
+| ni | dirudit | nirudien |
+| hi | dirudik / dirudin *(masc./fem.)* | hirudien |
+| hura | dirudi | zirudien |
+| gu | dirudigu | genirudien |
+| zu | dirudizu | zenirudien |
+| zuek | dirudizue | zeniruditen |
+| haiek | dirudite | ziruditen |
 
 ### `etzan` — "to lie (in) / consist of" (nor — rare, limited use)
 
