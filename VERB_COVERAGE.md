@@ -145,13 +145,60 @@ reach:
 - **`etorri`** is a natural bridge case: synthetic in present/past, but
   periphrastic in the other tenses
 
-## 5. Suggested coverage checklist
+## 5. Modal & aspectual constructions — `nahi` / `behar` / `ari`
+
+These three don't sit anywhere on the verb/tense/agreement grid above — they're
+not lexical verbs at all, but invariant nouns/particles that combine with a
+main verb's non-finite form plus an existing auxiliary to express **want**,
+**need/must**, and **ongoing action**:
+
+- **`nahi`** ("want/wish") + radical/participle + `ukan` — "Etorri nahi dut" =
+  "I want to come"; "Liburu bat nahi dut" = "I want a book"
+- **`behar`** ("need/necessity") + radical/participle + `ukan` — "Joan behar
+  dut" = "I have to / must go"
+- **`ari`** ("in the process of") + imperfective participle (`-tzen`/`-ten`)
+  + `izan` — "Lan egiten ari naiz" = "I'm working (right now)"; "Zer ari
+  zara?" = "What are you doing?"
+
+Three things make these unusually attractive — possibly *more* so than
+anything in §4:
+
+1. **They're likely what a beginner most wants to say.** "I want to…", "I
+   need to…", "I'm doing…" outrank most lexical verbs in conversational
+   payoff per form learned.
+2. **The auxiliary is chosen by the construction's head, not the lexical
+   verb — a genuinely teachable "aha" moment.** `nahi`/`behar` *always* take
+   `ukan` ("Joan behar **dut**", not "joan behar naiz", even though `joan`
+   alone is `noa`/intransitive); `ari` *always* takes `izan` ("Liburua
+   irakurtzen **ari naiz**", not "ari dut", even though `irakurri` alone is
+   `dut`/transitive). A learner who's internalised "the auxiliary matches the
+   verb" needs precisely this counter-example to get the real rule.
+3. **They cost nothing in new conjugation data.** `nahi`/`behar` conjugate
+   *exactly* like `ukan` (`nahi dut/duk/du/dugu/duzue/dute`) and `ari`
+   *exactly* like `izan` (`ari naiz/haiz/da/gara/zarete/dira`) — because
+   that's literally what they are: `ukan`/`izan` with an invariant word in
+   front. No new paradigm to source, verify, or maintain.
+
+That last point doubles as the open design question: do they become **new
+`sentences`/`pronounSentences` content layered onto the existing `izan`/`ukan`
+entries** (zero new lessons, but "nahi" never becomes a thing to discover and
+learn in its own right), or **new `VERBS`-shaped entries whose `conjugations`
+table is just `izan`'s/`ukan`'s with a fixed prefix word** (gives them
+dedicated lesson identity, but raises "how do we avoid hand-duplicating data
+that has to stay in sync with `izan`/`ukan`")? Either is far cheaper than
+standing up a periphrastic verb from scratch — worth resolving *before*
+reaching for §4b, not after.
+
+## 6. Suggested coverage checklist
 
 Not a commitment — just a way to see how much runway sits past the current
 `izan`/`ukan` × present/past × nor/nor-nork slice, roughly in priority order:
 
 - [x] `nor` agreement, present + past — `izan`
 - [x] `nor-nork` agreement, present + past — `ukan`
+- [ ] **`nahi`/`behar`/`ari`** — arguably do this *first*: highest
+      conversational payoff, zero new conjugation data, reuses `izan`/`ukan`
+      verbatim (per §5)
 - [ ] `nor-nori` agreement, the low-friction way — `jario` (native synthetic,
       no new plumbing; per §4a)
 - [ ] future tense, any verb/agreement — reuses existing auxiliary forms
