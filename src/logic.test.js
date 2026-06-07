@@ -3,6 +3,7 @@ import {
   computeStars,
   exerciseReducer,
   generateQuestions,
+  getEncouragement,
   getUnlockedLessonIds,
   recordResult,
   shuffle,
@@ -27,6 +28,28 @@ describe('computeStars', () => {
 
   it('awards 0 stars below 50%', () => {
     expect(computeStars(2, 6)).toBe(0)
+  })
+})
+
+describe('getEncouragement', () => {
+  it('matches the headline tone to the star band, in step with computeStars', () => {
+    expect(getEncouragement(5, 5).headline).toBe('Bikain!')
+    expect(getEncouragement(4, 5).headline).toBe('Oso ondo!')
+    expect(getEncouragement(3, 6).headline).toBe('Ondo!')
+    expect(getEncouragement(2, 6).headline).toBe('Ez etsi!')
+  })
+
+  it('always returns a non-empty icon, headline and message', () => {
+    ;[
+      [0, 0],
+      [0, 5],
+      [5, 5],
+    ].forEach(([correctCount, total]) => {
+      const { icon, headline, message } = getEncouragement(correctCount, total)
+      expect(icon).toBeTruthy()
+      expect(headline).toBeTruthy()
+      expect(message).toBeTruthy()
+    })
   })
 })
 
