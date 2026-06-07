@@ -45,13 +45,26 @@ combinations occur in the language:
 `AGREEMENT_META` already has copy and a badge style for `nori` — only the verb
 data is missing to exercise it.
 
-**Important wrinkle:** NOR-NORI and NOR-NORI-NORK agreement is mostly *not*
-carried by independently-synthetic lexical verbs — it's carried by `izan`'s
-and `ukan`'s synthetic auxiliary paradigms (`zait`/`zaio`/`natzaio`... for
-NOR-NORI; `dio`/`diot`/`diet`... for NOR-NORI-NORK), which periphrastic verbs
-lean on. `gustatu` and `iruditu` (both regular `-tu` participles, periphrastic)
-are the canonical NOR-NORI teaching examples for exactly this reason: their
+**Important wrinkle:** NOR-NORI and NOR-NORI-NORK agreement is *usually* carried
+by `izan`'s and `ukan`'s synthetic auxiliary paradigms (`zait`/`zaio`/
+`natzaio`... for NOR-NORI; `dio`/`diot`/`diet`... for NOR-NORI-NORK) rather
+than by an independently-synthetic lexical verb — that's the route `gustatu`
+and `iruditu` (both regular `-tu` participles, periphrastic) take; their
 "conjugation table" *is* `izan`'s NOR-NORI auxiliary paradigm — see §4b.
+
+But there *are* native synthetic exceptions, and they're a better first target
+for `nor-nori` specifically: **`jario`** ("to flow/ooze" — "malkoak dario" =
+"tears flow from him", "hitzak dario" = "words pour out of him") conjugates
+directly (`dario`, `dariot`, `darizkio`...), no auxiliary needed. It's
+defective — almost always used with an inanimate `nor` (tears, sweat, blood,
+words) — so a lesson would naturally fix `nor` (mirroring `ukan`'s
+`object: 'hura'`) and vary the table by **`nori` person** instead, which the
+existing `conjugations` shape already supports. That makes `jario` a way to
+land `nor-nori` *without* also having to stand up periphrastic-verb plumbing —
+a cleaner, smaller first step than `gustatu`/`iruditu`. (`iritzi` → `deritzo`
+is the parallel native-synthetic case for `nor-nori-nork`, "to deem/consider
+[something] to be [something], to [someone]" — rarer and more literary, so a
+weaker first pick than `eman`/`esan`.)
 
 ## 3. Tenses / moods (denborak eta moduak)
 
@@ -92,11 +105,11 @@ and is presumably what the `type: 'periphrastic'` plumbing is there for.
 ## 4. Verbs to cover
 
 ### 4a. Synthetic verbs (aditz trinkoak)
-The ~10 lexical verbs Batua still conjugates directly (i.e. *they themselves*
-take person/agreement endings, with no participle+auxiliary needed), ranked
-roughly by how often they come up in everyday speech. All of these are `nor`
-or `nor-nork` — see the wrinkle in §2 for why `nor-nori`(`-nork`) isn't on this
-list:
+The lexical verbs Batua still conjugates directly (i.e. *they themselves*
+take person/agreement endings, with no participle+auxiliary needed). The first
+dozen are common, everyday `nor`/`nor-nork` verbs; `jario` is the odd one out —
+rarer in conversation, but the cleanest native route to `nor-nori` (see the
+wrinkle in §2):
 
 | Verb | Meaning | Agreement | Status |
 |---|---|---|---|
@@ -112,6 +125,7 @@ list:
 | erabili | to use | nor-nork | 🔲 |
 | jakin | to know (a fact) | nor-nork | 🔲 |
 | egin | to do / make | nor-nork | 🔲 |
+| jario | to flow / ooze / stream ("malkoak dario" = tears flow from him) | nor-nori | 🔲 defective (effectively fixed `nor`, varies by `nori` person) — the lowest-friction way to land `nor-nori`: native synthetic, no auxiliary, fits the existing `object`-fixed `conjugations` shape |
 
 ### 4b. Representative periphrastic verbs (aditz perifrastikoak)
 None yet — `TYPE_META.periphrastic` exists but no verb actually conjugates as
@@ -138,10 +152,13 @@ Not a commitment — just a way to see how much runway sits past the current
 
 - [x] `nor` agreement, present + past — `izan`
 - [x] `nor-nork` agreement, present + past — `ukan`
-- [ ] `nor-nori` agreement *and* a first periphrastic verb in one move —
-      `gustatu` or `iruditu` (both, per §4b)
+- [ ] `nor-nori` agreement, the low-friction way — `jario` (native synthetic,
+      no new plumbing; per §4a)
 - [ ] future tense, any verb/agreement — reuses existing auxiliary forms
-- [ ] `nor-nori-nork` agreement — `eman` or `esan` (also periphrastic, per §4b)
+- [ ] a first periphrastic verb (participle + auxiliary) — `gustatu`/`iruditu`
+      double as *another*, auxiliary-driven route into `nor-nori` (per §4b)
+- [ ] `nor-nori-nork` agreement — `eman`/`esan` (also periphrastic, per §4b),
+      or the rarer native-synthetic `iritzi` → `deritzo`
 - [ ] `zu` modeled as a person, alongside or instead of `hi`
 - [ ] conditional / potential / subjunctive / imperative — stretch goals;
       imperative in particular needs its own lesson shape (no `ni`/`hura`/etc.)
