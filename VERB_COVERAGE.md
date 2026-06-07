@@ -139,14 +139,14 @@ cleanest route to `nor-nori`, `esan` to `nor-nori-nork`:
 | jario | to flow / ooze / stream ("malkoak dario" = tears flow from him) | nor-nori | 🔲 defective (effectively fixed `nor`, varies by `nori` person) — **and** it already has its own present/past synthetic pair: `dario`/`darie` (present) ↔ `erion`/`erien` (past, Bizkaian) — `erion` isn't a separate verb, it's `jario`'s own past stem. That's a remarkably exact match for the app's present+past shape, on top of being the lowest-friction `nor-nori` route (native synthetic, no auxiliary, fits `object`-fixed `conjugations`) |
 | esan | to say | nor-nork / nor-nori-nork | 🔲 the everyday, central `nor-nori-nork` verb — its ditransitive forms (`dio`/`diot`/`diozu`...) run on the same defective `*-io-` root that `ukan` borrows for *its* ditransitive auxiliary use; `erran` is the northern (Lapurdian/Zuberoan) dialectal variant, again a `dialectVariants` candidate. A much better first `nor-nori-nork` pick than `eman` or `iritzi` |
 | jardun | to be engaged in / at it ("zertan dihardu?" = "what's he up to?") | nor-nork | 🔲 a curiosity worth knowing about rather than prioritising: it expresses the *same* "ongoing action" meaning as `ari`/`ibili` (§5), but — unlike them — conjugates in the transitive `du`-pattern (`dihardut` "I'm at it" ~ `dut`) despite being semantically intransitive. One more data point for "the form doesn't follow the lexical verb's transitivity," alongside `nahi`/`behar`/`ari` |
+| etzan | to lie / be situated, recline ("Herria itsasoaren ondoan datza" = "The town lies by the sea") | nor | 🔲 confirmed synthetic — `datza` (3sg) — though it leans literary/descriptive (geography, figurative "resting" senses) rather than the everyday "lie down" a learner would reach for first, and like `iraun`/`jario` it's likely defective toward 3rd person; a real but lower-priority `nor` option, more `dago`'s literary cousin than its replacement |
 
-Three more genuinely-synthetic verbs (`atxeki` "to adhere/cling [to]", `iharduki`
-"to converse, hold forth" — a relative of `jardun` — and `etzan` "to lie down")
-turned up while researching this list, but they're rare/literary/dialectal
+`atxeki` ("to adhere/cling [to]") and `iharduki` ("to converse, hold forth" —
+a relative of `jardun`) are also genuinely synthetic, but rare/dialectal
 enough that I couldn't pin down their argument structure or how alive their
-synthetic paradigms are in modern Batua from the sources at hand. Worth a
-revisit with a proper grammar reference if any of them seem promising, rather
-than guessing at their forms here.
+paradigms are in modern Batua from the sources at hand — worth a revisit with
+a proper grammar reference if either seems promising, rather than guessing at
+their forms here.
 
 ### 4b. Representative periphrastic verbs (aditz perifrastikoak)
 None yet — `TYPE_META.periphrastic` exists but no verb actually conjugates as
