@@ -32,11 +32,11 @@ a professionally-typeset paradigm-chart PDF covering Batua/Bizkaiera/Zuberera
 (§14, "Euskal aditz laguntzailea"); a 2011 classroom handout covering ten
 synthetic verbs (§15, "Aditz trinkoak"); a PDF on rarer/non-standard synthetic
 verbs (§9, "trinko-ezohiko-batzuk", euskarians.wordpress.com, 2012) that
-filled out full present/past paradigms for `jario`, `irudi`, and `etzan`.
-§14/§15 mostly serve as *cross-checks* on material already here; §9's new
-source instead grows verbs that were previously fragmentary, sample-only, or
-barely sourced at all — see each section's own notes for exactly what each
-contributed.
+rounded out full present/past paradigms for `iraun`, `jario`, `irudi`, and
+`etzan` — the entire former 🔍-partial roster of §9. §14/§15 mostly serve as
+*cross-checks* on material already here; §9's new source instead grows verbs
+that were previously fragmentary, sample-only, or barely sourced at all —
+see each section's own notes for exactly what each contributed.
 
 ---
 
@@ -438,31 +438,42 @@ is the *plural-object* haiek-past form — `zekarten` is its singular-object
 counterpart, and both exist side by side rather than one superseding the
 other.)
 
-## 9. `iraun`, `jario`, `esan`, `irudi`, `etzan` · 🔍 / 📖
+## 9. `iraun`, `jario`, `esan`, `irudi`, `etzan` · 📖
 
-`iraun` is unchanged from the original research pass — see `VERB_COVERAGE.md`
-for full context and sourcing, still partial/🔍. `esan` no longer belongs in
-that company: §15 filled it in completely (📖, full table below) — kept here
-rather than relocated, since it's still the same verb this section was
-already tracking. `jario`, `irudi`, and `etzan` have now grown the same way,
-courtesy of a new PDF dedicated to rarer/non-standard synthetic verbs
-("trinko-ezohiko-batzuk", euskarians.wordpress.com, 2012): full present/past
-paradigms for all three, replacing what had been a fragment (`jario`), a
-two-cell sample (`irudi`), or nothing beyond a single confirmed form
-(`etzan` — `VERB_COVERAGE.md` flags it as a rare, "recognise it when you see
-it" verb that native teaching materials steer learners away from).
+This section started out as a holding pen for partial/🔍 leftovers from the
+original research pass, but two sources arriving in succession have since
+filled in every one of them. §15's classroom table completed `esan` first
+(kept here rather than relocated, since it's still the same verb this section
+was already tracking). Then a PDF dedicated to rarer/non-standard synthetic
+verbs ("trinko-ezohiko-batzuk", euskarians.wordpress.com, 2012) did the same
+for the rest in one pass: `iraun` (had a present-only table before; now also
+past tense plus two example sentences), `jario` (was a bare fragment; now a
+full present/past `NOR-NORI` grid), `irudi` (was a two-cell sample; now a
+complete `nor-nork` present-and-past table), and `etzan` (had nothing beyond
+a single confirmed form, `datza` — `VERB_COVERAGE.md` flags it as a rare,
+"recognise it when you see it" verb that native teaching materials steer
+learners away from).
 
-### `iraun` — "to last / endure" (present only)
+### `iraun` — "to last / endure" (nor-nork)
 
-| Person | Present |
-|---|---|
-| ni | diraut |
-| hi | dirauk / diraun *(masc./fem. — see allocutive note in `VERB_COVERAGE.md` §1)* |
-| hura | dirau |
-| gu | diraugu |
-| zu | dirauzu |
-| zuek | dirauzue |
-| haiek | diraute |
+The same new PDF behind `jario`/`irudi`/`etzan` confirms the present row
+below exactly (already sourced, and it's the form `VERB_COVERAGE.md`'s own
+corroboration was built on) and adds the past tense, which had no source
+until now — plus two example sentences showing the verb's everyday range
+goes well beyond the dictionary gloss "to last/endure":
+
+| Person | Present (oraina) | Past (lehena) |
+|---|---|---|
+| ni | diraut | nirauen |
+| hi | dirauk / diraun *(masc./fem. — see allocutive note in `VERB_COVERAGE.md` §1)* | hirauen |
+| hura | dirau | zirauen |
+| gu | diraugu | genirauen |
+| zu | dirauzu | zenirauen |
+| zuek | dirauzue | zenirauten |
+| haiek | diraute | zirauten |
+
+- *1983tik legeak indarrean dirau* — "The law has been in force since 1983"
+- *Filmak bi ordu dirau* — "The film runs/lasts two hours"
 
 ### `jario` — "to flow / ooze / pour" (nor-nori; defective, effectively fixed `nor`)
 
