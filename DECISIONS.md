@@ -4,6 +4,51 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-07 — Streak nudges are throttled: a session-level cooldown plus a chance check
+
+**Decision:** Showing the streak nudge (see below) on every milestone got
+mechanical fast, so `App` now tracks a `streakNudgeCooldown` (a count of
+lessons to wait), passed down as `canShowStreakNudge`. Once a nudge is shown,
+`onStreakNudgeShown` resets the cooldown to a random 2–4 lessons
+(`randomStreakNudgeCooldown`); it ticks down by one each time a lesson is
+completed. Even when eligible, `MultipleChoiceScreen.handleSelect` only shows
+the nudge ~60% of the time (`rollStreakNudgeChance`). Both random calls are
+pulled into their own top-level functions and invoked from the answer-time
+event handler — `react-hooks/purity` (part of `eslint-plugin-react-hooks`'s
+recommended config) forbids calling impure functions like `Math.random`
+directly inside a component body, even from within a nested event-handler
+closure, since it can't always tell render code from event code apart;
+wrapping the call in its own function and invoking *that* from the handler
+satisfies it without losing the "decide once, at answer time, not at render
+time" property that avoids flicker.
+
+**Why:** Asked to make the nudge "smarter" — wait a few lessons after showing
+one before showing another, and add randomness so it doesn't feel mechanical.
+Cooldown lives in `App` (not `MultipleChoiceScreen`, which remounts per
+lesson) since it has to persist across lesson plays for the session. Rolling
+the chance check in `handleSelect` (an event, not a render) and stashing the
+result in state keeps the decision stable for that answer's feedback bar
+without the `useMemo`-during-render purity violation or the flicker a
+post-render `useEffect` roll would introduce.
+
+## 2026-06-07 — Mid-lesson streak encouragement lives in the feedback bar, not a new screen
+
+**Decision:** Added a `streak` counter to the exercise state (`exerciseReducer`
+increments it on a correct answer, resets it to 0 on a miss) and
+`getStreakEncouragement(streak)` to `lessonLogic.js`, which returns
+`{ icon, headline, message }` for milestone streaks (5/10/20 in a row) and
+`null` otherwise. `FeedbackBar` shows it in place of the usual "Bikain! Great
+job!" line — exactly when the streak *lands* on a milestone, so it surfaces
+once per streak rather than on every subsequent correct answer.
+
+**Why:** Asked for an encouraging message between exercises (e.g. after 5
+correct in a row). A full extra screen (like `LessonResultsScreen`) would
+interrupt the flow mid-lesson; reusing the feedback bar that already appears
+after every answer keeps the nudge lightweight and in rhythm with the
+exercise. Resetting on a miss (rather than e.g. only on first-attempt misses)
+keeps "in a row" meaning what it says — an unbroken run of correct picks,
+matching the learner's lived experience of the session.
+
 ## 2026-06-07 — Failed questions are requeued and hidden, not revealed and skipped
 
 **Decision:** Reworked `exerciseReducer`/`createExerciseState` to drive the
