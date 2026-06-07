@@ -4,6 +4,24 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-07 — End-of-lesson encouragement screen keyed off `computeStars` bands
+
+**Decision:** Added `LessonResultsScreen`, shown when `MultipleChoiceScreen`
+finishes its last question (via local `finished` state) instead of calling
+`onComplete` immediately. Added `getEncouragement(correctCount, total)` to
+`lessonLogic.js`, returning `{ icon, headline, message }` selected by the
+*same* star band as `computeStars` (3/2/1/0 stars → Bikain!/Oso ondo!/Ondo!/Ez
+etsi!, with matching emoji and tone — celebratory for a perfect run, gentle
+encouragement to retry for a poor one).
+
+**Why:** Reusing `computeStars`' bands keeps the message, the star rating
+shown on the same screen, and the `Stars` badges elsewhere in the app all
+telling the same story — no separate thresholds to keep in sync. Kept the
+"finished" flag as local component state rather than adding a state to
+`exerciseReducer` since it's purely a screen-transition concern, not part of
+the scored exercise; `onComplete` (and thus `recordResult`/progress
+persistence) still only fires once the learner dismisses the results screen.
+
 ## 2026-06-07 — Use `dvh` instead of `vh`/`screen` for full-height screens
 
 **Decision:** Switched `HomeScreen` and `MultipleChoiceScreen` from

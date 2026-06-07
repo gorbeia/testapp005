@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useReducer, useState } from 'react'
 import {
+  computeStars,
   exerciseReducer,
   generateQuestions,
+  getEncouragement,
   getUnlockedLessonIds,
   recordResult,
 } from './lessonLogic'
@@ -459,8 +461,39 @@ function FeedbackBar({ status, correctAnswer, isLast, onContinue }) {
   )
 }
 
+function LessonResultsScreen({ verb, tense, correctCount, total, onDone }) {
+  const stars = computeStars(correctCount, total)
+  const { icon, headline, message } = getEncouragement(correctCount, total)
+  const tenseMeta = TENSE_META[tense]
+
+  return (
+    <div className="mx-auto flex h-dvh w-full max-w-md flex-col items-center justify-center gap-5 bg-white px-8 text-center">
+      <div className="flex h-20 w-20 items-center justify-center rounded-full bg-green-100 text-4xl" aria-hidden="true">
+        {icon}
+      </div>
+      <div>
+        <h2 className="text-2xl font-extrabold text-gray-900">{headline}</h2>
+        <p className="mt-1 text-sm text-gray-500">
+          {verb.verb} · {tenseMeta.label} — {correctCount}/{total} correct
+        </p>
+      </div>
+      <Stars count={stars} />
+      <p className="text-base text-gray-600">{message}</p>
+      <button
+        type="button"
+        onClick={onDone}
+        style={{ minHeight: 48 }}
+        className="w-full rounded-2xl bg-green-500 text-lg font-extrabold tracking-wide text-white uppercase transition hover:bg-green-600 active:scale-[0.98]"
+      >
+        Continue
+      </button>
+    </div>
+  )
+}
+
 function MultipleChoiceScreen({ verb, tense, onExit, onComplete }) {
   const [state, dispatch] = useReducer(exerciseReducer, undefined, () => createExerciseState(verb, tense))
+  const [finished, setFinished] = useState(false)
 
   const total = state.questions.length
   const question = state.questions[state.index]
@@ -476,10 +509,22 @@ function MultipleChoiceScreen({ verb, tense, onExit, onComplete }) {
 
   function handleContinue() {
     if (isLast) {
-      onComplete({ correctCount: state.correctCount, total })
+      setFinished(true)
     } else {
       dispatch({ type: 'next' })
     }
+  }
+
+  if (finished) {
+    return (
+      <LessonResultsScreen
+        verb={verb}
+        tense={tense}
+        correctCount={state.correctCount}
+        total={total}
+        onDone={() => onComplete({ correctCount: state.correctCount, total })}
+      />
+    )
   }
 
   return (

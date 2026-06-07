@@ -11,6 +11,39 @@ export function computeStars(score, total) {
   return 0
 }
 
+// Encouraging copy for the end-of-lesson screen, picked from the same
+// score-ratio bands as `computeStars` so the message always matches the stars
+// shown alongside it.
+export function getEncouragement(correctCount, total) {
+  const stars = computeStars(correctCount, total)
+  switch (stars) {
+    case 3:
+      return {
+        icon: '🎉',
+        headline: 'Bikain!',
+        message: 'Perfect score — every answer right. You really know this one!',
+      }
+    case 2:
+      return {
+        icon: '👏',
+        headline: 'Oso ondo!',
+        message: 'Great job — only a couple slipped by. One more round and you’ll have it nailed.',
+      }
+    case 1:
+      return {
+        icon: '💪',
+        headline: 'Ondo!',
+        message: 'Solid progress. Keep practicing this lesson and the forms will start to click.',
+      }
+    default:
+      return {
+        icon: '🌱',
+        headline: 'Ez etsi!',
+        message: 'Don’t give up — conjugation sinks in with repetition. Try this lesson again, you’ve got this.',
+      }
+  }
+}
+
 export function recordResult(progress, lessonId, result) {
   const previous = progress[lessonId]
   const stars = computeStars(result.correctCount, result.total)
