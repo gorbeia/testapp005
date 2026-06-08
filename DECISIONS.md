@@ -4,6 +4,34 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-08 — Cross-checked `ukan`'s NOR-NORK 🔍-cells against the paradigm-chart PDF; recovered the `-zte-`-insertion rule for `zuek`-as-object cells
+
+**Decision:** The user supplied a batch of forms read off the paradigm-chart
+PDF (§13) that either matched existing 🔍-derived guesses outright (letting
+the flag drop — `ninduan/nindunan`, `gintuan/gintunan`, `zintugun`,
+`gintuzun`, `gintuzuen`, `ninduzuen` in the Past grid; `banindu`,
+`baninduk/banindun` in Baldintza) or filled previously-honest `zuek`-as-object
+gaps. Comparing the new fills against their `zu`-cell counterparts
+(`zintuen`→`zintuzten`, `zintugun`→`zintuztegun`, `bazintugu`→
+`bazintuztegu`, …) revealed the rule cleanly: `-zte-` slots in right after
+the stem `-u-`, before the `NORK` person-suffix — resolving, in the user's
+favor, the exact contraction risk the doc had flagged as a reason to leave
+those cells blank rather than guess. Applied that rule to fill 3/4 Past cells
+and all 4 Baldintza cells; the remaining one (Past `nik`→`zuek`) got a 🔍
+rule-derived form (`zintuztedan`) instead of the user-supplied `zaituztet`,
+which is identical to this grid's own *present-tense* `nik`→`zuek` cell and
+breaks the pattern the other three follow — flagged in-place as a likely
+transcription slip pending a second look at the source, rather than silently
+preferred or silently overwritten.
+
+**Why the rule doesn't reach the Ondorioa grids too:** Baldintza/Past go
+straight from stem to suffix, leaving one slot for `-zte-`; Ondorioa inserts
+an extra `-ke-` mood layer between them, and nothing sourced anywhere pins
+down which side of `-ke-` the object-plural `-zte-` lands on. Left those four
+cells/grid blank rather than extend the rule somewhere it hasn't been
+validated — same "honest gap over a guess two layers deep" call the doc
+already made once for the Past grid's `zuek` column.
+
 ## 2026-06-08 — Merged `ukan`'s citation paradigm into its NOR-NORK section; renumbered §3–§15 down by one
 
 **Decision:** `CONJUGATIONS.md` had two `ukan` sections — a small citation-form
