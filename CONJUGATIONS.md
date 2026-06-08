@@ -371,6 +371,156 @@ rather than full paradigms; this grid is the dative-marked half of exactly
 that picture, laid out in full — for whatever a mechanically-generated table
 is worth standing next to genuinely-cited ones.
 
+The remaining eight grids below run the *exact same* mechanical recipe —
+[NOR person's prefix + stem(+`-zki-` if plural)] + [NORI person's suffix]
+(+ tense/mood markers like `-n`, `-ke`, `-en`) — across the rest of `izan`'s
+mood/tense system, mirroring §3's full coverage of the plain (non-dative)
+paradigm. `Ondorioa` keeps the `tzai` stem (like the indicative/baldintza
+grids above); `potentziala`, `subjuntiboa`, and `inperatiboa` swap in the
+bare `ki` stem instead (still `+-zki-` for plural `NOR`) — the same stem
+`naiteke`/`dadin`/`bedi` ride in §3's plain paradigm, just dative-marked
+here.
+
+### Ondorioa — Present
+
+§14's row-template for this mood runs on a `nin-`/`hin-`/`li-`/`gin-`/`zin-`/
+`zin-`/`li-` NOR-prefix series — note `hura`/`haiek` take an overt `li-` here,
+unlike present-tense `zai-`'s prefix-less allomorph — riding the `tzai` stem,
+closed off with a `-ke`-suffixed NORI series (`-dake`/`-ake`/`-nake`/`-oke`/
+`-guke`/`-zuke`/`-zuekete`/`-eke`):
+
+| NORI ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
+|---|---|---|---|---|---|---|---|
+| niri | *(refl.)* | hintzaidake | litzaidake | gintzaizkidake | zintzaidake | zintzaizkidake | litzaizkidake |
+| hiri | nintzaiake *(masc.)* / nintzainake *(fem.)* | *(refl.)* | litzaiake *(masc.)* / litzainake *(fem.)* | gintzaizkiake *(masc.)* / gintzaizkinake *(fem.)* | zintzaiake *(masc.)* / zintzainake *(fem.)* | zintzaizkiake *(masc.)* / zintzaizkinake *(fem.)* | litzaizkiake *(masc.)* / litzaizkinake *(fem.)* |
+| hari | nintzaioke | hintzaioke | litzaioke | gintzaizkioke | zintzaioke | zintzaizkioke | litzaizkioke |
+| guri | nintzaiguke | hintzaiguke | litzaiguke | *(refl.)* | zintzaiguke | zintzaizkiguke | litzaizkiguke |
+| zuri | nintzaizuke | hintzaizuke | litzaizuke | gintzaizkizuke | *(refl.)* | zintzaizkizuke | litzaizkizuke |
+| zuei | nintzaizuekete | hintzaizuekete | litzaizuekete | gintzaizkizuekete | zintzaizuekete | *(refl.)* | litzaizkizuekete |
+| haiei | nintzaieke | hintzaieke | litzaieke | gintzaizkieke | zintzaieke | zintzaizkieke | litzaizkieke |
+
+### Ondorioa — Past
+
+Same `-ke(+-en)` NORI-suffix family as above — now with the trailing `-en`
+that marks past throughout this mood, `zuei` taking `-eketen` — but a
+*different* `hura`/`haiek` prefix: `zi-`, not `li-` (compare past-tense
+`zitzaio`'s own `zi-`), over an otherwise identical `nin-`/`hin-`/`zi-`/
+`gin-`/`zin-`/`zin-`/`zi-` series:
+
+| NORI ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
+|---|---|---|---|---|---|---|---|
+| niri | *(refl.)* | hintzaidakeen | zitzaidakeen | gintzaizkidakeen | zintzaidakeen | zintzaizkidakeen | zitzaizkidakeen |
+| hiri | nintzaiakeen *(masc.)* / nintzainakeen *(fem.)* | *(refl.)* | zitzaiakeen *(masc.)* / zitzainakeen *(fem.)* | gintzaizkiakeen *(masc.)* / gintzaizkinakeen *(fem.)* | zintzaiakeen *(masc.)* / zintzainakeen *(fem.)* | zintzaizkiakeen *(masc.)* / zintzaizkinakeen *(fem.)* | zitzaizkiakeen *(masc.)* / zitzaizkinakeen *(fem.)* |
+| hari | nintzaiokeen | hintzaiokeen | zitzaiokeen | gintzaizkiokeen | zintzaiokeen | zintzaizkiokeen | zitzaizkiokeen |
+| guri | nintzaigukeen | hintzaigukeen | zitzaigukeen | *(refl.)* | zintzaigukeen | zintzaizkigukeen | zitzaizkigukeen |
+| zuri | nintzaizukeen | hintzaizukeen | zitzaizukeen | gintzaizkizukeen | *(refl.)* | zintzaizkizukeen | zitzaizkizukeen |
+| zuei | nintzaizueketen | hintzaizueketen | zitzaizueketen | gintzaizkizueketen | zintzaizueketen | *(refl.)* | zitzaizkizueketen |
+| haiei | nintzaiekeen | hintzaiekeen | zitzaiekeen | gintzaizkiekeen | zintzaiekeen | zintzaizkiekeen | zitzaizkiekeen |
+
+### Potentziala — Present (ahalera)
+
+Potentziala swaps the `tzai` stem for the bare `ki` stem (still `+-zki-` for
+plural `NOR`, per the regularity above) riding `na-`/`ha-`/`da-`/`ga-`/`za-`/
+`za-`/`da-` — the same prefix shape §3's plain `naiteke`/`gaitezke` paradigm
+uses — closed with the same `-ke` NORI-suffix family as Ondorioa-Present:
+
+| NORI ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
+|---|---|---|---|---|---|---|---|
+| niri | *(refl.)* | hakidake | dakidake | gakizkidake | zakidake | zakizkidake | dakizkidake |
+| hiri | nakiake *(masc.)* / nakinake *(fem.)* | *(refl.)* | dakiake *(masc.)* / dakinake *(fem.)* | gakizkiake *(masc.)* / gakizkinake *(fem.)* | zakiake *(masc.)* / zakinake *(fem.)* | zakizkiake *(masc.)* / zakizkinake *(fem.)* | dakizkiake *(masc.)* / dakizkinake *(fem.)* |
+| hari | nakioke | hakioke | dakioke | gakizkioke | zakioke | zakizkioke | dakizkioke |
+| guri | nakiguke | hakiguke | dakiguke | *(refl.)* | zakiguke | zakizkiguke | dakizkiguke |
+| zuri | nakizuke | hakizuke | dakizuke | gakizkizuke | *(refl.)* | zakizkizuke | dakizkizuke |
+| zuei | nakizuekete | hakizuekete | dakizuekete | gakizkizuekete | zakizuekete | *(refl.)* | dakizkizuekete |
+| haiei | nakieke | hakieke | dakieke | gakizkieke | zakieke | zakizkieke | dakizkieke |
+
+### Potentziala — Past
+
+Past and hypothetical both swap in a `ne-`-flavoured prefix series (`nen-`/
+`hen-`/…/`gen-`/`zen-`/`zen-`/…); past takes `ze-` for `hura`/`haiek`
+(paralleling `zekion`-type forms) and the trailing `-en` on the `-ke` suffix
+family:
+
+| NORI ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
+|---|---|---|---|---|---|---|---|
+| niri | *(refl.)* | henkidakeen | zekidakeen | genkizkidakeen | zenkidakeen | zenkizkidakeen | zekizkidakeen |
+| hiri | nenkiakeen *(masc.)* / nenkinakeen *(fem.)* | *(refl.)* | zekiakeen *(masc.)* / zekinakeen *(fem.)* | genkizkiakeen *(masc.)* / genkizkinakeen *(fem.)* | zenkiakeen *(masc.)* / zenkinakeen *(fem.)* | zenkizkiakeen *(masc.)* / zenkizkinakeen *(fem.)* | zekizkiakeen *(masc.)* / zekizkinakeen *(fem.)* |
+| hari | nenkiokeen | henkiokeen | zekiokeen | genkizkiokeen | zenkiokeen | zenkizkiokeen | zekizkiokeen |
+| guri | nenkigukeen | henkigukeen | zekigukeen | *(refl.)* | zenkigukeen | zenkizkigukeen | zekizkigukeen |
+| zuri | nenkizukeen | henkizukeen | zekizukeen | genkizkizukeen | *(refl.)* | zenkizkizukeen | zekizkizukeen |
+| zuei | nenkizueketen | henkizueketen | zekizueketen | genkizkizueketen | zenkizueketen | *(refl.)* | zekizkizueketen |
+| haiei | nenkiekeen | henkiekeen | zekiekeen | genkizkiekeen | zenkiekeen | zenkizkiekeen | zekizkiekeen |
+
+### Potentziala — Hypothetical
+
+…while the hypothetical takes `le-` for `hura`/`haiek` instead (paralleling
+`liteke`'s own `li-`/`le-` alternation in §3) and drops the trailing `-en`,
+landing back on the bare `-ke` suffix family:
+
+| NORI ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
+|---|---|---|---|---|---|---|---|
+| niri | *(refl.)* | henkidake | lekidake | genkizkidake | zenkidake | zenkizkidake | lekizkidake |
+| hiri | nenkiake *(masc.)* / nenkinake *(fem.)* | *(refl.)* | lekiake *(masc.)* / lekinake *(fem.)* | genkizkiake *(masc.)* / genkizkinake *(fem.)* | zenkiake *(masc.)* / zenkinake *(fem.)* | zenkizkiake *(masc.)* / zenkizkinake *(fem.)* | lekizkiake *(masc.)* / lekizkinake *(fem.)* |
+| hari | nenkioke | henkioke | lekioke | genkizkioke | zenkioke | zenkizkioke | lekizkioke |
+| guri | nenkiguke | henkiguke | lekiguke | *(refl.)* | zenkiguke | zenkizkiguke | lekizkiguke |
+| zuri | nenkizuke | henkizuke | lekizuke | genkizkizuke | *(refl.)* | zenkizkizuke | lekizkizuke |
+| zuei | nenkizuekete | henkizuekete | lekizuekete | genkizkizuekete | zenkizuekete | *(refl.)* | lekizkizuekete |
+| haiei | nenkieke | henkieke | lekieke | genkizkieke | zenkieke | zenkizkieke | lekizkieke |
+
+### Subjuntiboa — Present
+
+Subjuntiboa rides the same `ki`/`-zki-` stem as Potentziala. The present uses
+the *same* `na-`/`ha-`/`da-`/… prefix series as Potentziala-Present, but
+closes with a bare `-n` NORI-suffix family instead of `-ke` (`-dan`/`-an`/
+`-nan`/`-on`/`-gun`/`-zun`/`-zueten`/`-en` — `zuei` alone taking the extra
+`-te`):
+
+| NORI ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
+|---|---|---|---|---|---|---|---|
+| niri | *(refl.)* | hakidan | dakidan | gakizkidan | zakidan | zakizkidan | dakizkidan |
+| hiri | nakian *(masc.)* / nakinan *(fem.)* | *(refl.)* | dakian *(masc.)* / dakinan *(fem.)* | gakizkian *(masc.)* / gakizkinan *(fem.)* | zakian *(masc.)* / zakinan *(fem.)* | zakizkian *(masc.)* / zakizkinan *(fem.)* | dakizkian *(masc.)* / dakizkinan *(fem.)* |
+| hari | nakion | hakion | dakion | gakizkion | zakion | zakizkion | dakizkion |
+| guri | nakigun | hakigun | dakigun | *(refl.)* | zakigun | zakizkigun | dakizkigun |
+| zuri | nakizun | hakizun | dakizun | gakizkizun | *(refl.)* | zakizkizun | dakizkizun |
+| zuei | nakizueten | hakizueten | dakizueten | gakizkizueten | zakizueten | *(refl.)* | dakizkizueten |
+| haiei | nakien | hakien | dakien | gakizkien | zakien | zakizkien | dakizkien |
+
+### Subjuntiboa — Past
+
+The mood/tense distinction lives entirely in the prefix here: past swaps in
+the `ne-`-flavoured series (`nen-`/`hen-`/`ze-`/`gen-`/`zen-`/`zen-`/`ze-`)
+over the *exact same* `-n` suffix family as the present:
+
+| NORI ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
+|---|---|---|---|---|---|---|---|
+| niri | *(refl.)* | henkidan | zekidan | genkizkidan | zenkidan | zenkizkidan | zekizkidan |
+| hiri | nenkian *(masc.)* / nenkinan *(fem.)* | *(refl.)* | zekian *(masc.)* / zekinan *(fem.)* | genkizkian *(masc.)* / genkizkinan *(fem.)* | zenkian *(masc.)* / zenkinan *(fem.)* | zenkizkian *(masc.)* / zenkizkinan *(fem.)* | zekizkian *(masc.)* / zekizkinan *(fem.)* |
+| hari | nenkion | henkion | zekion | genkizkion | zenkion | zenkizkion | zekizkion |
+| guri | nenkigun | henkigun | zekigun | *(refl.)* | zenkigun | zenkizkigun | zekizkigun |
+| zuri | nenkizun | henkizun | zekizun | genkizkizun | *(refl.)* | zenkizkizun | zekizkizun |
+| zuei | nenkizueten | henkizueten | zekizueten | genkizkizueten | zenkizueten | *(refl.)* | zekizkizueten |
+| haiei | nenkien | henkien | zekien | genkizkien | zenkien | zenkizkien | zekizkien |
+
+### Inperatiboa (imperative)
+
+Like `izan`'s own imperative (§3's Agintera) and every Basque imperative
+(§10), this is second/third-person only — no commanding yourself or "it" —
+hence the `—` gaps filling the entire `ni`/`gu` columns. The `be-`-prefixed
+`hura`/`haiek` cells are *jussive* ("let it be to me", "let them be to
+him/her") rather than literal commands, mirroring `izan`'s own `bedi`/
+`bitez`; the rest (`ha-`/`za-`/`za-`/`be-` over the bare present-style suffix
+family, no trailing `-n`) is the same formula run one more time:
+
+| NORI ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
+|---|---|---|---|---|---|---|---|
+| niri | — | hakit | bekit | — | zakit | zakizkit | bekizkit |
+| hiri | — | *(refl.)* | bekik *(masc.)* / bekin *(fem.)* | — | zakik *(masc.)* / zakin *(fem.)* | zakizkik *(masc.)* / zakizkin *(fem.)* | bekizkik *(masc.)* / bekizkin *(fem.)* |
+| hari | — | hakio | bekio | — | zakio | zakizkio | bekizkio |
+| guri | — | hakigu | bekigu | — | zakigu | zakizkigu | bekizkigu |
+| zuri | — | hakizu | bekizu | — | *(refl.)* | zakizkizu | bekizkizu |
+| zuei | — | hakizue | bekizue | — | zakizue | *(refl.)* | bekizkizue |
+| haiei | — | hakie | bekie | — | zakie | zakizkie | bekizkie |
+
 **On confidence:** every cell outside the original `hura`/`haiek` columns
 (plus the `hiri`-row masc./fem. split, already covered above) is *generated*
 by the formula at the top of this section rather than individually attested
@@ -381,6 +531,19 @@ same kind of move the `-zki-` and `K/N`↔`A/NA` regularities above already
 licensed, just applied across the *whole* grid instead of one column/row —
 but it *is* derivation, not citation, and worth flagging as such for anyone
 cross-checking against a source that only lists citation forms.
+
+One wrinkle is sharper for the eight `ondorioa`/`potentziala`/`subjuntiboa`/
+`inperatiboa` grids just above than for the present/past/baldintza trio:
+those three have independently-citable `gustatu`-class anchors in their
+`hura`/`haiek` columns (`zait`, `zaio`, `zitzaion`, …) that the rest of each
+grid was filled in *around* — a built-in cross-check the formula had to
+reproduce before being trusted with the rest. The eight grids above have no
+such anchor; this dative paradigm simply isn't where citation dictionaries
+go looking for `ondorioa`/`potentziala`/`subjuntiboa`/`inperatiboa` forms, so
+*every* cell — `hura`/`haiek` columns fully included — comes straight out of
+§14's row-templates with nothing independently attested to validate against.
+Same derivation method, just running with no safety net; worth knowing if
+you're weighing how much to lean on any one form from these eight.
 
 ## 6. `ukan` with dative — NOR-NORI-NORK system · 📖
 
