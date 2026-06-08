@@ -23,6 +23,19 @@ internal `§N` cross-references accordingly (leaving `VERB_COVERAGE.md §N` and
 navigate, and a silent gap or forwarding stub would be exactly the kind of
 small structural debt that compounds the more the file grows.
 
+**Follow-up (same day):** Looking at the now-merged section with fresh eyes
+surfaced a *second*, pre-existing duplication one level down: the NOR-NORK
+section had two Present/Past grids back to back — a sparse one (citation
+columns only) immediately followed, two subsections later, by the exact same
+grid fully filled in. The first was wholly subsumed by the second, so it was
+deleted outright (its one unique bit, the `hituen`/`hik`-gender-split note,
+moved down to sit with the surviving complete grid) rather than merged —
+there was nothing in it worth folding in that the complete version didn't
+already have. **Pattern worth naming:** a "let's gradually fill this grid in"
+section structure is exactly the shape that *grows* this kind of duplicate —
+worth checking for, in this file or others, whenever a table appears to get
+"completed" in stages.
+
 ## 2026-06-08 — `CONJUGATIONS.md` keeps the *current* picture; the story of how it got there belongs here
 
 **Decision:** Trimmed `CONJUGATIONS.md` of in-place retrospectives — passages

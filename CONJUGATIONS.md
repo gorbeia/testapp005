@@ -169,41 +169,6 @@ gap `VERB_COVERAGE.md` §1 flags for `hi`/`zu` — is no longer a blank wall
 either: `haut`, `hau`, `haugu`, and `haute` ("I/he-she/we/they have you,
 familiar") are confirmed directly rather than recipe-derived guesses.
 
-### Present
-
-| NORK ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
-|---|---|---|---|---|---|---|---|
-| nik | *(refl.)* |  | dut | *(refl.)* | zaitut | zaituztet | ditut |
-| hik *(masc. subj., `-k`)* | nauk |  | duk |  |  |  |  |
-| hik *(fem. subj., `-n`)* | naun |  | dun |  |  |  |  |
-| hark | nau |  | du | gaitu | zaitu | zaituzte | ditu |
-| guk |  |  | dugu | *(refl.)* | zaitugu | zaituztegu | ditugu |
-| zuk | nauzu |  | duzu | gaituzu | *(refl.)* |  |  |
-| zuek | nauzue |  | duzue | gaituzue |  | *(refl.)* |  |
-| haiek | naute |  | dute | gaituzte | zaituzte | zaituzte | dituzte |
-
-### Past
-
-| NORK ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
-|---|---|---|---|---|---|---|---|
-| nik | *(refl.)* |  | nuen | *(refl.)* | zintudan |  | nituen |
-| hik |  |  | huen |  |  |  | hituen |
-| hark | ninduen |  | zuen | gintuen | zintuen |  | zituen |
-| guk |  |  | genuen | *(refl.)* | zintugun |  | genituen |
-| zuk | ninduzun |  | zenuen |  | *(refl.)* |  | zenituen |
-| zuek |  |  | zenuten |  |  | *(refl.)* | zenituzten |
-| haiek | ninduten |  | zuten | gintuzten | zintuzten |  | zituzten |
-
-`hituen` is newly filled in from §13 — its plain-word `HURA`/`HAIEK`
-past-tense lists spell `nuen/huen/zuen/…/zuten` and `nituen/hituen/zituen/…
-/zituzten` side by side, and `hituen` hadn't turned up in any source until
-now. Note also that `hik`'s row isn't gender-split in the past the way it is
-in the present (`huen` only, vs. `duk`/`dun`) — every source agrees on that,
-so it's reproduced as-is rather than "completed" with an invented split;
-whether that reflects a real grammatical fact (no past-tense gender marking)
-or just a shared simplification across teaching sources is exactly the kind
-of question a grammar reference would settle.
-
 ### Further moods (citation paradigm: `NOR` fixed at `hura`/`haiek`)
 
 §13 spells these out as plain `HURA`/`HAIEK` word-pairs too, which is what
@@ -259,10 +224,12 @@ same shape `VERBS` already uses for `ukan` itself (§3):
 
 ### Completing the grid — `NOR` = 1st/2nd person
 
-The Present/Past grids above still leave most of their `ni`/`hi`/`gu`/`zu`/
-`zuek` columns blank — the citation paradigm and the "Further moods" table
-both fix `NOR` at `hura`/`haiek` ("having *something*"), but the *full*
-paradigm also covers "*you* have *me*", "*they* had *us*", etc. §13's chart
+The citation paradigm above and the "Further moods" table both fix `NOR` at
+`hura`/`haiek` ("having *something*") — covering, between them, only the
+3rd-person-object slice of the full picture. The *full* paradigm also covers
+"*you* have *me*", "*they* had *us*", etc. — `NOR` ranging across all seven
+persons, the way the two grids below (Present and Past — the only two tenses
+this section covers in full, `NOR`-wise) lay it out. §13's chart
 gives this other half as compact row-templates rather than spelled-out words —
 the same `[NOR-prefix] + [stem] + [NORK-suffix]` recipe §4 decoded for
 NOR-NORI, with the prefix and suffix columns listed independently (any prefix
@@ -340,6 +307,17 @@ come out.)
 | zuk | ninduzun | *(hika/zuka)* | zenuen | 🔍 gintuzun | *(refl.)* | *(refl.)* | zenituen |
 | zuek | 🔍 ninduzuen | *(hika/zuka)* | zenuten | 🔍 gintuzuen | *(refl.)* | *(refl.)* | zenituzten |
 | haiek | ninduten | 🔍 hinduten | zuten | gintuzten | zintuzten | | zituzten |
+
+`hituen` (the confirmed `hik`→`haiek` cell above) was newly filled in from
+§13 — its plain-word `HURA`/`HAIEK` past-tense lists spell `nuen/huen/zuen/…
+/zuten` and `nituen/hituen/zituen/…/zituzten` side by side, and `hituen`
+hadn't turned up in any source until now. Note also that `hik`'s row isn't
+gender-split in the past the way it is in the present (`huen` only, vs.
+`duk`/`dun`) — every source agrees on that, so it's reproduced as-is rather
+than "completed" with an invented split; whether that reflects a real
+grammatical fact (no past-tense gender marking) or just a shared
+simplification across teaching sources is exactly the kind of question a
+grammar reference would settle.
 
 ### Baldintza, Ondorioa — completing the grid the same way
 
