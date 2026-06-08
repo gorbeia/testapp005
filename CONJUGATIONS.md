@@ -362,41 +362,37 @@ once) already showed; not a new wrinkle, just the rule doing what it does.
 
 | NORK ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
 |---|---|---|---|---|---|---|---|
-| nik | *(refl.)* | 🔍 hinduket | nuke | *(refl.)* | 🔍 zintuket | | nituzke |
+| nik | *(refl.)* | 🔍 hinduket | nuke | *(refl.)* | 🔍 zintuket | 🔍 zintukeztet | nituzke |
 | hik | 🔍 nindukek / ninduken | *(refl.)* | huke | 🔍 gintukek / gintuken | *(hika/zuka)* | *(hika/zuka)* | hituzke |
-| hark | 🔍 ninduke | 🔍 hinduke | luke | 🔍 gintuke | 🔍 zintuke | | lituzke |
-| guk | *(refl.)* | *(refl.)* | genuke | *(refl.)* | 🔍 zintukegu | | genituzke |
+| hark | 🔍 ninduke | 🔍 hinduke | luke | 🔍 gintuke | 🔍 zintuke | 🔍 zintukezte | lituzke |
+| guk | *(refl.)* | *(refl.)* | genuke | *(refl.)* | 🔍 zintukegu | 🔍 zintukeztegu | genituzke |
 | zuk | 🔍 nindukezu | *(hika/zuka)* | zenuke | 🔍 gintukezu | *(refl.)* | *(refl.)* | zenituzke |
 | zuek | 🔍 nindukezue | *(hika/zuka)* | zenukete | 🔍 gintukezue | *(refl.)* | *(refl.)* | zenituzkete |
-| haiek | 🔍 nindukete | 🔍 hindukete | lukete | 🔍 gintukezte | 🔍 zintukezte | | lituzkete |
+| haiek | 🔍 nindukete | 🔍 hindukete | lukete | 🔍 gintukezte | 🔍 zintukezte | 🔍 zintukeztete | lituzkete |
 
 #### Ondorioa, past — `NOR` = 1st/2nd person
 
 | NORK ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
 |---|---|---|---|---|---|---|---|
-| nik | *(refl.)* | 🔍 hindukedan | nukeen | *(refl.)* | 🔍 zintukedan | | nituzkeen |
+| nik | *(refl.)* | 🔍 hindukedan | nukeen | *(refl.)* | 🔍 zintukedan | 🔍 zintukeztedan | nituzkeen |
 | hik | 🔍 nindukean / nindukenan | *(refl.)* | hukeen | 🔍 gintukean / gintukenan | *(hika/zuka)* | *(hika/zuka)* | hituzkeen |
-| hark | 🔍 nindukeen | 🔍 hindukeen | zukeen | 🔍 gintukeen | 🔍 zintukeen | | zituzkeen |
-| guk | *(refl.)* | *(refl.)* | genukeen | *(refl.)* | 🔍 zintukezun | | genituzkeen |
+| hark | 🔍 nindukeen | 🔍 hindukeen | zukeen | 🔍 gintukeen | 🔍 zintukeen | 🔍 zintukezten | zituzkeen |
+| guk | *(refl.)* | *(refl.)* | genukeen | *(refl.)* | 🔍 zintukezun | 🔍 zintukeztegun | genituzkeen |
 | zuk | 🔍 nindukezun | *(hika/zuka)* | zenukeen | 🔍 gintukezun | *(refl.)* | *(refl.)* | zenituzkeen |
 | zuek | 🔍 nindukezuen | *(hika/zuka)* | zenuketen | 🔍 gintukezuen | *(refl.)* | *(refl.)* | zenituzketen |
-| haiek | 🔍 ninduketen | 🔍 hinduketen | zuketen | 🔍 gintukezten | 🔍 zintukezten | | zituzketen |
+| haiek | 🔍 ninduketen | 🔍 hinduketen | zuketen | 🔍 gintukezten | 🔍 zintukezten | 🔍 zintukezteten | zituzketen |
 
-The `-zte-`-insertion rule that just filled four `zuek`-as-object cells in
-Baldintza (and three in the Past grid above) doesn't carry over cleanly to
-either Ondorioa grid, so their `zuek` columns stay blank rather than guessed.
-The reason: Baldintza and Past both go straight from stem to person-suffix
-(`zint-u-`**`-t/-n/-gu-n…`**), leaving exactly one slot for `-zte-` to land
-in, right where the present-tense `zaituztet` showed it would. Ondorioa
-inserts an extra `-ke-` layer between the two (`zint-u-`**`ke`**`-t`), and
-nothing sourced anywhere in this file pins down which side of `-ke-` the
-object-plural `-zte-` goes on — `zintuzteket` and `zintukeztet` are equally
-plausible shapes, and the existing `haiek`→`zu` cell `zintukezte` only shows
-where a *different* `-zte-` (marking plural `NORK`, not plural `NOR`) sits
-relative to `-ke-`, which doesn't settle the question for this one. Guessing
-would be exactly the "two layers deep" risk the `zuek`-as-object discussion
-above already declined to take for the Past grid — an honest gap stays honest
-until the PDF (or another source) spells these four cells out directly.
+The existing `haiek`→`zu` cell `zintukezte` (Ondorioa-present, just above)
+actually does settle the ordering question: it shows `-zte-` (the `haiek`-NORK
+plural marker) sitting *after* `-ke-`, not before it. Since both the
+object-plural (`NOR`=`zuek`) and subject-plural (`NORK`=`haiek`) `-zte-`
+markers follow the same morphological template, the `NOR`=`zuek` one lands
+there too — `zint-u-ke-zte-[suffix]` — giving the 🔍-derived cells filled
+into both grids above. For `haiek`/`zuek` cells specifically, the same
+`bazintuztete` pattern from Baldintza applies: the `NORK`=`haiek` marker
+falls back to the shorter `-te` (rather than `-zte-`) when the NOR-marking
+`-zte-` is already present, so the form ends in `-zte-te(-n)` rather than
+`-zte-zte(-n)`.
 
 ### Ahalera, Subjuntiboa — the contradiction resolved, the grid mostly left open
 

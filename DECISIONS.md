@@ -4,6 +4,17 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-08 — Filled Ondorioa `zuek`-as-object blanks using `-zte-after-ke` rule
+
+**Decision:** The `zintukezte` cell (NORK=haiek, NOR=zu, Ondorioa-present)
+already in the grid showed `-zte-` sitting *after* `-ke-` — the ordering
+question I'd previously flagged as unresolved was already answered by the
+existing data. Extended the same position to the NOR=zuek marker in both
+Ondorioa grids (present and past): `[zint-u-ke-zte-suffix]`. For haiek/zuek
+cells specifically, the `NORK`=haiek marker falls back to the shorter `-te`
+(not `-zte-`) when the NOR-marking `-zte-` is already present — same pattern
+as the user-confirmed Baldintza `bazintuztete`. All 8 cells marked 🔍.
+
 ## 2026-06-08 — Cross-checked `ukan`'s NOR-NORK 🔍-cells against the paradigm-chart PDF; recovered the `-zte-`-insertion rule for `zuek`-as-object cells
 
 **Decision:** The user supplied a batch of forms read off the paradigm-chart
