@@ -16,24 +16,24 @@ the app's seven-person paradigm.
 **Confidence key:**
 - ✅ — verified, copied straight from `VERBS` in `src/App.jsx`; exactly what
   learners are quizzed on today
-- 📖 — broader reference material (sections 3 onward): plausible standard
+- 📖 — broader reference material (sections 2 onward): plausible standard
   Batua forms, merged in from a larger paste and cross-checked where possible
-  against the two further sources in §14/§15 (with a handful of typos and one
+  against the two further sources in §13/§14 (with a handful of typos and one
   mislabel corrected along the way). Treat it as a solid starting point —
   but still not yet verified against `VERBS` itself. The few discrepancies
   the cross-check couldn't settle are flagged inline with ⚠️ at point of use
-  (see §6) rather than gathered in a separate list
+  (see §5) rather than gathered in a separate list
 - 🔍 — partial forms only, as they surfaced while researching
   `VERB_COVERAGE.md`; the full paradigm isn't confirmed, so it's quoted
   verbatim rather than filled in
 
-**Sources, beyond `VERBS` itself:** an initial large paste (the basis of §3
-onward); a paradigm-chart PDF covering Batua/Bizkaiera/Zuberera (§14, "Euskal
+**Sources, beyond `VERBS` itself:** an initial large paste (the basis of §2
+onward); a paradigm-chart PDF covering Batua/Bizkaiera/Zuberera (§13, "Euskal
 aditz laguntzailea"); a 2011 classroom handout covering ten synthetic verbs
-(§15, "Aditz trinkoak"); and a PDF on rarer/non-standard synthetic verbs
-(behind §9, "trinko-ezohiko-batzuk", euskarians.wordpress.com, 2012). What
+(§14, "Aditz trinkoak"); and a PDF on rarer/non-standard synthetic verbs
+(behind §8, "trinko-ezohiko-batzuk", euskarians.wordpress.com, 2012). What
 each one settled, corroborated, or generated lives in the relevant section's
-own notes (start with §5, §7, §9, §14, §15 for the most substantial finds)
+own notes (start with §4, §6, §8, §13, §14 for the most substantial finds)
 rather than recapped here.
 
 ---
@@ -49,20 +49,6 @@ rather than recapped here.
 | zuek | zarete | zineten |
 | haiek | dira | ziren |
 
-## 2. `ukan` — "to have" (the `du` auxiliary) · nor-nork · ✅
-
-Shown in its citation paradigm — fixed 3rd-person-singular absolutive object
-("it/him/her"), as `VERBS` itself notes (`object: 'hura'`).
-
-| Person | Present (oraina) | Past (lehena) |
-|---|---|---|
-| ni | dut | nuen |
-| hi | duk | huen |
-| hura | du | zuen |
-| gu | dugu | genuen |
-| zuek | duzue | zenuten |
-| haiek | dute | zuten |
-
 ---
 
 # Broader reference (📖 — merged in, not yet verified)
@@ -72,13 +58,13 @@ and goes well beyond what's coded into `VERBS`. It includes the `zu` person
 the app doesn't model, fuller `NOR-NORK`/`NOR-NORI`/`NOR-NORI-NORK`
 object-agreement grids, more synthetic verbs, the imperative, and the
 periphrastic system. It's been cross-checked against the further sources in
-§14/§15 — what that caught and fixed is folded straight into the tables below,
+§13/§14 — what that caught and fixed is folded straight into the tables below,
 and the handful of discrepancies it couldn't resolve are flagged inline with
-⚠️ right where they occur (see §6).
+⚠️ right where they occur (see §5).
 
-## 3. `izan` — additional paradigms · 📖
+## 2. `izan` — additional paradigms · 📖
 
-`izan`'s full mood/tense system, sourced from §14's plain-word paradigm lists
+`izan`'s full mood/tense system, sourced from §13's plain-word paradigm lists
 (see its own notes on why that source is usually quoted only selectively).
 **Baldintza** (the *if*-clause — "if I were") and **ondorioa** (the
 *consequence* clause — "I would be") are two distinct paradigms that are easy
@@ -135,7 +121,7 @@ subjunctive, and `izan`'s own imperative.
 
 ### Agintera (imperative) — `izan`'s own forms
 
-Second/third-person only, like every Basque imperative (§10) — `izan`
+Second/third-person only, like every Basque imperative (§9) — `izan`
 doesn't have first-person or "hura"-as-addressee imperative forms, hence the
 gaps below (you can't command yourself or "it"; `bedi`/`bitez` are the
 3rd-person *jussive* "let X be" forms, not commands to "hura"/`haiek`):
@@ -150,14 +136,31 @@ gaps below (you can't command yourself or "it"; `bedi`/`bitez` are the
 | zuek | zaitezte |
 | haiek | bitez *("let them be")* |
 
-## 4. `ukan` — NOR-NORK system · 📖
+## 3. `ukan` — "to have" (the `du` auxiliary) · NOR-NORK system · 📖
 
-`VERBS` only models `ukan` in its citation form (NOR fixed at 3sg `hura`).
-The full paradigm varies the verb by **both** subject (`NORK`, rows) and
-object (`NOR`, columns) — laid out as a grid, the natural shape for a
-transitive paradigm, rather than the one-`NOR`-at-a-time tables this section
-started as. *Blank cells are sourcing gaps, not claims that a form doesn't
-exist* — except where marked `(refl.)`, meaning the combination is reflexive
+`VERBS` models `ukan` only in its citation form — `NOR` fixed at 3rd-person
+singular absolutive ("it/him/her"), as `VERBS` itself notes with
+`object: 'hura'`. That citation paradigm is the **✅ baseline** the rest of
+this section builds out from and was cross-checked against:
+
+| Person | Present (oraina) | Past (lehena) |
+|---|---|---|
+| ni | dut | nuen |
+| hi | duk | huen |
+| hura | du | zuen |
+| gu | dugu | genuen |
+| zuek | duzue | zenuten |
+| haiek | dute | zuten |
+
+The full paradigm, though, varies the verb by **both** subject (`NORK`, rows)
+*and* object (`NOR`, columns) — naturally a grid, not a single column. The
+table just above is, in fact, nothing but that grid's `hura` column, narrowed
+to the six persons `VERBS` models (no `zu`; `hi` shown unsplit). Keeping it
+as a stand-alone section next to the full grid would just be the same ✅ data
+twice wearing two hats — merged here instead, both to avoid that duplication
+and because seeing it as one column of the bigger picture is the more useful
+frame for what follows. *Blank cells are sourcing gaps, not claims that a form
+doesn't exist* — except where marked `(refl.)`, meaning the combination is reflexive
 and just doesn't occur ("I have me"), or `(hika/zuka)`, meaning the combination
 crosses Basque's two mutually exclusive familiar/formal address registers and
 so cannot occur in *any* verb form, full stop (see "Completing the grid" below
@@ -191,7 +194,7 @@ familiar") are confirmed directly rather than recipe-derived guesses.
 | zuek |  |  | zenuten |  |  | *(refl.)* | zenituzten |
 | haiek | ninduten |  | zuten | gintuzten | zintuzten |  | zituzten |
 
-`hituen` is newly filled in from §14 — its plain-word `HURA`/`HAIEK`
+`hituen` is newly filled in from §13 — its plain-word `HURA`/`HAIEK`
 past-tense lists spell `nuen/huen/zuen/…/zuten` and `nituen/hituen/zituen/…
 /zituzten` side by side, and `hituen` hadn't turned up in any source until
 now. Note also that `hik`'s row isn't gender-split in the past the way it is
@@ -203,11 +206,11 @@ of question a grammar reference would settle.
 
 ### Further moods (citation paradigm: `NOR` fixed at `hura`/`haiek`)
 
-§14 spells these out as plain `HURA`/`HAIEK` word-pairs too, which is what
+§13 spells these out as plain `HURA`/`HAIEK` word-pairs too, which is what
 let this grow from a five-cell "conditional" fragment into a full picture
 across six tense/mood combinations — shown as paired columns since `NOR`
 only takes the singular/plural-object contrast in this paradigm shape, the
-same shape `VERBS` already uses for `ukan` itself (§2):
+same shape `VERBS` already uses for `ukan` itself (§3):
 
 | Mood / tense | NORK | NOR = hura | NOR = haiek |
 |---|---|---|---|
@@ -259,9 +262,9 @@ same shape `VERBS` already uses for `ukan` itself (§2):
 The Present/Past grids above still leave most of their `ni`/`hi`/`gu`/`zu`/
 `zuek` columns blank — the citation paradigm and the "Further moods" table
 both fix `NOR` at `hura`/`haiek` ("having *something*"), but the *full*
-paradigm also covers "*you* have *me*", "*they* had *us*", etc. §14's chart
+paradigm also covers "*you* have *me*", "*they* had *us*", etc. §13's chart
 gives this other half as compact row-templates rather than spelled-out words —
-the same `[NOR-prefix] + [stem] + [NORK-suffix]` recipe §5 decoded for
+the same `[NOR-prefix] + [stem] + [NORK-suffix]` recipe §4 decoded for
 NOR-NORI, with the prefix and suffix columns listed independently (any prefix
 combines with any suffix; the seven rows just give seven of each side by side
 for compactness):
@@ -343,7 +346,7 @@ come out.)
 Baldintza and both Ondorioa tenses run on the *exact same* `nind-/hind-/
 gint-/zint-` prefix series and `-u(-ke)-` stem as the indicative grids just
 decoded — Baldintza just adds a `Ba-` protasis prefix and drops the past `-n`
-(mirroring `banintz`/`banu` in §1/§3/§4's own citation row), Ondorioa just
+(mirroring `banintz`/`banu` in §1/§2/§3's own citation row), Ondorioa just
 inserts `-ke-` before the same suffix families as present/past respectively.
 Same cross-checking discipline as above — 🔍 for recipe-derived cells, blank
 for `zuek`-as-object (same `-zte-`-meets-a-vowel concern as the past grid; here
@@ -393,7 +396,7 @@ impossible `hi`↔`zu`/`zuek` register-clash cells, and the already-sourced
 
 ### Ahalera, Subjuntiboa — an unresolved contradiction, left untouched
 
-§14's `NOR` = 1st/2nd-person templates for these two moods:
+§13's `NOR` = 1st/2nd-person templates for these two moods:
 
 | Mood / tense | Prefix series (`ni/hi/hura/gu/zu/zuek/haiek`) | Stem + markers | Suffix series (`nik/hik/hark/guk/zuk/zuek/haiek`) |
 |---|---|---|---|
@@ -403,24 +406,24 @@ impossible `hi`↔`zu`/`zuek` register-clash cells, and the already-sourced
 
 Applying the recipe to **ahalera-present** `nik`/`hura` gives `De-` + `-zake-`
 + `-t` → `dezaket` — but the already-sourced "Further moods" citation cell for
-that exact combination (§4 above) is `nezake`. These aren't spelling variants:
+that exact combination (§3 above) is `nezake`. These aren't spelling variants:
 `d-` is 3rd-person-style absolutive marking, `ne-` is 1st-singular-style — the
-two forms disagree about *which argument the verb is agreeing with*, and §14
+two forms disagree about *which argument the verb is agreeing with*, and §13
 is the only source that spells out either side of this pair. Left as an open,
 flagged contradiction and the templates unexpanded — a confidently-wrong table
 would be harder to catch later than an honest "these two don't reconcile".
 
 The **imperative**'s `NOR-NORK` cells are, by contrast, barely populated in
-§14 at all (mostly `()` placeholders) — consistent with Basque imperatives
+§13 at all (mostly `()` placeholders) — consistent with Basque imperatives
 being largely restricted to absolutive-marking commands (`zaitez`, `bitez`,
 …). Nothing substantial to expand there.
 
-## 5. `izan` with dative — NOR-NORI system · 📖
+## 4. `izan` with dative — NOR-NORI system · 📖
 
 Used with intransitive verbs that take an indirect object — `gustatu`,
 `iruditu`, etc. (`VERB_COVERAGE.md` §2 covers why this pattern usually rides
 on `izan`'s own auxiliary paradigm rather than a standalone lexical verb).
-Laid out as a grid (`NORI` rows × `NOR` columns) — and, like §4's `ukan`
+Laid out as a grid (`NORI` rows × `NOR` columns) — and, like §3's `ukan`
 grid, the *full* picture varies `NOR` across all seven persons, not just
 `hura`/`haiek`. The citation slice most relevant to `gustatu`-class verbs
 ("it pleases me", "they please me" — `NOR` is the 3rd-person stimulus) sits
@@ -429,7 +432,7 @@ wearing its other hat — "I am to him" (`natzaio`, cited in
 `VERB_COVERAGE.md` §2 as the synthetic engine behind e.g. `jarraitzen
 natzaio`, "I follow him") and its kin across all persons.
 
-§14's compact NOR-NORI row-template spells out, mechanically, how to build
+§13's compact NOR-NORI row-template spells out, mechanically, how to build
 *any* cell: `[NOR person's prefix + stem(+zki if plural)] + [NORI person's
 suffix] (+ -n in the past)` — e.g. present `Zai|O` (hura-stem `zai-` +
 hari-suffix `-o`) → `zaio`, or `NA tzai|O` (ni-stem `na-tzai-` + hari-suffix
@@ -439,27 +442,27 @@ elsewhere:
 
 - **`-zki-` marks a plural `NOR`** — not just for `haiek` (the only plural
   option visible in the old 2-column framing) but for `gu`/`zuek` too
-  (`gatzaizkio`, `zatzaizkio`, …) — the same infix §4's grid and §9 already
+  (`gatzaizkio`, `zatzaizkio`, …) — the same infix §3's grid and §8 already
   use for plural absolutive arguments generally. `zu`, despite being the
   person that triggers a *different* kind of plural-marking elsewhere (the
-  `ukan` system's "etiquette plural" `-it-` in `zaitut`, §4), sits this one
+  `ukan` system's "etiquette plural" `-it-` in `zaitut`, §3), sits this one
   out entirely — it keeps the bare `za-tzai-` shape (`zatzait` = za- +
   -tzai- + -t, no `-zki-`), in contrast with genuinely-plural `zuek`'s
   `zatzaizkit`.
 - **The `K/N` ↔ `A/NA` mirroring** — the masc./fem. split tied to a `hi`
   argument — surfaces in the `NORI = hiri` row in exactly the present ↔ past
-  pairing already named for §4: `zaik`/`zain` (present) ↔ `zitzaian`/
-  `zitzainan` (past). §14's own template spells out `A/NA` for this row,
+  pairing already named for §3: `zaik`/`zain` (present) ↔ `zitzaian`/
+  `zitzainan` (past). §13's own template spells out `A/NA` for this row,
   *independently corroborating* the 🔍-flagged guess this document made for
   that very form just one revision ago — nice to see a guess confirmed.
-- **Reflexive gaps** sit on the same kind of diagonal §4 leaves blank — `ni`-
+- **Reflexive gaps** sit on the same kind of diagonal §3 leaves blank — `ni`-
   to-`niri`, `hi`-to-`hiri`, `gu`-to-`guri`, `zu`-to-`zuri`, `zuek`-to-`zuei`
   ("I am to myself", …) — marked `*(refl.)*` rather than invented. (`hura`-
   to-`hari` and `haiek`-to-`haiei` *aren't* reflexive gaps — "it"/"they" are
   open referential slots that can differ from their dative counterpart, hence
   `zaio`/`zaizkie` are perfectly ordinary attested forms.)
 - **`hi`↔`zu`/`zuek` cells are `*(hika/zuka)*`** — the *same* register-clash
-  §4 already flags (a single verb form can't take one of *hika*'s `hi` and
+  §3 already flags (a single verb form can't take one of *hika*'s `hi` and
   *zuka*'s `zu`/`zuek` as one argument and the other as its second), just
   showing up here in the dative slot instead of the absolutive/ergative one:
   `hiri`'s `zu`/`zuek` columns ("you/you-all are to him-familiar") and the
@@ -469,7 +472,7 @@ elsewhere:
   (`zuek`-to-`hiri` would land on a `zatzaizkik`/`zatzaizkin`-type form) a
   native speaker flagged when reviewing this grid.
 
-**Note: `zu` ≠ `zuek` here**, unlike in `ukan`'s "etiquette plural" (§4's
+**Note: `zu` ≠ `zuek` here**, unlike in `ukan`'s "etiquette plural" (§3's
 `zaitut`-type forms, where `zu` itself triggers `-it-`). In *this* NOR-NORI
 paradigm `zu` keeps the bare `za-tzai-` shape with no `-zki-` (`zatzait` =
 za- + -tzai- + -t), while `zuek` — genuinely plural — takes `-zki-` exactly
@@ -505,9 +508,9 @@ other plural `NOR` slot.
 
 ### Baldintza — "if I were to him…" (protasis)
 
-§14 spells this mood out as a *third* NOR-NORI row-template, prefixed `Ba-`
+§13 spells this mood out as a *third* NOR-NORI row-template, prefixed `Ba-`
 on top of a `nin-`/`hin-`/`li-`/`gin-`/`zin-`/`zin-`/`li-` series (compare
-`banintz`/`bahintz`/`balitz`/… in §1/§3 — the familiar conditional prefix,
+`banintz`/`bahintz`/`balitz`/… in §1/§2 — the familiar conditional prefix,
 just riding the dative-marked `tzai` stem instead of `izan`'s own one) and
 closing with the *same* `NORI` suffixes as the present grid (no past `-n`):
 
@@ -524,7 +527,7 @@ closing with the *same* `NORI` suffixes as the present grid (no past `-n`):
 Same formula and same `*(refl.)*` diagonal as the indicative grids above —
 this section's `NOR` template just swaps in the `Ba-…` prefix series and
 drops the past tense's trailing `-n`. Worth noting this fills a kind of
-gap §13 and `VERB_COVERAGE.md` §3b both leave open in their own way — they
+gap §12 and `VERB_COVERAGE.md` §3b both leave open in their own way — they
 sketch `izan`'s baldintza with bare example forms (`banintz`, `banu`, …)
 rather than full paradigms; this grid is the dative-marked half of exactly
 that picture, laid out in full — for whatever a mechanically-generated table
@@ -533,16 +536,16 @@ is worth standing next to genuinely-cited ones.
 The remaining eight grids below run the *exact same* mechanical recipe —
 [NOR person's prefix + stem(+`-zki-` if plural)] + [NORI person's suffix]
 (+ tense/mood markers like `-n`, `-ke`, `-en`) — across the rest of `izan`'s
-mood/tense system, mirroring §3's full coverage of the plain (non-dative)
+mood/tense system, mirroring §2's full coverage of the plain (non-dative)
 paradigm. `Ondorioa` keeps the `tzai` stem (like the indicative/baldintza
 grids above); `potentziala`, `subjuntiboa`, and `inperatiboa` swap in the
 bare `ki` stem instead (still `+-zki-` for plural `NOR`) — the same stem
-`naiteke`/`dadin`/`bedi` ride in §3's plain paradigm, just dative-marked
+`naiteke`/`dadin`/`bedi` ride in §2's plain paradigm, just dative-marked
 here.
 
 ### Ondorioa — Present
 
-§14's row-template for this mood runs on a `nin-`/`hin-`/`li-`/`gin-`/`zin-`/
+§13's row-template for this mood runs on a `nin-`/`hin-`/`li-`/`gin-`/`zin-`/
 `zin-`/`li-` NOR-prefix series — note `hura`/`haiek` take an overt `li-` here,
 unlike present-tense `zai-`'s prefix-less allomorph — riding the `tzai` stem,
 closed off with a `-ke`-suffixed NORI series (`-dake`/`-ake`/`-nake`/`-oke`/
@@ -580,7 +583,7 @@ that marks past throughout this mood, `zuei` taking `-eketen` — but a
 
 Potentziala swaps the `tzai` stem for the bare `ki` stem (still `+-zki-` for
 plural `NOR`, per the regularity above) riding `na-`/`ha-`/`da-`/`ga-`/`za-`/
-`za-`/`da-` — the same prefix shape §3's plain `naiteke`/`gaitezke` paradigm
+`za-`/`da-` — the same prefix shape §2's plain `naiteke`/`gaitezke` paradigm
 uses — closed with the same `-ke` NORI-suffix family as Ondorioa-Present:
 
 | NORI ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
@@ -613,7 +616,7 @@ family:
 ### Potentziala — Hypothetical
 
 …while the hypothetical takes `le-` for `hura`/`haiek` instead (paralleling
-`liteke`'s own `li-`/`le-` alternation in §3) and drops the trailing `-en`,
+`liteke`'s own `li-`/`le-` alternation in §2) and drops the trailing `-en`,
 landing back on the bare `-ke` suffix family:
 
 | NORI ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
@@ -662,8 +665,8 @@ over the *exact same* `-n` suffix family as the present:
 
 ### Inperatiboa (imperative)
 
-Like `izan`'s own imperative (§3's Agintera) and every Basque imperative
-(§10), this is second/third-person only — no commanding yourself or "it" —
+Like `izan`'s own imperative (§2's Agintera) and every Basque imperative
+(§9), this is second/third-person only — no commanding yourself or "it" —
 hence the `—` gaps filling the entire `ni`/`gu` columns. The `be-`-prefixed
 `hura`/`haiek` cells are *jussive* ("let it be to me", "let them be to
 him/her") rather than literal commands, mirroring `izan`'s own `bedi`/
@@ -683,7 +686,7 @@ family, no trailing `-n`) is the same formula run one more time:
 **On confidence:** every cell outside the original `hura`/`haiek` columns
 (plus the `hiri`-row masc./fem. split, already covered above) is *generated*
 by the formula at the top of this section rather than individually attested
-— treat it as 📖-via-systematic-derivation from §14's template, not
+— treat it as 📖-via-systematic-derivation from §13's template, not
 📖-via-citation from a dictionary entry. Basque's verb agreement is regular
 enough that this is a fairly low-risk way to fill out a paradigm — it's the
 same kind of move the `-zki-` and `K/N`↔`A/NA` regularities above already
@@ -700,17 +703,17 @@ reproduce before being trusted with the rest. The eight grids above have no
 such anchor; this dative paradigm simply isn't where citation dictionaries
 go looking for `ondorioa`/`potentziala`/`subjuntiboa`/`inperatiboa` forms, so
 *every* cell — `hura`/`haiek` columns fully included — comes straight out of
-§14's row-templates with nothing independently attested to validate against.
+§13's row-templates with nothing independently attested to validate against.
 Same derivation method, just running with no safety net; worth knowing if
 you're weighing how much to lean on any one form from these eight.
 
-## 6. `ukan` with dative — NOR-NORI-NORK system · 📖
+## 5. `ukan` with dative — NOR-NORI-NORK system · 📖
 
 Used with ditransitive verbs — `eman` ("to give"), `esan` ("to say"), etc.
 (`VERB_COVERAGE.md` §2/§4b). `NOR` fixed at 3sg `hura`; grid is `NORI`
 (indirect object, rows) × `NORK` (subject, columns) — already the natural
 bidimensional shape, just with tidier headers below and two new columns
-(`zuk`/`zuek`) filled in courtesy of §15's `esan` paradigm, which happens to
+(`zuk`/`zuek`) filled in courtesy of §14's `esan` paradigm, which happens to
 be exactly this grid's `hari` row (NOR=hura, NORI=hari, NORK varying — the
 classic ditransitive citation form).
 
@@ -724,7 +727,7 @@ classic ditransitive citation form).
 | zuri | dizut | dizu | dizugu |  |  | dizute |
 | haiei | diet | die | diegu |  |  | diete |
 
-⚠️ **Still open** (§14 couldn't settle this either, see its own notes):
+⚠️ **Still open** (§13 couldn't settle this either, see its own notes):
 `zidan` in the `niri`/`hark` cell of a *present* table — `-an` is a
 past-tense ending (compare this row's own `dio`, and `diot`/`zion` in the
 past grid below), so it looks misplaced, and the present `niri`/`hark` cell
@@ -742,7 +745,7 @@ present slot.
 | zuri | nizun | zizun | genizun |  |  | zizuten |
 | haiei | nien | zien | genien |  |  | zieten |
 
-⚠️ **New discrepancy spotted while filling this in**: §15's `esan` table
+⚠️ **New discrepancy spotted while filling this in**: §14's `esan` table
 gives this exact row (`hari`, NORK = nik/hark/guk/zuk/zuek/haiek) as `nioen /
 zioen / genioen / zenioen / zenioten / zioten` — matching on `zenioen`,
 `zenioten`, and `zioten`, but disagreeing with the original paste's `nion` /
@@ -754,7 +757,7 @@ variant rather than an error in either source — but it's exactly the kind of
 reference to resolve, not a guess. Left as-is with both forms shown rather
 than picking one.
 
-## 7. More classic synthetic `nor` verbs · 📖 (corroborates §8 of the original notes)
+## 6. More classic synthetic `nor` verbs · 📖 (corroborates §8 of the original notes)
 
 These four overlap with tables already compiled independently while writing
 this reference (see the original `egon`/`joan`/`etorri`/`ibili` tables this
@@ -763,7 +766,7 @@ overlapping cell **matched**, which is reassuring corroboration for both
 sources; the `zu` row is new information from the merged paste.
 
 A *third*, independent source corroborates the same four verbs again — a
-classroom reference table covered in §15 (`eduki/egon/ekarri/erabili/eraman/
+classroom reference table covered in §14 (`eduki/egon/ekarri/erabili/eraman/
 esan/etorri/ibili/jakin/joan`, from euskarians.wordpress.com, 2011). Every
 `egon`/`joan`/`etorri`/`ibili` form it gives matches the table below exactly
 — **triple** corroboration now. (That source's own table omits the `hi` row
@@ -812,14 +815,14 @@ disputes `hago`/`hoa`/`hator`/`habil`.)
 | Person | Present | Past |
 |---|---|---|
 | ni | nabil | nenbilen |
-| hi | habil | *(not given by any source — `hi` consistently the gap, see §15's note above)* |
+| hi | habil | *(not given by any source — `hi` consistently the gap, see §14's note above)* |
 | hura | dabil | zebilen |
 | gu | gabiltza | genbiltzan |
-| zu | zabiltza | zenbiltzan *(filled in from §15)* |
-| zuek | zabiltzate | zenbiltzaten *(filled in from §15)* |
+| zu | zabiltza | zenbiltzan *(filled in from §14)* |
+| zuek | zabiltzate | zenbiltzaten *(filled in from §14)* |
 | haiek | dabiltza | zebiltzan |
 
-## 8. `jakin` and `ekarri` · 📖
+## 7. `jakin` and `ekarri` · 📖
 
 ### `jakin` — "to know (a fact)" — nor-nork
 
@@ -835,7 +838,7 @@ disputes `hago`/`hoa`/`hator`/`habil`.)
 
 ### `ekarri` — "to bring" — nor-nork
 
-Originally quoted here as "past-only/literary" from a partial source — §15's
+Originally quoted here as "past-only/literary" from a partial source — §14's
 classroom table gives a fuller paradigm with **both tenses** and an explicit
 singular-vs-plural-object split (`(tza)` = plural-object infix, exactly the
 `(z)`/`(zki)` notation `VERBS`/`VERB_COVERAGE.md` already use elsewhere):
@@ -854,11 +857,11 @@ is the *plural-object* haiek-past form — `zekarten` is its singular-object
 counterpart, and both exist side by side rather than one superseding the
 other.)
 
-## 9. `iraun`, `jario`, `esan`, `irudi`, `etzan` · 📖
+## 8. `iraun`, `jario`, `esan`, `irudi`, `etzan` · 📖
 
 This section started out as a holding pen for partial/🔍 leftovers from the
 original research pass, but two sources arriving in succession have since
-filled in every one of them. §15's classroom table completed `esan` first
+filled in every one of them. §14's classroom table completed `esan` first
 (kept here rather than relocated, since it's still the same verb this section
 was already tracking). Then a PDF dedicated to rarer/non-standard synthetic
 verbs ("trinko-ezohiko-batzuk", euskarians.wordpress.com, 2012) did the same
@@ -927,10 +930,10 @@ glosses, not grammar-checked):
 
 ### `esan` — "to say" (ditransitive forms, on the `*-io-` root `ukan` also borrows)
 
-§15's classroom table fills this in completely — for `esan`, "complete" means
+§14's classroom table fills this in completely — for `esan`, "complete" means
 NOR fixed at 3sg (`hura`/"it"), NORI fixed at 3sg (`hari`/"to him-her"), and
 NORK varying — the same "citation paradigm" shape `VERBS` already uses for
-`ukan` itself (§2):
+`ukan` itself (§3):
 
 | Person (nork) | Present | Past |
 |---|---|---|
@@ -980,10 +983,10 @@ persons:
 📖 — single-sourced and not yet checked against a grammar reference, like the
 rest of the broader reference. `datza` lining up exactly with the form
 already confirmed independently is a reasonable sign for the rest of the
-table, though — same kind of corroboration §7's `egon`/`joan`/`etorri`/`ibili`
+table, though — same kind of corroboration §6's `egon`/`joan`/`etorri`/`ibili`
 got, just from one source instead of three so far.
 
-## 10. Imperative (agintera) · 📖
+## 9. Imperative (agintera) · 📖
 
 Second-person only — doesn't fill the usual six/seven-person table
 (`VERB_COVERAGE.md` §3e already flags this as needing its own lesson shape).
@@ -995,7 +998,7 @@ Second-person only — doesn't fill the usual six/seven-person table
 | etorri ("come") | zatoz | zatozte | hator |
 | joan ("go") | zoaz | zoazte | hoa |
 
-## 11. Periphrastic construction reference · 📖
+## 10. Periphrastic construction reference · 📖
 
 For the ~20 synthetic verbs aside, every other Basque verb conjugates as
 **stem + aspect suffix + auxiliary** — exactly the `type: 'periphrastic'`
@@ -1016,8 +1019,8 @@ entry yet uses (see `VERB_COVERAGE.md` §4b).
 |---|---|
 | `nor` (intransitive) | `izan` |
 | `nor-nork` (transitive) | `ukan` |
-| `nor-nori` (intransitive + dative) | `izan` with dative (§5) |
-| `nor-nori-nork` (transitive + dative) | `ukan` with dative (§6) |
+| `nor-nori` (intransitive + dative) | `izan` with dative (§4) |
+| `nor-nori-nork` (transitive + dative) | `ukan` with dative (§5) |
 
 ### Worked examples
 
@@ -1032,7 +1035,7 @@ entry yet uses (see `VERB_COVERAGE.md` §4b).
 | eman dio | (S)he gave it to him/her (`ukan` + dative) |
 | gustatu zait | I liked it (`izan` + dative) |
 
-## 12. Pronoun & case reference · 📖
+## 11. Pronoun & case reference · 📖
 
 Low-risk, high-utility — basic noun-phrase declensions rather than verb
 forms. Mirrors the shape of `VERBS`' existing `pronouns` field (declined for
@@ -1048,7 +1051,7 @@ whichever case that verb's subject takes).
 | zuek | zuek | zuek | zuei |
 | haiek | haiek | haiek | haiei |
 
-## 13. Beyond present / past — notes
+## 12. Beyond present / past — notes
 
 Per `VERB_COVERAGE.md` §3, sketched rather than tabulated:
 
@@ -1057,7 +1060,7 @@ Per `VERB_COVERAGE.md` §3, sketched rather than tabulated:
   to add next.
 - **Conditional (baldintza/ondorioa)** — *"banintz"*, *"banu"*, *"banengo"*
   (if-clauses, "baldintza"); *"nintzateke"*, *"nuke"*, *"nengoke"* (the
-  "would" result, "ondorioa") — full tables for `izan`/`ukan` now in §3/§4
+  "would" result, "ondorioa") — full tables for `izan`/`ukan` now in §2/§3
   above (`egon`'s own — *"nengoke"* — still isn't sourced anywhere).
 - **Potential (ahalera)** — *"naiteke"*, *"dezaket"*, *"nagoke"* (present);
   *"nintekeen"*, *"nezakeen"*, *"nengokeen"* (past). A closed synthetic `-ke`
@@ -1065,7 +1068,7 @@ Per `VERB_COVERAGE.md` §3, sketched rather than tabulated:
 - **Subjunctive (subjuntiboa)** — *"nadin"*, *"dezadan"*, *"nengoen"* — mostly
   embedded in subordinate clauses (*"Nahi dut etor dadin"* = "I want him/her
   to come").
-- **Imperative (agintera)** — see §10.
+- **Imperative (agintera)** — see §9.
 
 For periphrastic verbs, each of the above is actually a (non-finite verb form
 × auxiliary tense) pair — e.g. *"ibiltzen naiz"* (present habitual), *"ibili
@@ -1073,7 +1076,7 @@ naiz"* (present perfect), *"ibiliko naiz"* (future).
 
 ---
 
-## 14. Cross-check source: "Euskal aditz laguntzailea" chart · 📖
+## 13. Cross-check source: "Euskal aditz laguntzailea" chart · 📖
 
 A dense, professionally-compiled auxiliary-verb paradigm chart (uploaded
 2026-06-07) — three pages covering Batua (Lorenzo Zugazaga Martikorena),
@@ -1083,7 +1086,7 @@ heavily abbreviated morpheme-template notation rather than fully-spelled-out
 words in most cells (e.g. `NA U T`, `Di (zki) GU GU`), which makes it
 excellent for *checking specific forms someone already wrote down* but
 error-prone to transcribe wholesale into prose tables — so it's used here as
-a **cross-check against §3–§6's flagged issues**, not copied in full.
+a **cross-check against §2–§5's flagged issues**, not copied in full.
 
 This source is also the first one seen so far with full **Bizkaiera and
 Zuberera** paradigms side by side with Batua — directly relevant to the
@@ -1092,15 +1095,15 @@ Zuberera** paradigms side by side with Batua — directly relevant to the
 ever grow dialect support beyond the current `dialect: 'batua'` placeholder.
 Worth keeping in mind as a source for that, once decoded more rigorously.
 
-## 15. Classroom reference table — three new synthetic verbs · 📖
+## 14. Classroom reference table — three new synthetic verbs · 📖
 
 Source: *"Aditz trinkoak: eduki, egon, ekarri, erabili, eraman, esan, etorri,
 ibili, jakin, joan"* (`santutxu` / euskarians.wordpress.com, 2011). A one-page
 classroom handout giving present + past for ten synthetic verbs side by side,
 in a **six-person layout that omits `hi`** (`ni / hura / gu / zu / zuek /
-haiek` — the same shape as `ukan`'s citation paradigm in §2). It corroborates
-or fills gaps in material already covered elsewhere — see §7's notes for
-`egon`/`joan`/`etorri`/`ibili`, §8/§9's for `ekarri`/`esan` — and contributes
+haiek` — the same shape as `ukan`'s citation paradigm in §3). It corroborates
+or fills gaps in material already covered elsewhere — see §6's notes for
+`egon`/`joan`/`etorri`/`ibili`, §7/§8's for `ekarri`/`esan` — and contributes
 **three verbs not seen in any other source**: `eduki`, `erabili`, `eraman`,
 none yet in `VERBS`.
 
@@ -1142,7 +1145,7 @@ rather than treating as a variant. Like `ekarri` above, the source's
 | zuek | daramazue / daramatzazue | zeneramaten / zeneramatzaten |
 | haiek | daramate / daramatzate | zeramaten / zeramatzaten |
 
-⚠️ As with everything past §2, these are merged in as **unverified leads**,
+⚠️ As with everything past §1, these are merged in as **unverified leads**,
 not facts — the `(sg./pl. obj.)` split is *inferred* from the source's
 `X(Y)` shorthand by analogy with `VERBS`' own `(z)`/`(zki)` convention and
 with `ekarri`'s spelled-out split above, not spelled out letter-by-letter in

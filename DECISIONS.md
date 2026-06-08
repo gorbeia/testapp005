@@ -4,6 +4,25 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-08 — Merged `ukan`'s citation paradigm into its NOR-NORK section; renumbered §3–§15 down by one
+
+**Decision:** `CONJUGATIONS.md` had two `ukan` sections — a small citation-form
+table (`NOR` fixed at `hura`) and, three sections later, the full NOR-NORK
+grid whose `hura` column *was* that exact table (same six persons, same
+forms). The user pointed out they "conjugate the same" and asked to merge
+them to avoid the duplication. Folded the citation table into the NOR-NORK
+section's intro — framed explicitly as the **✅ baseline** (straight from
+`VERBS`) the rest of that 📖 grid was built and cross-checked against, rather
+than a redundant standalone table — and deleted the old section. Every
+section from the old §3 onward shifted down by one number to close the gap;
+old §2 and old §4 (now merged) both collapse onto the new §3. Updated all ~60
+internal `§N` cross-references accordingly (leaving `VERB_COVERAGE.md §N` and
+"original notes §N" references alone — those number a *different* document).
+**Why bother with the renumbering** rather than leaving a gap or a
+"see §4" stub: sequential numbering is part of what makes this file fast to
+navigate, and a silent gap or forwarding stub would be exactly the kind of
+small structural debt that compounds the more the file grows.
+
 ## 2026-06-08 — `CONJUGATIONS.md` keeps the *current* picture; the story of how it got there belongs here
 
 **Decision:** Trimmed `CONJUGATIONS.md` of in-place retrospectives — passages
