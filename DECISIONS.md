@@ -4,6 +4,54 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-08 — Filling NOR-NORK's "`NOR` = 1st/2nd person" gap: derive-and-flag, not transcribe-wholesale, and stop at six moods deep
+
+**Decision:** Extended `CONJUGATIONS.md` §4 (`ukan`'s NOR-NORK system) with a
+"Completing the grid" subsection that fills in the present/past grids' other
+half — the `ni`/`hi`/`gu`/`zu`/`zuek`-as-object columns the citation-paradigm
+framing had left mostly blank ("you have *me*", "they had *us*", as opposed to
+the already-covered "I have *it/them*"). §14's chart (the "Euskal aditz
+laguntzailea" PDF) gives this half as compact `[prefix]+[stem]+[suffix]`
+row-templates rather than spelled-out words; rather than transcribing those
+templates wholesale (§14's own write-up already calls that "error-prone") or
+mechanically expanding every cell into a word, the new subsection (a) decodes
+the recipe and *cross-checks it* against cells already sourced elsewhere in
+§4 — which surfaced one real wrinkle, a `-z-` that appears between a
+plural-object stem and the `haiek`-subject suffix (`dituzte`, not `†ditute`;
+`gintuzten`, matching the existing sourced cell, not `†ginduten`) — then (b)
+fills cells with that corrected recipe, marking everything *not* already
+cross-checked as 🔍 (recipe-derived, not independently attested), and (c)
+stops short of expanding the *other* six moods (baldintza, both ondorioas,
+both ahaleras, subjuntiboa) into words at all — transcribing their templates
+as a table of prefix/stem/suffix series instead, with a note on why (each
+mood stacks its own tense/mood markers on top of the same recipe, multiplying
+the chances of another `dituzte`-shaped surprise hiding in a form no source
+spells out to check against).
+
+**Why:** Asked to use the PDF to build out the NOR-NORK tables. The natural
+temptation with a chart this information-dense is to mechanically expand every
+template into every cell — but the `dituzte`-vs-`†ditute` wrinkle (found by
+cross-checking the recipe against forms §4 *already* had, before trusting it
+on cells it didn't) is exactly the kind of thing that looks like correct
+Basque while teaching a paradigm that doesn't exist, the failure mode
+`DECISIONS.md`'s very first entries on `izan`/`ukan` content already named.
+Stopping at "present + past, fully decoded and flagged" rather than pushing
+through all eight mood/tense combinations isn't laziness so much as matching
+effort to verifiability: present/past had enough already-sourced cells to
+cross-check the recipe *against*, so filling their gaps means "applying a
+checked rule to fill blanks" — for the other six moods, expanding would mean
+"trusting an unchecked rule all the way down", six layers of compounding
+mood-specific markers deep, with no independently-sourced cells to catch a
+mistake. Leaving `zuek`-as-object blank in the past grid for the same reason
+(its `-zte-` infix would, for the first time in this paradigm, collide with a
+*vowel-initial* suffix — `-zte-` + `-en`/`-uzun`/… — exactly the kind of
+juncture that produced the `-z-` surprise above) is the same call made
+smaller: an honest gap beats a guess stacked on a guess. 🔍-marking the
+recipe-derived cells (rather than presenting them at the same ✅/📖 confidence
+as sourced material) keeps the file's existing confidence-key promise intact —
+"📖 means cross-checked where possible", and these specific cells, by
+construction, couldn't be.
+
 ## 2026-06-07 — The itinerary now ramps up in three stages: bare forms → richer framings → cross-lesson reviews
 
 **Decision:** Restructured the lesson progression so it starts simple and

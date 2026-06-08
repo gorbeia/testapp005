@@ -168,9 +168,11 @@ transitive paradigm, rather than the one-`NOR`-at-a-time tables this section
 started as. *Blank cells are sourcing gaps, not claims that a form doesn't
 exist* — except where marked `(refl.)`, meaning the combination is reflexive
 and just doesn't occur ("I have me"). The entirely-empty `hi`-as-object
-column is itself worth noting: **no source seen so far gives any "(someone)
-has you, familiar" form** — a gap of exactly the kind `VERB_COVERAGE.md` §1
-already flags for `hi`/`zu`.
+column is itself worth noting: **no source has been found yet that spells out
+any "(someone) has you, familiar" form outright** — a gap of exactly the kind
+`VERB_COVERAGE.md` §1 already flags for `hi`/`zu`. (The "Completing the grid"
+subsection below has a first attempt at it — 🔍-marked, recipe-derived rather
+than found spelled out, so still not a source in the sense meant here.)
 
 ### Present
 
@@ -259,6 +261,116 @@ same shape `VERBS` already uses for `ukan` itself (§2):
 | | zuk | zenezan | zenitzan |
 | | zuek | zenezaten | zenitzaten |
 | | haiek | zezaten | zitzaten |
+
+### Completing the grid — `NOR` = 1st/2nd person
+
+The Present/Past grids above still leave most of their `ni`/`hi`/`gu`/`zu`/
+`zuek` columns blank — the citation paradigm and the "Further moods" table
+both fix `NOR` at `hura`/`haiek` ("having *something*"), but the *full*
+paradigm also covers "*you* have *me*", "*they* had *us*", etc. §14's chart
+gives this other half as compact row-templates rather than spelled-out words —
+the same `[NOR-prefix] + [stem] + [NORK-suffix]` recipe §5 decoded for
+NOR-NORI, with the prefix and suffix columns listed independently (any prefix
+combines with any suffix; the seven rows just give seven of each side by side
+for compactness):
+
+- **Present** — prefixes `na-/ha-/d-/gait-/zait-/zait-…-zte-/dit-` (for
+  `ni/hi/hura/gu/zu/zuek/haiek`) + stem `-u-` + suffixes `-t/-k(/-n)/-∅/-gu/
+  -zu/-zue/-te` (for `nik/hik/hark/guk/zuk/zuek/haiek`)
+- **Past** — prefixes `nind-/hind-/(—)/gint-/zint-/zint-…-zte-/(—)` (no
+  `hura`/`haiek` row — those run on the plain-word paradigm above instead) +
+  stem `-u-` + suffixes `-da-n/-a-n(/-na-n)/-en/-gu-n/-zu-n/-zue-n/-te-n`
+
+Cross-checking the recipe against cells *already* sourced above confirms it
+mechanically — `nind-` + `-u-` + `-en` → `ninduen` (= the existing `hark`→`ni`
+cell), `zint-` + `-u-` + `-zu-n` → `zintuzun`… plus one wrinkle worth flagging
+explicitly: a plural-object stem (`-it-/-int-`) takes an epenthetic `-z-`
+right before the `haiek`-subject suffix `-te(n)` — `dit-u-` + `-te` surfaces
+as `dituzte` (not `†ditute`), and `gint-u-` + `-te-n` as `gintuzten` (matching
+the existing `haiek`→`gu` cell), not `†ginduten`. That single rule is enough
+to derive every `…-te(n)` cell correctly; nothing else in the recipe needed
+adjusting once it was applied. Cells below newly derived this way (rather than
+copied from an already-sourced cell) are marked 🔍 — plausible, recipe-built,
+but not independently attested the way the rest of this file's ✅/📖 forms are;
+*(refl.)* marks the same impossible-combination diagonal as the grids above
+(extended on the same logic to `guk`→`ni`/`hi` and `zuk`/`zuek`→`hi`, which no
+source spells out either but which are exactly as reflexive-shaped as the
+already-marked `nik`→`gu`/`zu`/`zuek` cells); blank still means "gap, not a
+claim the form doesn't exist" — most of the remaining blanks are the same
+"`hi` as object" gap §4 already named (the 🔍 forms below are this file's
+first attempt at it, built from the recipe rather than found in a source) plus
+the `zu`↔`zuek` cross-register cells (e.g. "you-singular have you-all") that
+no source addresses either.
+
+#### Present — `NOR` = 1st/2nd person
+
+| NORK ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
+|---|---|---|---|---|---|---|---|
+| nik | *(refl.)* | 🔍 haut | dut | *(refl.)* | zaitut | zaituztet | ditut |
+| hik *(`-k`/`-n`)* | nauk / naun | *(refl.)* | duk / dun | 🔍 gaituk / gaitun | 🔍 zaituk / zaitun | 🔍 zaituztek / zaituzten | dituk / ditun |
+| hark | nau | 🔍 hau | du | gaitu | zaitu | zaituzte | ditu |
+| guk | *(refl.)* | *(refl.)* | dugu | *(refl.)* | zaitugu | zaituztegu | ditugu |
+| zuk | nauzu | 🔍 hauzu | duzu | gaituzu | *(refl.)* | *(refl.)* | dituzu |
+| zuek | nauzue | 🔍 hauzue | duzue | gaituzue | *(refl.)* | *(refl.)* | dituzue |
+| haiek | naute | 🔍 haute | dute | gaituzte | zaituzte | zaituzte | dituzte |
+
+#### Past — `NOR` = 1st/2nd person
+
+`zuek`-as-object is left blank throughout (rather than 🔍-guessed): its
+present-tense shape pairs the `-zte-` infix straight with a vowel-initial
+suffix (`zait-u-zte-t` → `zaituztet`), but every past-tense suffix here is
+itself vowel-initial too (`-en`, `-ugu-n`…), and stacking `-zte-` against
+*another* vowel risks exactly the kind of contraction/epenthesis surprise the
+`dituzte`-vs-`†ditute` wrinkle above already showed this recipe can hide —
+better an honest gap than a guess two layers deep.
+
+| NORK ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
+|---|---|---|---|---|---|---|---|
+| nik | *(refl.)* | 🔍 hindudan | nuen | *(refl.)* | zintudan | | nituen |
+| hik | 🔍 ninduan / nindunan | *(refl.)* | huen | 🔍 gintuan / gintunan | 🔍 zintuan / zintunan | | hituen |
+| hark | ninduen | 🔍 hinduen | zuen | gintuen | zintuen | | zituen |
+| guk | *(refl.)* | *(refl.)* | genuen | *(refl.)* | 🔍 zintugun | | genituen |
+| zuk | ninduzun | 🔍 hinduzun | zenuen | 🔍 gintuzun | *(refl.)* | *(refl.)* | zenituen |
+| zuek | 🔍 ninduzuen | 🔍 hinduzuen | zenuten | 🔍 gintuzuen | *(refl.)* | *(refl.)* | zenituzten |
+| haiek | ninduten | 🔍 hinduten | zuten | gintuzten | zintuzten | | zituzten |
+
+### The same recipe, for the remaining six moods
+
+§14 spells out an equivalent `NOR` = 1st/2nd-person row-template for each of
+the moods the "Further moods" table above covers in citation form — same
+`[prefix] + [stem(+mood/tense markers)] + [suffix]` shape, just with
+mood-specific stems/markers riding the same `nind-/hind-/gint-/zint-` (or, in
+the conditional, `Ba-nind-/Ba-hind-/…`) prefix series and `-da-n`/`-a(/na)-n`/
+`-gu-n`/`-zu-n`/`-zue-n`/`-te-n`-family suffixes already decoded above.
+Transcribed as-is (not expanded into words — the `dituzte`-vs-`†ditute`
+wrinkle is exactly the kind of detail a mechanical expansion six moods deep,
+each with its own tense/mood markers stacked on top, would be likely to get
+subtly wrong without a source spelling the results out):
+
+| Mood / tense | Prefix series (`ni/hi/—/gu/zu/zuek/—`) | Stem + markers | Suffix series (`nik/hik/hark/guk/zuk/zuek/haiek`) |
+|---|---|---|---|
+| Baldintza | `Ba-nind-/Ba-hind-/(—)/Ba-gint-/Ba-zint-/Ba-zint-…-zte-/(—)` | `-u-` | `-t/-k(/-n)/-∅/-gu/-zu/-zue/-te` (no `-n`) |
+| Ondorioa, present | `nind-/hind-/(—)/gint-/zint-/zint-…-zte-/(—)` | `-u-ke-` | `-t/-k(/-n)/-∅/-gu/-zu/-zue/-te` |
+| Ondorioa, past | `nind-/hind-/(—)/gint-/zint-/zint-…-zte-/(—)` | `-u-ke-` | `-da-n/-a(/na)-n/-en/-gu-n/-zu-n/-zue-n/-te-n` |
+| Ahalera, present | `na-/ha-/De-/gait-/zait-/zait-…-te-/dit-` | `-zake-` | `-t/-k(/-n)/-∅/-gu/-zu/-zue/-te` |
+| Ahalera, past | `nint-/hint-/(—)/gint-/zint-/zint-…-te-/(—)` | `-zake-` | `-da-n/-a(/na)-n/-en/-gu-n/-zu-n/-zue-n/-te-n` |
+| Subjuntiboa, past | `na-/ha-/De-/gait-/zait-/zait-…-te-/dit-` | `-za-` | `-da-n/-a(/na)-n/-∅-n/-gu-n/-zu-n/-zue-n/-te-n` |
+
+Two things stand out even at this unexpanded level:
+
+- **Ahalera and Subjuntiboa run on `na-/ha-/d-`-type prefixes** (the `izan`
+  potential/subjunctive stems `naiteke`/`nadin` ride, per §3) **rather than
+  the `nind-/hind-`-type series** the indicative/baldintza/ondorioa moods use
+  — i.e. the choice of "which `izan`-flavoured stem carries the non-3rd-person
+  `NOR` marking" is itself mood-dependent, not a single fixed shape across the
+  whole `NOR-NORK` paradigm. (Ahalera-past further narrows this to
+  `nint-/hint-`, a third variant.)
+- **The imperative's `NOR-NORK` cells are barely populated at all** — §14
+  shows mostly `()` placeholders (`NA za ( )`, `Be za -`, `( ) ZU`…), which
+  squares with the independently-known fact that Basque imperatives are
+  largely restricted to absolutive-marking commands (`zaitez`, `bitez`, …);
+  a transitive "have it!" type imperative is at best marginal. Left out of the
+  table above for that reason — there's barely a recipe to transcribe.
 
 ## 5. `izan` with dative — NOR-NORI system · 📖
 
