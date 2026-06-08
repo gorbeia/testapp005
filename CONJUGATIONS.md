@@ -171,35 +171,18 @@ familiar") are confirmed directly rather than recipe-derived guesses.
 
 ### Further moods (citation paradigm: `NOR` fixed at `hura`/`haiek`)
 
-§13 spells these out as plain `HURA`/`HAIEK` word-pairs too, which is what
-let this grow from a five-cell "conditional" fragment into a full picture
-across six tense/mood combinations — shown as paired columns since `NOR`
-only takes the singular/plural-object contrast in this paradigm shape, the
-same shape `VERBS` already uses for `ukan` itself (§3):
+§13 spells these out as plain `HURA`/`HAIEK` word-pairs — the same shape
+`VERBS` already uses for `ukan` itself (§3) — across six mood/tense
+combinations. Half of them (**Baldintza**, **Ondorioa** present, **Ondorioa**
+past) get expanded into full NOR-NORK grids just below, where these same
+`hura`/`haiek` forms resurface as that grid's two citation-anchored columns —
+no need to show them twice over, so they're left out here. The other half —
+**Ahalera** (potential) and **Subjuntiboa** — *don't* get that expansion (see
+"An unresolved contradiction" below for why), so what follows is their only
+home in this file:
 
 | Mood / tense | NORK | NOR = hura | NOR = haiek |
 |---|---|---|---|
-| **Baldintza** ("if I had…") | nik | banu | banitu |
-| | hik | bahu | bahitu |
-| | hark | balu | balitu |
-| | guk | bagenu | bagenitu |
-| | zuk | bazenu | bazenitu |
-| | zuek | bazenute | bazenituzte |
-| | haiek | balute | balituzte |
-| **Ondorioa**, present ("would have") | nik | nuke | nituzke |
-| | hik | huke | hituzke |
-| | hark | luke | lituzke |
-| | guk | genuke | genituzke |
-| | zuk | zenuke | zenituzke |
-| | zuek | zenukete | zenituzkete |
-| | haiek | lukete | lituzkete |
-| **Ondorioa**, past ("would have had") | nik | nukeen | nituzkeen |
-| | hik | hukeen | hituzkeen |
-| | hark | zukeen | zituzkeen |
-| | guk | genukeen | genituzkeen |
-| | zuk | zenukeen | zenituzkeen |
-| | zuek | zenuketen | zenituzketen |
-| | haiek | zuketen | zituzketen |
 | **Ahalera** (potential), pres./hypoth. ("might have") | nik | nezake | nitzake |
 | | hik | hezake | hitzake |
 | | hark | lezake | litzake |
@@ -332,8 +315,9 @@ it additionally has to clear an inserted `-ke-` first, one more place for a
 silent contraction to hide — except `hik`→`zuek`, which is `*(hika/zuka)*`-
 impossible regardless of how that contraction question would resolve),
 `*(refl.)*` for the impossible-reflexive diagonal, `*(hika/zuka)*` for the
-impossible `hi`↔`zu`/`zuek` register-clash cells, and the already-sourced
-`hura`/`haiek` columns copied straight from the "Further moods" table above
+impossible `hi`↔`zu`/`zuek` register-clash cells, and `hura`/`haiek` columns
+sourced straight from §13's plain-word citation paradigm — the same
+independently-attested anchors "Further moods" above draws its own rows from
 (no 🔍 — those *are* the cross-check anchors):
 
 #### Baldintza — `NOR` = 1st/2nd person

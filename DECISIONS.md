@@ -36,6 +36,19 @@ section structure is exactly the shape that *grows* this kind of duplicate —
 worth checking for, in this file or others, whenever a table appears to get
 "completed" in stages.
 
+**Follow-up #2 (same day):** A *third* duplication, same pattern again: the
+"Further moods (citation paradigm)" table carried six mood/tense rows
+(Baldintza, Ondorioa pres./past, Ahalera pres./past, Subjuntiboa), but three
+of them — Baldintza and both Ondorioa tenses — are nothing but the `hura`/
+`haiek` columns of the full NOR-NORK grids built out two subsections later
+("Baldintza, Ondorioa — completing the grid the same way"), shown a second
+time. Trimmed the table down to just Ahalera and Subjuntiboa — the two moods
+that *don't* get a full-grid expansion (per "An unresolved contradiction"),
+making this table their only remaining home in the file — and reworded the
+dependent grids' intro to source their `hura`/`haiek` columns directly from
+§13's citation paradigm (the shared upstream anchor) rather than from this
+now-trimmed table.
+
 ## 2026-06-08 — `CONJUGATIONS.md` keeps the *current* picture; the story of how it got there belongs here
 
 **Decision:** Trimmed `CONJUGATIONS.md` of in-place retrospectives — passages
