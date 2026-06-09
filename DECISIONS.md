@@ -4,6 +4,33 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-09 — Started NOR-NORI-NORK (§5): completed the `hura` grid, added a `haiek` (`-zki-`) grid, scoped out NOR=1st/2nd person
+
+**Decision:** §5 (`ukan` with dative, ditransitive) previously had a single
+`NOR=hura` grid with several blank `NORI`×`NORK` cells (`niri`/`guri` rows ×
+`guk`/`zuk`/`zuek` columns) plus an unexplained `—` on the `nik` column for
+those same rows. Filled the blanks via the same `di-` + NORI-suffix +
+NORK-suffix formula already visible in the `hari`/`zuri`/`haiei` rows
+(`didazu`, `diguzu`, `diezu`, …) — one of the new fills (`didazu`, "you give
+it to me") is itself a well-known form, corroborating the formula. Two of the
+new cells (`guri`/`guk`, `zuri`/`zuk`) turned out to be reflexive
+("we/you give it to ourselves/yourself") and got `*(refl.)*`, distinct from
+the pre-existing unexplained `—` cells (`niri`/`nik`, `guri`/`nik`), which
+were left as `—` rather than reclassified since their status wasn't actually
+investigated. `zuri`/`zuek` (`dizuzue`) got a 🔍 — `zu`/`zuek` aren't a
+register clash here, just unattested.
+
+Also added a parallel `NOR=haiek` grid (Present + Past) using §4's `-zki-`
+infix (`dizkidazu`, `dizkio`, `zizkidan`, `nizkion`, …) — these are common,
+recognizable forms, so this grid rests on firmer ground than `hura`'s
+blanker corners did before this pass.
+
+**Follow-up (scoped out, not done):** `NOR`=1st/2nd person ditransitive forms
+("he gives *me* to him") exist in principle but are vanishingly rare in
+practice and unattested in any source this doc draws on — left out
+entirely (no `❓` shell even) rather than invented, pending source material,
+the same posture as the Ahalera/Subjuntiboa `❓` cells in §3.
+
 ## 2026-06-08 — Filled Ondorioa `zuek`-as-object blanks using `-zte-after-ke` rule
 
 **Decision:** The `zintukezte` cell (NORK=haiek, NOR=zu, Ondorioa-present)

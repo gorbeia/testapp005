@@ -795,22 +795,29 @@ you're weighing how much to lean on any one form from these eight.
 ## 5. `ukan` with dative — NOR-NORI-NORK system · 📖
 
 Used with ditransitive verbs — `eman` ("to give"), `esan` ("to say"), etc.
-(`VERB_COVERAGE.md` §2/§4b). `NOR` fixed at 3sg `hura`; grid is `NORI`
-(indirect object, rows) × `NORK` (subject, columns) — already the natural
-bidimensional shape, just with tidier headers below and two new columns
-(`zuk`/`zuek`) filled in courtesy of §14's `esan` paradigm, which happens to
-be exactly this grid's `hari` row (NOR=hura, NORI=hari, NORK varying — the
-classic ditransitive citation form).
+(`VERB_COVERAGE.md` §2/§4b). Like §4's NOR-NORI grid, the *full* picture has
+three dimensions (`NOR`/`NORI`/`NORK`); flattened here into a `NORI`
+(indirect object, rows) × `NORK` (subject, columns) grid per `NOR` value —
+the same kind of slicing §4 used. The `hari` row's `zuk`/`zuek` columns below
+come from §14's `esan` paradigm, which happens to be exactly this grid's
+`hari` row (NOR=hura, NORI=hari, NORK varying — the classic ditransitive
+citation form).
 
-### Present
+Two `NOR` values are covered below: `hura` (singular object — "give *it*…")
+and `haiek` (plural object — "give *them*…", via §4's `-zki-` infix). These
+cover the ditransitive forms that see everyday use; `NOR` = 1st/2nd person
+("he gives *me* to him") is a real corner of the paradigm but vanishingly
+rare and not attempted here — see the closing note.
+
+### `NOR` = hura — Present
 
 | NORI ↓ ╲ NORK → | nik | hark | guk | zuk | zuek | haiek |
 |---|---|---|---|---|---|---|
-| niri | — | zidan *(⚠ — see note)* |  |  |  | zidaten |
+| niri | — | zidan *(⚠ — see note)* | didagu | didazu | didazue | zidaten |
 | hari | diot | dio | diogu | diozu | diozue | diote |
-| guri | — | zigun |  |  |  | ziguten |
-| zuri | dizut | dizu | dizugu |  |  | dizute |
-| haiei | diet | die | diegu |  |  | diete |
+| guri | — | zigun | *(refl.)* | diguzu | diguzue | ziguten |
+| zuri | dizut | dizu | dizugu | *(refl.)* | dizuzue 🔍 | dizute |
+| haiei | diet | die | diegu | diezu | diezue | diete |
 
 ⚠️ **Still open** (§13 couldn't settle this either, see its own notes):
 `zidan` in the `niri`/`hark` cell of a *present* table — `-an` is a
@@ -820,15 +827,31 @@ is probably the one left blank instead. Reproduced verbatim rather than
 moved, since nothing here independently confirms what *should* fill the
 present slot.
 
-### Past
+The newly-filled cells follow the same `di-` + NORI-suffix + NORK-suffix
+formula visible in the `hari`/`zuri`/`haiei` rows (NORI-suffixes
+`-da-`/`-o-`/`-gu-`/`-zu-`/`-e-` for `niri`/`hari`/`guri`/`zuri`/`haiei`;
+NORK-suffixes `-t`/`∅`/`-gu`/`-zu`/`-zue`/`-te` for
+`nik`/`hark`/`guk`/`zuk`/`zuek`/`haiek`, same as `hari`'s row already
+showed). `didazu` ("you give it to me") is itself a common, independently-
+recognizable form, which is reassuring corroboration for the formula.
+`guri`/`guk` and `zuri`/`zuk` are newly-identified `*(refl.)*` cells
+(NORI=NORK: "we give it to ourselves", "you give it to yourself") — distinct
+from the pre-existing `—` cells (`niri`/`nik`, `guri`/`nik`), which are
+unsourced gaps from the original citation table rather than confirmed
+reflexive impossibilities, so left as `—` rather than reclassified.
+`zuri`/`zuek` (`dizuzue`) is marked 🔍 — `zu` and `zuek` aren't a
+`*(hika/zuka)*`-style register clash (both are `zuka`), so the cell isn't
+grammatically excluded, but it's also not independently attested here.
+
+### `NOR` = hura — Past
 
 | NORI ↓ ╲ NORK → | nik | hark | guk | zuk | zuek | haiek |
 |---|---|---|---|---|---|---|
-| niri | — | zidan |  |  |  | zidaten |
+| niri | — | zidan | genidan | zenidan | zenidaten | zidaten |
 | hari | nion *(⚠ vs. `nioen`)* | zion *(⚠ vs. `zioen`)* | genion *(⚠ vs. `genioen`)* | zenioen | zenioten | zioten |
-| guri | — | zigun |  |  |  | ziguten |
-| zuri | nizun | zizun | genizun |  |  | zizuten |
-| haiei | nien | zien | genien |  |  | zieten |
+| guri | — | zigun | *(refl.)* | zenigun | zeniguten | ziguten |
+| zuri | nizun | zizun | genizun | *(refl.)* | zenizuten 🔍 | zizuten |
+| haiei | nien | zien | genien | zenien | zenieten | zieten |
 
 ⚠️ **New discrepancy spotted while filling this in**: §14's `esan` table
 gives this exact row (`hari`, NORK = nik/hark/guk/zuk/zuek/haiek) as `nioen /
@@ -841,6 +864,62 @@ variant rather than an error in either source — but it's exactly the kind of
 "two sources disagree and both look right" situation that needs a grammar
 reference to resolve, not a guess. Left as-is with both forms shown rather
 than picking one.
+
+The same prefix-encodes-NORK pattern that §3's past-tense `ukan` grid uses
+(`n-`/`z-`/`gen-`/`zen-`/`zen-…te`/`z-…te` for
+`nik`/`hark`/`guk`/`zuk`/`zuek`/`haiek`) accounts for every newly-filled cell
+here too — e.g. `genidan` = `gen-i-da-n` (guk→niri), `zenigun` = `zen-i-gu-n`
+(zuk→guri), `zenieten` = `zen-i-e-te-n` (zuek→haiei). `guri`/`guk` and
+`zuri`/`zuk` are `*(refl.)*` for the same reason as the present grid;
+`zuri`/`zuek` (`zenizuten`) carries the same 🔍 as its present-tense
+counterpart, for the same reason.
+
+### `NOR` = haiek — Present
+
+Same grid shape, with §4's `-zki-` infix marking the plural object
+(`di-` → `di-zki-`), inserted right before the `NORI` suffix — e.g.
+`dizkidazu` = `di-zki-da-zu` ("you give them to me"), `dizkio` = `di-zki-o`
+("he gives them to him"). Several of these — `dizkidazu`, `dizkit`-type
+`dizkida`, `dizkio`, `dizkigu`, `dizkidate` and their kin — are everyday,
+widely-recognized forms, giving this grid more independent footing than the
+`hura` grid's blanker corners.
+
+| NORI ↓ ╲ NORK → | nik | hark | guk | zuk | zuek | haiek |
+|---|---|---|---|---|---|---|
+| niri | — | dizkida | dizkidagu | dizkidazu | dizkidazue | dizkidate |
+| hari | dizkiot | dizkio | dizkiogu | dizkiozu | dizkiozue | dizkiote |
+| guri | — | dizkigu | *(refl.)* | dizkiguzu | dizkiguzue | dizkigute |
+| zuri | dizkizut | dizkizu | dizkizugu | *(refl.)* | dizkizuzue 🔍 | dizkizute |
+| haiei | dizkiet | dizkie | dizkiegu | dizkiezu | dizkiezue | dizkiete |
+
+The `—`/`*(refl.)*`/🔍 cells follow the exact same pattern as the `hura` grid
+above, just with `-zki-` threaded through every form.
+
+### `NOR` = haiek — Past
+
+Same `-zki-` infix over the past grid's prefix-encodes-NORK forms — e.g.
+`zizkidan` = `z-i-zki-da-n` ("he had given them to me"), `nizkion` =
+`n-i-zki-o-n` ("I had given them to him"). The `hari` row inherits the
+`hura` grid's `-on`/`-oen` ⚠ uncertainty (here `-zkion`/`-zkioen`) for the
+same unresolved reason.
+
+| NORI ↓ ╲ NORK → | nik | hark | guk | zuk | zuek | haiek |
+|---|---|---|---|---|---|---|
+| niri | — | zizkidan | genizkidan | zenizkidan | zenizkidaten | zizkidaten |
+| hari | nizkion *(⚠ vs. `nizkioen`)* | zizkion *(⚠ vs. `zizkioen`)* | genizkion *(⚠ vs. `genizkioen`)* | zenizkioen | zenizkioten | zizkioten |
+| guri | — | zizkigun | *(refl.)* | zenizkigun | zenizkiguten | zizkiguten |
+| zuri | nizkizun | zizkizun | genizkizun | *(refl.)* | zenizkizuten 🔍 | zizkizuten |
+| haiei | nizkien | zizkien | genizkien | zenizkien | zenizkieten | zizkieten |
+
+**On `NOR` = 1st/2nd person**: forms like "he gives *me* to him" (NOR=ni)
+exist in principle — they'd follow §3's NOR-NORK shape (NOR marked by a
+prefix/stem-internal change, e.g. the `nau-`/`gaitu-`-type stems) with a
+`NORI` suffix layered on top — but they're vanishingly rare in actual use
+(ditransitive verbs overwhelmingly take inanimate/3rd-person direct objects:
+you *give* things, you don't usually *give people*), and nothing in this
+document's sources attempts them. Left out rather than invented; would need
+source material to fill in, the same way the Ahalera/Subjuntiboa `❓` cells
+in §3 were left for a future pass.
 
 ## 6. More classic synthetic `nor` verbs · 📖 (corroborates §8 of the original notes)
 
