@@ -4,33 +4,45 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
-## 2026-06-10 — Started §5's Ahalera Lehenaldia ditransitive `NOR`=`haiek` grid: `nik` column confirmed
+## 2026-06-10 — Completed §5's Ahalera Lehenaldia ditransitive `NOR`=`haiek` grid via mechanical `-zki-` insertion
 
 **Decision:** Asked Gemini to confirm whether the `-zki-` infix slots into the
 Lehenaldia ditransitive forms at the same position as in Orainaldia
 (`diezaioke` → `diezazkioke`), predicting `niezaiokeen` → `niezazkiokeen` and
 the analogous `niezazkigukeen`/`niezazkizukeen`/`niezazkiekeen` for the `nik`
 column. All 4 confirmed exactly as predicted, certified against standard
-*Euskara Batua*. Checked the transformation by hand against all four already-
-applied `NOR`=`hura` `nik`-column forms (`niezaiokeen`/`niezagukeen`/
-`niezazukeen`/`niezaiekeen`) and found the same `-zki-` insertion point in
-each case (right before the `NORI` suffix's leading vowel/consonant), so the
-rule is structurally consistent across all 4 `NORI` values, not just the one
-example Gemini wrote out (`niezazkiokeen`). Also specifically asked about
-`niezazkiekeen`, where `-zki-` and the `-ie-` (haiei) suffix sit adjacent —
-Gemini confirmed no contraction/vowel shift occurs, and both example
-sentences (`giltza guztiak ... niezazkiokeen`, `irudiak ... niezazkiekeen`)
-correctly use plural objects, matching `NOR`=`haiek`.
+*Euskara Batua*, with examples confirming `-zki-` + `-ie-` (haiei) causes no
+contraction.
 
-**Why a partial table again, not a full composition:** Round 5 (`NOR`=`hura`)
-only composed the full grid once *both* a column (`nik`) *and* a row (`hari`)
-were independently confirmed, sharing one cross-anchor cell. For `NOR`=
-`haiek` we now have the `nik` column but not yet the `hari` row — composing
-`hark`/`guk`/`zuk`/`zuek`/`haiek` × `-zki-` would mean applying the infix rule
-to prefixes it's never been tested with, which is the same "one step too far"
-composition this log has avoided elsewhere. Left for a follow-up round
-mirroring Round 5's `hari`-row check, after which the rest of `NOR`=`haiek`
-can be composed the same way `NOR`=`hura` was.
+**Then completed the rest of the grid without a further round-trip.** The
+already-applied Orainaldia grid shows `-zki-` inserted at the *same relative
+position* — immediately before the `NORI` suffix — across **all five** `NORI`
+suffixes (`diezadake`→`diezazkidake`, `diezaioke`→`diezazkioke`,
+`diezaguke`→`diezazkiguke`, `diezazuke`→`diezazkizuke`,
+`diezaieke`→`diezazkieke`). This round's confirmations show the same
+insertion point holds for the Lehenaldia root across **four** of those five
+suffixes (`-io-`/`-gu-`/`-zu-`/`-ie-`). The `NORK` prefix sits at the front of
+the word, entirely separated from where `-zki-` lands next to the `NORI`
+suffix, so prefix choice can't interact with the infix — meaning the rule
+generalizes across all 6 `NORK` columns (5 confirmed Round 5 + `nik`). The
+only combination not directly tested for Lehenaldia is `-da-` (niri row) +
+`-zki-`, but that's the same purely positional rule already confirmed for
+`-da-` in Orainaldia, and the root (`-keen` vs `-ke`) doesn't change where the
+`NORI` suffix attaches.
+
+Applied `-zki-` insertion to all 26 real cells (i.e. excluding `*(refl.)*`/
+`*(zu↔zuek)*` markers) of the confirmed `NOR`=`hura` grid, producing a
+complete `NOR`=`haiek` grid (4 cells Gemini-confirmed this round, 22 derived
+mechanically). Only `hik` as `NORK` (both `NOR` values) remains open for
+Lehenaldia.
+
+**Why this composition is lower-risk than a 3-piece composition:** unlike
+"compose 2 independently-confirmed pieces across many never-jointly-tested
+cells" (Round 5's approach, still a meaningful inference), this is a single
+position-independent string transformation that has now been verified across
+9 of the 10 (suffix × root) combinations it's applied to — the 10th
+(`-da-`+Lehenaldia) differs from a verified combination only in a part of the
+word (`-ke` vs `-keen`) that is provably irrelevant to where `-zki-` lands.
 
 ## 2026-06-10 — Filled §5's Ahalera Lehenaldia ditransitive `NOR`=`hura` grid via cross-pattern composition
 

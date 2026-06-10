@@ -784,17 +784,17 @@ hari/haiek).
 
 #### `NOR` = haiek (plural object)
 
-The `-zki-` infix slots in at the same point as in Orainaldia
-(`niezaiokeen` → `niezazkiokeen`, inserting `-zki-` right before the `NORI`
-suffix). So far only the `nik` column is verified:
+The `-zki-` infix slots in at the same point as in Orainaldia and the
+Lehenaldia `nik` column (`niezaiokeen` → `niezazkiokeen`, inserting `-zki-`
+right before the `NORI` suffix), giving:
 
-| NORI ↓ | nik (Lehenaldia) |
-|---|---|
-| niri | *(refl.)* |
-| hari | niezazkiokeen |
-| guri | niezazkigukeen |
-| zuri | niezazkizukeen |
-| haiei | niezazkiekeen |
+| NORI ↓ ╲ NORK → | nik | hark | guk | zuk | zuek | haiek |
+|---|---|---|---|---|---|---|
+| niri | *(refl.)* | ziezazkidakeen | geniezazkidakeen | zeniezazkidakeen | zeniezazkidaketen | ziezazkidaketen |
+| hari | niezazkiokeen | ziezazkiokeen | geniezazkiokeen | zeniezazkiokeen | zeniezazkioketen | ziezazkioketen |
+| guri | niezazkigukeen | ziezazkigukeen | *(refl.)* | zeniezazkigukeen | zeniezazkiguketen | ziezazkiguketen |
+| zuri | niezazkizukeen | ziezazkizukeen | geniezazkizukeen | *(refl.)* | *(zu↔zuek)* | ziezazkizuketen |
+| haiei | niezazkiekeen | ziezazkiekeen | geniezazkiekeen | zeniezazkiekeen | zeniezazkieketen | ziezazkieketen |
 
 *Adibideak:* `Giltzak poltsikoan eraman izan banitu, nik giltza guztiak
 lagunari utz niezazkiokeen bera sartu ahal izateko` ("If I had carried the
@@ -804,9 +804,7 @@ nire gurasoei erakuts niezazkiekeen atzo arratsaldean` ("If I had printed the
 photos on time, I could have shown the images to my parents yesterday
 afternoon" — haiei/nik).
 
-The rest of the `NOR`=`haiek` grid (`hark`/`guk`/`zuk`/`zuek`/`haiek` as
-`NORK`) and `hik` as `NORK` (both `NOR` values) remain open for future
-passes.
+`hik` as `NORK` (both `NOR` values) remains open for a future pass.
 
 ### `NOR` = 1st/2nd person
 
