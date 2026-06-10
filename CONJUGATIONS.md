@@ -203,7 +203,7 @@ A plural-object stem (`-it-/-int-`) takes an epenthetic `-z-` right before the
 | nik | *(refl.)* | hindudan | nuen | *(refl.)* | zintudan | zintuztedan | nituen |
 | hik | ninduan / nindunan | *(refl.)* | huen | gintuan / gintunan | *(hika/zuka)* | *(hika/zuka)* | hituen |
 | hark | ninduen | hinduen | zuen | gintuen | zintuen | zintuzten | zituen |
-| guk | *(refl.)* | *(refl.)* | genuen | *(refl.)* | zintugun | zintuztegun | genituen |
+| guk | *(refl.)* | hindugun | genuen | *(refl.)* | zintugun | zintuztegun | genituen |
 | zuk | ninduzun | *(hika/zuka)* | zenuen | gintuzun | *(refl.)* | *(refl.)* | zenituen |
 | zuek | ninduzuen | *(hika/zuka)* | zenuten | gintuzuen | *(refl.)* | *(refl.)* | zenituzten |
 | haiek | ninduten | hinduten | zuten | gintuzten | zintuzten | zintuzteten | zituzten |

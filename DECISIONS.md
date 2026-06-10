@@ -4,6 +4,31 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-10 — Fixed §3's `guk`→`hi` past cell (`*(refl.)*` → `hindugun`); declined a new `*(PCC-blocked)*` marker
+
+**Decision:** Followed up on two doubts from the previous round.
+
+- **`guk`→`hi` past**: was marked `*(refl.)*`, but `guk`→`hi` *present*
+  (`haugu`) is a real, non-reflexive form — `gu` and `hi` are different
+  person categories, so there's no reflexivity to block it. Asked Gemini to
+  re-derive it; it proposed `hindugun`, built from the already-established
+  `NOR`=`hi` past prefix `hind-` (seen in `hindudan`/`hinduen`/`hinduten`) +
+  stem `-u-` + `NORK`=`guk` suffix `-gu-` (as in `zintugun`) + `-n`. This is
+  structurally consistent with every other cell in the past grid and with
+  `guk`→`hi` present, so applied it.
+- **`hiri` `NORI` row in the `NOR`=1st/2nd ditransitive grids**: asked Gemini
+  to re-derive this row, since its previous answer marked `hark`/`haiek`
+  columns `*(refl.)*` for no reason. It came back with a new
+  `*(PCC-blocked)*` marker for `hark`/`haiek` (vs. `*(hika/zuka)*` for
+  `nik`/`guk`/`zuk`/`zuek`) when `NOR`=`ni`/`gu` — but then marked the *entire*
+  `hiri` row `*(hika/zuka)*`, including `hark`/`haiek`, when `NOR`=`zu`/`zuek`.
+  Both are "`NOR` and `NORI` both 1st/2nd person" cases that the PCC should
+  treat the same regardless of `NORK`, so this `*(hika/zuka)*`/
+  `*(PCC-blocked)*` split looks like patching rather than a principled rule.
+  **Declined** — §5's existing "NOR = 1st/2nd person" subsection already
+  states the substance (PCC blocks any `NOR`+`NORI` both non-3rd-person
+  combination) without needing a new marker or per-cell breakdown.
+
 ## 2026-06-10 — Fixed §3's `haiek`→`zuek` present cell (`zaituzte` → `zaituztete`); declined Gemini's 10 NOR=1st/2nd grids again
 
 **Decision:** Asked Gemini to resolve the contradictions flagged in the
