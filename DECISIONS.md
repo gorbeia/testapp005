@@ -4,6 +4,33 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-10 — Ahalera "contradiction" was a tense split, not an error; filled the `❓` `NOR`=1st/2nd-person cells from a user-supplied table
+
+**Decision:** A previous session concluded `dezaket` (NOR-prefix/NORK-suffix
+recipe) was a mistaken artifact and `nezake` (NORK-prefix/NOR-stem,
+`*ezan`-mirrored) was "correct" for Ahalera, marking the entire `NOR` =
+1st/2nd-person block `❓` ("plausibly outside this paradigm's range"). A
+user-supplied reference table (Orainaldia/Alegiazkoa/Lehenaldia, full
+NOR×NORK grids minus `hi`) shows **both recipes are real, for different
+tenses**: Orainaldia (present, "I can…") uses the `dezaket`/`nazake`/
+`gaitzake`/`zaitzaket`/`ditzaket`-type prefix recipe; Alegiazkoa
+(hypothetical) and Lehenaldia (past) use the `nezake`/`nintzake`-type
+`*ezan`-mirrored recipe. Replaced the old combined "present/hypothetical"
+grid with three full grids (Orainaldia/Alegiazkoa/Lehenaldia), filling
+nearly all of the previously-`❓` `NOR`=1st/2nd-person cells with real,
+user-sourced forms.
+
+**New finding:** the source also reveals a same-person-category blocking
+pattern broader than the old strict-diagonal `*(refl.)*` — 1st-on-1st
+(`nik`/`guk` ↔ `ni`/`gu`, any number combination) and 2nd-on-2nd (`zuk`/
+`zuek` ↔ `zu`/`zuek`) cells are all impossible, not just `nik`→`ni` and
+`zuk`→`zu`. Extended `*(refl.)*` to cover this whole 8-cell block per grid.
+
+**Remaining gap:** `hi` (as `NOR` or `NORK`) is omitted by the new source
+entirely (allocutive simplification) — `hi`-row/column `❓`s remain.
+Subjuntiboa wasn't covered by the new table either; its `❓` grid is
+untouched, with a pointer note that the same patterns likely apply.
+
 ## 2026-06-09 — Started NOR-NORI-NORK (§5): completed the `hura` grid, added a `haiek` (`-zki-`) grid, scoped out NOR=1st/2nd person
 
 **Decision:** §5 (`ukan` with dative, ditransitive) previously had a single

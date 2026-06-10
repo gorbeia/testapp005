@@ -394,7 +394,7 @@ falls back to the shorter `-te` (rather than `-zte-`) when the NOR-marking
 `-zte-` is already present, so the form ends in `-zte-te(-n)` rather than
 `-zte-zte(-n)`.
 
-### Ahalera, Subjuntiboa — the contradiction resolved, the grid mostly left open
+### Ahalera — Orainaldia, Alegiazkoa, Lehenaldia: a tense split, not a contradiction
 
 §13's `NOR` = 1st/2nd-person templates for these two moods:
 
@@ -404,87 +404,91 @@ falls back to the shorter `-te` (rather than `-zte-`) when the NOR-marking
 | Ahalera, past | `nint-/hint-/(—)/gint-/zint-/zint-…-te-/(—)` | `-zake-` | `-da-n/-a(/na)-n/-en/-gu-n/-zu-n/-zue-n/-te-n` |
 | Subjuntiboa, present | `na-/ha-/De-/gait-/zait-/zait-…-te-/dit-` | `-za-` | `-da-n/-a(/na)-n/-∅-n/-gu-n/-zu-n/-zue-n/-te-n` |
 
-Applying that recipe to **ahalera-present** `nik`/`hura` predicts `De-` +
-`-zake-` + `-t` → `dezaket`. But lay the "Further moods" citation cells (§3
-above — also from §13) for that very row side by side — `nezake`, `hezake`,
-`lezake`, `genezake`, `zenezake`, `zenezakete`, `lezakete` for
-`nik/hik/hark/guk/zuk/zuek/haiek` — and a completely different shape jumps
-out: **the part that varies tracks `NORK`** (`ne-/he-/le-/gene-/zene-/
-zene-…-te/le-…-te`, a clean match to the seven `NORK` rows), while `NOR`
-surfaces as a *stem-internal* change instead — `-eza-` (zero-marked, `hura`)
-vs. `-itza-` (the familiar plural-object `-it-` infix, `haiek`), audible by
-comparing `nezake`/`nitzake`, `hezake`/`hitzake`, and so on straight down the
-list. That's the **mirror image** of what the template above assumes
-(`NOR`-prefix, `NORK`-suffix) — and the *subjuntiboa-past* plain-word row
-already transcribed above shows that very mirrored shape even more plainly:
-`nezan/hezan/zezan/genezan/zenezan/zenezaten/zezaten` ↔ `nitzan/hitzan/
-zitzan/genitzan/zenitzan/zenitzaten/zitzaten` is exactly `[NORK-prefix] +
-[NOR-stem] (+ -te for plural NORK)`, spelled out in full, in a table the doc
-had already copied down.
+A previous revision of this document treated the `na-/De-/gait-/zait-/dit-`-
+prefix template above as a *mistake* — a recipe carried over from the wrong
+paradigm — because it predicts `dezaket` for `nik`/`hura`, while the citation
+cells for that same row (`nezake`, `lezake`, `genezake`, …) clearly follow the
+*mirror-image* `*ezan`-suppletive pattern (`NORK`-prefix, `NOR`-stem). Both
+observations were correct, but the conclusion was wrong: **a user-supplied
+reference table (below) shows both patterns are real — they're just different
+tenses.** `Orainaldia` (present, "I *can* do it") uses the `na-/De-/gait-/
+zait-/dit-`-prefix template after all (`dezaket`, `nazake`, `gaitzake`,
+`zaitzaket`, `ditzaket`, …) — `NOR`-marked by prefix, `NORK`-marked by suffix,
+exactly like indicative `ukan` (§3). `Alegiazkoa` (hypothetical, "I
+*could/would be able to* do it") and `Lehenaldia` (past, "I *could have*
+done it") use the `*ezan`-mirrored pattern instead (`nezake`/`nezakeen`,
+`lezake`/`zezakeen`, …) — `NORK`-marked by prefix, `NOR`-stem-internal. The
+"contradiction" was real cells from two different tenses sitting in the same
+row of an over-general abstract template.
 
-So this was never a genuine source disagreement (`d-` vs. `ne-` "disagreeing
-about which argument the verb agrees with") — it was a recipe quietly carried
-over from the wrong paradigm. Ahalera and subjuntiboa build on the suppletive
-`*ezan` root (the same one the plain-word subjuntiboa list already showed),
-and *that* paradigm marks `NORK` by prefix and `NOR` stem-internally — neatly
-backwards from indicative `ukan`'s `NOR`-prefix/`NORK`-suffix shape, not a
-variant of it. §13's abstract templates over-generalized the indicative shape
-onto moods that simply don't follow it; between an abstracted recipe and the
-actual spelled-out words, the words win. `nezake` is correct; `dezaket` was
-never anything but where a mismatched recipe pointed.
+The new table also settles the `NOR` = 1st/2nd person question this document
+previously marked `❓`: those forms **do exist**, for all three tenses
+(`nazake`, `gaitzake`, `zaitzaket`, `nintzake`, `zintzakedan`, …). The only
+genuine remaining gap is `hi` (as either `NOR` or `NORK`), which the new
+source omits entirely as an allocutive-register simplification — consistent
+with `hi`'s patchy coverage everywhere else in this document.
 
-That settles *which* `NORK`-axis pattern to build the grid on, with real
-confidence — cross-checked against the citation cells the same way Baldintza/
-Ondorioa's `hura`/`haiek` columns were:
+**A new pattern, broader than the old `*(refl.)*` diagonal**: the new source
+marks a cell impossible whenever `NOR` and `NORK` belong to the *same person
+category* — 1st (`ni`/`gu`) on 1st (`nik`/`guk`), or 2nd (`zu`/`zuek`) on 2nd
+(`zuk`/`zuek`) — regardless of whether the *numbers* match. So not just
+`nik`→`ni` and `guk`→`gu` (the strict diagonal, "I/we [verb] myself/
+ourselves"), but also `guk`→`ni` ("we [verb] me" — I'm one of the "we") and
+`nik`→`gu` ("I [verb] us" — same overlap, other direction), and likewise
+`zuk`↔`zuek` both ways. All eight such cells are marked `*(refl.)*` below,
+extending the marker's existing meaning from the literal `NOR=NORK` diagonal
+to this whole same-person-category block.
 
-- **Ahalera**, present/hypothetical — `ne-/he-/le-/gene-/zene-/zene-…-te/
-  le-…-te` + `-(t)zake-`
-- **Ahalera**, past — `ne-/he-/ze-/gene-/zene-/zene-…-te/ze-…-te` +
-  `-(t)zakeen-` *(the `hark`/`haiek` prefix shifts `le-` → `ze-` — the same
-  present/past `l-`/`z-` alternation visible throughout the conditional grids
-  above, e.g. `luke`/`zukeen`)*
-- **Subjuntiboa**, past — `ne-/he-/ze-/gene-/zene-/zene-…-te/ze-…-te` +
-  `-(t)zan-` *(spelled out in full already — see "Further moods" above)*
-
-What that *doesn't* settle is the other axis. Filling in `NOR` = `ni/hi/gu/
-zu/zuek` would mean knowing how this paradigm marks a **non-3rd-person**
-absolutive — and no source consulted here spells that out, because, as far as
-turned up, *nothing* does: synthetic forms for "you could have me" / "so that
-I might have you" don't seem to exist for `ukan` in the modern language at
-all — the same kind of *grammatical* restriction (not sourcing gap) the doc
-already notes for the imperative just below. Marking that block `🔍`, the way
-Baldintza/Ondorioa's recipe-derived cells are, would misrepresent it: `🔍`
-there means "this exact word, built by a *validated* recipe, just not
-independently attested"; here there's no validated recipe to extend —
-manufacturing one would mean inventing the rule and the word in the same
-stroke. So the grids below mark that whole block `❓` instead — a *fourth*
-kind of gap, distinct from `🔍`/blank/`*(refl.)*`/`*(hika/zuka)*`:
-**"plausibly outside this paradigm's range altogether, not merely
-unattested."**
-
-#### Ahalera (potential), present/hypothetical — `NOR` = 1st/2nd person
+#### Ahalera, Orainaldia (Present) — "I can…"
 
 | NORK ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
 |---|---|---|---|---|---|---|---|
-| nik | *(refl.)* | ❓ | nezake | ❓ | ❓ | ❓ | nitzake |
+| nik | *(refl.)* | ❓ | dezaket | *(refl.)* | zaitzaket | zaitzaketet | ditzaket |
+| hik | ❓ | *(refl.)* | dezakek 🔍 / dezaken 🔍 | ❓ | *(hika/zuka)* | *(hika/zuka)* | ditzakek 🔍 / ditzaken 🔍 |
+| hark | nazake | ❓ | dezake | gaitzake | zaitzake | zaitzakete | ditzake |
+| guk | *(refl.)* | ❓ | dezakegu | *(refl.)* | zaitzakegu | zaitzaketegu | ditzakegu |
+| zuk | nazakezu | *(hika/zuka)* | dezakezu | gaitzakezu | *(refl.)* | *(refl.)* | ditzakezu |
+| zuek | nazakezue | *(hika/zuka)* | dezakezue | gaitzakezue | *(refl.)* | *(refl.)* | ditzakezue |
+| haiek | nazakete | ❓ | dezakete | gaitzakete | zaitzakete | zaitzakete(te) | ditzakete |
+
+`hik`'s `hura`/`haiek` cells are 🔍 — derived by swapping `nik`'s `-t` suffix
+for `hik`'s usual `-k`(masc.)/`-n`(fem.) (the same `K`/`N` alternation used
+throughout this document), since the new source omits `hik` entirely. The
+remaining `hi`-column and `hik`-row `❓`s are the genuine gap noted above.
+`zaitzakete(te)` (`haiek`→`zuek`) is reproduced verbatim, parentheses
+included — read as the source itself flagging an optional/uncertain extra
+`-te`, the same kind of doubled `-te`/`-zte` territory §3's `zuek`-as-object
+cells already sit in.
+
+#### Ahalera, Alegiazkoa (Hypothetical) — "I would be able to…"
+
+| NORK ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
+|---|---|---|---|---|---|---|---|
+| nik | *(refl.)* | ❓ | nezake | *(refl.)* | zintzaket | zintzaketet | nitzake |
 | hik | ❓ | *(refl.)* | hezake | ❓ | *(hika/zuka)* | *(hika/zuka)* | hitzake |
-| hark | ❓ | ❓ | lezake | ❓ | ❓ | ❓ | litzake |
-| guk | ❓ | ❓ | genezake | *(refl.)* | ❓ | ❓ | genitzake |
-| zuk | ❓ | *(hika/zuka)* | zenezake | ❓ | *(refl.)* | *(refl.)* | zenitzake |
-| zuek | ❓ | *(hika/zuka)* | zenezakete | ❓ | *(refl.)* | *(refl.)* | zenitzakete |
-| haiek | ❓ | ❓ | lezakete | ❓ | ❓ | ❓ | litzakete |
+| hark | nintzake | ❓ | lezake | gintzake | zintzake | zintzakete | litzake |
+| guk | *(refl.)* | ❓ | genezake | *(refl.)* | zintzakegu | zintzaketegu | genitzake |
+| zuk | nintzakezu | *(hika/zuka)* | zenezake | gintzakezu | *(refl.)* | *(refl.)* | zenitzake |
+| zuek | nintzakezue | *(hika/zuka)* | zenezakete | gintzakezue | *(refl.)* | *(refl.)* | zenitzakete |
+| haiek | nintzakete | ❓ | lezakete | gintzakete | zintzakete | zintzakete(te) | litzakete |
 
-#### Ahalera, past — `NOR` = 1st/2nd person
+#### Ahalera, Lehenaldia (Past) — "I could have… / was able to…"
 
 | NORK ↓ ╲ NOR → | ni | hi | hura | gu | zu | zuek | haiek |
 |---|---|---|---|---|---|---|---|
-| nik | *(refl.)* | ❓ | nezakeen | ❓ | ❓ | ❓ | nitzakeen |
+| nik | *(refl.)* | ❓ | nezakeen | *(refl.)* | zintzakedan | zintzaketedan | nitzakeen |
 | hik | ❓ | *(refl.)* | hezakeen | ❓ | *(hika/zuka)* | *(hika/zuka)* | hitzakeen |
-| hark | ❓ | ❓ | zezakeen | ❓ | ❓ | ❓ | zitzakeen |
-| guk | ❓ | ❓ | genezakeen | *(refl.)* | ❓ | ❓ | genitzakeen |
-| zuk | ❓ | *(hika/zuka)* | zenezakeen | ❓ | *(refl.)* | *(refl.)* | zenitzakeen |
-| zuek | ❓ | *(hika/zuka)* | zenezaketen | ❓ | *(refl.)* | *(refl.)* | zenitzaketen |
-| haiek | ❓ | ❓ | zezaketen | ❓ | ❓ | ❓ | zitzaketen |
+| hark | nintzakeen | ❓ | zezakeen | gintzakeen | zintzakeen | zintzaketen | zitzakeen |
+| guk | *(refl.)* | ❓ | genezakeen | *(refl.)* | zintzakegun | zintzaketegun | genitzakeen |
+| zuk | nintzakezun | *(hika/zuka)* | zenezakeen | gintzakezun | *(refl.)* | *(refl.)* | zenitzakeen |
+| zuek | nintzakezuen | *(hika/zuka)* | zenezaketen | gintzakezuen | *(refl.)* | *(refl.)* | zenitzaketen |
+| haiek | nintzaketen | ❓ | zezaketen | gintzaketen | zintzaketen | zintzakete(te)n | zitzaketen |
+
+The `hark`/`haiek` columns in both grids above match this document's
+pre-existing citations exactly (`nezake`/`nitzake`, `lezake`/`litzake`,
+`zezakeen`/`zitzakeen`, …) — the new source corroborates the earlier
+derivation and the earlier derivation corroborates the new source, in the
+same pass.
 
 #### Subjuntiboa, past — `NOR` = 1st/2nd person
 
@@ -497,6 +501,11 @@ unattested."**
 | zuk | ❓ | *(hika/zuka)* | zenezan | ❓ | *(refl.)* | *(refl.)* | zenitzan |
 | zuek | ❓ | *(hika/zuka)* | zenezaten | ❓ | *(refl.)* | *(refl.)* | zenitzaten |
 | haiek | ❓ | ❓ | zezaten | ❓ | ❓ | ❓ | zitzaten |
+
+The new source above doesn't cover Subjuntiboa, so this grid's `❓` cells
+stay open — though the same same-person-category `*(refl.)*` pattern and
+`hi`-shaped gap from the Ahalera grids would plausibly extend here too, if a
+comparable table for Subjuntiboa ever turns up.
 
 The **imperative**'s `NOR-NORK` cells are, by contrast, barely populated in
 §13 at all (mostly `()` placeholders) — consistent with Basque imperatives
