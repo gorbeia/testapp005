@@ -782,7 +782,31 @@ isuna jar ziezaioketen, baina abisua soilik eman zioten` ("The police could
 have given the driver a fine, but they only gave a warning" —
 hari/haiek).
 
-`NOR`=`haiek` (via `-zki-`) and `hik` as `NORK` remain open for future passes.
+#### `NOR` = haiek (plural object)
+
+The `-zki-` infix slots in at the same point as in Orainaldia
+(`niezaiokeen` → `niezazkiokeen`, inserting `-zki-` right before the `NORI`
+suffix). So far only the `nik` column is verified:
+
+| NORI ↓ | nik (Lehenaldia) |
+|---|---|
+| niri | *(refl.)* |
+| hari | niezazkiokeen |
+| guri | niezazkigukeen |
+| zuri | niezazkizukeen |
+| haiei | niezazkiekeen |
+
+*Adibideak:* `Giltzak poltsikoan eraman izan banitu, nik giltza guztiak
+lagunari utz niezazkiokeen bera sartu ahal izateko` ("If I had carried the
+keys in my pocket, I could have left all the keys to my friend so he could
+get in" — hari/nik); `Argazkiak garaiz inprimatu izan banitu, nik irudiak
+nire gurasoei erakuts niezazkiekeen atzo arratsaldean` ("If I had printed the
+photos on time, I could have shown the images to my parents yesterday
+afternoon" — haiei/nik).
+
+The rest of the `NOR`=`haiek` grid (`hark`/`guk`/`zuk`/`zuek`/`haiek` as
+`NORK`) and `hik` as `NORK` (both `NOR` values) remain open for future
+passes.
 
 ### `NOR` = 1st/2nd person
 

@@ -4,6 +4,34 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-10 — Started §5's Ahalera Lehenaldia ditransitive `NOR`=`haiek` grid: `nik` column confirmed
+
+**Decision:** Asked Gemini to confirm whether the `-zki-` infix slots into the
+Lehenaldia ditransitive forms at the same position as in Orainaldia
+(`diezaioke` → `diezazkioke`), predicting `niezaiokeen` → `niezazkiokeen` and
+the analogous `niezazkigukeen`/`niezazkizukeen`/`niezazkiekeen` for the `nik`
+column. All 4 confirmed exactly as predicted, certified against standard
+*Euskara Batua*. Checked the transformation by hand against all four already-
+applied `NOR`=`hura` `nik`-column forms (`niezaiokeen`/`niezagukeen`/
+`niezazukeen`/`niezaiekeen`) and found the same `-zki-` insertion point in
+each case (right before the `NORI` suffix's leading vowel/consonant), so the
+rule is structurally consistent across all 4 `NORI` values, not just the one
+example Gemini wrote out (`niezazkiokeen`). Also specifically asked about
+`niezazkiekeen`, where `-zki-` and the `-ie-` (haiei) suffix sit adjacent —
+Gemini confirmed no contraction/vowel shift occurs, and both example
+sentences (`giltza guztiak ... niezazkiokeen`, `irudiak ... niezazkiekeen`)
+correctly use plural objects, matching `NOR`=`haiek`.
+
+**Why a partial table again, not a full composition:** Round 5 (`NOR`=`hura`)
+only composed the full grid once *both* a column (`nik`) *and* a row (`hari`)
+were independently confirmed, sharing one cross-anchor cell. For `NOR`=
+`haiek` we now have the `nik` column but not yet the `hari` row — composing
+`hark`/`guk`/`zuk`/`zuek`/`haiek` × `-zki-` would mean applying the infix rule
+to prefixes it's never been tested with, which is the same "one step too far"
+composition this log has avoided elsewhere. Left for a follow-up round
+mirroring Round 5's `hari`-row check, after which the rest of `NOR`=`haiek`
+can be composed the same way `NOR`=`hura` was.
+
 ## 2026-06-10 — Filled §5's Ahalera Lehenaldia ditransitive `NOR`=`hura` grid via cross-pattern composition
 
 **Decision:** Asked Gemini to confirm the predicted `hari` row (`hark`/`guk`/
