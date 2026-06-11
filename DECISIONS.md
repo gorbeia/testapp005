@@ -4,6 +4,47 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-11 — Added `LEARNING_JOURNEY.md`: a ~50-unit/17-stage curriculum sequence, ordered by usefulness rather than implementation effort
+
+**Decision:** Added `LEARNING_JOURNEY.md`, a content-design roadmap that
+sequences `VERB_COVERAGE.md`'s open items (plus the verbs/moods already
+written up in `CONJUGATIONS.md`) into a linear unit-by-unit, lesson-by-lesson
+order — no exercises or `VERBS` data yet, just the sequence and rationale.
+"Unit" = one verb (or small invariant-construction group like
+`nahi`/`behar`/`ari`/`ahal`-`ezin`) gaining one or more tenses; this maps
+directly onto the existing `LESSONS` auto-derivation (practice lesson per
+verb×tense, review once a verb has 2+ tenses, periodic mixed reviews) — no
+changes to that derivation logic are assumed.
+
+**Key ordering choices:**
+- High-value invariant constructions (`nahi`/`behar`/`ari`/`ahal`/`ezin`,
+  Stage 2) and the future tense (Geroa, Stage 5) are pulled forward because
+  they reuse `izan`/`ukan` tables the learner already has — big
+  conversational payoff for ~zero new conjugation data.
+- **Deviated from `VERB_COVERAGE.md`'s suggested `nor-nori` ordering**: that
+  doc leads with `jario` as the lower-friction *implementation*, but
+  `CONJUGATIONS.md` itself flags `jario` as "oso erabilpen mugatua" (very
+  limited use). For a *learner-usefulness* ordering, `gustatu`/`iruditu`
+  ("it pleases me" / "it seems to me" — extremely high-frequency
+  periphrastic NOR-NORI) lead Stage 9, with `jario` as a short synthetic
+  coda. Usefulness over implementation-ease is the document's stated
+  tiebreaker whenever the two disagree.
+- `zu` (Stage 11, flagged as a real gap in `VERB_COVERAGE.md` §1) is
+  deliberately placed *after* a solid core verb set (Stages 1–10) but
+  *before* the tense/mood explosion (Stages 12–15) — the cheapest point to
+  retrofit a 7th person once and have it apply to everything after, rather
+  than redoing tables repeatedly.
+- `egin` (flagged in `VERB_COVERAGE.md` but not yet in `CONJUGATIONS.md`) and
+  other not-yet-documented verbs/moods are intentionally left out of the
+  sequence — they'd need a `CONJUGATIONS.md` pass first.
+
+**Open implementation questions** (left in the doc rather than decided here):
+the `zu` retrofit likely needs a `STORAGE_KEY` version bump (progress shape
+unaffected, but `generateQuestions`'s distractor pool changes for every
+existing lesson); the imperative (Stage 14) needs a `hi`/`zu`/`zuek`-only
+exercise shape; non-finite/passive (Stage 16) may need a new question `kind`
+beyond multiple-choice conjugation.
+
 ## 2026-06-11 — Relabeled `ihardun`/`jardun`, `iraun`, `irudi` (§6/§8) as "unergative — nork-only", consistently
 
 **Decision:** a request came in to fix `ihardun`'s person-column labels —
