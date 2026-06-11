@@ -203,6 +203,64 @@ const VERBS = [
       },
     },
   },
+  // Unit 3 ("Moving Around") — `joan` present, trimmed to Phase I's
+  // `ni`/`zu`/`hura` horizon (`noa`/`zoaz`/`doa`), per
+  // `docs/CONJUGATIONS.md` §6 (already has a `zu` row). `gu`/`zuek`/`haiek`
+  // arrive in Unit 6 ("Expansion"), same as every Phase I verb.
+  {
+    id: 'joan',
+    verb: 'joan',
+    meaning: 'to go',
+    type: 'synthetic',
+    agreement: ['nor'],
+    dialect: 'batua',
+    conjugations: {
+      present: { ni: 'noa', zu: 'zoaz', hura: 'doa' },
+    },
+    sentences: {
+      present: {
+        ni: 'Ni hondartzara ___.',
+        zu: 'Zu eskolara ___.',
+        hura: 'Hura lanera ___.',
+      },
+    },
+    pronouns: { ni: 'Ni', zu: 'Zu', hura: 'Hura' },
+    pronounSentences: {
+      present: {
+        ni: '___ hondartzara noa.',
+        zu: '___ eskolara zoaz.',
+        hura: '___ lanera doa.',
+      },
+    },
+  },
+  // `etorri` present, same Unit 3 ("Moving Around") trim — `nator`/`zatoz`/
+  // `dator`, per `docs/CONJUGATIONS.md` §6.
+  {
+    id: 'etorri',
+    verb: 'etorri',
+    meaning: 'to come',
+    type: 'synthetic',
+    agreement: ['nor'],
+    dialect: 'batua',
+    conjugations: {
+      present: { ni: 'nator', zu: 'zatoz', hura: 'dator' },
+    },
+    sentences: {
+      present: {
+        ni: 'Ni etxera ___.',
+        zu: 'Zu bihar ___.',
+        hura: 'Hura orain ___.',
+      },
+    },
+    pronouns: { ni: 'Ni', zu: 'Zu', hura: 'Hura' },
+    pronounSentences: {
+      present: {
+        ni: '___ etxera nator.',
+        zu: '___ bihar zatoz.',
+        hura: '___ orain dator.',
+      },
+    },
+  },
 ]
 
 const PERSON_LABELS = {
@@ -261,6 +319,8 @@ const LESSONS = [
   { id: 'ukan-present', verbId: 'ukan', tense: 'present' },
   { id: 'nahi-present', verbId: 'nahi', tense: 'present' },
   { id: 'jakin-present', verbId: 'jakin', tense: 'present' },
+  { id: 'joan-present', verbId: 'joan', tense: 'present' },
+  { id: 'etorri-present', verbId: 'etorri', tense: 'present' },
 ]
 
 // =============================================================================
