@@ -4,6 +4,27 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-11 — Relabeled `ihardun`/`jardun`, `iraun`, `irudi` (§6/§8) as "unergative — nork-only", consistently
+
+**Decision:** a request came in to fix `ihardun`'s person-column labels —
+its table's suffixes (`-t`/`-k(/-n)`/`∅`/`-gu`/`-zu`/`-zue`/`-te`) are
+`NORK` (ergative) suffixes, but the column was headed `ni/hi/hura/…`
+(absolutive-looking) under a "(nor)" heading. Relabeled to
+`nik/hik/hark/guk/zuk/zuek/haiek` under "(unergative — nork-only)".
+
+`iraun` and `irudi` (§8) have the *exact same* suffix pattern and were
+previously headed "(nor-nork)" with the same `ni/hi/hura/…` labels —
+`ihardun` even says it "follows §8's `iraun` di-root pattern exactly". Fixing
+only `ihardun` would've made three structurally identical paradigms
+inconsistent with each other, so the same relabeling + heading was applied to
+all three.
+
+**`esan` (§8) — kept "ditransitive"**, not "transitive": a companion request
+to reword `esan`'s heading to credit the `*io` root and call its forms
+"transitive" was rejected, since the very next sentence fixes `NORI` at 3sg
+(`hari`) — a dative argument, i.e. ditransitive (NOR-NORI-NORK). Applied only
+the `*io`-root wording, keeping "ditransitive forms".
+
 ## 2026-06-11 — Confirmed: `hiri` truly doesn't exist in §5's `-ke-` conditional/potential grids — upgraded the `—` placeholders with an explanation
 
 **Decision:** the previous entry left `hiri` as an unexplained `—` in
