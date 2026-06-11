@@ -4,6 +4,30 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-11 — Filled §5's missing `zuei` rows (and marked `hiri` as an honest gap) in the remaining NOR-NORI-NORK conditional/potential grids
+
+**Decision:** the same 5-row gap (missing `hiri`/`zuei`) also affected
+Baldintza, Ondorioa present/past, and Ahalera Orainaldia/Lehenaldia/Alegiazkoa
+— 6 sections × 2 (`NOR`=hura/haiek) = 12 grids. Added `zuei` to all of them;
+left `hiri` as `—` in all of them.
+
+**`zuei`:** same `-zu-`→`-zue-` mirror as the indicative grids (e.g. Baldintza
+`banizu`→`banizue`, Ondorioa-present `nizuke`→`nizueke`, Ahalera Orainaldia
+`diezazuket`→`diezazueket`), with the `*(refl.)*`/`*(zu↔zuek)*` swap mirrored
+the same way (zuri's `zuk`=refl/`zuek`=clash → zuei's `zuek`=refl/`zuk`=clash).
+
+**`hiri` left as `—`:** unlike the indicative Present/Past, where `hiri`'s
+forms turned out to coincide with §10's documented allocutive
+`-k`/`-n`/`-a-`/`-na-` forms, these `-ke-` conditional/potential forms have no
+allocutive counterpart documented anywhere in this document. Inventing ~24
+new word forms (with masc./fem. pairs) with no attestable basis would risk
+teaching incorrect Basque, so — per this document's "honest gap over an
+unverifiable form" policy (cf. §16.1's subjunctive past) — these cells are
+left as `—`. The `*(refl.)*` (hi→hiri) and `*(hika/zuka)*` (hiri vs.
+zuk/zuek) cells are still filled in, since those reflect grammatical blocking
+rather than missing forms, and are unaffected by the question of what the
+"positive" forms look like.
+
 ## 2026-06-11 — Filled §5's missing `hiri`/`zuei` rows for the NOR-NORI-NORK Past grids (`NOR`=hura and `NOR`=haiek)
 
 **Decision:** same gap as the Present grids (see entry immediately below),
