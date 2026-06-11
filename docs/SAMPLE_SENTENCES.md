@@ -493,6 +493,19 @@ auxiliary is whichever finite form sits at the end.
 - **Guk udan Euskal Herriko kosta osoa zeharkatu nahi dugu txalupaz.**
   - *Translation:* We want to cross the entire Basque coast by boat in the
     summer.
+- **Arrantzaleek gaur gauean portura garaiz itzuli nahi dute.**
+  - *Translation:* The fishermen want to return to the port early tonight.
+- **Turistek Zumaia Flysch-eko itsaslabarrak argazkitan hartu nahi dituzte.**
+  - *Translation:* The tourists want to take photos of the Zumaia Flysch
+    cliffs.
+- **Nik baserriko sukaldean euskal pastela egiten ikasi nahi dut.**
+  - *Translation:* I want to learn how to make Basque cake in the farmhouse
+    kitchen.
+- **Zuek bertsolarien saioa plazako lehen lerrotik entzun nahi zenuten.**
+  - *Translation:* You all wanted to listen to the bertsolaris' session from
+    the front row of the square.
+- **Guk gure aplikazioan euskal aditz guztiak sartu nahi ditugu.**
+  - *Translation:* We want to include all Basque verbs in our application.
 
 ### 2. BEHAR (to need / must)
 *Takes a **NOR-NORK** auxiliary (matching the person who needs).*
@@ -509,6 +522,23 @@ auxiliary is whichever finite form sits at the end.
     stew.
 - **Nik euskarazko aditzak ondo ikasi behar nituen azterketa gainditzeko.**
   - *Translation:* I needed to learn the Basque verbs well to pass the exam.
+- **Herritarrek dantzari dantza ondo entrenatu behar dute jaietarako.**
+  - *Translation:* The townspeople need to practice the traditional dantzari
+    dance well for the festivals.
+- **Okinak irina eta ur epela nahasi behar ditu ogia labean sartzeko.**
+  - *Translation:* The baker needs to mix flour and warm water to put the
+    bread in the oven.
+- **Nik bihar goizean txakolin botilak sotorik hotzenean gorde behar
+  ditut.**
+  - *Translation:* Tomorrow morning, I need to store the Txakoli bottles in
+    the coldest cellar.
+- **Zuk Bilboko Guggenheim museorako sarrerak Internetez erosi behar
+  zenituen.**
+  - *Translation:* You needed to buy the tickets for the Bilbao Guggenheim
+    Museum online.
+- **Guk euskal mitologiaren istorioak gazteei kontatu behar dizkiegu.**
+  - *Translation:* We must tell the stories of Basque mythology to the
+    youth.
 
 ### 3. AHAL (to be able to)
 *Can take a **NOR** or **NOR-NORK** auxiliary, depending on whether the main
@@ -526,6 +556,20 @@ action itself is transitive or intransitive.*
 - **Zuk nire aitona baserritarraren istorioak ulertu ahal dituzu.**
   - *Translation:* You can understand my grandfather the farmer's stories.
     *(Transitive with plural object → uses **dituzu**)*
+- **Surflariek Mundakako ezker olatua erraz hartu ahal dute gaur.**
+  - *Translation:* The surfers can easily catch Mundaka's left wave today.
+- **Gazteak Baionako jaietan goizera arte dantzatu ahal izango dira.**
+  - *Translation:* The youths will be able to dance until morning at the
+    Bayonne festivals.
+- **Umeak baso ilunean bakarrik ibili ahal ziren Basajaun agertu baino
+  lehen.**
+  - *Translation:* The children were able to walk alone in the dark forest
+    before Basajaun appeared.
+- **Nik Tolosako babarrun gorriak nire kabuz prestatu ahal izan ditut.**
+  - *Translation:* I have been able to prepare Tolosa's red beans on my own.
+- **Zuek pilotari txapeldunari eskua eman ahal zenioten pilotalekuan.**
+  - *Translation:* You all were able to shake the champion pelota player's
+    hand in the fronton court.
 
 ---
 
