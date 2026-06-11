@@ -17,10 +17,14 @@
 // a number, so both forms are identical there).
 // =============================================================================
 
+// Euskara listed first — most Aditzak users already have some grounding in
+// Basque (that's why they're practicing conjugation specifically), so it's
+// the most likely "language I already know" pick, both here and in the
+// onboarding language selector.
 export const LANGUAGES = [
-  { code: 'en', name: 'English' },
-  { code: 'es', name: 'Español' },
   { code: 'eu', name: 'Euskara' },
+  { code: 'es', name: 'Español' },
+  { code: 'en', name: 'English' },
 ]
 
 export const DEFAULT_LANGUAGE = 'en'
@@ -43,7 +47,11 @@ export const TRANSLATIONS = {
     profileAchievements: 'Achievements and streaks are coming soon.',
     profileResetProgress: 'Reset progress',
     profileResetConfirm: 'Reset all lesson progress? This cannot be undone.',
-    profileLanguage: 'Interface language',
+    profileLanguage: 'Source language',
+    profileLanguageHint: 'The language you already know — used for instructions, hints, and translations.',
+    onboardingTitle: 'Welcome to Aditzak!',
+    onboardingSubtitle: 'Choose the language you already know — we’ll use it for instructions, hints, and translations.',
+    onboardingRecommended: 'Recommended',
     exitLessonLabel: 'Exit lesson',
     previewTitle: 'Take a look before you start',
     previewSubtitle: "Here's every form you'll be asked about in this lesson.",
@@ -106,7 +114,11 @@ export const TRANSLATIONS = {
     profileAchievements: 'Los logros y las rachas estarán disponibles próximamente.',
     profileResetProgress: 'Reiniciar progreso',
     profileResetConfirm: '¿Reiniciar el progreso de todas las lecciones? Esta acción no se puede deshacer.',
-    profileLanguage: 'Idioma de la interfaz',
+    profileLanguage: 'Idioma de origen',
+    profileLanguageHint: 'El idioma que ya conoces — se usa para las instrucciones, pistas y traducciones.',
+    onboardingTitle: '¡Bienvenido/a a Aditzak!',
+    onboardingSubtitle: 'Elige el idioma que ya conoces — lo usaremos para las instrucciones, pistas y traducciones.',
+    onboardingRecommended: 'Recomendado',
     exitLessonLabel: 'Salir de la lección',
     previewTitle: 'Échale un vistazo antes de empezar',
     previewSubtitle: 'Aquí tienes todas las formas que se te preguntarán en esta lección.',
@@ -169,7 +181,11 @@ export const TRANSLATIONS = {
     profileAchievements: 'Lorpenak eta jarraipenak laster egongo dira eskuragarri.',
     profileResetProgress: 'Aurrerapena berrezarri',
     profileResetConfirm: 'Ikasgai guztien aurrerapena berrezarri nahi duzu? Ekintza hau ezin da desegin.',
-    profileLanguage: 'Interfazearen hizkuntza',
+    profileLanguage: 'Jatorrizko hizkuntza',
+    profileLanguageHint: 'Jada dakizun hizkuntza — argibideetarako, laguntzetarako eta itzulpenetarako erabiliko da.',
+    onboardingTitle: 'Ongi etorri Aditzak-era!',
+    onboardingSubtitle: 'Aukeratu jada dakizun hizkuntza — argibideetarako, laguntzetarako eta itzulpenetarako erabiliko dugu.',
+    onboardingRecommended: 'Gomendatua',
     exitLessonLabel: 'Irten ikasgaitik',
     previewTitle: 'Begiratu hasi aurretik',
     previewSubtitle: 'Hona hemen ikasgai honetan galdetuko zaizkizun forma guztiak.',
