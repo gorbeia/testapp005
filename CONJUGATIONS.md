@@ -1339,11 +1339,11 @@ its own (rough working glosses):
 - *Adurra dariola dago* — "He/she is drooling"
 - *Iturriari ura dario* — "Water flows from the fountain"
 
-### `esan` — "to say" (ditransitive forms, utilizing the synthetic paradigm of the root verb `*io`)
+### `esan` — "to say" (ditransitive forms — same shape as §5's `NOR`=hura/`NORI`=hari grid)
 
 `NOR` fixed at 3sg (`hura`/"it"), `NORI` fixed at 3sg (`hari`/"to him-her"),
-`NORK` varying — the same "citation paradigm" shape `VERBS` already uses for
-`ukan` itself (§3):
+`NORK` varying. These forms are identical to the `hari` row of §5's `NOR` =
+hura grids — `di-` + `-o-` (the `NORI`=hari suffix) + `NORK`-suffix:
 
 | Person (nork) | Present | Past |
 |---|---|---|

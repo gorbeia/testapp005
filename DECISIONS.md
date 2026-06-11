@@ -19,11 +19,24 @@ only `ihardun` would've made three structurally identical paradigms
 inconsistent with each other, so the same relabeling + heading was applied to
 all three.
 
-**`esan` (§8) — kept "ditransitive"**, not "transitive": a companion request
-to reword `esan`'s heading to credit the `*io` root and call its forms
-"transitive" was rejected, since the very next sentence fixes `NORI` at 3sg
-(`hari`) — a dative argument, i.e. ditransitive (NOR-NORI-NORK). Applied only
-the `*io`-root wording, keeping "ditransitive forms".
+**`esan` (§8) — kept "ditransitive", dropped the root-etymology framing
+entirely.** A companion request to reword `esan`'s heading to credit a `*io`
+root and call its forms "transitive" was rejected — the next sentence fixes
+`NORI` at 3sg (`hari`), a dative argument, i.e. ditransitive (NOR-NORI-NORK).
+A counter-argument (sourced from Gemini) claimed `diot`/`dio`/etc. can't be
+ditransitive because true NOR-NORI-NORK present forms would be `diezaio-`
+based — but `diezaio-` is the *Ahalera* (potential) ditransitive (§5's
+"Ahalera, Orainaldia, ditransitive" grid), a different mood from the plain
+indicative `diot`/`dio`/`diogu`/... Those plain forms are *identical* to the
+`hari` row of §5's `NOR`=hura indicative grid, which §5 itself analyzes as
+`di-` + `-o-` (`NORI`=hari suffix) + `NORK`-suffix — i.e. they do carry a
+`NORI` morpheme.
+
+Rather than adjudicate the disputed `*-io-`/`*io`/"ukan borrows" etymology
+(neither framing could be verified), dropped it entirely and replaced the
+heading/intro with a cross-reference to §5's identical, already-documented
+grid — verifiable from the document's own data rather than resting on
+external historical-linguistics claims.
 
 ## 2026-06-11 — Confirmed: `hiri` truly doesn't exist in §5's `-ke-` conditional/potential grids — upgraded the `—` placeholders with an explanation
 
