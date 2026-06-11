@@ -4,6 +4,60 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-11 — Added interface-language i18n (English/Spanish/Basque), keeping the Basque content being taught untranslated
+
+**Decision:** Added `src/i18n/` with `translations.js` (a flat per-language
+key→string dictionary for `en`/`es`/`eu`, with `{placeholder}`-style
+interpolation and `_one`/`_other` pluralization via `tCount`) and
+`LanguageContext.jsx` (`LanguageProvider` + `useLanguage()`, exposing
+`{ language, setLanguage, languages, t, tCount }`). `App`'s default export now
+just wraps the renamed `AppShell` in `LanguageProvider`, so `App.test.jsx`'s
+`render(<App />)` needs no changes. The active language is persisted under its
+own `aditzak:lang:v1` localStorage key — separate from `aditzak:progress:v1`
+so "Reset progress" doesn't also reset the user's language — and falls back to
+browser-language detection (`navigator.language`), then `DEFAULT_LANGUAGE =
+'en'`.
+
+**What stays untranslated regardless of interface language:** the Basque verb
+forms/conjugations/example sentences (the actual content being taught), plus
+the "app voice" flavor text — `getEncouragement`'s/`STREAK_MILESTONES`'
+Basque `headline`s ("Bikain!", "Zoragarria!", etc.) and Basque grammar
+terminology (`NOR`/`NORI`/`NORK` labels, `TENSE_META`/`TYPE_META`'s
+`basque`/`basqueLabel`, `DIALECT_LABELS`). Everything else — nav/buttons,
+instructions, feedback copy, person/tense/type labels, and verb glosses (now
+`meaning: { en, es, eu }` per `VERBS` entry instead of a plain string,
+via the new `verbMeaning(verb, language)` helper) — is translated.
+
+**`journey.js` curriculum text** (phase/stage/unit `title`/`subtitle`/`focus`/
+`payload`) is translated via a parallel lookup table,
+`src/i18n/journeyTranslations.js` (`JOURNEY_TRANSLATIONS.{phases,stages,units}`,
+keyed by phase id / stage id / unit number), looked up through `journeyText()`
+with a fallback to `journey.js`'s English original — rather than restructuring
+`journey.js` itself to carry per-language fields inline. This keeps
+`journey.js` as the single structural source of truth (order, `status`,
+`lessonIds`, `gate`) while translations live alongside it; a missing
+translation entry (or `es`/`eu` key) silently falls back to English instead of
+crashing.
+
+**Why a lookup table instead of inline `{ en, es, eu }` fields throughout
+`journey.js`:** `journey.js` is large (22 units across 5 phases) and read/edited
+frequently when units move from `pending` to `available` — keeping its
+English text as plain strings (the existing, reviewed copy) and layering
+translations on top as an optional, independently-fillable table means a
+missing `es`/`eu` entry degrades gracefully (English shows) rather than
+breaking the build, and adding/editing units doesn't require touching three
+languages' worth of strings inline.
+
+**Existing lookup-table patterns extended, not replaced:** `TENSE_META`/
+`TYPE_META` gained `labelKey` (looked up via `t()`), `AGREEMENT_META`/
+`PERSON_LABELS`→`PERSON_LABEL_KEYS` similarly map to translation keys;
+`DIALECT_LABELS`/`AGREEMENT_META`'s `label`s (Basque grammar terms) are
+unchanged. `getEncouragement`/`STREAK_MILESTONES` (`lessonLogic.js`) now return
+`messageKey` instead of a hardcoded `message` string, translated by the caller.
+
+**No `STORAGE_KEY` bump:** `aditzak:progress:v1`'s shape is unchanged; the new
+`aditzak:lang:v1` key is independent and additive.
+
 ## 2026-06-11 — Implemented Unit 3 ("Moving Around"): new `joan`/`etorri` present-tense verbs
 
 **Decision:** Added two new playable lessons — `joan-present` and

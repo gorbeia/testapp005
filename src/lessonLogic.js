@@ -13,45 +13,34 @@ export function computeStars(score, total) {
 
 // Encouraging copy for the end-of-lesson screen, picked from the same
 // score-ratio bands as `computeStars` so the message always matches the stars
-// shown alongside it.
+// shown alongside it. `headline` is a Basque exclamation — kept as-is
+// regardless of the interface language, as part of the app's voice.
+// `messageKey` is looked up in the active interface language by the caller
+// (via `useLanguage`'s `t`), since this module has no UI-language context of
+// its own.
 export function getEncouragement(correctCount, total) {
   const stars = computeStars(correctCount, total)
   switch (stars) {
     case 3:
-      return {
-        icon: '🎉',
-        headline: 'Bikain!',
-        message: 'Perfect score — every answer right. You really know this one!',
-      }
+      return { icon: '🎉', headline: 'Bikain!', messageKey: 'encouragementPerfect' }
     case 2:
-      return {
-        icon: '👏',
-        headline: 'Oso ondo!',
-        message: 'Great job — only a couple slipped by. One more round and you’ll have it nailed.',
-      }
+      return { icon: '👏', headline: 'Oso ondo!', messageKey: 'encouragementGreat' }
     case 1:
-      return {
-        icon: '💪',
-        headline: 'Ondo!',
-        message: 'Solid progress. Keep practicing this lesson and the forms will start to click.',
-      }
+      return { icon: '💪', headline: 'Ondo!', messageKey: 'encouragementGood' }
     default:
-      return {
-        icon: '🌱',
-        headline: 'Ez etsi!',
-        message: 'Don’t give up — conjugation sinks in with repetition. Try this lesson again, you’ve got this.',
-      }
+      return { icon: '🌱', headline: 'Ez etsi!', messageKey: 'encouragementKeepGoing' }
   }
 }
 
 // Mid-lesson momentum nudges: shown in the feedback bar exactly when a streak
 // of consecutive correct answers *lands* on one of these milestones — not on
 // every answer past it — so the message appears once per streak rather than
-// repeating itself each turn.
+// repeating itself each turn. Same `headline`-stays-Basque /
+// `messageKey`-is-translated split as `getEncouragement`.
 const STREAK_MILESTONES = [
-  { streak: 5, icon: '🔥', headline: 'Zoragarria!', message: 'Five in a row — you’re finding your rhythm.' },
-  { streak: 10, icon: '⚡', headline: 'Itzela!', message: 'Ten in a row — you’re really on fire.' },
-  { streak: 20, icon: '🚀', headline: 'Ikaragarria!', message: 'Twenty in a row — pure mastery.' },
+  { streak: 5, icon: '🔥', headline: 'Zoragarria!', messageKey: 'streak5' },
+  { streak: 10, icon: '⚡', headline: 'Itzela!', messageKey: 'streak10' },
+  { streak: 20, icon: '🚀', headline: 'Ikaragarria!', messageKey: 'streak20' },
 ]
 
 export function getStreakEncouragement(streak) {

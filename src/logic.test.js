@@ -41,16 +41,16 @@ describe('getEncouragement', () => {
     expect(getEncouragement(2, 6).headline).toBe('Ez etsi!')
   })
 
-  it('always returns a non-empty icon, headline and message', () => {
+  it('always returns a non-empty icon, headline and messageKey', () => {
     ;[
       [0, 0],
       [0, 5],
       [5, 5],
     ].forEach(([correctCount, total]) => {
-      const { icon, headline, message } = getEncouragement(correctCount, total)
+      const { icon, headline, messageKey } = getEncouragement(correctCount, total)
       expect(icon).toBeTruthy()
       expect(headline).toBeTruthy()
-      expect(message).toBeTruthy()
+      expect(messageKey).toBeTruthy()
     })
   })
 })
@@ -62,12 +62,12 @@ describe('getStreakEncouragement', () => {
     })
   })
 
-  it('returns a non-empty icon, headline and message exactly on milestone streaks', () => {
+  it('returns a non-empty icon, headline and messageKey exactly on milestone streaks', () => {
     ;[5, 10, 20].forEach((streak) => {
-      const { icon, headline, message } = getStreakEncouragement(streak)
+      const { icon, headline, messageKey } = getStreakEncouragement(streak)
       expect(icon).toBeTruthy()
       expect(headline).toBeTruthy()
-      expect(message).toBeTruthy()
+      expect(messageKey).toBeTruthy()
     })
   })
 })
