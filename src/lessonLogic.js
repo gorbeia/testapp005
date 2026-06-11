@@ -62,6 +62,49 @@ export function recordResult(progress, lessonId, result) {
   }
 }
 
+// Returns today's date as a 'YYYY-MM-DD' string in the learner's local
+// timezone (as opposed to `toISOString`, which is UTC and could roll over to
+// the next/previous day depending on the learner's offset). Streak logic
+// always compares dates in this form.
+export function getLocalDateString(date = new Date()) {
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  const day = String(date.getDate()).padStart(2, '0')
+  return `${year}-${month}-${day}`
+}
+
+const ONE_DAY_MS = 24 * 60 * 60 * 1000
+
+// Updates the daily streak after a lesson is completed. `today` is a
+// 'YYYY-MM-DD' string (see `getLocalDateString`), passed in rather than
+// computed here so this stays a pure, easily-testable function. Completing a
+// lesson again on the same day is a no-op; completing one the day after
+// `lastActiveDate` extends the streak; any bigger gap restarts it at 1.
+export function recordDailyStreak(streak, today) {
+  const { currentStreak = 0, longestStreak = 0, lastActiveDate = null } = streak ?? {}
+  if (lastActiveDate === today) {
+    return { currentStreak, longestStreak, lastActiveDate }
+  }
+  const isConsecutiveDay = lastActiveDate && Date.parse(today) - Date.parse(lastActiveDate) === ONE_DAY_MS
+  const nextStreak = isConsecutiveDay ? currentStreak + 1 : 1
+  return {
+    currentStreak: nextStreak,
+    longestStreak: Math.max(nextStreak, longestStreak),
+    lastActiveDate: today,
+  }
+}
+
+// The streak as it should be *displayed*: still alive (today's or
+// yesterday's `lastActiveDate`, so there's still time to extend it today) or
+// broken (anything older), in which case it reads as 0 even though
+// `currentStreak` itself isn't reset to 0 until the next completed lesson.
+export function getActiveStreak(streak, today) {
+  const { currentStreak = 0, lastActiveDate = null } = streak ?? {}
+  if (!lastActiveDate) return 0
+  const gap = Date.parse(today) - Date.parse(lastActiveDate)
+  return gap > ONE_DAY_MS ? 0 : currentStreak
+}
+
 // A lesson unlocks once the lesson before it has been attempted at least once.
 export function getUnlockedLessonIds(lessons, progress) {
   const unlocked = new Set()

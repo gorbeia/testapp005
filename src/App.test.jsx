@@ -27,6 +27,10 @@ describe('App', () => {
   })
 
   it('shows a conjugation preview before a lesson’s first attempt, then starts the exercise on "Start"', async () => {
+    // A roll just under 1 keeps `rollQuestionKind` on the 'form' framing
+    // (roll >= SPECIAL_QUESTION_CHANCE) without disturbing `shuffle`'s
+    // Fisher-Yates swaps (Math.floor(0.99 * (i + 1)) === i for every i).
+    vi.spyOn(Math, 'random').mockReturnValue(0.99)
     const user = userEvent.setup()
     render(<App />)
 
