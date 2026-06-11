@@ -573,6 +573,81 @@ action itself is transitive or intransitive.*
 
 ---
 
+## Cultural sentence bank — causative (-arazi/-erazi) (Phase VI, Units 23-25)
+
+The **causative suffix `-arazi`** (sometimes `-erazi`) attaches to a verb's
+radical and changes the meaning from *doing* an action to *making, causing,
+or forcing someone else* to do it — see `docs/VERB_COVERAGE.md` §6 for the
+grammar (the `nor`→`nor-nork` and `nor-nork`→`nor-nori-nork` argument shifts)
+and `docs/LEARNING_JOURNEY.md`'s Phase VI (Units 23-25) for where these land
+in the curriculum. Same "full sentence, adapt later" status as the banks
+above — the drilled form is the auxiliary at the end, exactly like any other
+periphrastic verb.
+
+### 1. Transforming intransitive verbs (`nor` → `nor-nork`)
+*A basic intransitive verb like "to go" or "to laugh" becomes "to make go" or
+"to make laugh."*
+
+- **Bertsolariaren txantxek barre arazi digute plazan.**
+  - *Translation:* The bertsolari's jokes made us laugh in the square.
+  - *Base verb:* *Barre egin* (to laugh) → *Barre arazi* (to make laugh).
+- **Mendiko ekaitz gogorrak kirolariak baserrira itzularazi zituen.**
+  - *Translation:* The harsh mountain storm made the athletes return to the
+    farmhouse.
+  - *Base verb:* *Itzuli* (to return) → *Itzularazi* (to force/make return).
+- **Donostiako Danborradako doinuek haurrak pozez dantzariarazi dituzte.**
+  - *Translation:* The melodies of San Sebastian's Drum Festival made the
+    children dance with joy.
+  - *Base verb:* *Dantzatu* (to dance) → *Dantzariarazi* (to make dance).
+- **Zuzendariak langileak Bilboko museora joanarazi zituen goizean.**
+  - *Translation:* The director made the workers go to the Bilbao museum in
+    the morning.
+  - *Base verb:* *Joan* (to go) → *Joanarazi* (to make go).
+
+### 2. Transforming transitive verbs (`nor-nork` → `nor-nori-nork`)
+*When the original verb already has a direct object (like "to eat meat" or
+"to drink wine"), adding `-arazi` requires a three-argument structure: someone
+(`nork`) makes someone else (`nori`) do something (`nor`).*
+
+- **Amonak bilobei Tolosako babarrun gorriak jandakarazi dizkie.**
+  - *Translation:* Grandmother made her grandchildren eat Tolosa's red beans.
+  - *Base verb:* *Jan* (to eat) → *Janarazi / Jandakarazi* (to feed / force to
+    eat).
+- **Etxekoak bisitariei Getariako txakolin hotza edanarazi die afarian.**
+  - *Translation:* The host made the visitors drink cold Txakoli from Getaria
+    during dinner.
+  - *Base verb:* *Edan* (to drink) → *Edanarazi* (to make drink).
+- **Irakasleak ikasleei euskal mitologiaren istorioak idatzarazi dizkie.**
+  - *Translation:* The teacher made the students write stories of Basque
+    mythology.
+  - *Base verb:* *Idatzi* (to write) → *Idatzarazi* (to make write).
+
+### 3. Advanced tenses & moods with `-arazi`
+*Pairs with Refresh Gate D (Unit 25)'s recombination of `-arazi` with future,
+conditional, and imperative.*
+
+#### Future Tense (Geroaldia)
+- **Entrenatzaileak pilotariei partida hobea jokaraziko die datorren
+  igandean.**
+  - *Translation:* The coach will make the pelota players play a better
+    match next Sunday.
+  - *Base verb:* *Jokatu* (to play) → *Jokarazi* (to make play).
+
+#### Conditional Mood (Baldintza)
+- **Gurasoek umeei gelako argia itzalariaraziko baliete, haurrak berehala
+  lokartuko lirateke.**
+  - *Translation:* If the parents made the children turn off the bedroom
+    light, the kids would fall asleep immediately.
+  - *Base verb:* *Itzali* (to turn off) → *Itzalarazi* (to make turn off).
+
+#### Imperative Mood (Agintera)
+- **Gernikako okinari euskal pastel gozoa guri dastarazi diezaiola esan!**
+  - *Translation:* Tell the baker from Gernika to let us taste the delicious
+    Basque cake!
+  - *Base verb:* *Dastatu* (to taste) → *Dastarazi* (to let/make taste).
+
+---
+
 ## Next steps (not yet done)
 
 1. Review/edit these for naturalness and any missing vocabulary gaps.
@@ -594,3 +669,7 @@ action itself is transitive or intransitive.*
 6. The modal-verb bank pairs with Unit 2 (`nahi` per `journey.js`'s "Having
    and Wanting") and Units 9–10's `behar`/Geroa work — `ahal`'s sentences also
    double as early `potential`-tense examples once that tense exists.
+7. The causative bank pairs with the new Phase VI (Units 23-25,
+   `LEARNING_JOURNEY.md`) — `docs/VERB_COVERAGE.md` §6 still needs the
+   `-arazi`/`-erazi` conditioning rule sourced before any of these become
+   `VERBS` entries.
