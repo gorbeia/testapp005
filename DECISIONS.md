@@ -4,6 +4,31 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-11 — Filled §5's missing `hiri`/`zuei` rows for the NOR-NORI-NORK Present grids (`NOR`=hura and `NOR`=haiek)
+
+**Decision:** §5's `NOR`=hura and `NOR`=haiek Present grids tabulated only
+`niri`/`hari`/`guri`/`zuri`/`haiei` — five of the seven `NORI` categories,
+silently skipping `hiri` and `zuei`. Added both as new rows to each grid.
+
+**`zuei`:** straightforward — mirrors `zuri` with `-zu-` → `-zue-`
+(`dizut`/`dizu`/`dizugu`/`dizute` → `dizuet`/`dizue`/`dizuegu`/`dizuete`),
+the same pluralisation §16.1's `zuei` row already uses. Gap cells follow the
+same swapped `*(refl.)*`/`*(zu↔zuek)*` mirroring as §16.1's `zuei` row
+(`zuek`=refl, `zuk`=`*(zu↔zuek)*`), plus `hik`=`*(hika/zuka)*` like `zuri`.
+
+**`hiri`:** doesn't fit the `di-` + vowel-`NORI`-suffix + `NORK`-suffix
+template the other rows follow. Instead its forms are §10's allocutive
+`-k`/`-n` (tokano/nokano) forms — `diat`/`dinat` (nik→hiri), `dik`/`din`
+(hark→hiri), `diagu`/`dinagu` (guk→hiri), `ditek`/`diten` (haiek→hiri) —
+the same syncretism §10 already documents from the other direction (a
+3rd-person sentence "for `hi`'s benefit" and one where `hi` genuinely *is*
+the dative produce identical surface forms). `hik`=`*(refl.)*` (hi→hiri,
+same person) and `zuk`/`zuek`=`*(hika/zuka)*` (mirroring `zuri`/`zuei`'s
+`hik`=`*(hika/zuka)*` clash, in the other direction).
+
+The `NOR`=haiek grid's new rows are the same forms with the `-zki-` infix
+(`diat`→`dizkiat`, `dizuet`→`dizkizuet`, …), per §5's existing infix rule.
+
 ## 2026-06-10 — Filled §16.1's missing `niri`/`guri`/`zuri`/`zuei` rows for the NOR-NORI-NORK Subjunctive Present
 
 **Decision:** §16.1's `NOR-NORI-NORK` Subjunctive Present previously tabulated

@@ -633,25 +633,43 @@ table.
 | NORI ↓ ╲ NORK → | nik | hik | hark | guk | zuk | zuek | haiek |
 |---|---|---|---|---|---|---|---|
 | niri | *(refl.)* | didak / didan | dit | didagu | didazu | didazue | didate |
+| hiri | diat / dinat | *(refl.)* | dik / din | diagu / dinagu | *(hika/zuka)* | *(hika/zuka)* | ditek / diten |
 | hari | diot | diok / dion | dio | diogu | diozu | diozue | diote |
 | guri | *(refl.)* | diguk / digun | zigun | *(refl.)* | diguzu | diguzue | ziguten |
 | zuri | dizut | *(hika/zuka)* | dizu | dizugu | *(refl.)* | *(zu↔zuek)* | dizute |
+| zuei | dizuet | *(hika/zuka)* | dizue | dizuegu | *(zu↔zuek)* | *(refl.)* | dizuete |
 | haiei | diet | diek / dien | die | diegu | diezu | diezue | diete |
 
 Each form follows **`di-` + `NORI`-suffix + `NORK`-suffix**: `NORI`-suffixes
-`-da-`/`-o-`/`-gu-`/`-zu-`/`-e-` for `niri`/`hari`/`guri`/`zuri`/`haiei`;
-`NORK`-suffixes `-t`/`-k(/-n)`/`∅`/`-gu`/`-zu`/`-zue`/`-te` for
+`-da-`/`-o-`/`-gu-`/`-zu-`/`-zue-`/`-e-` for
+`niri`/`hari`/`guri`/`zuri`/`zuei`/`haiei`; `NORK`-suffixes
+`-t`/`-k(/-n)`/`∅`/`-gu`/`-zu`/`-zue`/`-te` for
 `nik`/`hik`/`hark`/`guk`/`zuk`/`zuek`/`haiek` — `hik`'s suffix gender-splits
 like §3's `-k`/`-n` (`diok`/`dion`, `didak`/`didan`, …). `zuri`/`zuei` with
 `NORK`=`hik` are `*(hika/zuka)*`, same register clash as `NORK`=`zuk`/`zuek`
-with `NOR`=`hi` in §3.
+with `NOR`=`hi` in §3. `zuei` mirrors `zuri` with `-zu-` → `-zue-` (`dizut` →
+`dizuet`, `dizu` → `dizue`, …), the same pluralisation §16.1 uses for its own
+`zuei` row.
 
-`niri`/`nik`, `guri`/`nik`, `guri`/`guk`, and `zuri`/`zuk` are all
-`*(refl.)*` under §3's same-person-category extension (1st person category =
-`ni`/`gu`, 2nd = `zu`/`zuek`): in each of these cells `NORI` and `NORK`
-belong to the same person category, so "I give it to myself/us" or "we/you
-give it to yourself/ourselves" can't be expressed with a distinct ditransitive
-form. In practice these meanings are expressed periphrastically with `buru`
+`hiri` doesn't fit the `-VOWEL-`-suffix template the other rows follow —
+instead its forms *are* §10's allocutive `-k`/`-n` (tokano/nokano) forms,
+gender-split for `hi` the same way `hik`-as-`NORK` cells are:
+`diat`/`dinat` (nik→hiri, mirroring `dut`→`diat`/`dinat`), `dik`/`din`
+(hark→hiri, mirroring `du`→`dik`/`din`), `diagu`/`dinagu` (guk→hiri, by the
+same `-a-`/`-na-`-before-the-NORK-suffix pattern as `dut`→`diat`), and
+`ditek`/`diten` (haiek→hiri, mirroring `dute`→`ditek`/`diten`). This is the
+same syncretism §10 describes from the other direction: a 3rd-person sentence
+"for `hi`'s benefit" and a sentence where `hi` genuinely *is* the dative
+produce identical surface forms.
+
+`niri`/`nik`, `hiri`/`hik`, `guri`/`nik`, `guri`/`guk`, `zuri`/`zuk`, and
+`zuei`/`zuek` are all `*(refl.)*` under §3's same-person-category extension
+(1st person category = `ni`/`gu`, 2nd = `zu`/`zuek`, and `hi`/`hiri` forms
+their own one-member category): in each of these cells `NORI` and `NORK`
+belong to the same person (category), so "I give it to myself/us",
+"you(-familiar) give it to yourself", or "we/you give it to
+yourself/ourselves" can't be expressed with a distinct ditransitive form. In
+practice these meanings are expressed periphrastically with `buru`
 ("head/self"), e.g. *nire buruari eman diot* ("I gave it to my own self").
 
 ### `NOR` = hura — Past
@@ -682,9 +700,11 @@ to him").
 | NORI ↓ ╲ NORK → | nik | hik | hark | guk | zuk | zuek | haiek |
 |---|---|---|---|---|---|---|---|
 | niri | *(refl.)* | dizkidak / dizkidan | dizkida | dizkidagu | dizkidazu | dizkidazue | dizkidate |
+| hiri | dizkiat / dizkinat | *(refl.)* | dizkik / dizkin | dizkiagu / dizkinagu | *(hika/zuka)* | *(hika/zuka)* | dizkitek / dizkiten |
 | hari | dizkiot | dizkiok / dizkion | dizkio | dizkiogu | dizkiozu | dizkiozue | dizkiote |
 | guri | *(refl.)* | dizkiguk / dizkigun | dizkigu | *(refl.)* | dizkiguzu | dizkiguzue | dizkigute |
 | zuri | dizkizut | *(hika/zuka)* | dizkizu | dizkizugu | *(refl.)* | *(zu↔zuek)* | dizkizute |
+| zuei | dizkizuet | *(hika/zuka)* | dizkizue | dizkizuegu | *(zu↔zuek)* | *(refl.)* | dizkizuete |
 | haiei | dizkiet | dizkiek / dizkien | dizkie | dizkiegu | dizkiezu | dizkiezue | dizkiete |
 
 ### `NOR` = haiek — Past
