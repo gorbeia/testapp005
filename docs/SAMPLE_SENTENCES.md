@@ -748,6 +748,90 @@ conditional, and imperative.*
 
 ---
 
+## Cultural sentence bank — continuous aspect (`ari izan`) (future units)
+
+A handful of earlier sentences (in the "Present Continuous" subsections
+above) already used **ari**, but it deserves its own treatment: `ari izan`
+is how Basque forms continuous/progressive tenses (English "-ing"). The main
+verb takes the verbal-noun suffix (`-tzen`/`-ten`), followed by `ari`, then
+an auxiliary.
+
+**Crucial for tagging by `agreement`:** `ari` *always* takes a **NOR**
+auxiliary (`izan`), even when the embedded verb is transitive — e.g. "we are
+developing an app" uses `gara`, not `dugu`. So a future `ari`-periphrastic
+`VERBS` entry would carry `agreement: ['nor']` regardless of the main verb's
+own valency; the object/subject of the embedded verb stays baked into the
+sentence text rather than the auxiliary.
+
+### 1. Present Continuous (Oraina + Ari)
+*Structure: [Verb]-tzen/-ten + ari + Present NOR Auxiliary (naiz, zara, da,
+gara, zarete, dira)*
+
+- **Une honetan, sukaldariak marmitako gozoa prestatzen ari dira
+  sukaldean.**
+  - *Translation:* At this moment, the chefs are preparing delicious tuna
+    stew in the kitchen.
+- **Arrantzaleak Getariako portuan sareak konpontzen ari dira.**
+  - *Translation:* The fishermen are repairing the nets in the port of
+    Getaria.
+- **Gu aplikazio eder bat garatzen ari gara euskal aditzak irakasteko.**
+  - *Translation:* We are developing a beautiful application to teach Basque
+    verbs.
+- **Zu Idiazabal gazta eta txakolina dasten ari zara plazako azokan.**
+  - *Translation:* You are tasting Idiazabal cheese and txakoli wine at the
+    square's market.
+- **Dantzariak plazako lurra zapaltzen ari dira fandangoa dantzatzeko.**
+  - *Translation:* The dancers are stepping on the square's ground to dance
+    the fandango.
+- **Gu Zumaia Flysch-eko itsaslabarren artean oinez ibiltzen ari gara.**
+  - *Translation:* We are walking among the cliffs of the Zumaia Flysch.
+
+### 2. Past Continuous (Lehena + Ari)
+*Structure: [Verb]-tzen/-ten + ari + Past NOR Auxiliary (nintzen, zinen, zen,
+ginen, zineten, ziren)*
+
+- **Atzo arratsaldean, dantzariak Donostiako kaleetan dantzatzen ari
+  ziren.**
+  - *Translation:* Yesterday afternoon, the dancers were dancing in the
+    streets of San Sebastian.
+- **Mendizaleak Gorbeiako gurutzeraino igotzen ari ziren ekaitza hasi
+  denean.**
+  - *Translation:* The mountaineers were climbing up to the Gorbeia cross
+    when the storm started.
+- **Ni bertsolarien saioa irratiz entzuten ari nintzen afaltzen nuen
+  bitartean.**
+  - *Translation:* I was listening to the bertsolaris' session on the radio
+    while I was having dinner.
+- **Zuek pilotarien partida zirraragarria ikusten ari zineten
+  pilotalekuan.**
+  - *Translation:* You all were watching the exciting pelota match in the
+    fronton court.
+- **Artzaia ardi latzak mendian biltzen ari zen ekaitza hasi aurretik.**
+  - *Translation:* The shepherd was gathering the Latxa sheep on the mountain
+    before the storm started.
+- **Aste Nagusian su artifizialak zeruan lehertzen ari ziren herritarrek
+  begiratzen zieten bitartean.**
+  - *Translation:* During the Aste Nagusia, fireworks were exploding in the
+    sky while the citizens watched them.
+
+### 3. Future Continuous (Geroa + Ari)
+*Structure: [Verb]-tzen/-ten + ari + izango + Present NOR Auxiliary (also
+seen contracted as `arituko`/`ariko` + Present NOR Auxiliary)*
+
+- **Bihar goizean, baserritarrak Gernikako azokan barazkiak saltzen ari
+  izango dira.**
+  - *Translation:* Tomorrow morning, the farmers will be selling vegetables
+    at the Gernika market.
+- **Hurrengo astean, surflariak Mundakako ezker olatua hartzen ari izango
+  dira.**
+  - *Translation:* Next week, the surfers will be catching Mundaka's left
+    wave.
+- **Haurrak Olentzeroren abestia ikasten ariko dira datorren abenduan.**
+  - *Translation:* The children will be learning Olentzero's song next
+    December. *(`ariko` is the contracted form of `ari izango`.)*
+
+---
+
 ## Next steps (not yet done)
 
 1. Review/edit these for naturalness and any missing vocabulary gaps.
