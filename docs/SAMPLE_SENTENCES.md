@@ -469,6 +469,66 @@ tenses/moods, doubling the pool to draw from for each combination — same
 
 ---
 
+## Cultural sentence bank — modal verbs (nahi, behar, ahal) (future units)
+
+`nahi` (to want), `behar` (to need/must), and `ahal` (to be able to) aren't
+conjugated themselves — they pair with a main verb's radical and let `izan`
+or `ukan/edun` carry the tense/agreement at the end of the sentence, much
+like `CLAUDE.md`'s `periphrastic` type (participle + auxiliary), except the
+"participle" slot here is `[main verb radical] + nahi/behar/ahal`. Same
+"full sentence, adapt later" status as the banks above; the drilled
+auxiliary is whichever finite form sits at the end.
+
+### 1. NAHI (to want)
+*Takes a **NOR-NORK** auxiliary (matching the person who wants).*
+
+- **Nik gaur gauean sagardotegira joan nahi dut.**
+  - *Translation:* I want to go to the cider house tonight.
+- **Gure lagunek Donostiako Danborrada hurbiletik ikusi nahi dute.**
+  - *Translation:* Our friends want to see the San Sebastian Drum Festival up
+    close.
+- **Zuk Idiazabal gazta pixka bat erosi nahi zenuen atzoko azokan.**
+  - *Translation:* You wanted to buy some Idiazabal cheese at yesterday's
+    market.
+- **Guk udan Euskal Herriko kosta osoa zeharkatu nahi dugu txalupaz.**
+  - *Translation:* We want to cross the entire Basque coast by boat in the
+    summer.
+
+### 2. BEHAR (to need / must)
+*Takes a **NOR-NORK** auxiliary (matching the person who needs).*
+
+- **Mendizaleek ura eta mapak eraman behar dituzte Gorbeiara igotzeko.**
+  - *Translation:* The mountaineers need to carry water and maps to climb
+    Gorbeia.
+- **Zuek bihar goizean garaiz esnatu behar duzue Gernikako azokara
+  joateko.**
+  - *Translation:* You all need to wake up early tomorrow morning to go to
+    the Gernika market.
+- **Sukaldariak legatz freskoa garbitu behar du marmitakoa egiteko.**
+  - *Translation:* The chef needs to clean the fresh hake to make the fish
+    stew.
+- **Nik euskarazko aditzak ondo ikasi behar nituen azterketa gainditzeko.**
+  - *Translation:* I needed to learn the Basque verbs well to pass the exam.
+
+### 3. AHAL (to be able to)
+*Can take a **NOR** or **NOR-NORK** auxiliary, depending on whether the main
+action itself is transitive or intransitive.*
+
+- **Haurrak gaur arratsaldean plazan dantzatu ahal dira.**
+  - *Translation:* The children can dance in the square this afternoon.
+    *(Intransitive action → uses **dira**)*
+- **Pilotariek partida gogorra irabazi ahal dute gaurko txapelketan.**
+  - *Translation:* The pelota players can win a tough match in today's
+    tournament. *(Transitive action → uses **dute**)*
+- **Gu bihar San Juan de Gaztelugatxera joan ahal izango gara.**
+  - *Translation:* We will be able to go to San Juan de Gaztelugatxe
+    tomorrow. *(Future tense with ahal → **ahal izango gara**)*
+- **Zuk nire aitona baserritarraren istorioak ulertu ahal dituzu.**
+  - *Translation:* You can understand my grandfather the farmer's stories.
+    *(Transitive with plural object → uses **dituzu**)*
+
+---
+
 ## Next steps (not yet done)
 
 1. Review/edit these for naturalness and any missing vocabulary gaps.
@@ -487,3 +547,6 @@ tenses/moods, doubling the pool to draw from for each combination — same
    pull individual sentences from them, blank the drilled form, and fold them
    into that verb's `sentences`/`pronounSentences` tables (plus a theme from
    the categories above) as each unit is implemented.
+6. The modal-verb bank pairs with Unit 2 (`nahi` per `journey.js`'s "Having
+   and Wanting") and Units 9–10's `behar`/Geroa work — `ahal`'s sentences also
+   double as early `potential`-tense examples once that tense exists.
