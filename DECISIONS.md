@@ -4,6 +4,142 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-11 — Filled `izan`/`ukan`'s missing `zu` rows in §1/§3 — the v2 journey's one concrete prerequisite
+
+**Decision:** Added `zu` (`zara`/`zinen`) to §1's `izan` table and `zu`
+(`duzu`/`zenuen`) to §3's `ukan` citation table — both previously listed only
+six persons with an explicit "no `zu`" note, despite the document's stated
+seven-person reference model (intro, lines 7–9). This was the single concrete
+prerequisite `LEARNING_JOURNEY.md` v2 flagged before its Units 1/2/4/12 could
+be built.
+
+**Verification, not invention:** both forms were cross-checked against
+material *already in this document* rather than sourced fresh — `izan`'s
+`zara`/`zinen` against `mintzatu`'s "Literary/Northern" `mintzo + izan`
+paradigm (§6, whose `zu` row is `mintzo zara`/`mintzo zinen` — this `izan`
+form plus an invariant prefix), and `ukan`'s `duzu`/`zenuen` against the
+`NOR`=1st/2nd person grids' `zuk`→`hura` present/past cells (§3, already
+`zenuen`/`duzu`). No new claims, just two existing facts surfaced into the
+two tables that needed them.
+
+**Scope:** only §1/§3's *citation* tables were touched — `egon`/`joan`/
+`etorri`/`ibili` (§6) already had `zu` rows (noted in the v2 journey as a
+reason this redesign costs less than it looks), and `VERBS` itself is
+unchanged (still six persons, no `zu` — that's the data-model change the
+journey's later units, not this prerequisite, are for). Updated
+`LEARNING_JOURNEY.md`'s "Data status" cells for Units 1, 2, 4, and 12 from
+"needs `zu` row" to done.
+
+## 2026-06-11 — Rewrote `LEARNING_JOURNEY.md` (v2): acquisition order replaces grammar order; `zu` becomes the default "you", `hi` deferred to the allocutive unit
+
+**Decision:** Replaced v1's 17-stage, grammar-ordered sequence (below) with an
+acquisition-ordered one, per a detailed external proposal. v1's "usefulness
+over implementation-ease" tiebreaker carries over unchanged; what changed is
+the organizing unit (communicative goal, not grammatical category) and the
+person scope.
+
+**Key changes accepted as-is:**
+- **3-person horizon**: every verb's first lesson covers only `ni`/`zu`/`hura`;
+  `gu`/`zuek`/`haiek` are unlocked together in one "Expansion" unit (Refresh
+  Gate A) rather than being part of every verb's first table.
+- **Functional grouping**: units are named for what they let a learner say
+  ("Moving Around", "Daily Routine") rather than "synthetic nor verbs" /
+  "periphrastic verbs" — the synthetic/periphrastic distinction is explained
+  in passing, not used as a unit boundary.
+- **Refresh Gates**: every phase ends with a zero-new-verbs consolidation
+  unit (negation drills, person-grid expansion, NOR/NORK/NORI sorting).
+
+**Key change *resolved differently* than the proposal suggested:** the
+proposal kept a 7-person model (`ni`/`hi`/`zu`/`hura`/`gu`/`zuek`/`haiek`)
+with `hi` reappearing in Unit 21 for hitanoa. Since `hi` only becomes
+meaningful *with* allocutive register context anyway, this revision instead
+**defers `hi` entirely** to that one late unit (now teaching `hi` + hitanoa
+together as a single "intimate register") and uses **`zu` as the sole
+2nd-person-singular throughout the core curriculum** — net result is still a
+6-person core grid (`ni`/`zu`/`hura`/`gu`/`zuek`/`haiek`, swapped from today's
+`ni`/`hi`/`hura`/`gu`/`zuek`/`haiek`), not 7. This also fully resolves v1's
+"Stage 11: zu retrofit" problem by making `zu` foundational from the start
+instead of backfilled later.
+
+**Concrete data gaps surfaced while checking this against `CONJUGATIONS.md`:**
+- `izan` §1 and `ukan` §3's citation tables explicitly omit `zu`
+  (`zara`/`zinen`, `duzu`/`zenuen`) — both forms are unsurprising and already
+  appear elsewhere in the document (e.g. `egon`'s `zaude`/`zeunden`), but per
+  this doc's "verify before teaching" norm need their own small addition pass
+  before Units 1/2/4/12 can be built. This is the single concrete prerequisite
+  for the whole journey.
+- `egon`/`joan`/`etorri`/`ibili` (§6) **already have `zu` rows** — written
+  with 7 persons from the start, so most of the "make `zu` foundational" cost
+  is just *not asking for `hi`'s row yet*, not new sourcing work.
+- `jan`/`edan`/`erosi`/`ahaztu` (proposal's Units 7 and 15) aren't in
+  `CONJUGATIONS.md` yet — flagged as needing a documentation pass first, same
+  treatment `ikusi`/`entzun` got.
+
+**Correction to the proposal:** its Unit 14 ("Completed Motion in the Past":
+`nindoan`/`zetorren`) mislabels §6's `joan`/`etorri`/`ibili` "Past" column —
+those forms are **imperfective/progressive** ("I was going"), not simple past
+("I went" = periphrastic `joan nintzen`, which Unit 13 already covers).
+Renamed to "Motion in Progress (Past)" and moved `joan nintzen`-type forms
+into Unit 13 where they belong — same kind of mislabeling-vs-consistency issue
+this log has corrected before (cf. the `ihardun`/`iraun`/`irudi` entry above).
+
+**Two engine-level proposals (periodic flash drills from weak lessons;
+"ergative suffix drift" error-pattern detection) were recorded as design notes
+but explicitly *not* folded into the unit sequence** — both are real feature
+work (dynamic lesson generation from `progress`; per-question error
+categorization neither `exerciseReducer` nor the distractor data currently
+support) deserving their own design pass, not curriculum content.
+
+**Also flagged, not decided:** score-gating Refresh Gate B (Unit 11) per the
+proposal's "must pass with high accuracy" framing would change
+`getUnlockedLessonIds` from "has an attempt" to "has a passing score" — a
+real product decision (threshold? retry behavior?) left open.
+
+v1's per-stage `CONJUGATIONS.md`/`VERB_COVERAGE.md` cross-references for
+material not yet placed in v2 (dialect variants, `etzan`, `egin`) remain valid
+background — just not yet re-sequenced.
+
+## 2026-06-11 — Added `LEARNING_JOURNEY.md`: a ~50-unit/17-stage curriculum sequence, ordered by usefulness rather than implementation effort
+
+**Decision:** Added `LEARNING_JOURNEY.md`, a content-design roadmap that
+sequences `VERB_COVERAGE.md`'s open items (plus the verbs/moods already
+written up in `CONJUGATIONS.md`) into a linear unit-by-unit, lesson-by-lesson
+order — no exercises or `VERBS` data yet, just the sequence and rationale.
+"Unit" = one verb (or small invariant-construction group like
+`nahi`/`behar`/`ari`/`ahal`-`ezin`) gaining one or more tenses; this maps
+directly onto the existing `LESSONS` auto-derivation (practice lesson per
+verb×tense, review once a verb has 2+ tenses, periodic mixed reviews) — no
+changes to that derivation logic are assumed.
+
+**Key ordering choices:**
+- High-value invariant constructions (`nahi`/`behar`/`ari`/`ahal`/`ezin`,
+  Stage 2) and the future tense (Geroa, Stage 5) are pulled forward because
+  they reuse `izan`/`ukan` tables the learner already has — big
+  conversational payoff for ~zero new conjugation data.
+- **Deviated from `VERB_COVERAGE.md`'s suggested `nor-nori` ordering**: that
+  doc leads with `jario` as the lower-friction *implementation*, but
+  `CONJUGATIONS.md` itself flags `jario` as "oso erabilpen mugatua" (very
+  limited use). For a *learner-usefulness* ordering, `gustatu`/`iruditu`
+  ("it pleases me" / "it seems to me" — extremely high-frequency
+  periphrastic NOR-NORI) lead Stage 9, with `jario` as a short synthetic
+  coda. Usefulness over implementation-ease is the document's stated
+  tiebreaker whenever the two disagree.
+- `zu` (Stage 11, flagged as a real gap in `VERB_COVERAGE.md` §1) is
+  deliberately placed *after* a solid core verb set (Stages 1–10) but
+  *before* the tense/mood explosion (Stages 12–15) — the cheapest point to
+  retrofit a 7th person once and have it apply to everything after, rather
+  than redoing tables repeatedly.
+- `egin` (flagged in `VERB_COVERAGE.md` but not yet in `CONJUGATIONS.md`) and
+  other not-yet-documented verbs/moods are intentionally left out of the
+  sequence — they'd need a `CONJUGATIONS.md` pass first.
+
+**Open implementation questions** (left in the doc rather than decided here):
+the `zu` retrofit likely needs a `STORAGE_KEY` version bump (progress shape
+unaffected, but `generateQuestions`'s distractor pool changes for every
+existing lesson); the imperative (Stage 14) needs a `hi`/`zu`/`zuek`-only
+exercise shape; non-finite/passive (Stage 16) may need a new question `kind`
+beyond multiple-choice conjugation.
+
 ## 2026-06-11 — Relabeled `ihardun`/`jardun`, `iraun`, `irudi` (§6/§8) as "unergative — nork-only", consistently
 
 **Decision:** a request came in to fix `ihardun`'s person-column labels —
