@@ -38,6 +38,31 @@
    need no separate expansion). From Unit 7 onward, **every new verb is
    taught with its full 6-person grid (`ni`/`zu`/`hura`/`gu`/`zuek`/`haiek`)
    from its first lesson** — no further person-expansion passes needed.
+6. **Difficulty-weighted extra practice.** Most units introduce one new verb
+   in a pattern the learner already knows (same `nor`/`nor-nork` shape, just
+   new vocabulary) and get the standard treatment: one practice lesson per new
+   (verb × tense), plus the auto-generated verb/mixed reviews from
+   `docs/DECISIONS.md`'s "ramps up in three stages" entry. A handful of units
+   instead introduce a *new grammatical relation or register* the learner has
+   never used before — these get one or more **additional dedicated practice
+   lessons** (beyond the standard verb-review), drilling that new relation in
+   isolation, before the unit's own review caps it off. Flagged units, to be
+   reflected in their `lessonIds` once implemented:
+   - **Unit 2** — first `nor-nork`/ergative subject (`ukan`)
+   - **Unit 8** — first full 6-person transitive grid
+   - **Unit 15** — first NOR-NORI / dative-subject forms (`zait`/`zaizu`/`zaio`)
+   - **Unit 16** — first NOR-NORI-NORK / ditransitive — the steepest jump in
+     the whole sequence, gets **two** extra practice lessons, not one
+   - **Unit 20** — imperative (a new register)
+   - **Unit 21** — `hi` + hitanoa (a new register)
+
+   These extra lessons compound with the engine's per-lesson ramp (a lesson's
+   first `BARE_FORM_ATTEMPTS` attempts stay multiple-choice/recognition-only,
+   and a one-time conjugation-table preview is shown before a lesson's first
+   attempt — see `App.jsx`'s `LessonPreviewScreen`), so a hard unit gets both
+   *more lessons* and *more gentle reps within each lesson* than an easy one —
+   without changing the linear `getUnlockedLessonIds` unlock model or the
+   stored-progress shape.
 
 ## Data & architecture implications (read before building)
 
