@@ -3,10 +3,13 @@ import {
   computeStars,
   exerciseReducer,
   generateQuestions,
+  getActiveStreak,
   getEncouragement,
+  getLocalDateString,
   getStreakEncouragement,
   getUnlockedLessonIds,
   isAnswerCorrect,
+  recordDailyStreak,
   recordResult,
   shuffle,
 } from './lessonLogic'
@@ -118,6 +121,67 @@ describe('recordResult', () => {
     recordResult(original, 'izan-present', { correctCount: 6, total: 6 })
 
     expect(original['izan-present']).toMatchObject({ attempts: 1, bestScore: 1 })
+  })
+})
+
+describe('getLocalDateString', () => {
+  it('formats a date as YYYY-MM-DD using local fields, zero-padded', () => {
+    expect(getLocalDateString(new Date(2026, 0, 5))).toBe('2026-01-05')
+    expect(getLocalDateString(new Date(2026, 11, 31))).toBe('2026-12-31')
+  })
+})
+
+describe('recordDailyStreak', () => {
+  it('starts a streak of 1 on the first completed lesson', () => {
+    const streak = recordDailyStreak({}, '2026-06-10')
+
+    expect(streak).toEqual({ currentStreak: 1, longestStreak: 1, lastActiveDate: '2026-06-10' })
+  })
+
+  it('does not change the streak for a second lesson on the same day', () => {
+    const first = recordDailyStreak({}, '2026-06-10')
+    const second = recordDailyStreak(first, '2026-06-10')
+
+    expect(second).toEqual(first)
+  })
+
+  it('extends the streak on the very next day', () => {
+    const day1 = recordDailyStreak({}, '2026-06-10')
+    const day2 = recordDailyStreak(day1, '2026-06-11')
+
+    expect(day2).toEqual({ currentStreak: 2, longestStreak: 2, lastActiveDate: '2026-06-11' })
+  })
+
+  it('resets to 1 after a missed day, but keeps the longest streak record', () => {
+    const day1 = recordDailyStreak({}, '2026-06-10')
+    const day2 = recordDailyStreak(day1, '2026-06-11')
+    const afterGap = recordDailyStreak(day2, '2026-06-13')
+
+    expect(afterGap).toEqual({ currentStreak: 1, longestStreak: 2, lastActiveDate: '2026-06-13' })
+  })
+})
+
+describe('getActiveStreak', () => {
+  it('returns 0 when there is no recorded activity', () => {
+    expect(getActiveStreak({}, '2026-06-10')).toBe(0)
+  })
+
+  it('returns the current streak when last active today', () => {
+    const streak = { currentStreak: 4, longestStreak: 4, lastActiveDate: '2026-06-10' }
+
+    expect(getActiveStreak(streak, '2026-06-10')).toBe(4)
+  })
+
+  it('still counts the streak as alive the day after, before it lapses', () => {
+    const streak = { currentStreak: 4, longestStreak: 4, lastActiveDate: '2026-06-10' }
+
+    expect(getActiveStreak(streak, '2026-06-11')).toBe(4)
+  })
+
+  it('reads as broken (0) once more than a day has passed', () => {
+    const streak = { currentStreak: 4, longestStreak: 4, lastActiveDate: '2026-06-10' }
+
+    expect(getActiveStreak(streak, '2026-06-12')).toBe(0)
   })
 })
 

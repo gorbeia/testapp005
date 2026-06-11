@@ -3,10 +3,13 @@ import {
   computeStars,
   exerciseReducer,
   generateQuestions,
+  getActiveStreak,
   getEncouragement,
+  getLocalDateString,
   getStreakEncouragement,
   getUnlockedLessonIds,
   isAnswerCorrect,
+  recordDailyStreak,
   recordResult,
   shuffle,
 } from './lessonLogic'
@@ -353,6 +356,29 @@ function saveProgress(progress) {
   }
 }
 
+// Daily streak data lives under its own key — it tracks calendar-day
+// activity across all lessons, not any single lesson's progress, and
+// shouldn't need a shape-version bump every time `progress` does (or vice
+// versa).
+const STREAK_STORAGE_KEY = 'aditzak:streak:v1'
+
+function loadStreak() {
+  try {
+    const raw = localStorage.getItem(STREAK_STORAGE_KEY)
+    return raw ? JSON.parse(raw) : {}
+  } catch {
+    return {}
+  }
+}
+
+function saveStreak(streak) {
+  try {
+    localStorage.setItem(STREAK_STORAGE_KEY, JSON.stringify(streak))
+  } catch {
+    // localStorage may be unavailable (private browsing, quota) — ignore.
+  }
+}
+
 // Looks up a verb's English/Spanish/Basque gloss, falling back to English if
 // the active interface language has no translation for this verb.
 function verbMeaning(verb, language) {
@@ -650,14 +676,32 @@ function ProgressTab({ progress }) {
   )
 }
 
-function ProfileTab({ onResetProgress }) {
-  const { t, language, setLanguage, languages } = useLanguage()
+function ProfileTab({ streak, onResetProgress }) {
+  const { t, tCount, language, setLanguage, languages } = useLanguage()
+  const currentStreak = getActiveStreak(streak, getLocalDateString())
+  const longestStreak = streak?.longestStreak ?? 0
   return (
     <div className="flex flex-col items-center gap-4 py-12 text-center">
       <div className="flex h-20 w-20 items-center justify-center rounded-full bg-green-100 text-4xl">🧑‍🎓</div>
       <div>
         <h2 className="text-lg font-bold text-gray-900">{t('profileGreeting')}</h2>
         <p className="text-sm text-gray-500">{t('profileAchievements')}</p>
+      </div>
+      <div className="flex w-full gap-3">
+        <div className="flex flex-1 flex-col items-center gap-1 rounded-2xl border border-gray-200 bg-white p-4">
+          <span className="text-2xl" aria-hidden="true">
+            🔥
+          </span>
+          <span className="text-lg font-bold text-gray-900">{tCount('streakDays', currentStreak)}</span>
+          <span className="text-xs text-gray-500">{t('streakCurrent')}</span>
+        </div>
+        <div className="flex flex-1 flex-col items-center gap-1 rounded-2xl border border-gray-200 bg-white p-4">
+          <span className="text-2xl" aria-hidden="true">
+            🏆
+          </span>
+          <span className="text-lg font-bold text-gray-900">{tCount('streakDays', longestStreak)}</span>
+          <span className="text-xs text-gray-500">{t('streakLongest')}</span>
+        </div>
       </div>
       <div className="w-full">
         <p className="mb-1 text-sm font-semibold text-gray-700">{t('profileLanguage')}</p>
@@ -722,10 +766,11 @@ function BottomNav({ active, onSelect }) {
   )
 }
 
-function HomeScreen({ progress, tab, onChangeTab, onSelectLesson, onResetProgress }) {
+function HomeScreen({ progress, streak, tab, onChangeTab, onSelectLesson, onResetProgress }) {
   const { t } = useLanguage()
   const totalStars = LESSONS.reduce((sum, lesson) => sum + (progress[lesson.id]?.bestStars ?? 0), 0)
   const maxStars = LESSONS.length * 3
+  const currentStreak = getActiveStreak(streak, getLocalDateString())
 
   return (
     <div className="mx-auto flex min-h-dvh w-full max-w-md flex-col bg-gray-50">
@@ -734,19 +779,28 @@ function HomeScreen({ progress, tab, onChangeTab, onSelectLesson, onResetProgres
           <h1 className="text-xl font-extrabold tracking-tight text-gray-900">Aditzak</h1>
           <p className="text-xs text-gray-500">{t('appTagline')}</p>
         </div>
-        <div className="flex items-center gap-1.5 rounded-full bg-amber-100 px-3 py-1.5 text-sm font-bold text-amber-700">
-          <span aria-hidden="true">★</span>
-          <span>
-            {totalStars}
-            <span className="font-normal text-amber-500">/{maxStars}</span>
-          </span>
+        <div className="flex items-center gap-2">
+          <div
+            className="flex items-center gap-1.5 rounded-full bg-orange-100 px-3 py-1.5 text-sm font-bold text-orange-600"
+            aria-label={t('streakLabel', { count: currentStreak })}
+          >
+            <span aria-hidden="true">🔥</span>
+            <span>{currentStreak}</span>
+          </div>
+          <div className="flex items-center gap-1.5 rounded-full bg-amber-100 px-3 py-1.5 text-sm font-bold text-amber-700">
+            <span aria-hidden="true">★</span>
+            <span>
+              {totalStars}
+              <span className="font-normal text-amber-500">/{maxStars}</span>
+            </span>
+          </div>
         </div>
       </header>
 
       <main className="flex-1 px-5 pt-5 pb-28">
         {tab === 'home' && <JourneyTab progress={progress} onSelectLesson={onSelectLesson} />}
         {tab === 'progress' && <ProgressTab progress={progress} />}
-        {tab === 'profile' && <ProfileTab onResetProgress={onResetProgress} />}
+        {tab === 'profile' && <ProfileTab streak={streak} onResetProgress={onResetProgress} />}
       </main>
 
       <BottomNav active={tab} onSelect={onChangeTab} />
@@ -1284,6 +1338,7 @@ function LanguageOnboardingScreen() {
 function AppShell() {
   const { t, hasChosenLanguage } = useLanguage()
   const [progress, setProgress] = useState(loadProgress)
+  const [dailyStreak, setDailyStreak] = useState(loadStreak)
   const [tab, setTab] = useState('home')
   const [activeLessonId, setActiveLessonId] = useState(null)
   // Session-level gate for the mid-lesson streak nudge: counts down once a
@@ -1295,6 +1350,10 @@ function AppShell() {
     saveProgress(progress)
   }, [progress])
 
+  useEffect(() => {
+    saveStreak(dailyStreak)
+  }, [dailyStreak])
+
   const handleStreakNudgeShown = useCallback(() => {
     setStreakNudgeCooldown(randomStreakNudgeCooldown())
   }, [])
@@ -1304,6 +1363,7 @@ function AppShell() {
       return
     }
     setProgress({})
+    setDailyStreak({})
   }
 
   if (!hasChosenLanguage) {
@@ -1322,6 +1382,7 @@ function AppShell() {
         onStreakNudgeShown={handleStreakNudgeShown}
         onComplete={(result) => {
           setProgress((previous) => recordResult(previous, lesson.id, result))
+          setDailyStreak((previous) => recordDailyStreak(previous, getLocalDateString()))
           setStreakNudgeCooldown((cooldown) => Math.max(0, cooldown - 1))
           setActiveLessonId(null)
         }}
@@ -1332,6 +1393,7 @@ function AppShell() {
   return (
     <HomeScreen
       progress={progress}
+      streak={dailyStreak}
       tab={tab}
       onChangeTab={setTab}
       onSelectLesson={setActiveLessonId}

@@ -4,6 +4,27 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-11 — Daily streak tracked in its own storage key, computed via a "live vs. broken" split
+
+**Decision:** Added a Duolingo-style daily streak: completing any lesson
+records today's local date (`getLocalDateString` — local, not UTC, so the day
+boundary matches the learner's clock) into `aditzak:streak:v1`
+(`{ currentStreak, longestStreak, lastActiveDate }`), via the pure
+`recordDailyStreak` in `lessonLogic.js`. Kept as a separate localStorage key
+rather than folded into `progress`/`STORAGE_KEY`, so its shape can evolve
+independently and "Reset progress" can clear both without a version bump to
+either.
+
+`recordDailyStreak` only ever increments (consecutive day), restarts at 1 (gap
+of 2+ days), or no-ops (same day again) — it never resets `currentStreak` to 0
+itself. Whether a streak currently *reads* as alive or broken is a separate,
+display-only concern handled by `getActiveStreak`: a `lastActiveDate` of today
+or yesterday still counts (the learner has until the end of today to extend
+it), anything older reads as 0. This split means the stored streak only
+changes on actual lesson completions, while the UI (header flame badge,
+Profile tab's current/longest cards) always reflects today's reality without
+needing a background job or app-open side effect to "expire" stale streaks.
+
 ## 2026-06-11 — "Source language" is the existing interface language, picked via a one-time onboarding screen, with Euskara prioritised
 
 **Decision:** Rather than introduce a second, parallel language preference,
