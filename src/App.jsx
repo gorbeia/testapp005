@@ -660,7 +660,8 @@ function ProfileTab({ onResetProgress }) {
         <p className="text-sm text-gray-500">{t('profileAchievements')}</p>
       </div>
       <div className="w-full">
-        <p className="mb-2 text-sm font-semibold text-gray-700">{t('profileLanguage')}</p>
+        <p className="mb-1 text-sm font-semibold text-gray-700">{t('profileLanguage')}</p>
+        <p className="mb-2 text-xs text-gray-400">{t('profileLanguageHint')}</p>
         <div className="flex justify-center gap-2">
           {languages.map((lang) => (
             <button
@@ -1237,8 +1238,51 @@ function ExerciseScreen({ lesson, attempts, onExit, onComplete, canShowStreakNud
 // App shell
 // =============================================================================
 
+// Shown once, before anything else, when no source language has been chosen
+// yet (`hasChosenLanguage` is false — see `LanguageContext`) — a "fancy"
+// full-screen selector so a first-time visitor picks the language they
+// already know before seeing any lesson content. Euskara is listed first
+// (per `LANGUAGES`) and flagged as recommended, since most Aditzak users
+// already have some grounding in Basque. Picking a language calls
+// `setLanguage`, which persists the choice and flips `hasChosenLanguage`, so
+// this screen doesn't render again.
+function LanguageOnboardingScreen() {
+  const { t, setLanguage, languages } = useLanguage()
+  return (
+    <div className="mx-auto flex h-dvh w-full max-w-md flex-col items-center justify-center gap-8 bg-gradient-to-b from-green-50 to-white px-6 text-center">
+      <div className="flex h-20 w-20 items-center justify-center rounded-full bg-green-100 text-4xl" aria-hidden="true">
+        🌍
+      </div>
+      <div>
+        <h1 className="text-2xl font-extrabold text-gray-900">{t('onboardingTitle')}</h1>
+        <p className="mt-2 text-gray-500">{t('onboardingSubtitle')}</p>
+      </div>
+      <div className="flex w-full flex-col gap-3">
+        {languages.map((lang) => (
+          <button
+            key={lang.code}
+            type="button"
+            onClick={() => setLanguage(lang.code)}
+            style={{ minHeight: 64 }}
+            className={`flex items-center justify-between rounded-2xl border-2 px-5 text-left text-lg font-bold transition active:scale-[0.98] ${
+              lang.code === 'eu'
+                ? 'border-green-500 bg-green-50 text-green-700'
+                : 'border-gray-200 bg-white text-gray-800 hover:border-gray-300 hover:bg-gray-50'
+            }`}
+          >
+            {lang.name}
+            {lang.code === 'eu' && (
+              <span className="rounded-full bg-green-500 px-2.5 py-1 text-xs font-bold text-white">{t('onboardingRecommended')}</span>
+            )}
+          </button>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 function AppShell() {
-  const { t } = useLanguage()
+  const { t, hasChosenLanguage } = useLanguage()
   const [progress, setProgress] = useState(loadProgress)
   const [tab, setTab] = useState('home')
   const [activeLessonId, setActiveLessonId] = useState(null)
@@ -1260,6 +1304,10 @@ function AppShell() {
       return
     }
     setProgress({})
+  }
+
+  if (!hasChosenLanguage) {
+    return <LanguageOnboardingScreen />
   }
 
   if (activeLessonId) {

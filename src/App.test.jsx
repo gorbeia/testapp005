@@ -1,9 +1,15 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { afterEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
 
 describe('App', () => {
+  beforeEach(() => {
+    // Bypass the one-time language-onboarding screen for tests that exercise
+    // the lesson flow — see the dedicated onboarding test below.
+    localStorage.setItem('aditzak:lang:v1', 'en')
+  })
+
   afterEach(() => {
     localStorage.clear()
     vi.restoreAllMocks()
@@ -54,5 +60,19 @@ describe('App', () => {
 
     expect(screen.queryByText('Take a look before you start')).not.toBeInTheDocument()
     expect(screen.getByText('Which form is correct?')).toBeInTheDocument()
+  })
+
+  it('shows a language selector before the home screen on first launch, then remembers the choice', async () => {
+    localStorage.removeItem('aditzak:lang:v1')
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(screen.queryByRole('heading', { name: 'Aditzak' })).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /Euskara/ })).toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: /English/ }))
+
+    expect(screen.getByRole('heading', { name: 'Aditzak' })).toBeInTheDocument()
+    expect(localStorage.getItem('aditzak:lang:v1')).toBe('en')
   })
 })

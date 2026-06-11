@@ -4,6 +4,30 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-11 — "Source language" is the existing interface language, picked via a one-time onboarding screen, with Euskara prioritised
+
+**Decision:** Rather than introduce a second, parallel language preference,
+"source language" (the language a user already knows, used for instructions/
+hints/translations) is the *same* setting as the existing interface language
+from `LanguageContext` — just reframed. `LANGUAGES` (`src/i18n/translations.js`)
+is now ordered `eu`, `es`, `en` (Euskara first), since most Aditzak users
+already have some grounding in Basque and it's the most likely "language I
+already know" pick. The Profile tab's picker is relabelled `profileLanguage:
+'Source language'` with a one-line `profileLanguageHint` explaining what it's
+for.
+
+**Onboarding:** `LanguageContext` now exposes `hasChosenLanguage` — true only
+once the user has *explicitly* picked a language via `setLanguage` (which
+persists to `aditzak:lang:v1` immediately, replacing the old "persist on every
+change" `useEffect`). `language` itself still falls back to browser-detection/
+`DEFAULT_LANGUAGE` for rendering, but a first-time visitor (no stored
+preference) sees `LanguageOnboardingScreen` — a full-screen selector with
+Euskara visually flagged "Recommended" — before anything else, even if their
+browser language happens to match a supported one. Picking a language
+dismisses it permanently. `App.test.jsx` sets `aditzak:lang:v1` in
+`beforeEach` so existing tests skip straight to the home screen, with one new
+test covering the onboarding screen itself.
+
 ## 2026-06-11 — Added interface-language i18n (English/Spanish/Basque), keeping the Basque content being taught untranslated
 
 **Decision:** Added `src/i18n/` with `translations.js` (a flat per-language
