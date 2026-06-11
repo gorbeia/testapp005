@@ -50,15 +50,13 @@
 These are the things this journey *requires* that don't exist yet — flagged
 here so they're decided once, deliberately, rather than discovered mid-build.
 
-- **`zu` is missing from `izan` §1 and `ukan` §3 in `CONJUGATIONS.md`.**
-  Both citation tables currently list six persons (`ni`/`hi`/`hura`/`gu`/
-  `zuek`/`haiek`) with an explicit note that `zu` is omitted. The forms
-  themselves are entirely unsurprising (`zara`/`zinen` for `izan`, `duzu`/
-  `zenuen` for `ukan` — both already appear elsewhere in `CONJUGATIONS.md`,
-  e.g. `egon`'s `zaude`/`zeunden` and the NOR-NORI-NORK grids' `zuri` rows),
-  but per this repo's "verify before teaching" norm they should be added to
-  §1/§3 as their own small pass **before** Unit 1/Unit 2 are built — this is
-  the single concrete prerequisite for this entire journey.
+- ~~**`zu` is missing from `izan` §1 and `ukan` §3 in `CONJUGATIONS.md`.**~~
+  **Done** — `zu` rows (`zara`/`zinen` for `izan`, `duzu`/`zenuen` for `ukan`)
+  have been added to both citation tables, cross-checked against `mintzatu`'s
+  `mintzo zara`/`mintzo zinen` (§6) and the `NOR`=1st/2nd person grids'
+  `zuk`→`hura` cells respectively. `VERBS` itself still models six persons (no
+  `zu`); this was the documentation prerequisite, not the data-model change
+  itself.
 - **`egon`/`joan`/`etorri`/`ibili` (§6) already have `zu` rows** — one of the
   reasons this redesign is *less* work than it first looks. §6's data was
   written with 7 persons (`ni`/`hi`/`hura`/`gu`/`zu`/`zuek`/`haiek`) from the
@@ -112,15 +110,15 @@ Persons in scope throughout Phase I: **`ni` / `zu` / `hura`** only.
 
 | Unit | Focus | Payload | Persons | Ref | Data status |
 |---|---|---|---|---|---|
-| 1 | **Who and Where** — `izan` + `egon` present | "I am a student." / "Where are you?" / "He is at home." | ni/zu/hura: `naiz`/`zara`/`da`, `nago`/`zaude`/`dago` | §1 (izan), §6 (egon) | `izan` needs its `zu` row added to §1 first (see above); `egon`'s already documented |
-| 2 | **Having and Wanting** — `ukan` present (object fixed `hura`) + `nahi` | "I have a car." / "I want coffee." / "Do you want to come?" | ni/zu/hura: `dut`/`duzu`/`du`, `nahi dut`/`nahi duzu`/`nahi du` | §3 (ukan), VERB_COVERAGE §5 (`nahi`) | `ukan` needs its `zu` row added to §3 first (same pass as Unit 1) |
+| 1 | **Who and Where** — `izan` + `egon` present | "I am a student." / "Where are you?" / "He is at home." | ni/zu/hura: `naiz`/`zara`/`da`, `nago`/`zaude`/`dago` | §1 (izan), §6 (egon) | ✅ both have `zu` rows in `CONJUGATIONS.md` |
+| 2 | **Having and Wanting** — `ukan` present (object fixed `hura`) + `nahi` | "I have a car." / "I want coffee." / "Do you want to come?" | ni/zu/hura: `dut`/`duzu`/`du`, `nahi dut`/`nahi duzu`/`nahi du` | §3 (ukan), VERB_COVERAGE §5 (`nahi`) | ✅ `ukan` has its `zu` row in `CONJUGATIONS.md` |
 
 #### Stage 2: Basic Operations & Movement
 
 | Unit | Focus | Payload | Persons | Ref | Data status |
 |---|---|---|---|---|---|
 | 3 | **Moving Around** — `joan` + `etorri` present | "I'm going to the beach." / "She's coming tomorrow." | ni/zu/hura: `noa`/`zoaz`/`doa`, `nator`/`zatoz`/`dator` | §6 | ✅ already has `zu` |
-| 4 | **The Immediate Continuous** — `ari` + `izan` | "I am eating." / "What are you doing?" | reuses Unit 1's `izan` present table under `ari` | VERB_COVERAGE §5 | needs `izan`'s `zu` row (same Unit 1/2 prerequisite) |
+| 4 | **The Immediate Continuous** — `ari` + `izan` | "I am eating." / "What are you doing?" | reuses Unit 1's `izan` present table under `ari` | VERB_COVERAGE §5 | ✅ reuses Unit 1's table |
 
 ### 🛡️ Refresh Gate A — The "Ez" Trap & Person Expansion
 
@@ -164,7 +162,7 @@ grid, every verb, from each verb's first lesson (Person-Expansion Rule).
 
 | Unit | Focus | Payload | Ref | Data status |
 |---|---|---|---|---|
-| 12 | **"I Was, I Had"** — `izan`/`ukan` past, full grid | "I was young." / "She had a dog." | §1, §3 | needs `zu`'s `zinen`/`zenuen` (same prerequisite pass) |
+| 12 | **"I Was, I Had"** — `izan`/`ukan` past, full grid | "I was young." / "She had a dog." | §1, §3 | ✅ `zu`'s `zinen`/`zenuen` now in `CONJUGATIONS.md` |
 | 13 | **Past Narrative Flow** — periphrastic past (`ikusi nuen`), imperfective/habitual past (`etortzen nintzen`), **and completed motion** (`joan nintzen`, `etorri nintzen`) | "I saw it." / "I used to come (often)." / "I went." / "She came." | §11 (periphrastic tense matrix), §13 | `joan`/`etorri` simple-past (`joan nintzen`) belongs *here*, not Unit 14 — see relabeling note above |
 | 14 | **Motion in Progress (Past)** *(renamed from "Completed Motion")* — `joan`/`etorri`/`ibili`'s native past forms (`nindoan` "I was going", `zetorren` "he was coming") | "I was on my way (when...)." / "He was coming (and then...)." | §6 | ✅ already in §6's tables; framed explicitly as imperfective/progressive, contrasted with Unit 13's `joan nintzen` |
 

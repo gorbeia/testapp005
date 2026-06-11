@@ -4,6 +4,32 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-11 — Filled `izan`/`ukan`'s missing `zu` rows in §1/§3 — the v2 journey's one concrete prerequisite
+
+**Decision:** Added `zu` (`zara`/`zinen`) to §1's `izan` table and `zu`
+(`duzu`/`zenuen`) to §3's `ukan` citation table — both previously listed only
+six persons with an explicit "no `zu`" note, despite the document's stated
+seven-person reference model (intro, lines 7–9). This was the single concrete
+prerequisite `LEARNING_JOURNEY.md` v2 flagged before its Units 1/2/4/12 could
+be built.
+
+**Verification, not invention:** both forms were cross-checked against
+material *already in this document* rather than sourced fresh — `izan`'s
+`zara`/`zinen` against `mintzatu`'s "Literary/Northern" `mintzo + izan`
+paradigm (§6, whose `zu` row is `mintzo zara`/`mintzo zinen` — this `izan`
+form plus an invariant prefix), and `ukan`'s `duzu`/`zenuen` against the
+`NOR`=1st/2nd person grids' `zuk`→`hura` present/past cells (§3, already
+`zenuen`/`duzu`). No new claims, just two existing facts surfaced into the
+two tables that needed them.
+
+**Scope:** only §1/§3's *citation* tables were touched — `egon`/`joan`/
+`etorri`/`ibili` (§6) already had `zu` rows (noted in the v2 journey as a
+reason this redesign costs less than it looks), and `VERBS` itself is
+unchanged (still six persons, no `zu` — that's the data-model change the
+journey's later units, not this prerequisite, are for). Updated
+`LEARNING_JOURNEY.md`'s "Data status" cells for Units 1, 2, 4, and 12 from
+"needs `zu` row" to done.
+
 ## 2026-06-11 — Rewrote `LEARNING_JOURNEY.md` (v2): acquisition order replaces grammar order; `zu` becomes the default "you", `hi` deferred to the allocutive unit
 
 **Decision:** Replaced v1's 17-stage, grammar-ordered sequence (below) with an

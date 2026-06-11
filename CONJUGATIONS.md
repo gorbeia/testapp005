@@ -36,8 +36,16 @@ that omits `zu`.
 | hi | haiz | hintzen |
 | hura | da | zen |
 | gu | gara | ginen |
+| zu | zara | zinen |
 | zuek | zarete | zineten |
 | haiek | dira | ziren |
+
+`zu` (`zara`/`zinen`) is the everyday neutral "you" — cross-checked against
+`mintzatu`'s "Literary/Northern" `mintzo + izan` paradigm (§6), whose `zu` row
+is `mintzo zara`/`mintzo zinen`, i.e. this same `izan` form with an invariant
+prefix. `VERBS` itself currently models six persons (no `zu`; see `CLAUDE.md`)
+— this row fills out the seven-person reference model stated in the intro
+above, ahead of `zu` being added to the app's data.
 
 ---
 
@@ -119,8 +127,9 @@ below (you can't command yourself or "it"; `bedi`/`bitez` are the 3rd-person
 
 `VERBS` models `ukan` with `NOR` fixed at 3rd-person singular absolutive
 ("it/him/her"), as `object: 'hura'`. This is the `hura` column of the full
-grid below, restricted to the six persons `VERBS` models (no `zu`; `hi` shown
-unsplit):
+grid below, given here for the seven-person reference model (`hi` shown
+unsplit) — `VERBS` itself currently models six persons (no `zu`; see
+`CLAUDE.md`):
 
 | Person | Present (oraina) | Past (lehena) |
 |---|---|---|
@@ -128,8 +137,13 @@ unsplit):
 | hi | duk | huen |
 | hura | du | zuen |
 | gu | dugu | genuen |
+| zu | duzu | zenuen |
 | zuek | duzue | zenuten |
 | haiek | dute | zuten |
+
+`zu` (`duzu`/`zenuen`) is cross-checked against the `NOR`=1st/2nd person grids
+below, where `zuk`→`hura` (present) and `zuk`→`hura` (past) are exactly these
+forms.
 
 The full paradigm varies by both `NORK` (subject, rows) *and* `NOR` (object,
 columns) — see the grids below. *Blank cells (`—`) are gaps; `*(refl.)*` and
