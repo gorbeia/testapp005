@@ -232,6 +232,136 @@ gaurko bazkarirako.'` (blanking the auxiliary `du`, per `CLAUDE.md`'s
 
 ---
 
+## Cultural sentence bank — advanced tenses, moods & aspects (future units)
+
+A second pass over the same four argument structures, this time covering the
+**aspect/mood** territory beyond plain present/past — future, conditional,
+potential, imperative, and past continuous — per `docs/EXERCISE_ENGINE.md`'s
+Tier 1 (Geroa, Units 9–10), Tier 3 (imperative, Unit 20), and Tier 1
+(Ahalera/Baldintza/Ondorioa, Units 18–19) entries. Same culture/geography/
+folklore approach as above; same "full sentence, adapt later" status.
+
+### 1. NOR (Intransitive) — advanced tenses
+
+#### Future Tense (Geroaldia)
+- **Datorren astean, baserritarrak Gernikako azokara joango dira.**
+  - *Translation:* Next week, the farmers will go to the Gernika market.
+  - *Cultural touch:* *Baserritarra* (the traditional Basque farmer) and the
+    historic *Gernika* Monday market are foundational to Basque rural culture.
+
+#### Conditional Mood (Baldintza)
+- **Dirurik banu, igandean kirolariak ikustera joango nintzateke.**
+  - *Translation:* If I had money, I would go to see the rural sports
+    athletes on Sunday.
+  - *Verb focus:* Uses the past-continuous hypothetical **nintzateke** (I
+    would be).
+  - *Cultural touch:* *Herri Kirolak* (Basque rural sports) include
+    wood-chopping, stone-lifting, and anvil-tossing.
+
+#### Present Potential (Ahalera Oraina)
+- **Zuek gaur gauean Donostiako Parte Zaharrean afal zaitezkete.**
+  - *Translation:* You all can have dinner in San Sebastian's Old Town
+    tonight.
+  - *Verb focus:* **zaitezkete** = you all can be (expressing
+    capability/permission).
+  - *Cultural touch:* The *Parte Zaharra* is world-famous for having the
+    highest concentration of pintxo bars.
+
+### 2. NOR-NORK (Transitive) — advanced tenses
+
+#### Present Continuous / Progressive (Aridun Oraina)
+- **Une honetan, okinak euskal pastela labean sartzen ari dira.**
+  - *Translation:* At this moment, the bakers are putting the Basque cake
+    into the oven.
+  - *Grammar tip:* Created using the locative nominalization **ari dira**
+    (they are engaged in).
+  - *Cultural touch:* *Euskal pastela* (Gâteau Basque) is a traditional
+    dessert filled with black cherry jam or pastry cream.
+
+#### Past Conditional (Lehengo Baldintza)
+- **Guk denbora gehiago izan bagenu, sagardotegiko txuleta jango genuen.**
+  - *Translation:* If we had had more time, we would have eaten the steak at
+    the cider house.
+  - *Verb focus:* **genuen** is used here as the apodosis (the "would have"
+    part) of a past conditional.
+  - *Cultural touch:* *Sagardotegia* (cider house season) involves drinking
+    cider straight from the barrel (*txotx*) and eating massive
+    charcoal-grilled steaks (*txuleta*).
+
+#### Imperative Mood (Agintera)
+- **Ekar ezazu gazta eta Idiazabalgo ardoa mahaira, mesedez!**
+  - *Translation:* Bring the cheese and the Idiazabal wine to the table,
+    please!
+  - *Verb focus:* **Ekar ezazu** is the direct command form (radical verb +
+    subjunctive auxiliary).
+  - *Cultural touch:* *Idiazabal* is a famous smoked sheep's milk cheese from
+    the Basque highlands.
+
+### 3. NOR-NORI (Intransitive + indirect object) — advanced tenses
+
+#### Future Tense (Geroaldia)
+- **Uda honetan, bidaiariei asko gustatuko zaie Mundakako ezker olatua.**
+  - *Translation:* This summer, the travelers will really like Mundaka's
+    left-hand wave.
+  - *Verb focus:* **gustatuko zaie** (it will be pleasing to them).
+  - *Cultural touch:* Mundaka is a world-renowned surf spot famous for its
+    perfect, hollow rivermouth wave.
+
+#### Past Potential (Ahalera Lehena)
+- **Guri txikitan beldurra dakiokeen Mari jainkosa ager zekiokeen basoan.**
+  - *Translation:* To us as kids, the goddess Mari, who can be scary, could
+    have appeared in the forest.
+  - *Verb focus:* **zekiokeen** (it could have happened to us).
+  - *Cultural touch:* *Mari* is the supreme goddess of Basque mythology,
+    representing Mother Earth and living in mountain caves (like Anboto).
+
+### 4. NOR-NORI-NORK (Three-argument transitive) — advanced tenses
+
+#### Future Tense (Geroaldia)
+- **Etxekoek niri txakolin botila bat irekiko didate afaltzeko.**
+  - *Translation:* The hosts will open a bottle of Txakoli wine for me for
+    dinner.
+  - *Verb focus:* **didate** turns into a future helper when paired with
+    *irekiko*.
+  - *Cultural touch:* *Txakoli* is a slightly sparkling, very dry white wine
+    local to the Basque coast.
+
+#### Conditional Mood (Baldintza)
+- **Nik zuei istorio hau kontatuko nizueke, baina sekretua da.**
+  - *Translation:* I would tell you all this story, but it's a secret.
+  - *Verb focus:* **nizueke** = I would [do it] to you all (it [`d-`] + to you
+    all [`-izue-`] + I [`-ke`]).
+
+#### Past Continuous (Lehengo Ari)
+- **Zizurkildarrek elizari kanpai berriak jartzen zizkioten olgetan ari
+  zirela.**
+  - *Translation:* The people of Zizurkil were putting new bells on the
+    church while they were joking around.
+  - *Verb focus:* **zizkioten** (they [Nork] used to do them [plural Nor] to
+    it [Nori] in the past).
+  - *Cultural touch:* *Zizurkil* is a traditional town in Gipuzkoa known for
+    its rural charm.
+
+### Tagging by aspect/mood/tense
+
+For filtering or future authoring, each sentence above can be tagged along
+the same axes `VERBS` already models (`agreement` for argument structure, plus
+the tense/mood key it would live under in `conjugations`):
+
+| Sentence fragment | Argument structure (`agreement`) | Aspect / mood | `conjugations` key |
+|---|---|---|---|
+| *...afal zaitezkete.* | nor | Potential (Ahalera) | `potential` |
+| *...jango genuen.* | nor-nork | Conditional (Baldintza) | `conditional` |
+| *...kontatuko nizueke.* | nor-nori-nork | Conditional (Baldintza) | `conditional` |
+| *Ekar ezazu...* | nor-nork | Imperative (Agintera) | `imperative` |
+
+These map onto new tense *keys* (Tier 1 in `docs/EXERCISE_ENGINE.md`), not new
+shapes — once a verb's `conjugations.potential`/`conditional`/`imperative`
+table exists, its `sentences`/`pronounSentences` entries follow exactly the
+same `___`-blanked pattern as `present`/`past` above.
+
+---
+
 ## Next steps (not yet done)
 
 1. Review/edit these for naturalness and any missing vocabulary gaps.
@@ -245,8 +375,8 @@ gaurko bazkarirako.'` (blanking the auxiliary `du`, per `CLAUDE.md`'s
 4. As new verbs/tenses are added (per `docs/EXERCISE_ENGINE.md`'s Tier 1
    list), extend this doc with the same four categories before writing their
    `VERBS` entries.
-5. The cultural sentence bank above pairs argument structures with specific
-   verbs/tenses for future units — pull individual sentences from it, blank
-   the drilled form, and fold them into that verb's `sentences`/
-   `pronounSentences` tables (plus a theme from the categories above) as each
-   unit is implemented.
+5. The cultural sentence banks above pair argument structures (and, for the
+   advanced bank, aspect/mood) with specific verbs/tenses for future units —
+   pull individual sentences from them, blank the drilled form, and fold them
+   into that verb's `sentences`/`pronounSentences` tables (plus a theme from
+   the categories above) as each unit is implemented.
