@@ -125,7 +125,7 @@ synthetic forms.*
 object (**Nor**). Uses the auxiliary **edun** (to have).*
 
 #### Present Tense (Oraina)
-- **Sustraiak eta Uxuek bertso politak abesten dituzte plazan.**
+- **Sustraik eta Uxuek bertso politak abesten dituzte plazan.**
   - *Translation:* Sustrai and Uxue sing beautiful improvised verses in the
     square.
 - **Amonak marmitako epela prestatu du gaurko bazkarirako.**
@@ -167,7 +167,7 @@ object (**Nor**). Uses the auxiliary **edun** (to have).*
 - **Nik zuri gaztelerazko liburua euskaratu dizut.**
   - *Translation:* I have translated the Spanish book into Basque for you.
   - *Auxiliary:* **dizut** = it (`d-`) + to you (`-izu-`) + I (`-t`).
-- **Goizaneik lagunei opari politak ekarri dizkie Baionako dendatik.**
+- **Goizanek lagunei opari politak ekarri dizkie Baionako dendatik.**
   - *Translation:* Goizane has brought nice gifts to her friends from the shop
     in Bayonne.
 
@@ -378,7 +378,7 @@ tenses/moods, doubling the pool to draw from for each combination — same
     of the Zumaia Flysch.
 
 #### Present Potential (Ahalera Oraina)
-- **Niri pintxo merkeak eta gozoak Gasteizko tabernetan okurru dakizkit.**
+- **Niri pintxo merkeak eta gozoak Gasteizko tabernetan bururatu dakizkit.**
   - *Translation:* Cheap and tasty pintxos can occur to me (be found by me)
     in the bars of Vitoria-Gasteiz.
 - **Gurasoei umeak gauez basoan galtzen bazaizkie Olentzero ager dakioke.**
@@ -387,7 +387,7 @@ tenses/moods, doubling the pool to draw from for each combination — same
 
 #### Conditional Mood (Baldintza)
 - **Zuei katu beltzak bidera aterako balitzaizkizue, zorte txarra irudituko
-  litzazaizkizue.**
+  litzaizkizue.**
   - *Translation:* If black cats came out onto your path, it would seem like
     bad luck to you all.
 
@@ -411,7 +411,7 @@ tenses/moods, doubling the pool to draw from for each combination — same
 #### Conditional Mood (Baldintza)
 - **Guk zuei egia esango bagenizue, zuek guri laguntza emango zenigukete.**
   - *Translation:* If we told you the truth, you would give us help.
-- **Sustraiek epaimaimahaiari bertso hobeak kantatu balizkio, txapela
+- **Sustraik epaimahaiari bertso hobeak kantatu balizkio, txapela
   jantziko luke.**
   - *Translation:* If Sustrai had sung better verses to the jury, he would
     wear the championship beret.
@@ -555,7 +555,7 @@ periphrastic verb.
 *A basic intransitive verb like "to go" or "to laugh" becomes "to make go" or
 "to make laugh."*
 
-- **Bertsolariaren txantxek barre arazi digute plazan.**
+- **Bertsolariaren txantxek barre arazi gaituzte plazan.**
   - *Translation:* The bertsolari's jokes made us laugh in the square.
   - *Base verb:* *Barre egin* (to laugh) → *Barre arazi* (to make laugh).
 - **Mendiko ekaitz gogorrak kirolariak baserrira itzularazi zituen.**
@@ -605,10 +605,9 @@ periphrastic verb.
 "to drink wine"), adding `-arazi` requires a three-argument structure: someone
 (`nork`) makes someone else (`nori`) do something (`nor`).*
 
-- **Amonak bilobei Tolosako babarrun gorriak jandakarazi dizkie.**
+- **Amonak bilobei Tolosako babarrun gorriak janarazi dizkie.**
   - *Translation:* Grandmother made her grandchildren eat Tolosa's red beans.
-  - *Base verb:* *Jan* (to eat) → *Janarazi / Jandakarazi* (to feed / force to
-    eat).
+  - *Base verb:* *Jan* (to eat) → *Janarazi* (to feed / force to eat).
 - **Etxekoak bisitariei Getariako txakolin hotza edanarazi die afarian.**
   - *Translation:* The host made the visitors drink cold Txakoli from Getaria
     during dinner.
@@ -656,7 +655,7 @@ conditional, and imperative.*
   - *Translation:* The parents will make the children gather seasonal wild
     mushrooms on the mountain tomorrow.
   - *Base verb:* *Bildu* (to gather) → *Bilduarazi* (to make gather).
-- **Okinak labe berriak euskal pastela azkarrago laberaraziko du.**
+- **Okinaren labe berriak euskal pastela azkarrago laberaraziko du.**
   - *Translation:* The baker's new oven will make the Basque cake bake
     faster.
   - *Base verb:* *Labean sartu/erre* (to bake) → *Laberazi* (to make bake).
@@ -755,7 +754,7 @@ ginen, zineten, ziren)*
   pilotalekuan.**
   - *Translation:* You all were watching the exciting pelota match in the
     fronton court.
-- **Artzaia ardi latzak mendian biltzen ari zen ekaitza hasi aurretik.**
+- **Artzaia ardi latxak mendian biltzen ari zen ekaitza hasi aurretik.**
   - *Translation:* The shepherd was gathering the Latxa sheep on the mountain
     before the storm started.
 - **Aste Nagusian su artifizialak zeruan lehertzen ari ziren herritarrek
@@ -893,11 +892,11 @@ Past (Lehena):
 - **Gurasoak goizeko lehen orduan zetozen baserritik esnearekin.**
   - *Translation:* The parents were coming from the farmhouse with the milk
     at the first hour of the morning.
-- **Zuek korrika zenetozten Korrika festan lekukoa eskuz esku
+- **Zuek korrika zentozten Korrika festan lekukoa eskuz esku
     pasatzen.**
   - *Translation:* You all were coming running in the Korrika festival
     passing the witness baton from hand to hand.
-- **Zuek pilotarien partidatik zenetozten pozik irabazi zutelako.**
+- **Zuek pilotarien partidatik zentozten pozik irabazi zutelako.**
   - *Translation:* You all were coming from the pelota players' match happy
     because they won.
 - **Ni oso nekatuta nentorren Tolosako babarrun janketatik.**
@@ -1008,7 +1007,7 @@ Present (Oraina):
 - **Zuk motxilan Idiazabal gazta zaharra daramazu afaltzeko.**
   - *Translation:* You are carrying old Idiazabal cheese in your backpack for
     dinner.
-- **Guk motxilan Getariako txakolin botila hotz bi daramagu.**
+- **Guk motxilan Getariako txakolin botila hotz bi daramatzagu.**
   - *Translation:* We are carrying two cold bottles of Getaria Txakoli in our
     backpack.
 
@@ -1016,7 +1015,7 @@ Past (Lehena):
 - **Sukaldariek txuleta handiak zeramatzaten txosnatik mahaira.**
   - *Translation:* The cooks were carrying large steaks from the festival
     stall to the table.
-- **Nik nire txakurra neraman mendira ardi latzak ikustera.**
+- **Nik nire txakurra neraman mendira ardi latxak ikustera.**
   - *Translation:* I was taking my dog to the mountain to see the Latxa
     sheep.
 - **Zuek autoan zeramatzazten dantzariak herriko jaietara joateko.**
@@ -1030,9 +1029,9 @@ Present (Oraina):
   oparitzeko.**
   - *Translation:* The friends are bringing a small drum from San Sebastian's
     Drum Festival to gift.
-- **Nire lagunek Getariako txakolin botila hotzak dakarte.**
+- **Nire lagunek Getariako txakolin botila hotzak dakartzate.**
   - *Translation:* My friends bring cold bottles of Txakoli from Getaria.
-- **Nire lagunek goizero euskal pastel gozoak dakarte gozotegitik.**
+- **Nire lagunek goizero euskal pastel gozoak dakartzate gozotegitik.**
   - *Translation:* My friends bring delicious Basque cakes from the pastry
     shop every morning.
 - **Nik zuri Tolosako babarrun gorri zaku bat dakart oparitzeko.**

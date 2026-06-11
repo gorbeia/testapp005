@@ -4,6 +4,57 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-11 — Fixed 13 grammar/spelling errors in `docs/SAMPLE_SENTENCES.md`'s cultural sentence banks
+
+**Decision:** Corrected the following in the "future units" cultural sentence
+banks (none of these are wired into `VERBS` yet, so no code/data changes were
+needed):
+
+- Ergative case on vowel-final names: `Sustraiak`/`Sustraiek` → `Sustraik`,
+  `Goizaneik` → `Goizanek` (vowel-final names take bare `-k`, not `-ek`/`-ak`).
+- `epaimaimahaiari` → `epaimahaiari` (duplicated syllable typo).
+- `okurru dakizkit` → `bururatu dakizkit` (`okurru` is a non-standard
+  Spanish-derived coinage; `bururatu` is the standard "occur to someone" verb,
+  and `dakizkit` is already the correct plural potential NOR-NORI form).
+- `litzazaizkizue` → `litzaizkizue` (duplicated syllable typo; parallels
+  `balitzaizkizue` earlier in the same sentence).
+- `barre arazi digute` → `barre arazi gaituzte` (causative of an `egin`-type
+  intransitive follows this section's `nor`→`nor-nork` pattern — the original
+  subject becomes the absolutive object — consistent with the section's other
+  examples like `korrikarazi zituen`/`itzularazi zituen`).
+- `jandakarazi` → `janarazi` (non-standard double-marked causative; matches
+  `docs/VERB_COVERAGE.md` §6's own `janarazi` example for the same
+  `nor-nork`→`nor-nori-nork` shift).
+- `Okinak labe berriak ... du` → `Okinaren labe berriak ... du` (the
+  translation says "the baker's new oven" — possessive needs the genitive
+  `-aren`, not the ergative `-ak`).
+- `zenetozten` → `zentozten` (×2 — `etorri` past, `zuek`).
+- `daramagu` → `daramatzagu` (a numeral like `bi` ("two") triggers plural
+  object agreement even though the noun itself stays unmarked).
+- `dakarte` → `dakartzate` (×2 — plural object `botila hotzak`/`pastel
+  gozoak` needs the `-tza-` plural marker).
+- `ardi latzak` → `ardi latxak` (×2, for consistency with the existing
+  correct `ardi latxak` elsewhere in the doc — Latxa is the sheep breed named
+  in the English translations).
+
+**Left for native-speaker review** (re-checked but not changed — see
+`docs/SAMPLE_SENTENCES.md`'s "Next steps" item 1 for the general "review for
+naturalness" catch-all):
+- `zeramatzazten` (`eraman` past, `zuek`) — the synthetic past of `eraman` for
+  `zuek` is rare/archaic; possibly `zeneramatzaten`, but the exact form
+  couldn't be confirmed.
+- `Ekar ezazu gazta eta Idiazabalgo ardoa` — whether two coordinated singular
+  objects joined by `eta` should trigger plural-object imperative (`Ekar
+  itzazu`).
+- `saski beteta perretxiko zekarzkigun` — whether a bare/mass-noun object
+  (`perretxiko`, no plural marker) justifies the plural `-zki-` verb form, or
+  needs `perretxikoz` (instrumental) instead.
+- `Okinak ... labe berriak ... laberaraziko du` — `Laberazi`, coined directly
+  from the noun `labe` rather than a verb radical (`erre`/`sartu`), is
+  non-standard; resolving it is part of the broader `-arazi`/`-erazi`
+  conditioning-rule work `docs/VERB_COVERAGE.md` §6 already flags as
+  unsourced.
+
 ## 2026-06-11 — `sentences[tense][person]` can hold multiple phrasing variants, picked at random per question
 
 **Decision:** `verb.sentences[tense][person]` (and, by extension, anything
