@@ -11,6 +11,8 @@ import {
   shuffle,
 } from './lessonLogic'
 import { JOURNEY } from './journey'
+import { JOURNEY_TRANSLATIONS } from './i18n/journeyTranslations'
+import { LanguageProvider, useLanguage } from './i18n/LanguageContext'
 
 // =============================================================================
 // Verb data
@@ -56,7 +58,7 @@ const VERBS = [
   {
     id: 'izan',
     verb: 'izan',
-    meaning: 'to be',
+    meaning: { en: 'to be', es: 'ser / estar', eu: 'izan' },
     type: 'synthetic',
     agreement: ['nor'],
     dialect: 'batua',
@@ -82,7 +84,7 @@ const VERBS = [
   {
     id: 'egon',
     verb: 'egon',
-    meaning: 'to be (located / in a state)',
+    meaning: { en: 'to be (located / in a state)', es: 'estar (ubicación o estado)', eu: 'egon (norbait/zerbait non dagoen)' },
     type: 'synthetic',
     agreement: ['nor'],
     dialect: 'batua',
@@ -114,7 +116,7 @@ const VERBS = [
   {
     id: 'ukan',
     verb: 'ukan',
-    meaning: 'to have',
+    meaning: { en: 'to have', es: 'tener', eu: 'eduki' },
     type: 'synthetic',
     agreement: ['nor', 'nork'],
     object: 'hura',
@@ -148,7 +150,7 @@ const VERBS = [
   {
     id: 'nahi',
     verb: 'nahi izan',
-    meaning: 'to want',
+    meaning: { en: 'to want', es: 'querer', eu: 'nahi izan' },
     type: 'periphrastic',
     agreement: ['nor', 'nork'],
     object: 'hura',
@@ -179,7 +181,7 @@ const VERBS = [
   {
     id: 'jakin',
     verb: 'jakin',
-    meaning: 'to know (a fact)',
+    meaning: { en: 'to know (a fact)', es: 'saber (un hecho)', eu: 'jakin (informazioa)' },
     type: 'synthetic',
     agreement: ['nor', 'nork'],
     object: 'hura',
@@ -210,7 +212,7 @@ const VERBS = [
   {
     id: 'joan',
     verb: 'joan',
-    meaning: 'to go',
+    meaning: { en: 'to go', es: 'ir', eu: 'joan' },
     type: 'synthetic',
     agreement: ['nor'],
     dialect: 'batua',
@@ -238,7 +240,7 @@ const VERBS = [
   {
     id: 'etorri',
     verb: 'etorri',
-    meaning: 'to come',
+    meaning: { en: 'to come', es: 'venir', eu: 'etorri' },
     type: 'synthetic',
     agreement: ['nor'],
     dialect: 'batua',
@@ -263,30 +265,35 @@ const VERBS = [
   },
 ]
 
-const PERSON_LABELS = {
-  ni: 'I',
-  hi: 'you (familiar)',
-  zu: 'you',
-  hura: 'he / she / it',
-  gu: 'we',
-  zuek: 'you all',
-  haiek: 'they',
+// Maps grammatical persons / tenses / verb types / agreement roles to the
+// translation keys their UI labels live under (`src/i18n/translations.js`) —
+// looked up via `t()` at render time so labels follow the interface language.
+// `basque`/`basqueLabel`/the NOR/NORI/NORK `label`s themselves are Basque
+// grammar terms, shown as-is regardless of interface language.
+const PERSON_LABEL_KEYS = {
+  ni: 'personNi',
+  hi: 'personHi',
+  zu: 'personZu',
+  hura: 'personHura',
+  gu: 'personGu',
+  zuek: 'personZuek',
+  haiek: 'personHaiek',
 }
 
 const TENSE_META = {
-  present: { label: 'Present', basque: 'oraina' },
-  past: { label: 'Past', basque: 'lehena' },
+  present: { labelKey: 'tensePresent', basque: 'oraina' },
+  past: { labelKey: 'tensePast', basque: 'lehena' },
 }
 
 const TYPE_META = {
-  synthetic: { label: 'Synthetic · trinkoa', className: 'bg-indigo-100 text-indigo-700' },
-  periphrastic: { label: 'Periphrastic · perifrastikoa', className: 'bg-rose-100 text-rose-700' },
+  synthetic: { labelKey: 'typeSynthetic', basqueLabel: 'trinkoa', className: 'bg-indigo-100 text-indigo-700' },
+  periphrastic: { labelKey: 'typePeriphrastic', basqueLabel: 'perifrastikoa', className: 'bg-rose-100 text-rose-700' },
 }
 
 const AGREEMENT_META = {
-  nor: { label: 'NOR', title: 'Absolutive — the subject (or object) being talked about', className: 'bg-blue-100 text-blue-700' },
-  nori: { label: 'NORI', title: 'Dative — to / for whom', className: 'bg-purple-100 text-purple-700' },
-  nork: { label: 'NORK', title: 'Ergative — who performs the action', className: 'bg-amber-100 text-amber-700' },
+  nor: { label: 'NOR', titleKey: 'agreementNorTitle', className: 'bg-blue-100 text-blue-700' },
+  nori: { label: 'NORI', titleKey: 'agreementNoriTitle', className: 'bg-purple-100 text-purple-700' },
+  nork: { label: 'NORK', titleKey: 'agreementNorkTitle', className: 'bg-amber-100 text-amber-700' },
 }
 
 const DIALECT_LABELS = {
@@ -346,30 +353,39 @@ function saveProgress(progress) {
   }
 }
 
+// Looks up a verb's English/Spanish/Basque gloss, falling back to English if
+// the active interface language has no translation for this verb.
+function verbMeaning(verb, language) {
+  return verb.meaning[language] ?? verb.meaning.en
+}
+
 // Display copy for a lesson card/row, covering both practice and review
 // shapes so `LessonNode`/`ProgressTab`/`LessonResultsScreen` don't each need
 // their own branching. `title`/`subtitle` are `{ main, secondary }` pairs —
 // mirroring the two-tone "label · detail" layout `LessonNode` already used
 // for practice lessons (e.g. "Present · oraina" / "izan — to be") — and
 // `heading` is the single-line form `ProgressTab` shows in its flat list.
-function describeLesson(lesson) {
+// Takes `t`/`language` from the caller's `useLanguage()` since this is a
+// plain function, not a component.
+function describeLesson(lesson, t, language) {
   if (!lesson.review) {
     const verb = VERBS.find((v) => v.id === lesson.verbId)
     const meta = TENSE_META[lesson.tense]
+    const label = t(meta.labelKey)
     return {
-      icon: meta.label[0],
-      title: { main: meta.label, secondary: meta.basque },
-      subtitle: { main: verb.verb, secondary: verb.meaning },
-      heading: `${verb.verb} · ${meta.label}`,
+      icon: label[0],
+      title: { main: label, secondary: meta.basque },
+      subtitle: { main: verb.verb, secondary: verbMeaning(verb, language) },
+      heading: `${verb.verb} · ${label}`,
     }
   }
   const verbNames = [...new Set(lesson.sources.map(({ verbId }) => VERBS.find((v) => v.id === verbId).verb))]
-  const tenseLabels = [...new Set(lesson.sources.map(({ tense }) => TENSE_META[tense].label))]
-  const reviewName = verbNames.length > 1 ? 'Mixed review' : `${verbNames[0]} review`
+  const tenseLabels = [...new Set(lesson.sources.map(({ tense }) => t(TENSE_META[tense].labelKey)))]
+  const reviewName = verbNames.length > 1 ? t('mixedReview') : t('verbReview', { verb: verbNames[0] })
   return {
     icon: '🔁',
-    title: { main: 'Review', secondary: tenseLabels.join(' + ') },
-    subtitle: { main: verbNames.join(' & '), secondary: 'mixed practice' },
+    title: { main: t('reviewLabel'), secondary: tenseLabels.join(' + ') },
+    subtitle: { main: verbNames.join(' & '), secondary: t('mixedPractice') },
     heading: `${reviewName} · ${tenseLabels.join(' + ')}`,
   }
 }
@@ -379,14 +395,20 @@ function describeLesson(lesson) {
 // =============================================================================
 
 function TypeBadge({ type }) {
+  const { t } = useLanguage()
   const meta = TYPE_META[type]
-  return <span className={`rounded-full px-2.5 py-1 text-xs font-semibold whitespace-nowrap ${meta.className}`}>{meta.label}</span>
+  return (
+    <span className={`rounded-full px-2.5 py-1 text-xs font-semibold whitespace-nowrap ${meta.className}`}>
+      {t(meta.labelKey)} · {meta.basqueLabel}
+    </span>
+  )
 }
 
 function AgreementBadge({ role }) {
+  const { t } = useLanguage()
   const meta = AGREEMENT_META[role]
   return (
-    <span title={meta.title} className={`rounded-full px-2.5 py-1 text-xs font-semibold whitespace-nowrap ${meta.className}`}>
+    <span title={t(meta.titleKey)} className={`rounded-full px-2.5 py-1 text-xs font-semibold whitespace-nowrap ${meta.className}`}>
       {meta.label}
     </span>
   )
@@ -413,8 +435,9 @@ function VerbBadgeRow({ verb }) {
 }
 
 function Stars({ count }) {
+  const { t } = useLanguage()
   return (
-    <div className="flex gap-0.5 text-base text-amber-400" aria-label={`${count} of 3 stars`}>
+    <div className="flex gap-0.5 text-base text-amber-400" aria-label={t('starsLabel', { count })}>
       {[0, 1, 2].map((i) => (
         <span key={i} className={i < count ? 'opacity-100' : 'opacity-20'}>
           ★
@@ -433,12 +456,20 @@ function ProgressBar({ value }) {
   )
 }
 
+// Looks up a translated phase/stage/unit field from `JOURNEY_TRANSLATIONS`
+// (`src/i18n/journeyTranslations.js`), falling back to `journey.js`'s English
+// original (`fallback`) for English or any not-yet-translated entry.
+function journeyText(scope, id, field, language, fallback) {
+  return JOURNEY_TRANSLATIONS[scope]?.[id]?.[field]?.[language] ?? fallback
+}
+
 // =============================================================================
 // Home screen — lesson selection
 // =============================================================================
 
 function LessonNode({ lesson, locked, stars, onSelect }) {
-  const { icon, title, subtitle } = describeLesson(lesson)
+  const { t, language } = useLanguage()
+  const { icon, title, subtitle } = describeLesson(lesson, t, language)
   return (
     <button
       type="button"
@@ -494,6 +525,10 @@ function LessonList({ lessons, progress, unlockedIds, onSelect }) {
 // Refresh Gate units (`unit.gate`) get a shield icon instead of a lock to set
 // them apart as checkpoints rather than ordinary lessons.
 function PendingUnitCard({ unit }) {
+  const { t, language } = useLanguage()
+  const title = journeyText('units', unit.number, 'title', language, unit.title)
+  const focus = journeyText('units', unit.number, 'focus', language, unit.focus)
+  const payload = unit.payload ? journeyText('units', unit.number, 'payload', language, unit.payload) : null
   return (
     <div className="flex items-start gap-4 rounded-2xl border-2 border-dashed border-gray-200 bg-gray-50 p-4 opacity-70">
       <div
@@ -504,11 +539,11 @@ function PendingUnitCard({ unit }) {
       </div>
       <div className="min-w-0 flex-1">
         <p className="font-semibold text-gray-700">
-          Unit {unit.number} <span className="font-normal text-gray-400">· {unit.title}</span>
+          {t('unitLabel', { number: unit.number })} <span className="font-normal text-gray-400">· {title}</span>
         </p>
-        <p className="mt-0.5 text-sm text-gray-500">{unit.focus}</p>
-        {unit.payload && <p className="mt-1 text-sm text-gray-400 italic">{unit.payload}</p>}
-        <span className="mt-2 inline-block rounded-full bg-gray-200 px-2.5 py-1 text-xs font-semibold text-gray-500">Coming soon</span>
+        <p className="mt-0.5 text-sm text-gray-500">{focus}</p>
+        {payload && <p className="mt-1 text-sm text-gray-400 italic">{payload}</p>}
+        <span className="mt-2 inline-block rounded-full bg-gray-200 px-2.5 py-1 text-xs font-semibold text-gray-500">{t('comingSoon')}</span>
       </div>
     </div>
   )
@@ -518,22 +553,27 @@ function PendingUnitCard({ unit }) {
 // as a `LessonNode`, with the unit's title/focus from `journey.js` as a label
 // above them.
 function UnitLessons({ unit, progress, unlockedIds, onSelect }) {
+  const { t, language } = useLanguage()
   const lessons = unit.lessonIds.map((id) => LESSONS.find((lesson) => lesson.id === id))
+  const title = journeyText('units', unit.number, 'title', language, unit.title)
+  const focus = journeyText('units', unit.number, 'focus', language, unit.focus)
   return (
     <div>
       <p className="font-semibold text-gray-900">
-        Unit {unit.number} <span className="font-normal text-gray-400">· {unit.title}</span>
+        {t('unitLabel', { number: unit.number })} <span className="font-normal text-gray-400">· {title}</span>
       </p>
-      <p className="mt-0.5 mb-2 text-sm text-gray-500">{unit.focus}</p>
+      <p className="mt-0.5 mb-2 text-sm text-gray-500">{focus}</p>
       <LessonList lessons={lessons} progress={progress} unlockedIds={unlockedIds} onSelect={onSelect} />
     </div>
   )
 }
 
 function StageSection({ stage, progress, unlockedIds, onSelect }) {
+  const { language } = useLanguage()
+  const title = journeyText('stages', stage.id, 'title', language, stage.title)
   return (
     <section className="mb-6">
-      <h3 className="mb-3 text-sm font-bold tracking-wide text-gray-400 uppercase">{stage.title}</h3>
+      <h3 className="mb-3 text-sm font-bold tracking-wide text-gray-400 uppercase">{title}</h3>
       <div className="flex flex-col gap-4">
         {stage.units.map((unit) =>
           unit.status === 'available' ? (
@@ -548,11 +588,14 @@ function StageSection({ stage, progress, unlockedIds, onSelect }) {
 }
 
 function PhaseSection({ phase, progress, unlockedIds, onSelect }) {
+  const { language } = useLanguage()
+  const title = journeyText('phases', phase.id, 'title', language, phase.title)
+  const subtitle = journeyText('phases', phase.id, 'subtitle', language, phase.subtitle)
   return (
     <section className="mb-8">
       <div className="mb-4">
-        <h2 className="text-lg font-bold text-gray-900">{phase.title}</h2>
-        <p className="text-sm text-gray-500">{phase.subtitle}</p>
+        <h2 className="text-lg font-bold text-gray-900">{title}</h2>
+        <p className="text-sm text-gray-500">{subtitle}</p>
       </div>
       {phase.stages.map((stage) => (
         <StageSection key={stage.id} stage={stage} progress={progress} unlockedIds={unlockedIds} onSelect={onSelect} />
@@ -566,11 +609,12 @@ function PhaseSection({ phase, progress, unlockedIds, onSelect }) {
 // curriculum roadmap is visible, with available units rendering their
 // `LessonNode`s and pending units rendering locked `PendingUnitCard`s.
 function JourneyTab({ progress, onSelectLesson }) {
+  const { t } = useLanguage()
   const unlockedIds = useMemo(() => getUnlockedLessonIds(LESSONS, progress), [progress])
 
   return (
     <div>
-      <p className="mb-4 text-sm text-gray-500">Pick a lesson to practice. Finish one to unlock the next.</p>
+      <p className="mb-4 text-sm text-gray-500">{t('homeIntro')}</p>
       {JOURNEY.map((phase) => (
         <PhaseSection key={phase.id} phase={phase} progress={progress} unlockedIds={unlockedIds} onSelect={onSelectLesson} />
       ))}
@@ -579,12 +623,13 @@ function JourneyTab({ progress, onSelectLesson }) {
 }
 
 function ProgressTab({ progress }) {
+  const { t, tCount, language } = useLanguage()
   return (
     <div>
-      <h2 className="mb-4 text-lg font-bold text-gray-900">Your progress</h2>
+      <h2 className="mb-4 text-lg font-bold text-gray-900">{t('progressTitle')}</h2>
       <div className="flex flex-col gap-3">
         {LESSONS.map((lesson) => {
-          const { heading } = describeLesson(lesson)
+          const { heading } = describeLesson(lesson, t, language)
           const entry = progress[lesson.id]
           return (
             <div key={lesson.id} className="flex items-center justify-between gap-3 rounded-2xl border border-gray-200 bg-white p-4">
@@ -592,8 +637,8 @@ function ProgressTab({ progress }) {
                 <p className="truncate font-semibold text-gray-900">{heading}</p>
                 <p className="truncate text-sm text-gray-500">
                   {entry
-                    ? `Best ${entry.bestScore}/${entry.totalQuestions} · ${entry.attempts} attempt${entry.attempts === 1 ? '' : 's'}`
-                    : 'Not started yet'}
+                    ? `${t('progressBest', { best: entry.bestScore, total: entry.totalQuestions })} · ${tCount('attempt', entry.attempts)}`
+                    : t('progressNotStarted')}
                 </p>
               </div>
               <Stars count={entry?.bestStars ?? 0} />
@@ -606,12 +651,33 @@ function ProgressTab({ progress }) {
 }
 
 function ProfileTab({ onResetProgress }) {
+  const { t, language, setLanguage, languages } = useLanguage()
   return (
     <div className="flex flex-col items-center gap-4 py-12 text-center">
       <div className="flex h-20 w-20 items-center justify-center rounded-full bg-green-100 text-4xl">🧑‍🎓</div>
       <div>
-        <h2 className="text-lg font-bold text-gray-900">Ikaslea</h2>
-        <p className="text-sm text-gray-500">Achievements and streaks are coming soon.</p>
+        <h2 className="text-lg font-bold text-gray-900">{t('profileGreeting')}</h2>
+        <p className="text-sm text-gray-500">{t('profileAchievements')}</p>
+      </div>
+      <div className="w-full">
+        <p className="mb-2 text-sm font-semibold text-gray-700">{t('profileLanguage')}</p>
+        <div className="flex justify-center gap-2">
+          {languages.map((lang) => (
+            <button
+              key={lang.code}
+              type="button"
+              onClick={() => setLanguage(lang.code)}
+              style={{ minHeight: 48 }}
+              className={`flex-1 rounded-2xl border-2 px-3 text-sm font-bold transition ${
+                language === lang.code
+                  ? 'border-green-500 bg-green-50 text-green-700'
+                  : 'border-gray-200 text-gray-500 hover:border-gray-300'
+              }`}
+            >
+              {lang.name}
+            </button>
+          ))}
+        </div>
       </div>
       <button
         type="button"
@@ -619,19 +685,20 @@ function ProfileTab({ onResetProgress }) {
         style={{ minHeight: 48 }}
         className="rounded-2xl border-2 border-gray-200 px-5 text-sm font-bold text-gray-500 transition hover:border-red-300 hover:text-red-500"
       >
-        Reset progress
+        {t('profileResetProgress')}
       </button>
     </div>
   )
 }
 
 const NAV_ITEMS = [
-  { id: 'home', label: 'Learn', icon: '🏠' },
-  { id: 'progress', label: 'Progress', icon: '📊' },
-  { id: 'profile', label: 'Profile', icon: '🧑‍🎓' },
+  { id: 'home', labelKey: 'navLearn', icon: '🏠' },
+  { id: 'progress', labelKey: 'navProgress', icon: '📊' },
+  { id: 'profile', labelKey: 'navProfile', icon: '🧑‍🎓' },
 ]
 
 function BottomNav({ active, onSelect }) {
+  const { t } = useLanguage()
   return (
     <nav className="fixed inset-x-0 bottom-0 z-20 mx-auto flex w-full max-w-md border-t border-gray-200 bg-white">
       {NAV_ITEMS.map((item) => (
@@ -647,7 +714,7 @@ function BottomNav({ active, onSelect }) {
           <span className="text-xl leading-none" aria-hidden="true">
             {item.icon}
           </span>
-          {item.label}
+          {t(item.labelKey)}
         </button>
       ))}
     </nav>
@@ -655,6 +722,7 @@ function BottomNav({ active, onSelect }) {
 }
 
 function HomeScreen({ progress, tab, onChangeTab, onSelectLesson, onResetProgress }) {
+  const { t } = useLanguage()
   const totalStars = LESSONS.reduce((sum, lesson) => sum + (progress[lesson.id]?.bestStars ?? 0), 0)
   const maxStars = LESSONS.length * 3
 
@@ -663,7 +731,7 @@ function HomeScreen({ progress, tab, onChangeTab, onSelectLesson, onResetProgres
       <header className="sticky top-0 z-10 flex items-center justify-between border-b border-gray-200 bg-white/90 px-5 py-4 backdrop-blur">
         <div>
           <h1 className="text-xl font-extrabold tracking-tight text-gray-900">Aditzak</h1>
-          <p className="text-xs text-gray-500">Basque verb conjugation practice</p>
+          <p className="text-xs text-gray-500">{t('appTagline')}</p>
         </div>
         <div className="flex items-center gap-1.5 rounded-full bg-amber-100 px-3 py-1.5 text-sm font-bold text-amber-700">
           <span aria-hidden="true">★</span>
@@ -745,6 +813,7 @@ function createExerciseState(lesson, attempts) {
 // here, then spends their first attempts recognising those same forms in
 // isolation before sentences and typed answers are introduced.
 function ConjugationTable({ verb, tense }) {
+  const { t } = useLanguage()
   const table = verb.conjugations[tense]
   return (
     <div className="overflow-hidden rounded-2xl border border-gray-200">
@@ -752,7 +821,7 @@ function ConjugationTable({ verb, tense }) {
         <div key={person} className={`flex items-center justify-between px-4 py-3 ${index > 0 ? 'border-t border-gray-100' : ''}`}>
           <div>
             <p className="font-semibold text-gray-800">{(verb.pronouns?.[person] ?? person).toLowerCase()}</p>
-            <p className="text-xs text-gray-400">{PERSON_LABELS[person]}</p>
+            <p className="text-xs text-gray-400">{t(PERSON_LABEL_KEYS[person])}</p>
           </div>
           <p className="text-xl font-extrabold text-gray-900">{form}</p>
         </div>
@@ -762,13 +831,14 @@ function ConjugationTable({ verb, tense }) {
 }
 
 function LessonPreviewScreen({ verb, tense, tenseMeta, onStart, onExit }) {
+  const { t, language } = useLanguage()
   return (
     <div className="mx-auto flex h-dvh w-full max-w-md flex-col overflow-hidden bg-white">
       <div className="flex items-center gap-3 px-4 pt-4">
         <button
           type="button"
           onClick={onExit}
-          aria-label="Exit lesson"
+          aria-label={t('exitLessonLabel')}
           style={{ minHeight: 48, minWidth: 48 }}
           className="flex items-center justify-center rounded-full text-2xl text-gray-400 transition hover:bg-gray-100 hover:text-gray-600"
         >
@@ -781,10 +851,10 @@ function LessonPreviewScreen({ verb, tense, tenseMeta, onStart, onExit }) {
           <VerbBadgeRow verb={verb} />
         </div>
         <p className="text-sm font-semibold tracking-wide text-gray-400 uppercase">
-          {verb.verb} — {verb.meaning} · {tenseMeta.label}
+          {verb.verb} — {verbMeaning(verb, language)} · {t(tenseMeta.labelKey)}
         </p>
-        <h2 className="mt-2 text-2xl font-extrabold text-gray-900">Take a look before you start</h2>
-        <p className="mt-1 text-gray-500">Here's every form you'll be asked about in this lesson.</p>
+        <h2 className="mt-2 text-2xl font-extrabold text-gray-900">{t('previewTitle')}</h2>
+        <p className="mt-1 text-gray-500">{t('previewSubtitle')}</p>
         <div className="mt-6">
           <ConjugationTable verb={verb} tense={tense} />
         </div>
@@ -797,7 +867,7 @@ function LessonPreviewScreen({ verb, tense, tenseMeta, onStart, onExit }) {
           style={{ minHeight: 48 }}
           className="w-full rounded-2xl bg-green-500 text-lg font-extrabold tracking-wide text-white uppercase transition hover:bg-green-600 active:scale-[0.98]"
         >
-          Start
+          {t('start')}
         </button>
       </div>
     </div>
@@ -849,6 +919,7 @@ const TYPED_INPUT_STYLES = {
 }
 
 function TypedAnswerInput({ value, status, onChange, onSubmit }) {
+  const { t } = useLanguage()
   const isAnswered = status !== 'active'
   return (
     <form
@@ -865,8 +936,8 @@ function TypedAnswerInput({ value, status, onChange, onSubmit }) {
         autoCapitalize="off"
         autoCorrect="off"
         spellCheck="false"
-        placeholder="Idatzi erantzuna…"
-        aria-label="Type your answer"
+        placeholder={t('typeAnswerPlaceholder')}
+        aria-label={t('typeAnswerLabel')}
         value={value}
         disabled={isAnswered}
         onChange={(event) => onChange(event.target.value)}
@@ -882,7 +953,7 @@ function TypedAnswerInput({ value, status, onChange, onSubmit }) {
           style={{ minHeight: 48 }}
           className="w-full rounded-2xl bg-green-500 px-5 py-4 text-lg font-extrabold tracking-wide text-white uppercase transition hover:bg-green-600 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40"
         >
-          Check
+          {t('check')}
         </button>
       )}
     </form>
@@ -914,10 +985,11 @@ function SentenceWithBlank({ sentence }) {
 // `ExerciseScreen`). Every combination still tests recognising/recalling the
 // right Basque form, just packaged differently.
 function QuestionPrompt({ verb, tenseMeta, question }) {
+  const { t, language } = useLanguage()
   return (
     <>
       <p className="text-sm font-semibold tracking-wide text-gray-400 uppercase">
-        {verb.verb} — {verb.meaning} · {tenseMeta.label}
+        {verb.verb} — {verbMeaning(verb, language)} · {t(tenseMeta.labelKey)}
       </p>
       {question.sentence ? (
         <SentenceWithBlank sentence={question.sentence} />
@@ -926,23 +998,26 @@ function QuestionPrompt({ verb, tenseMeta, question }) {
           <h2 className="mt-2 text-4xl font-extrabold text-gray-900">
             {(verb.pronouns?.[question.person] ?? question.person).toLowerCase()}
           </h2>
-          <p className="mt-1 text-gray-500">{PERSON_LABELS[question.person]}</p>
+          <p className="mt-1 text-gray-500">{t(PERSON_LABEL_KEYS[question.person])}</p>
         </>
       )}
     </>
   )
 }
 
-const QUESTION_PROMPTS = {
-  form: 'Which form is correct?',
-  sentence: 'Which word completes the sentence?',
-  'spot-error': 'Which sentence has the wrong form?',
-  pronoun: 'Which pronoun completes the sentence?',
-  'type-verb': 'Type the word that completes the sentence.',
-  'type-pronoun': 'Type the pronoun that completes the sentence.',
+// Maps each question `kind` to the translation key for its instruction line
+// (`src/i18n/translations.js`) — looked up via `t()` in `ExerciseScreen`.
+const QUESTION_PROMPT_KEYS = {
+  form: 'questionForm',
+  sentence: 'questionSentence',
+  'spot-error': 'questionSpotError',
+  pronoun: 'questionPronoun',
+  'type-verb': 'questionTypeVerb',
+  'type-pronoun': 'questionTypePronoun',
 }
 
 function FeedbackBar({ status, isLast, streakEncouragement, onContinue }) {
+  const { t } = useLanguage()
   if (status === 'active') return null
   const isCorrect = status === 'correct'
   return (
@@ -953,12 +1028,12 @@ function FeedbackBar({ status, isLast, streakEncouragement, onContinue }) {
         </span>
         {streakEncouragement ? (
           <span>
-            {streakEncouragement.headline} {streakEncouragement.message}
+            {streakEncouragement.headline} {t(streakEncouragement.messageKey)}
           </span>
         ) : isCorrect ? (
-          <span>Bikain! Great job!</span>
+          <span>{t('feedbackCorrect')}</span>
         ) : (
-          <span>Not quite — you'll see this one again.</span>
+          <span>{t('feedbackIncorrect')}</span>
         )}
       </p>
       <button
@@ -969,16 +1044,17 @@ function FeedbackBar({ status, isLast, streakEncouragement, onContinue }) {
           isCorrect ? 'bg-green-500 hover:bg-green-600' : 'bg-red-500 hover:bg-red-600'
         }`}
       >
-        {isLast ? 'Finish' : 'Continue'}
+        {isLast ? t('finish') : t('continue')}
       </button>
     </div>
   )
 }
 
 function LessonResultsScreen({ lesson, correctCount, total, onDone }) {
+  const { t, language } = useLanguage()
   const stars = computeStars(correctCount, total)
-  const { icon, headline, message } = getEncouragement(correctCount, total)
-  const { heading } = describeLesson(lesson)
+  const { icon, headline, messageKey } = getEncouragement(correctCount, total)
+  const { heading } = describeLesson(lesson, t, language)
 
   return (
     <div className="mx-auto flex h-dvh w-full max-w-md flex-col items-center justify-center gap-5 bg-white px-8 text-center">
@@ -988,18 +1064,18 @@ function LessonResultsScreen({ lesson, correctCount, total, onDone }) {
       <div>
         <h2 className="text-2xl font-extrabold text-gray-900">{headline}</h2>
         <p className="mt-1 text-sm text-gray-500">
-          {heading} — {correctCount}/{total} correct
+          {heading} — {t('resultsScore', { correct: correctCount, total })}
         </p>
       </div>
       <Stars count={stars} />
-      <p className="text-base text-gray-600">{message}</p>
+      <p className="text-base text-gray-600">{t(messageKey)}</p>
       <button
         type="button"
         onClick={onDone}
         style={{ minHeight: 48 }}
         className="w-full rounded-2xl bg-green-500 text-lg font-extrabold tracking-wide text-white uppercase transition hover:bg-green-600 active:scale-[0.98]"
       >
-        Continue
+        {t('continue')}
       </button>
     </div>
   )
@@ -1028,6 +1104,7 @@ function rollStreakNudgeChance() {
 }
 
 function ExerciseScreen({ lesson, attempts, onExit, onComplete, canShowStreakNudge, onStreakNudgeShown }) {
+  const { t } = useLanguage()
   const [state, dispatch] = useReducer(exerciseReducer, undefined, () => createExerciseState(lesson, attempts))
   const [finished, setFinished] = useState(false)
   const [streakEncouragement, setStreakEncouragement] = useState(null)
@@ -1117,7 +1194,7 @@ function ExerciseScreen({ lesson, attempts, onExit, onComplete, canShowStreakNud
         <button
           type="button"
           onClick={onExit}
-          aria-label="Exit lesson"
+          aria-label={t('exitLessonLabel')}
           style={{ minHeight: 48, minWidth: 48 }}
           className="flex items-center justify-center rounded-full text-2xl text-gray-400 transition hover:bg-gray-100 hover:text-gray-600"
         >
@@ -1133,7 +1210,7 @@ function ExerciseScreen({ lesson, attempts, onExit, onComplete, canShowStreakNud
 
         <QuestionPrompt verb={verb} tenseMeta={tenseMeta} question={question} />
 
-        <p className="mt-8 mb-3 text-base font-semibold text-gray-700">{QUESTION_PROMPTS[question.kind]}</p>
+        <p className="mt-8 mb-3 text-base font-semibold text-gray-700">{t(QUESTION_PROMPT_KEYS[question.kind])}</p>
         {question.options ? (
           <div className="flex flex-col gap-3">
             {question.options.map((option) => (
@@ -1160,7 +1237,8 @@ function ExerciseScreen({ lesson, attempts, onExit, onComplete, canShowStreakNud
 // App shell
 // =============================================================================
 
-export default function App() {
+function AppShell() {
+  const { t } = useLanguage()
   const [progress, setProgress] = useState(loadProgress)
   const [tab, setTab] = useState('home')
   const [activeLessonId, setActiveLessonId] = useState(null)
@@ -1178,7 +1256,7 @@ export default function App() {
   }, [])
 
   function handleResetProgress() {
-    if (typeof window !== 'undefined' && !window.confirm('Reset all lesson progress? This cannot be undone.')) {
+    if (typeof window !== 'undefined' && !window.confirm(t('profileResetConfirm'))) {
       return
     }
     setProgress({})
@@ -1211,5 +1289,13 @@ export default function App() {
       onSelectLesson={setActiveLessonId}
       onResetProgress={handleResetProgress}
     />
+  )
+}
+
+export default function App() {
+  return (
+    <LanguageProvider>
+      <AppShell />
+    </LanguageProvider>
   )
 }
