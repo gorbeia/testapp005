@@ -1,50 +1,10 @@
 # Language decisions
 
-A running log of decisions about *language* in this app, in two distinct
-senses — kept together since both are language-content decisions distinct
-from the app/code architecture decisions in `docs/DECISIONS.md`. Newest
-entries at the top of each section.
-
-## Interface language (i18n)
-
-Decisions about the language the UI itself is displayed in (English/
-Spanish/Basque), as distinct from the Basque content being taught.
-
-## 2026-06-11 — "Source language" is the existing interface language, picked via a one-time onboarding screen, with Euskara prioritised
-
-**Decision:** Rather than add a second language preference, "source language"
-(for hints/translations) reuses the existing interface-language setting from
-`LanguageContext`. `LANGUAGES` is now ordered `eu`/`es`/`en` (Euskara first,
-since most users already know some Basque), and the Profile picker is
-relabelled "Source language". `LanguageContext` exposes `hasChosenLanguage`;
-first-time visitors see `LanguageOnboardingScreen` (Euskara flagged
-"Recommended") before anything else, and picking a language persists it
-permanently to `aditzak:lang:v1`.
-
-## 2026-06-11 — Added interface-language i18n (English/Spanish/Basque), keeping the Basque content being taught untranslated
-
-**Decision:** Added `src/i18n/` (`translations.js` + `LanguageContext.jsx`)
-providing `{ language, setLanguage, languages, t, tCount }`, persisted under
-`aditzak:lang:v1` (separate from progress) with browser-language fallback to
-`DEFAULT_LANGUAGE = 'en'`. The Basque verb forms/sentences being taught, plus
-"app voice" flavor text and grammar terminology (NOR/NORI/NORK, `TENSE_META`'s
-Basque labels), stay untranslated — everything else (nav, instructions,
-feedback, person/tense/type labels, verb glosses via `meaning: { en, es, eu
-}`) is translated.
-
-`journey.js`'s curriculum text is translated via a parallel lookup table
-(`journeyTranslations.js`) rather than restructuring `journey.js` itself, so a
-missing translation falls back to English instead of breaking. Existing
-lookup-table patterns (`TENSE_META`, `PERSON_LABELS`, etc.) were extended with
-`labelKey`s rather than replaced. No `STORAGE_KEY` bump — `aditzak:lang:v1` is
-additive.
-
-## Basque conjugation research (`CONJUGATIONS.md` / `VERB_COVERAGE.md`)
-
-Decisions from the research process that filled out `CONJUGATIONS.md`'s
-conjugation grids and `VERB_COVERAGE.md` — the Basque grammar content being
-taught, as distinct from the i18n feature above or the app/code decisions in
-`docs/DECISIONS.md`.
+A running log of decisions from the research process that filled out
+`CONJUGATIONS.md`'s conjugation grids and `VERB_COVERAGE.md` — the Basque
+conjugation content being taught, as distinct from the app/code decisions
+(including the interface-language/i18n feature) in `docs/DECISIONS.md`.
+Newest entries at the top.
 
 ## 2026-06-11 — Filled `izan`/`ukan`'s missing `zu` rows in `CONJUGATIONS.md` §1/§3 — the v2 journey's one concrete prerequisite
 
