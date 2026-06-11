@@ -54,7 +54,8 @@ export const JOURNEY = [
             title: 'Moving Around',
             focus: 'joan + etorri, present tense',
             payload: "\"I'm going to the beach.\" · \"She's coming tomorrow.\"",
-            status: 'pending',
+            status: 'available',
+            lessonIds: ['joan-present', 'etorri-present'],
           },
           {
             number: 4,

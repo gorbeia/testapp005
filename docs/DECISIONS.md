@@ -4,6 +4,31 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-11 — Implemented Unit 3 ("Moving Around"): new `joan`/`etorri` present-tense verbs
+
+**Decision:** Added two new playable lessons — `joan-present` and
+`etorri-present` — and flipped Unit 3 to `available` in `journey.js` with
+those `lessonIds`, in `LESSONS` order right after Unit 2.
+
+- **`joan`** ("to go") and **`etorri`** ("to come"): both fully synthetic,
+  `agreement: ['nor']`, trimmed to Phase I's `ni`/`zu`/`hura` horizon
+  (`noa`/`zoaz`/`doa` and `nator`/`zatoz`/`dator`), per
+  `docs/CONJUGATIONS.md` §6 — which already has `zu` rows for both, so no
+  new sourcing was needed. `gu`/`zuek`/`haiek` will be added in Unit 6
+  ("Expansion"), same as every other Phase I verb.
+- Both verbs have full `sentences`/`pronouns`/`pronounSentences` for
+  `ni`/`zu`/`hura`, giving the same question-kind variety
+  (`form`/`sentence`/`pronoun`/`type-verb`/`type-pronoun`) as the other Unit
+  1-2 verbs. Sentences follow the existing place + `___` pattern (e.g. `Ni
+  hondartzara ___.` → `noa`), matching the unit's "I'm going to the beach" /
+  "She's coming tomorrow" payload.
+- No `lessonLogic.js` or engine changes needed — both verbs fit the
+  already-handled 3-person, single-`nor`-argument shape (same as
+  `izan`/`egon`).
+
+**Why no `STORAGE_KEY` bump:** brand-new lesson ids, no prior progress to
+migrate.
+
 ## 2026-06-11 — Implemented Unit 2 ("Having, Wanting, and Knowing"): `ukan` present trimmed to the 3-person horizon, plus new `nahi`/`jakin` verbs
 
 **Decision:** Per `EXERCISE_ENGINE.md`'s Tier 1 (data-only) classification,
