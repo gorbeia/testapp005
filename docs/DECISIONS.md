@@ -8,6 +8,85 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-11 — `generateQuestions` cycles through a person's framings before repeating one, to fix near-duplicate questions in small lessons
+
+**Decision:** For Phase I's 3-person (`ni`/`zu`/`hura`) lessons, a kind's
+content is otherwise fully determined by `person` — e.g. the `sentence`
+question for `ni` is always "Ni etxean ___." with options `{nago, zaude,
+dago}`. During `noTyping` (a learner's first `NO_TYPING_ATTEMPTS`), only
+`['form', 'sentence', 'pronoun']` are available per person, but
+`TARGET_EXERCISE_COUNT` gives such lessons `rounds: 4` — four independent
+per-person rolls into a 3-outcome distribution, which by the pigeonhole
+principle guarantees at least one repeat, and often more. The result (e.g. on
+Unit 1's `egon-present` lesson) was the same question appearing multiple times
+in a single ~12-question session.
+
+`generateQuestions` now tracks, per person, which kinds have already been
+rolled across rounds (`usedKinds`). If a roll repeats a kind that's already
+been used and an unused one remains (`form` plus `availableKinds`), it's
+swapped for one of the unused kinds instead. With `rounds <= ` the number of
+available kinds, this guarantees zero repeats for that person; beyond that,
+repeats only start once every framing has appeared once. `rounds: 1` (the
+default, used by all existing single-round tests) leaves `used` empty before
+the first roll, so this is a no-op there — existing weighted-roll behaviour
+and tests for the first occurrence per person are unchanged.
+
+## 2026-06-11 — Daily streak tracked in its own storage key, computed via a "live vs. broken" split
+
+**Decision:** Added a Duolingo-style daily streak: completing any lesson
+records today's local date (`getLocalDateString` — local, not UTC, so the day
+boundary matches the learner's clock) into `aditzak:streak:v1`
+(`{ currentStreak, longestStreak, lastActiveDate }`), via the pure
+`recordDailyStreak` in `lessonLogic.js`. Kept as a separate localStorage key
+rather than folded into `progress`/`STORAGE_KEY`, so its shape can evolve
+independently and "Reset progress" can clear both without a version bump to
+either.
+
+`recordDailyStreak` only ever increments (consecutive day), restarts at 1 (gap
+of 2+ days), or no-ops (same day again) — it never resets `currentStreak` to 0
+itself. Whether a streak currently *reads* as alive or broken is a separate,
+display-only concern handled by `getActiveStreak`: a `lastActiveDate` of today
+or yesterday still counts (the learner has until the end of today to extend
+it), anything older reads as 0. This split means the stored streak only
+changes on actual lesson completions, while the UI (header flame badge,
+Profile tab's current/longest cards) always reflects today's reality without
+needing a background job or app-open side effect to "expire" stale streaks.
+
+## 2026-06-11 — Increased real-sentence usage in exercises: raised `SPECIAL_QUESTION_CHANCE` to 0.75 and let the no-typing ramp keep sentence/pronoun framings
+
+**Decision:** Two changes to `lessonLogic.js`'s `generateQuestions`, prompted
+by feedback that a learner doing Unit 2's exercises saw no example-sentence
+questions at all:
+
+1. **`SPECIAL_QUESTION_CHANCE` raised from `0.5` to `0.75`.** Previously, even
+   once sentence/pronoun framings were available, only half of questions used
+   them — the other half were bare `form` questions ("hura → ?", no context).
+   Now real Basque sentences (`sentence`/`type-verb`/`spot-error`/`pronoun`/
+   `type-pronoun`) are the common case (75%) and the bare form is the
+   occasional variation (25%).
+2. **Replaced `onlyBareForm` with `noTyping`** (and renamed
+   `BARE_FORM_ATTEMPTS` to `NO_TYPING_ATTEMPTS` in `App.jsx`, still `2`). The
+   old `onlyBareForm` zeroed out `sentences`/`pronounSentences` entirely for a
+   learner's first two attempts at a lesson — so *no* sentence-based question
+   could appear for two full ~12-question sessions, which is what the learner
+   ran into in Unit 2. `noTyping` instead only excludes the framings that
+   demand recalling/cross-checking a brand-new form from scratch
+   (`type-verb`, `type-pronoun`, `spot-error`); the multiple-choice
+   `sentence`/`pronoun` fill-in-the-blank framings remain available from the
+   very first question. The "don't make a learner type a form they've never
+   seen" rationale behind the original ramp (2026-06-11, "Extended the
+   bare-form ramp..." entry below) is preserved — only typing/spot-error are
+   gated — while sentence exposure starts immediately.
+
+**Why not just raise the chance and leave the ramp as-is:** raising
+`SPECIAL_QUESTION_CHANCE` alone wouldn't have fixed the reported symptom —
+`onlyBareForm` set `sentences`/`pronounSentences` to `{}`, so `availableKinds`
+was always empty and `rollQuestionKind` always returned `'form'` regardless of
+the chance, for a learner's first two attempts at every non-review lesson.
+
+**No `STORAGE_KEY` bump:** purely a question-generation change, no change to
+stored progress shape.
+
 ## 2026-06-11 — "Source language" is the existing interface language, picked via a one-time onboarding screen, with Euskara prioritised
 
 **Decision:** Rather than add a second language preference, "source language"
