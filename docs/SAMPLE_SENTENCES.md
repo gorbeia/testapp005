@@ -603,6 +603,25 @@ periphrastic verb.
   - *Translation:* The director made the workers go to the Bilbao museum in
     the morning.
   - *Base verb:* *Joan* (to go) → *Joanarazi* (to make go).
+- **Goizeko eguzkiak loreak mendian agertarazi ditu.**
+  - *Translation:* The morning sun made the flowers appear on the mountain.
+  - *Base verb:* *Agertu* (to appear) → *Agertarazi* (to make appear).
+- **Basajaunen beldurrak ardiak basotik korrikarazi zituen.**
+  - *Translation:* The fear of Basajaun made the sheep run out of the forest.
+  - *Base verb:* *Korrika egin* (to run) → *Korrikarazi* (to make run).
+- **Zumaia Flysch-eko olatu handiek turistak atzerarazi zituzten.**
+  - *Translation:* The big waves of the Zumaia Flysch made the tourists step
+    back.
+  - *Base verb:* *Atzera egin* (to step back) → *Atzerarazi* (to make step
+    back).
+- **Gernikako albisteak herritarrak plazan bilduarazi ditu.**
+  - *Translation:* The news from Gernika made the townspeople gather in the
+    square.
+  - *Base verb:* *Bildu* (to gather) → *Bilduarazi* (to make gather).
+- **Lagunaren txakolinak niri logura sarrarazi dit.**
+  - *Translation:* My friend's Txakoli made sleepiness enter me (made me
+    sleepy).
+  - *Base verb:* *Sartu* (to enter) → *Sarrarazi* (to make enter).
 
 ### 2. Transforming transitive verbs (`nor-nork` → `nor-nori-nork`)
 *When the original verb already has a direct object (like "to eat meat" or
@@ -621,6 +640,25 @@ periphrastic verb.
   - *Translation:* The teacher made the students write stories of Basque
     mythology.
   - *Base verb:* *Idatzi* (to write) → *Idatzarazi* (to make write).
+- **Sukaldariak laguntzaileari Idiazabal gazta zatituarazi dio.**
+  - *Translation:* The chef made the assistant slice the Idiazabal cheese.
+  - *Base verb:* *Zatitu* (to slice) → *Zatituarazi* (to make slice).
+- **Aitona baserritarrak guri euskal kanta zaharrak abestarazi dizkigu.**
+  - *Translation:* The grandfather farmer made us sing old Basque songs.
+  - *Base verb:* *Abestu* (to sing) → *Abestarazi* (to make sing).
+- **Arrantzaleek dendariei hegaluze freskoa merke salduarazi diote.**
+  - *Translation:* The fishermen made the shopkeepers sell the fresh albacore
+    tuna cheaply.
+  - *Base verb:* *Saldu* (to sell) → *Salduarazi* (to make sell).
+- **Zuzendariak idazleari bertsoen liburua euskararazi zion iaz.**
+  - *Translation:* The director made the writer translate the book of verses
+    into Basque last year.
+  - *Base verb:* *Euskaratu* (to translate into Basque) → *Euskararazi* (to
+    make translate).
+- **Epaimahaiak pilotariari txapela kenduarazi dio pilotalekuan.**
+  - *Translation:* The jury made the pelota player remove the championship
+    beret in the fronton court.
+  - *Base verb:* *Kendu* (to remove) → *Kenduarazi* (to make remove).
 
 ### 3. Advanced tenses & moods with `-arazi`
 *Pairs with Refresh Gate D (Unit 25)'s recombination of `-arazi` with future,
@@ -632,6 +670,15 @@ conditional, and imperative.*
   - *Translation:* The coach will make the pelota players play a better
     match next Sunday.
   - *Base verb:* *Jokatu* (to play) → *Jokarazi* (to make play).
+- **Gurasoek umeei sasoiko perretxikoak mendian bilduaraziko dizkiete
+  bihar.**
+  - *Translation:* The parents will make the children gather seasonal wild
+    mushrooms on the mountain tomorrow.
+  - *Base verb:* *Bildu* (to gather) → *Bilduarazi* (to make gather).
+- **Okinak labe berriak euskal pastela azkarrago laberaraziko du.**
+  - *Translation:* The baker's new oven will make the Basque cake bake
+    faster.
+  - *Base verb:* *Labean sartu/erre* (to bake) → *Laberazi* (to make bake).
 
 #### Conditional Mood (Baldintza)
 - **Gurasoek umeei gelako argia itzalariaraziko baliete, haurrak berehala
@@ -639,12 +686,27 @@ conditional, and imperative.*
   - *Translation:* If the parents made the children turn off the bedroom
     light, the kids would fall asleep immediately.
   - *Base verb:* *Itzali* (to turn off) → *Itzalarazi* (to make turn off).
+- **Guk zuei egia ikusaraziko bagenizue, zuek guri lagunduko zenigukete.**
+  - *Translation:* If we made you all see the truth, you would help us.
+  - *Base verb:* *Ikusi* (to see) → *Ikusarazi* (to make see).
+- **Errezeta honek niri marmitako hobea prestataraziko lidake denbora
+  banu.**
+  - *Translation:* This recipe would make me prepare a better tuna stew if I
+    had time.
+  - *Base verb:* *Prestatu* (to prepare) → *Prestatarazi* (to make prepare).
 
 #### Imperative Mood (Agintera)
 - **Gernikako okinari euskal pastel gozoa guri dastarazi diezaiola esan!**
   - *Translation:* Tell the baker from Gernika to let us taste the delicious
     Basque cake!
   - *Base verb:* *Dastatu* (to taste) → *Dastarazi* (to let/make taste).
+- **Entrenatzaileak kirolariei soka gogorrago tiraerazi diezaiola!**
+  - *Translation:* Have the coach make the athletes pull the rope harder!
+  - *Base verb:* *Tira egin* (to pull) → *Tiraerazi* (to make pull).
+- **Erakutsarazi iezaiozu Baionako mapa lagunari bidea gal ez dezan!**
+  - *Translation:* Make your friend show the map of Bayonne so they don't get
+    lost!
+  - *Base verb:* *Erakutsi* (to show) → *Erakutsarazi* (to make show).
 
 ---
 
