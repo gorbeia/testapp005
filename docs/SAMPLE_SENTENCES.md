@@ -1057,6 +1057,8 @@ Past (Lehena):
 ## Next steps (not yet done)
 
 1. Review/edit these for naturalness and any missing vocabulary gaps.
+   `docs/SAMPLE_SENTENCES_REVIEW_PROMPT.md` has a ready-to-send prompt for the
+   four items still flagged as doubtful in `docs/DECISIONS.md`.
 2. ~~Turn each `sentences[tense][person]` cell into an array of these
    variants in `src/App.jsx`'s `VERBS`, and update `generateQuestions`/
    `buildSpotErrorQuestion` (`src/lessonLogic.js`) to pick one variant at
