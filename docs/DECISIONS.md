@@ -4,6 +4,46 @@ A running log of notable decisions made while developing this app, and the
 reasoning behind them — so future sessions don't relitigate settled questions
 without knowing why they were settled. Newest entries at the top.
 
+## 2026-06-11 — Extended the bare-form ramp to two attempts, added a one-time conjugation preview, and flagged high-difficulty units for extra practice lessons
+
+**Decision:** Three related changes, prompted by feedback that the journey
+moves too fast through topics that need a lot of practice, and that a
+brand-new form shouldn't be typed the first time it's seen:
+
+1. **`BARE_FORM_ATTEMPTS = 2`** (`App.jsx`) — `onlyBareForm` (see the
+   2026-06-07 "ramps up in three stages" entry below) now applies whenever
+   `attempts < 2`, not just `attempts === 0`. A learner gets two full
+   recognition-only passes through a (non-review) lesson — multiple choice
+   over bare forms only, no sentences/pronouns/typing — before the richer
+   framings mix in.
+2. **`LessonPreviewScreen`** (`App.jsx`) — shown once, before a (non-review)
+   lesson's very first attempt (`attempts === 0`): a plain table of every
+   person's conjugated form for that lesson's verb/tense (`ConjugationTable`),
+   with a "Start" button. Reuses `VerbBadgeRow`/`PERSON_LABELS`/`TENSE_META`.
+   Review lessons skip it — every form in a review has already had its own
+   practice-lesson intro.
+3. **`docs/LEARNING_JOURNEY.md`** gained a "Difficulty-weighted extra
+   practice" point (§1.6) flagging units that introduce a *new grammatical
+   relation or register* (Units 2, 8, 15, 16, 20, 21) for one or more
+   additional dedicated practice lessons beyond the standard verb-review, with
+   Unit 16 (NOR-NORI-NORK — the steepest jump in the sequence) getting two.
+
+**Why:** (1) and (2) are general engine improvements that benefit every
+lesson, current and future, with no new stored state — `attempts` already
+exists, and the preview's one-shot condition reuses the same value — so no
+`STORAGE_KEY` bump. Keeping them global rather than gated on a new per-lesson
+"difficulty" field avoids a new mechanism; (3) addresses difficulty at the
+lesson-*count* level instead, which fits the existing
+practice-lesson-per-(verb×tense) model and is purely a flag for whoever
+implements those (still-`pending`) units, not a `LESSONS` change now.
+
+Also fixed a latent test-isolation bug while adding coverage for the above:
+`src/setupTests.js` didn't call `@testing-library/react`'s `cleanup` between
+tests (this project doesn't use vitest's `globals: true`, so RTL's
+auto-cleanup-detection never kicked in), so a second test's `render(<App />)`
+left the first one's DOM around too — added the standard
+`afterEach(() => cleanup())`.
+
 ## 2026-06-11 — Restructured the home screen around `LEARNING_JOURNEY.md` and implemented Unit 1 ("Who and Where")
 
 **Decision:** Added `src/journey.js`, exporting `JOURNEY` — a data-only mirror

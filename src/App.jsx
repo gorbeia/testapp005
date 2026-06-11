@@ -586,13 +586,20 @@ function HomeScreen({ progress, tab, onChangeTab, onSelectLesson, onResetProgres
 // several. Either way, `generateQuestions` runs once per source and the
 // results are interleaved into one shuffled queue — so a review session mixes
 // its conjugation tables together rather than working through them block by
-// block. `onlyBareForm` (see `generateQuestions`) is set only for a learner's
-// very first run through a *practice* lesson — review lessons always show the
-// full mix of framings, and a lesson being repeated has already had its
-// "simple recognition" introduction.
+// block.
+//
+// `onlyBareForm` (see `generateQuestions`) keeps a learner's first
+// `BARE_FORM_ATTEMPTS` runs through a *practice* lesson restricted to bare
+// recognition questions — no sentences, pronouns, or typing — so a brand-new
+// paradigm gets a couple of full passes in its simplest shape before the
+// richer framings open up. Review lessons always show the full mix: by the
+// time a review exists, every form in it has already had its own bare-form
+// introduction.
+const BARE_FORM_ATTEMPTS = 2
+
 function createExerciseState(lesson, attempts) {
   const sources = lesson.sources ?? [{ verbId: lesson.verbId, tense: lesson.tense }]
-  const onlyBareForm = !lesson.review && attempts === 0
+  const onlyBareForm = !lesson.review && attempts < BARE_FORM_ATTEMPTS
   const questions = shuffle(
     sources.flatMap(({ verbId, tense }) => generateQuestions(VERBS.find((verb) => verb.id === verbId), tense, { onlyBareForm })),
   )
@@ -604,6 +611,72 @@ function createExerciseState(lesson, attempts) {
     correctCount: 0,
     streak: 0,
   }
+}
+
+// Shown once, before a learner's very first attempt at a (non-review)
+// lesson: every person's conjugated form for this lesson's verb/tense, laid
+// out as a plain list, so the whole paradigm is visible before any question
+// is asked. Pairs with `BARE_FORM_ATTEMPTS` — the learner sees the full table
+// here, then spends their first attempts recognising those same forms in
+// isolation before sentences and typed answers are introduced.
+function ConjugationTable({ verb, tense }) {
+  const table = verb.conjugations[tense]
+  return (
+    <div className="overflow-hidden rounded-2xl border border-gray-200">
+      {Object.entries(table).map(([person, form], index) => (
+        <div key={person} className={`flex items-center justify-between px-4 py-3 ${index > 0 ? 'border-t border-gray-100' : ''}`}>
+          <div>
+            <p className="font-semibold text-gray-800">{(verb.pronouns?.[person] ?? person).toLowerCase()}</p>
+            <p className="text-xs text-gray-400">{PERSON_LABELS[person]}</p>
+          </div>
+          <p className="text-xl font-extrabold text-gray-900">{form}</p>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function LessonPreviewScreen({ verb, tense, tenseMeta, onStart, onExit }) {
+  return (
+    <div className="mx-auto flex h-dvh w-full max-w-md flex-col overflow-hidden bg-white">
+      <div className="flex items-center gap-3 px-4 pt-4">
+        <button
+          type="button"
+          onClick={onExit}
+          aria-label="Exit lesson"
+          style={{ minHeight: 48, minWidth: 48 }}
+          className="flex items-center justify-center rounded-full text-2xl text-gray-400 transition hover:bg-gray-100 hover:text-gray-600"
+        >
+          ✕
+        </button>
+      </div>
+
+      <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-6 pt-4">
+        <div className="mb-6">
+          <VerbBadgeRow verb={verb} />
+        </div>
+        <p className="text-sm font-semibold tracking-wide text-gray-400 uppercase">
+          {verb.verb} — {verb.meaning} · {tenseMeta.label}
+        </p>
+        <h2 className="mt-2 text-2xl font-extrabold text-gray-900">Take a look before you start</h2>
+        <p className="mt-1 text-gray-500">Here's every form you'll be asked about in this lesson.</p>
+        <div className="mt-6">
+          <ConjugationTable verb={verb} tense={tense} />
+        </div>
+      </div>
+
+      <div className="px-5 pt-4 pb-6">
+        <button
+          type="button"
+          onClick={onStart}
+          style={{ minHeight: 48 }}
+          className="w-full rounded-2xl bg-green-500 text-lg font-extrabold tracking-wide text-white uppercase transition hover:bg-green-600 active:scale-[0.98]"
+        >
+          Start
+        </button>
+      </div>
+    </div>
+  )
 }
 
 // On a correct answer we reveal which option it was; on an incorrect one we
@@ -837,6 +910,23 @@ function ExerciseScreen({ lesson, attempts, onExit, onComplete, canShowStreakNud
   // whenever a new question comes up so the field doesn't carry over what was
   // typed for the previous one.
   const [typedValue, setTypedValue] = useState('')
+  // Shown once, before the first attempt at a (non-review) lesson — see
+  // `LessonPreviewScreen`. Review lessons skip it: every form they cover has
+  // already had its own practice-lesson intro.
+  const [showPreview, setShowPreview] = useState(!lesson.review && attempts === 0)
+
+  if (showPreview) {
+    const verb = VERBS.find((v) => v.id === lesson.verbId)
+    return (
+      <LessonPreviewScreen
+        verb={verb}
+        tense={lesson.tense}
+        tenseMeta={TENSE_META[lesson.tense]}
+        onStart={() => setShowPreview(false)}
+        onExit={onExit}
+      />
+    )
+  }
 
   const total = state.total
   const question = state.queue[0]
