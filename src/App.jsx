@@ -349,25 +349,54 @@ const DIALECT_LABELS = {
 // cleanly onto "every tense of every verb" (e.g. a unit can introduce two
 // verbs at once, or reuse an earlier verb's table under a different gloss),
 // so `journey.js`'s `JOURNEY` is the source of truth for *order and grouping*
-// and references these ids via each available unit's `lessonIds`. Currently
-// just Unit 1 ("Who and Where"); append the next unit's lessons here as it's
-// implemented, and flip its `status` to `'available'` in `journey.js`.
+// and references these ids via each available unit's `lessonIds`. Append the
+// next unit's lessons here as it's implemented, and flip its `status` to
+// `'available'` in `journey.js`.
 //
-// Review lessons (not used yet, but supported by `describeLesson`/
-// `createExerciseState`/`ProgressTab`) would carry `review: true` and
-// `sources: [{ verbId, tense }, …]` instead of a single `verbId`/`tense` —
-// `generateQuestions` is called once per source and the results interleaved,
-// with every generated question keeping its own `verbId`/`tense` so the
-// exercise screen can show each one in its correct context. The journey's
-// Refresh Gate units (5, 6, 11, 17, ...) will use this shape once implemented.
+// Review lessons carry `review: true` and `sources: [{ verbId, tense }, …]`
+// instead of a single `verbId`/`tense` — `generateQuestions` is called once
+// per source and the results interleaved, with every generated question
+// keeping its own `verbId`/`tense` so the exercise screen can show each one
+// in its correct context. Every available unit ends with one of these as a
+// "Unit review" — `sources` covers every verb/tense the unit introduced —
+// giving each unit an extra, harder consolidation lesson (reviews skip the
+// no-typing ramp and the conjugation preview, see `NO_TYPING_ATTEMPTS`/
+// `LessonPreviewScreen`) before the next unit unlocks. The journey's Refresh
+// Gate units (5, 6, 11, 17, ...) are a bigger, cross-unit version of the same
+// shape once implemented.
 const LESSONS = [
   { id: 'izan-present', verbId: 'izan', tense: 'present' },
   { id: 'egon-present', verbId: 'egon', tense: 'present' },
+  {
+    id: 'unit-1-review',
+    review: true,
+    sources: [
+      { verbId: 'izan', tense: 'present' },
+      { verbId: 'egon', tense: 'present' },
+    ],
+  },
   { id: 'ukan-present', verbId: 'ukan', tense: 'present' },
   { id: 'nahi-present', verbId: 'nahi', tense: 'present' },
   { id: 'jakin-present', verbId: 'jakin', tense: 'present' },
+  {
+    id: 'unit-2-review',
+    review: true,
+    sources: [
+      { verbId: 'ukan', tense: 'present' },
+      { verbId: 'nahi', tense: 'present' },
+      { verbId: 'jakin', tense: 'present' },
+    ],
+  },
   { id: 'joan-present', verbId: 'joan', tense: 'present' },
   { id: 'etorri-present', verbId: 'etorri', tense: 'present' },
+  {
+    id: 'unit-3-review',
+    review: true,
+    sources: [
+      { verbId: 'joan', tense: 'present' },
+      { verbId: 'etorri', tense: 'present' },
+    ],
+  },
 ]
 
 // =============================================================================

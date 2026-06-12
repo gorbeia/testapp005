@@ -4,7 +4,11 @@
 // Mirrors `docs/LEARNING_JOURNEY.md`'s phases → stages → units. Each unit is
 // either:
 //   - `available`: has `lessonIds`, pointing at entries in `LESSONS`
-//     (App.jsx) that the home screen renders as playable lesson cards.
+//     (App.jsx) that the home screen renders as playable lesson cards. Every
+//     available unit's `lessonIds` ends with that unit's `unit-N-review`
+//     entry — a trailing `review: true` lesson covering everything the unit
+//     introduced, giving each unit its own harder consolidation pass before
+//     the next one unlocks.
 //   - `pending`: not implemented yet — rendered as a locked "coming soon"
 //     roadmap card (title/focus/payload only), so the full curriculum is
 //     visible from day one even as units are filled in one at a time.
@@ -32,7 +36,7 @@ export const JOURNEY = [
             focus: 'izan + egon, present tense',
             payload: '"I am a student." · "Where are you?" · "He is at home."',
             status: 'available',
-            lessonIds: ['izan-present', 'egon-present'],
+            lessonIds: ['izan-present', 'egon-present', 'unit-1-review'],
           },
           {
             number: 2,
@@ -41,7 +45,7 @@ export const JOURNEY = [
             payload:
               '"I have a car." · "I want coffee." · "Do you want to come?" · "I don\'t know."',
             status: 'available',
-            lessonIds: ['ukan-present', 'nahi-present', 'jakin-present'],
+            lessonIds: ['ukan-present', 'nahi-present', 'jakin-present', 'unit-2-review'],
           },
         ],
       },
@@ -55,7 +59,7 @@ export const JOURNEY = [
             focus: 'joan + etorri, present tense',
             payload: "\"I'm going to the beach.\" · \"She's coming tomorrow.\"",
             status: 'available',
-            lessonIds: ['joan-present', 'etorri-present'],
+            lessonIds: ['joan-present', 'etorri-present', 'unit-3-review'],
           },
           {
             number: 4,
