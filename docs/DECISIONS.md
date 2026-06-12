@@ -8,6 +8,25 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-12 — Added optional Cloudflare Web Analytics, off unless a beacon token is configured
+
+**Decision:** Added `src/analytics.js`'s `loadCloudflareAnalytics`, called
+once from `src/main.jsx`, which injects Cloudflare's beacon `<script>` tag
+only if `import.meta.env.VITE_CF_BEACON_TOKEN` is set. `.github/workflows/deploy.yml`
+passes a `CF_BEACON_TOKEN` repo variable through as that env var during the
+build. `.env.example` documents the variable for local builds. Full setup
+instructions (creating the Cloudflare Web Analytics site, getting the token,
+configuring the GitHub Actions variable) live in
+`docs/CLOUDFLARE_ANALYTICS.md`.
+
+**Why conditional injection over a static `<script>` tag in `index.html`:**
+the token is account-specific and shouldn't be hardcoded into the repo (forks
+would send data to our account, and local/dev builds would too). Gating on an
+env var means analytics are opt-in per deployment and silently absent — no
+broken placeholder tags — when unconfigured. A repo *variable* (not secret)
+is appropriate since the token only ever appears in publicly-served JS and
+can't be used to read analytics data back out.
+
 ## 2026-06-12 — Implemented Unit 4 ("The Immediate Continuous"), modeling `ari` as its own `VERBS` entry
 
 **Decision:** Added an `ari` entry to `VERBS` (`type: 'periphrastic'`,
