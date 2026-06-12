@@ -7,8 +7,11 @@ even one hosted outside Cloudflare (like our GitHub Pages deployment). It
 embeds a small JS "beacon" snippet that reports visits to Cloudflare's
 dashboard.
 
-Analytics are **off by default**. The beacon only loads if a token is
-configured — see below.
+A token for this app's site is already baked into `src/analytics.js`
+(`DEFAULT_CF_BEACON_TOKEN`), so analytics work out of the box on the deployed
+site with no configuration needed. The rest of this doc explains where that
+token came from and how to point a fork/different deployment at a different
+Cloudflare account instead.
 
 ## 1. Create a Web Analytics site in Cloudflare
 
@@ -30,32 +33,21 @@ configured — see below.
 
 ## 2. Configure the token
 
-The token is read from the `VITE_CF_BEACON_TOKEN` environment variable at
-build time (`src/analytics.js`, loaded once from `src/main.jsx`). If it's
-unset, no script is injected and nothing is sent to Cloudflare.
+`src/analytics.js` falls back to `DEFAULT_CF_BEACON_TOKEN`, which is already
+set to this app's token (from step 1, for `gorbeia.github.io`). This is fine
+to commit: the token ends up in the publicly-served HTML/JS anyway, and
+Cloudflare Web Analytics tokens are only useful for sending beacons to that
+one Cloudflare account, not for reading data back out.
 
-### Production (GitHub Pages deploy)
+To point a fork or alternate deployment at a *different* Cloudflare site
+(rather than editing the default in source), set the
+`VITE_CF_BEACON_TOKEN` environment variable, which takes precedence:
 
-`.github/workflows/deploy.yml`'s build step reads `vars.CF_BEACON_TOKEN` from
-the repository's GitHub Actions configuration. To set it:
-
-1. In the GitHub repo, go to **Settings → Secrets and variables → Actions →
-   Variables**.
-2. Add a repository variable named `CF_BEACON_TOKEN` with the token from
-   step 1.
-3. Re-run the deploy workflow (or push to `main`) — the next build will embed
-   the beacon.
-
-A repository *variable* (not secret) is fine here: the token ends up in the
-publicly-served HTML/JS anyway, and Cloudflare Web Analytics tokens are only
-useful for sending beacons to that one Cloudflare account, not for reading
-data back out.
-
-### Local development
-
-Copy `.env.example` to `.env.local` and fill in `VITE_CF_BEACON_TOKEN` if you
-want to test the beacon locally (`.env.local` is gitignored). Leave it unset
-to develop without analytics, which is the normal case.
+- **GitHub Pages deploy:** `.github/workflows/deploy.yml`'s build step passes
+  through a `CF_BEACON_TOKEN` repository variable (**Settings → Secrets and
+  variables → Actions → Variables**) as `VITE_CF_BEACON_TOKEN`.
+- **Local development:** copy `.env.example` to `.env.local` and fill in
+  `VITE_CF_BEACON_TOKEN` (`.env.local` is gitignored).
 
 ## 3. Verify
 

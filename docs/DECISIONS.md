@@ -8,24 +8,25 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
-## 2026-06-12 — Added optional Cloudflare Web Analytics, off unless a beacon token is configured
+## 2026-06-12 — Added Cloudflare Web Analytics, with the beacon token committed as a default in `src/analytics.js`
 
 **Decision:** Added `src/analytics.js`'s `loadCloudflareAnalytics`, called
 once from `src/main.jsx`, which injects Cloudflare's beacon `<script>` tag
-only if `import.meta.env.VITE_CF_BEACON_TOKEN` is set. `.github/workflows/deploy.yml`
-passes a `CF_BEACON_TOKEN` repo variable through as that env var during the
-build. `.env.example` documents the variable for local builds. Full setup
-instructions (creating the Cloudflare Web Analytics site, getting the token,
-configuring the GitHub Actions variable) live in
-`docs/CLOUDFLARE_ANALYTICS.md`.
+using `DEFAULT_CF_BEACON_TOKEN` (the token for `gorbeia.github.io`'s Web
+Analytics site), unless `VITE_CF_BEACON_TOKEN` is set to override it.
+`.github/workflows/deploy.yml` passes a `CF_BEACON_TOKEN` repo variable
+through as that env var, for forks/alternate deployments that want their own
+Cloudflare site. `.env.example` documents the same for local overrides. Full
+setup instructions (creating the Cloudflare Web Analytics site, getting the
+token, overriding it) live in `docs/CLOUDFLARE_ANALYTICS.md`.
 
-**Why conditional injection over a static `<script>` tag in `index.html`:**
-the token is account-specific and shouldn't be hardcoded into the repo (forks
-would send data to our account, and local/dev builds would too). Gating on an
-env var means analytics are opt-in per deployment and silently absent — no
-broken placeholder tags — when unconfigured. A repo *variable* (not secret)
-is appropriate since the token only ever appears in publicly-served JS and
-can't be used to read analytics data back out.
+**Why commit the token as a default:** Cloudflare Web Analytics beacon tokens
+are not secrets — they're embedded in every page's public HTML/JS by design,
+and can only be used to *send* beacons to that Cloudflare account, not read
+data back out. Committing it means analytics work on the deployed site with
+zero configuration, instead of requiring a one-time GitHub Actions variable
+setup. The env var override exists only for forks that want their own
+Cloudflare account, not as a secrecy mechanism.
 
 ## 2026-06-12 — Implemented Unit 4 ("The Immediate Continuous"), modeling `ari` as its own `VERBS` entry
 
