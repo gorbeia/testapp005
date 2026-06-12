@@ -67,7 +67,7 @@ import { trackEvent } from './analytics'
 // this single-blank shape; see `docs/DECISIONS.md` (Unit 5). Powers the
 // `negative`/`type-negative` question kinds, which only appear when a lesson
 // opts in via `includeNegation` (see `generateQuestions`) — Unit 5's
-// `unit-5-review` is the only lesson that currently does.
+// `unit-5-review-1`/`-2`/`-3` are the only lessons that currently do.
 //
 // Per `docs/LEARNING_JOURNEY.md`'s Phase I ("Survival Present"), every verb's
 // first lesson is restricted to `ni`/`zu`/`hura` — `gu`/`zuek`/`haiek` (and,
@@ -728,17 +728,38 @@ const LESSONS = [
   // six Units 1–3 verbs whose present-tense form is a single word that stays
   // intact under negation. `negation: true` tells `createExerciseState` to
   // pass `includeNegation` through to `generateQuestions` for every source.
+  // Split into three reviews of two sources each — a single six-source review
+  // landed at ~33 questions (see `docs/DECISIONS.md`, 2026-06-12 "Implemented
+  // Unit 6"), well past `TARGET_EXERCISE_COUNT`; each of these three lands at
+  // exactly 12. Per `docs/LEARNING_JOURNEY.md`, a Refresh Gate's whole point is
+  // a cumulative cross-unit mixer, so sources are deliberately paired *across*
+  // their originating units (Unit 1: izan/egon, Unit 2: ukan/jakin, Unit 3:
+  // joan/etorri) rather than keeping each origin unit's pair together.
   {
-    id: 'unit-5-review',
+    id: 'unit-5-review-1',
     review: true,
     negation: true,
     sources: [
       { verbId: 'izan', tense: 'present' },
-      { verbId: 'egon', tense: 'present' },
       { verbId: 'ukan', tense: 'present' },
+    ],
+  },
+  {
+    id: 'unit-5-review-2',
+    review: true,
+    negation: true,
+    sources: [
+      { verbId: 'egon', tense: 'present' },
       { verbId: 'joan', tense: 'present' },
-      { verbId: 'etorri', tense: 'present' },
+    ],
+  },
+  {
+    id: 'unit-5-review-3',
+    review: true,
+    negation: true,
+    sources: [
       { verbId: 'jakin', tense: 'present' },
+      { verbId: 'etorri', tense: 'present' },
     ],
   },
   // Unit 6 ("Expansion — Bringing in the Plural", Refresh Gate A) — zero new
@@ -747,18 +768,30 @@ const LESSONS = [
   // `haiek` rows directly (see `docs/DECISIONS.md`), so every practice lesson
   // and review above that already references these verbs' present tense now
   // covers the full 6-person grid automatically — no `persons` filter needed.
-  // `unit-6-review` is this unit's own consolidation pass across all five
-  // newly-expanded tables.
+  // This unit's own consolidation pass is split into three reviews, using the
+  // same cross-unit pairing as Unit 5 above (Unit 1: izan/egon, Unit 2: ukan,
+  // Unit 3: joan/etorri all paired across origins) — a single five-source
+  // review landed at 30 questions; each of these three lands at exactly 12.
   {
-    id: 'unit-6-review',
+    id: 'unit-6-review-1',
     review: true,
     sources: [
       { verbId: 'izan', tense: 'present' },
-      { verbId: 'egon', tense: 'present' },
       { verbId: 'ukan', tense: 'present' },
-      { verbId: 'joan', tense: 'present' },
-      { verbId: 'etorri', tense: 'present' },
     ],
+  },
+  {
+    id: 'unit-6-review-2',
+    review: true,
+    sources: [
+      { verbId: 'egon', tense: 'present' },
+      { verbId: 'joan', tense: 'present' },
+    ],
+  },
+  {
+    id: 'unit-6-review-3',
+    review: true,
+    sources: [{ verbId: 'etorri', tense: 'present' }],
   },
   // Unit 7 ("Daily Routine (Transitive)", Phase II) — first unit past Refresh
   // Gate A, introducing four new periphrastic nor-nork verbs (`jan`/`edan`/

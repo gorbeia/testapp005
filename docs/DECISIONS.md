@@ -8,6 +8,43 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-12 — Split `unit-5-review`/`unit-6-review` into three reviews each, paired across origin units
+
+**Decision:** Replaced the single `unit-5-review` (6 sources, ~33 questions)
+and `unit-6-review` (5 sources, 30 questions) lessons with
+`unit-5-review-1`/`-2`/`-3` and `unit-6-review-1`/`-2`/`-3`. Every resulting
+lesson lands at exactly 12 questions (`TARGET_EXERCISE_COUNT`) — two 6-person
+sources give 6+6, a 6-person + 3-person pair (`jakin`) gives 6+6 via the
+`rounds` formula, and a single 6-person source (Unit 6's `etorri`-only
+review) gets 2 rounds for 12. Updated `journey.js`'s `lessonIds` for Units
+5/6 to the new three-lesson arrays, in order.
+
+Sources are paired *across* their originating units rather than keeping each
+origin unit's own pair together: `unit-5/6-review-1` = `izan`(U1)+`ukan`(U2),
+`-2` = `egon`(U1)+`joan`(U3), `-3` = `jakin`(U2)+`etorri`(U3) for Unit 5 (Unit
+6 drops `jakin`, so its `-3` is `etorri` alone).
+
+**Why:** ~30-33 questions in one sitting was flagged as too long (this entry
+follows directly from the "documented tradeoff... flagged here in case a
+future session wants to trim it" note in the 2026-06-12 "Implemented Unit 6"
+entry below). An earlier version of this split grouped sources by originating
+unit (`izan`+`egon`, `ukan`+`jakin`, `joan`+`etorri`), but that defeats a
+Refresh Gate's purpose per `docs/LEARNING_JOURNEY.md` — a cumulative
+cross-unit mixer, not three separate "redo this unit" sessions. Pairing
+across origins keeps each lesson a genuine mix while still hitting 12
+questions. Reusing the existing `rounds = max(1, round(targetPerSource /
+personCount))` machinery needed no engine changes — `getUnlockedLessonIds`
+and `describeLesson` already handle any number of review lessons per unit. No
+`STORAGE_KEY` bump: old `unit-5-review`/`unit-6-review` progress entries (if
+any) simply become orphaned/unused, same as any renamed lesson id.
+
+Lesson naming stays generic (`unit-5-review-1`/`-2`/`-3`, displayed via
+`describeLesson`'s existing "Mixed Review" label) rather than themed by
+sentence topic (e.g. "Nature", "Sport") — the current `sentences` data isn't
+tagged by topic and doesn't cover topics like that, so topic-themed reviews
+would need a separate content pass tagging sentence variants by topic across
+`VERBS` first.
+
 ## 2026-06-12 — Filled the remaining sentence-variety gaps: `joan`/`etorri` (all 6 persons) and `nahi`/`jakin`'s `ni`/`zu`
 
 **Decision:** Converted `joan`/`etorri`'s `sentences.present` from single
