@@ -1571,10 +1571,10 @@ function ProgressTab({ progress }) {
 }
 
 // Cloudflare Worker endpoint for feedback submissions — see
-// docs/CLOUDFLARE_FEEDBACK_WORKER.md. Injected at build time, following the
-// same "env var, no committed default" approach as src/analytics.js's
-// PostHog overrides (the worker URL isn't known/committed yet).
-const FEEDBACK_API_URL = import.meta.env.VITE_FEEDBACK_API_URL
+// docs/CLOUDFLARE_FEEDBACK_WORKER.md. Defaults to the deployed worker;
+// override with VITE_FEEDBACK_API_URL for forks or local `wrangler dev`.
+// Not a secret — the worker's CORS is locked to ALLOWED_ORIGIN regardless.
+const FEEDBACK_API_URL = import.meta.env.VITE_FEEDBACK_API_URL || 'https://aditzak-feedback.inakiibarrola.workers.dev'
 // Mirrors the worker's own limits (worker/src/index.js).
 const FEEDBACK_MESSAGE_MAX_LENGTH = 2000
 const FEEDBACK_EMAIL_MAX_LENGTH = 320

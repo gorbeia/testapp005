@@ -8,6 +8,26 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-12 — Hardcoded the feedback worker's URL as a default in `src/App.jsx`, `VITE_FEEDBACK_API_URL` now just an override
+
+**Decision:** `FEEDBACK_API_URL` now falls back to the deployed worker's URL
+(`https://aditzak-feedback.inakiibarrola.workers.dev`) when
+`VITE_FEEDBACK_API_URL` is unset/empty, following the same `|| DEFAULT_X`
+pattern `src/analytics.js` uses for PostHog. `.env.example` and
+`docs/CLOUDFLARE_FEEDBACK_WORKER.md` updated accordingly; the env var/repo
+variable is now only needed to point at a *different* worker (a fork's own
+deployment, or local `wrangler dev`).
+
+**Why:** the original "build-time env var, no committed default" choice (see
+the "Added a feedback form/modal" entry below) was made before the worker was
+deployed and its URL was unknown. In production this left
+`VITE_FEEDBACK_API_URL` empty (the `FEEDBACK_API_URL` repo variable was never
+set), so `fetch('')` resolved to the Pages site's own URL and got a 405 from
+GitHub Pages — feedback submission silently failed. The worker's URL isn't
+sensitive (CORS is locked to `ALLOWED_ORIGIN` regardless of who knows the
+URL), so hardcoding a working default removes this footgun entirely while
+still allowing overrides.
+
 ## 2026-06-12 — App-wide "max 3 persons per exercise" rule, applied to Units 6-9 via singular/plural lesson pairs
 
 **Decision:** Generalized the previous entry's fix into a hard app-wide rule:
