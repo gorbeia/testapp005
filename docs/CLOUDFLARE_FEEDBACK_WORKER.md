@@ -66,18 +66,60 @@ npx wrangler secret put RESEND_API_KEY
 Paste the Resend API key when prompted. Secrets aren't stored in the repo or
 `wrangler.toml`.
 
-## 4. Develop and deploy
+## 4. Develop and deploy locally
 
 ```sh
 cd worker
 npm install
 npm run dev      # local dev server (wrangler dev)
-npm run deploy   # publish to Cloudflare
+npm run deploy   # publish to Cloudflare (uses `wrangler login` auth)
 ```
 
 `wrangler deploy` prints the worker's URL
 (`https://aditzak-feedback.<your-subdomain>.workers.dev`). That URL is what
 the frontend will call — see "Next steps".
+
+## 5. Automatic deploys via GitHub Actions
+
+`.github/workflows/deploy-worker.yml` runs `wrangler deploy` (via
+[`cloudflare/wrangler-action`](https://github.com/cloudflare/wrangler-action))
+whenever `worker/**` changes on `main`, or on manual dispatch. It needs two
+**repository secrets** (**Settings → Secrets and variables → Actions →
+Secrets**, not "Variables" — these must stay secret):
+
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
+
+### Creating the API token
+
+1. Cloudflare dashboard → **My Profile → API Tokens → Create Token**.
+2. Use the **"Edit Cloudflare Workers"** template (or a custom token with
+   **Account → Workers Scripts → Edit** permission).
+3. Scope it to the account that will host this worker (no need for
+   all-account access if you have multiple).
+4. Create the token and copy it immediately — Cloudflare only shows it once.
+5. Add it as the `CLOUDFLARE_API_TOKEN` repo secret.
+
+### Finding the account ID
+
+Cloudflare dashboard → any domain/**Workers & Pages** overview page — the
+**Account ID** is shown in the right-hand sidebar. Add it as the
+`CLOUDFLARE_ACCOUNT_ID` repo secret.
+
+### Note on `RESEND_API_KEY`
+
+This is a *Worker* secret (step 3 above), not a GitHub secret — it's stored
+by Cloudflare and attached to the deployed worker, not read by the CI job.
+`wrangler secret put` requires being authenticated as the same Cloudflare
+account/token; you can run it locally after `wrangler login`, or
+non-interactively with `CLOUDFLARE_API_TOKEN` set in your shell:
+
+```sh
+echo "$RESEND_API_KEY" | CLOUDFLARE_API_TOKEN=<token> npx wrangler secret put RESEND_API_KEY
+```
+
+It only needs to be set once (and again if the key is rotated) — it persists
+across the redeploys the GitHub Action triggers.
 
 ## Next steps (not yet done)
 

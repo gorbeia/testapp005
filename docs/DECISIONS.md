@@ -8,6 +8,20 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-12 — Added CI deploy for the feedback worker (`cloudflare/wrangler-action`)
+
+**Decision:** Added `.github/workflows/deploy-worker.yml`, running
+`wrangler deploy` on pushes to `main` that touch `worker/**` (or manual
+dispatch), authenticated via `CLOUDFLARE_API_TOKEN`/`CLOUDFLARE_ACCOUNT_ID`
+repo secrets. Documented token creation/scoping in
+`docs/CLOUDFLARE_FEEDBACK_WORKER.md`.
+
+**Why:** keeps the worker deploy on the same "push to main → live" model as
+the GitHub Pages site (`deploy.yml`), rather than relying on manual
+`wrangler deploy` from a developer machine. `RESEND_API_KEY` stays a
+Cloudflare Worker secret (set once via `wrangler secret put`, not a GitHub
+secret) since it's read by the worker at runtime, not by the CI job.
+
 ## 2026-06-12 — Added a standalone Cloudflare Worker for feedback emails (Resend), no storage/UI yet
 
 **Decision:** Added `worker/` — a Cloudflare Worker (`wrangler.toml` +
