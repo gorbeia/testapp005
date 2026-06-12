@@ -344,8 +344,8 @@ function buildSpotErrorQuestion(table, sentences, personsWithSentences, person) 
 // several lessons' worth of conjugation tables and still show each one in its
 // correct verb/tense context.
 //
-// `includeNegation` (set for the Refresh Gate A "Inversion Matrix" review —
-// see `LESSONS`'s `unit-5-review`) switches a person with
+// `includeNegation` (set for the Refresh Gate A "Inversion Matrix" reviews —
+// see `LESSONS`'s `unit-5-review-1`/`-2`/`-3`) switches a person with
 // `negativeSentences[tense][person]` data over to *exclusively*
 // `negative`/`type-negative` framings (plus the occasional bare `form`,
 // same as any other kind) instead of the normal `sentence`/`pronoun`/...

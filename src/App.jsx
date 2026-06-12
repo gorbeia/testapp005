@@ -67,7 +67,7 @@ import { trackEvent } from './analytics'
 // this single-blank shape; see `docs/DECISIONS.md` (Unit 5). Powers the
 // `negative`/`type-negative` question kinds, which only appear when a lesson
 // opts in via `includeNegation` (see `generateQuestions`) — Unit 5's
-// `unit-5-review` is the only lesson that currently does.
+// `unit-5-review-1`/`-2`/`-3` are the only lessons that currently do.
 //
 // Per `docs/LEARNING_JOURNEY.md`'s Phase I ("Survival Present"), every verb's
 // first lesson is restricted to `ni`/`zu`/`hura` — `gu`/`zuek`/`haiek` (and,
@@ -728,17 +728,36 @@ const LESSONS = [
   // six Units 1–3 verbs whose present-tense form is a single word that stays
   // intact under negation. `negation: true` tells `createExerciseState` to
   // pass `includeNegation` through to `generateQuestions` for every source.
+  // Split into three reviews, grouped by the unit that originally taught each
+  // verb (Unit 1: izan/egon, Unit 2: ukan/jakin, Unit 3: joan/etorri) — a
+  // single six-source review landed at ~33 questions (see `docs/DECISIONS.md`,
+  // 2026-06-12 "Implemented Unit 6"), well past `TARGET_EXERCISE_COUNT`; each
+  // of these three lands at exactly 12.
   {
-    id: 'unit-5-review',
+    id: 'unit-5-review-1',
     review: true,
     negation: true,
     sources: [
       { verbId: 'izan', tense: 'present' },
       { verbId: 'egon', tense: 'present' },
+    ],
+  },
+  {
+    id: 'unit-5-review-2',
+    review: true,
+    negation: true,
+    sources: [
       { verbId: 'ukan', tense: 'present' },
+      { verbId: 'jakin', tense: 'present' },
+    ],
+  },
+  {
+    id: 'unit-5-review-3',
+    review: true,
+    negation: true,
+    sources: [
       { verbId: 'joan', tense: 'present' },
       { verbId: 'etorri', tense: 'present' },
-      { verbId: 'jakin', tense: 'present' },
     ],
   },
   // Unit 6 ("Expansion — Bringing in the Plural", Refresh Gate A) — zero new
@@ -747,15 +766,27 @@ const LESSONS = [
   // `haiek` rows directly (see `docs/DECISIONS.md`), so every practice lesson
   // and review above that already references these verbs' present tense now
   // covers the full 6-person grid automatically — no `persons` filter needed.
-  // `unit-6-review` is this unit's own consolidation pass across all five
-  // newly-expanded tables.
+  // This unit's own consolidation pass is split into three reviews, mirroring
+  // Unit 5's grouping (Unit 1: izan/egon, Unit 2: ukan, Unit 3: joan/etorri) —
+  // a single five-source review landed at 30 questions; each of these three
+  // lands at exactly 12.
   {
-    id: 'unit-6-review',
+    id: 'unit-6-review-1',
     review: true,
     sources: [
       { verbId: 'izan', tense: 'present' },
       { verbId: 'egon', tense: 'present' },
-      { verbId: 'ukan', tense: 'present' },
+    ],
+  },
+  {
+    id: 'unit-6-review-2',
+    review: true,
+    sources: [{ verbId: 'ukan', tense: 'present' }],
+  },
+  {
+    id: 'unit-6-review-3',
+    review: true,
+    sources: [
       { verbId: 'joan', tense: 'present' },
       { verbId: 'etorri', tense: 'present' },
     ],

@@ -81,7 +81,7 @@ export const JOURNEY = [
             focus: 'Negation drills across Units 1–4 — zero new verbs',
             status: 'available',
             gate: true,
-            lessonIds: ['unit-5-review'],
+            lessonIds: ['unit-5-review-1', 'unit-5-review-2', 'unit-5-review-3'],
           },
           {
             number: 6,
@@ -89,7 +89,7 @@ export const JOURNEY = [
             focus: 'Adds gu/zuek/haiek to izan, egon, ukan, joan, etorri — zero new verbs',
             status: 'available',
             gate: true,
-            lessonIds: ['unit-6-review'],
+            lessonIds: ['unit-6-review-1', 'unit-6-review-2', 'unit-6-review-3'],
           },
         ],
       },
