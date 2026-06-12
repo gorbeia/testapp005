@@ -8,6 +8,23 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-12 — Added a project-scoped `.mcp.json` for PostHog's hosted MCP server
+
+**Decision:** Added `.mcp.json` at the repo root, configuring PostHog's hosted
+remote MCP server (`https://mcp.posthog.com/mcp`, `type: "http"`) under
+`mcpServers.posthog`. No API key/env var in the config — PostHog's MCP auth is
+an OAuth login flow per the client (`/mcp` in Claude Code), which routes to the
+correct data region (EU/US) based on the logged-in account, so nothing
+project-specific needs to be committed.
+
+**Why:** gives any Claude Code session on this repo direct access to this
+app's PostHog project (the one configured in `docs/POSTHOG_ANALYTICS.md`) —
+querying events/insights, debugging the `lesson_started`/`lesson_completed`
+funnel, etc. — without per-session manual setup. Project-scoped (checked in)
+rather than user-scoped since it's specific to this app's analytics, and safe
+to commit since the config itself carries no secret (auth happens via OAuth at
+connection time, not a static key).
+
 ## 2026-06-12 — Implemented Unit 8 (`eduki`/`ibili`), no extra dedicated practice lesson
 
 **Decision:** Added `eduki` (nor-nork, `daukat`/`daukazu`/`dauka`/`daukagu`/
