@@ -40,6 +40,42 @@ doesn't call this worker yet (no feedback form/UI, no `VITE_FEEDBACK_API_URL`
 wiring) — that's a deliberate follow-up so the worker can be deployed and its
 URL known first.
 
+## 2026-06-12 — Implemented Unit 7 ("Daily Routine (Transitive)"), adding `jan`/`edan`/`erosi`/`ikusi` as periphrastic NOR-NORK verbs with full 6-person grids
+
+**Decision:** Added four new `VERBS` entries — `jan`, `edan`, `erosi`,
+`ikusi` — each `type: 'periphrastic'`, `agreement: ['nor', 'nork']`,
+`object: 'hura'` (citation paradigm, same as `ukan`/`nahi`/`jakin`), and
+`conjugations.present` built from each verb's imperfective participle
+(`jaten`/`edaten`/`erosten`/`ikusten`) + `ukan`'s present auxiliary
+(`dut`/`duzu`/`du`/`dugu`/`duzue`/`dute`) — `docs/CONJUGATIONS.md` §7's
+"Present (oraina)" column for all four (see `docs/LANGUAGE_DECISIONS.md` for
+`jan`/`edan`/`erosi`'s new tables; `ikusi`'s was already documented).
+
+Per the Person-Expansion Rule (`docs/LEARNING_JOURNEY.md`), Unit 7 is the
+first unit past Refresh Gate A, so all four verbs start at the full
+`ni`/`zu`/`hura`/`gu`/`zuek`/`haiek` grid from their first lesson — no
+3-person trim, no later expansion pass. `pronouns` reuse `ukan`'s ergative set
+(`Nik`/`Zuk`/`Hark`/`Guk`/`Zuek`/`Haiek`). No `negativeSentences` — like
+`nahi`/`ari`, these are two-word forms that break apart under negation
+(out of scope until a future negation-of-periphrastics pass).
+
+Added `jan-present`/`edan-present`/`erosi-present`/`ikusi-present` plus
+`unit-7-review` (sources = all four, present tense) to `LESSONS`, and flipped
+Unit 7 to `available` in `journey.js` with those five `lessonIds`.
+
+**Why "oraina"/present rather than the journey doc's literal "I ate"/"I
+bought" payload glosses for `jan`/`erosi`:** `docs/LEARNING_JOURNEY.md`'s
+Unit 7 payload glosses read past-tense in English ("I ate." / "I bought a
+book.") for `jan`/`erosi` but present for `edan`/`ikusi` ("You drink water." /
+"Do you see it?") — these are loose "what this unit lets you say" framings,
+not a literal spec for which participle (perfective vs. imperfective) each
+verb's table should use. Using the imperfective-participle "Present (oraina)"
+column uniformly for all four (`jaten`/`edaten`/`erosten`/`ikusten dut`)
+keeps `TENSE_META.present`'s "oraina" label accurate for every verb in the
+lesson, matches `ikusi`'s already-documented table exactly, and needs no new
+tense bucket. "I eat/drink/buy/see [it]" fits "Daily Routine" at least as well
+as the journey's literal glosses.
+
 ## 2026-06-12 — Implemented Unit 6 ("Expansion — Bringing in the Plural", Refresh Gate A), growing `izan`/`egon`/`ukan`/`joan`/`etorri`'s present tense to the full 6-person grid in place
 
 **Decision:** Added `gu`/`zuek`/`haiek` rows (per `docs/CONJUGATIONS.md` §1/§3/§6)
