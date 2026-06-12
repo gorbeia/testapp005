@@ -8,6 +8,31 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-12 — Every available unit ends with a trailing "Unit review" lesson
+
+**Decision:** Added `unit-1-review`/`unit-2-review`/`unit-3-review` to
+`LESSONS` — `{ id, review: true, sources: [...] }` entries covering every
+verb/tense the unit introduced — and appended each to its unit's `lessonIds`
+in `journey.js`. This activates the `review`/`sources` shape that
+`describeLesson`/`createExerciseState`/`ProgressTab` already supported but
+that `LESSONS` never used.
+
+**Why:** feedback that the journey moves too fast and units don't get enough
+consolidation practice. A trailing review needs no new engine work and gives
+two things at once: an extra ~9-12 question session per unit (mixing that
+unit's tables together), and — for free, via existing rules — the *hardest*
+lesson in the unit, since reviews skip both `NO_TYPING_ATTEMPTS`'s no-typing
+ramp and `LessonPreviewScreen`'s conjugation preview. Linear unlocking
+(`getUnlockedLessonIds`) means the next unit stays locked until the review's
+been attempted, making it a real per-unit checkpoint — smaller-scale than the
+journey's cross-phase Refresh Gates (5, 6, 11, 17, ...), which remain the
+bigger consolidation passes.
+
+**Going forward:** every unit added to `journey.js` should end its
+`lessonIds` with its own `unit-N-review` entry, sourced from that unit's
+verb/tense pairs — see the header comments in `journey.js`/`App.jsx`'s
+`LESSONS`.
+
 ## 2026-06-11 — Added variant encouragement copy and a confetti/fireworks celebration to `LessonResultsScreen`
 
 **Decision:** `getEncouragement` (`lessonLogic.js`) now holds 3 icon/headline/
