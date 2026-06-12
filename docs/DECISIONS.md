@@ -35,6 +35,38 @@ doc's "no inventing vocabulary on the fly" guidance. `pronounSentences`/
 `negativeSentences` stay single-string — still deferred, per
 `docs/SAMPLE_SENTENCES.md`'s "Next steps" item 3.
 
+## 2026-06-12 — Added CI deploy for the feedback worker (`cloudflare/wrangler-action`)
+
+**Decision:** Added `.github/workflows/deploy-worker.yml`, running
+`wrangler deploy` on pushes to `main` that touch `worker/**` (or manual
+dispatch), authenticated via `CLOUDFLARE_API_TOKEN`/`CLOUDFLARE_ACCOUNT_ID`
+repo secrets. Documented token creation/scoping in
+`docs/CLOUDFLARE_FEEDBACK_WORKER.md`.
+
+**Why:** keeps the worker deploy on the same "push to main → live" model as
+the GitHub Pages site (`deploy.yml`), rather than relying on manual
+`wrangler deploy` from a developer machine. `RESEND_API_KEY` stays a
+Cloudflare Worker secret (set once via `wrangler secret put`, not a GitHub
+secret) since it's read by the worker at runtime, not by the CI job.
+
+## 2026-06-12 — Added a standalone Cloudflare Worker for feedback emails (Resend), no storage/UI yet
+
+**Decision:** Added `worker/` — a Cloudflare Worker (`wrangler.toml` +
+`src/index.js`) exposing a single `POST` endpoint that validates a
+`{ message, email?, context? }` JSON body and relays it as an email via the
+[Resend](https://resend.com/) API to `FEEDBACK_TO_EMAIL`. CORS is restricted
+to `ALLOWED_ORIGIN`. No database/KV — each submission is just forwarded, not
+stored. See `docs/CLOUDFLARE_FEEDBACK_WORKER.md` for setup/deploy.
+
+**Why:** chose the "lighter" of the options discussed (Worker+D1 vs.
+Worker+webhook/email) since feedback volume for this app doesn't justify a
+database yet — an email per submission is enough, and avoids provisioning/
+managing D1. Resend over a Discord/Slack webhook because feedback lands
+directly in the maintainer's inbox. This is infrastructure only: the app
+doesn't call this worker yet (no feedback form/UI, no `VITE_FEEDBACK_API_URL`
+wiring) — that's a deliberate follow-up so the worker can be deployed and its
+URL known first.
+
 ## 2026-06-12 — Implemented Unit 7 ("Daily Routine (Transitive)"), adding `jan`/`edan`/`erosi`/`ikusi` as periphrastic NOR-NORK verbs with full 6-person grids
 
 **Decision:** Added four new `VERBS` entries — `jan`, `edan`, `erosi`,
