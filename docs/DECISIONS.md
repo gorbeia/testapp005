@@ -8,6 +8,37 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-12 — Implemented Unit 9 (future tense, 13 verbs), reused present-tense sentences by reference, split review into 4 lessons
+
+**Decision:** Added a `conjugations.future` table to all 12 of Units 1-8's
+verbs except `ari` (`izan`, `egon`, `ukan`, `nahi`, `jakin`, `joan`, `etorri`,
+`jan`, `edan`, `erosi`, `ikusi`, `eduki`, `ibili`), per `docs/CONJUGATIONS.md`
+§11's `-ko`/`-go` participle + present-auxiliary rule. Added `TENSE_META.future`
+(`labelKey: 'tenseFuture'`, `basque: 'geroa'`) and the corresponding
+`tenseFuture` translation key (en/es/eu). Since a sentence template's blank
+doesn't depend on tense (`"Ni irakaslea ___."` fits `naiz` or `izango naiz`
+equally), verbs with a new `future` table have their `sentences.future`/
+`pronounSentences.future` set to alias their existing `present` arrays by
+reference in a small post-`VERBS` loop, rather than duplicating ~150 lines of
+sentence data. Added 13 `<verbId>-future` practice lessons to `LESSONS`
+(one per verb, mirroring the existing per-(verb×tense) convention) plus four
+`unit-9-review-N` reviews of 3-4 sources each (~18 questions apiece), following
+Units 5/6's precedent for splitting oversized consolidation passes. Flipped
+Unit 9 to `available` in `journey.js` with all 17 lesson ids. Required zero
+changes to `lessonLogic.js`/the exercise engine — confirmed via lint, the full
+test suite, build, and a live Playwright run of `izan-future` (preview shows
+`izango naiz/zara/da/gara/zarete/dira`; exercise renders a future sentence-fill
+question correctly).
+
+**Why:** `docs/LEARNING_JOURNEY.md` describes Unit 9 as reusing "Unit 1-8
+auxiliary tables; only the participle-formation rule is new" — confirmed true
+in practice. `ari` was excluded because its periphrastic future ("ari izango
+naiz") is grammatically valid but rarely used and not part of Unit 9's payload
+(see `docs/LANGUAGE_DECISIONS.md` for the linguistic rationale). 13 practice
+lessons is the largest single-unit verb count so far, so a single review would
+be unwieldy — four grouped reviews matches the question-count ballpark of
+other units' reviews while still covering every verb's future forms.
+
 ## 2026-06-12 — Implemented Unit 8 (`eduki`/`ibili`), no extra dedicated practice lesson
 
 **Decision:** Added `eduki` (nor-nork, `daukat`/`daukazu`/`dauka`/`daukagu`/

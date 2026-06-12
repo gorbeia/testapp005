@@ -6,6 +6,34 @@ conjugation content being taught, as distinct from the app/code decisions
 (including the interface-language/i18n feature) in `docs/DECISIONS.md`.
 Newest entries at the top.
 
+## 2026-06-12 — Future-tense (`Geroa`) forms for Units 1-8's 12 verbs, `izan` as suppletive future participle for `ukan`/`eduki`, `ari` excluded
+
+**Decision:** Per `docs/CONJUGATIONS.md` §11, every verb's future is its
+`-ko`/`-go` prospective participle + the present tense of its agreement-
+appropriate auxiliary (`izan` for `nor` verbs, `ukan` for `nor-nork` verbs) —
+the same auxiliary table each verb already uses for its periphrastic present,
+just with a different participle. Concretely: `izan`→`izango naiz/zara/da/
+gara/zarete/dira`, `egon`→`egongo naiz/...`, `joan`→`joango naiz/...`,
+`etorri`→`etorriko naiz/...`, `ibili`→`ibiliko naiz/...` (all `nor`, `izan`
+aux); `ukan`/`eduki`→**`izango dut/duzu/du/dugu/duzue/dute`** (the suppletive
+participle for "have" is `izango`, not a `ukan`-stem form — `ukango` doesn't
+exist), `nahi`→`nahiko dut/duzu/du`, `jakin`→`jakingo dut/duzu/du`, `jan`→
+`jango dut/...`, `edan`→`edango dut/...`, `erosi`→`erosiko dut/...`, `ikusi`→
+`ikusiko dut/...` (all `nor-nork`, `ukan` aux, three-person tables kept at
+their existing scope for `nahi`/`jakin`, full six for the rest). `ari` was
+**not** given a `future` table — its only grammatical future ("ari izango
+naiz" / "I will be [in the middle of] doing") is a periphrastic-of-a-
+periphrastic that's marginal in everyday Batua and isn't part of Unit 9's
+"`-ko`/`-go` + present auxiliaries" payload.
+
+**Why:** All forms follow directly from §11's documented rule plus each verb's
+already-established `agreement`/auxiliary pairing from its present-tense
+table — no new research or cross-checking needed beyond confirming `izango`
+(not `ukango`) is correct for `ukan`/`eduki`'s future, which §11 already notes
+as the suppletive pattern. Excluding `ari` keeps Unit 9 to forms a learner
+would actually produce, and avoids inventing a "future continuous" framing the
+journey doesn't ask for.
+
 ## 2026-06-12 — Documented `jan`/`edan`/`erosi` in `CONJUGATIONS.md` §7, completing Unit 7's prerequisite
 
 **Decision:** Added `jan`/`edan`/`erosi` as new `###` subsections appended to

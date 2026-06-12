@@ -91,6 +91,14 @@ const VERBS = [
     dialect: 'batua',
     conjugations: {
       present: { ni: 'naiz', zu: 'zara', hura: 'da', gu: 'gara', zuek: 'zarete', haiek: 'dira' },
+      future: {
+        ni: 'izango naiz',
+        zu: 'izango zara',
+        hura: 'izango da',
+        gu: 'izango gara',
+        zuek: 'izango zarete',
+        haiek: 'izango dira',
+      },
     },
     sentences: {
       present: {
@@ -147,6 +155,14 @@ const VERBS = [
     dialect: 'batua',
     conjugations: {
       present: { ni: 'nago', zu: 'zaude', hura: 'dago', gu: 'gaude', zuek: 'zaudete', haiek: 'daude' },
+      future: {
+        ni: 'egongo naiz',
+        zu: 'egongo zara',
+        hura: 'egongo da',
+        gu: 'egongo gara',
+        zuek: 'egongo zarete',
+        haiek: 'egongo dira',
+      },
     },
     sentences: {
       present: {
@@ -210,6 +226,14 @@ const VERBS = [
     dialect: 'batua',
     conjugations: {
       present: { ni: 'dut', zu: 'duzu', hura: 'du', gu: 'dugu', zuek: 'duzue', haiek: 'dute' },
+      future: {
+        ni: 'izango dut',
+        zu: 'izango duzu',
+        hura: 'izango du',
+        gu: 'izango dugu',
+        zuek: 'izango duzue',
+        haiek: 'izango dute',
+      },
     },
     sentences: {
       present: {
@@ -271,6 +295,7 @@ const VERBS = [
     dialect: 'batua',
     conjugations: {
       present: { ni: 'nahi dut', zu: 'nahi duzu', hura: 'nahi du' },
+      future: { ni: 'nahiko dut', zu: 'nahiko duzu', hura: 'nahiko du' },
     },
     sentences: {
       present: {
@@ -302,6 +327,7 @@ const VERBS = [
     dialect: 'batua',
     conjugations: {
       present: { ni: 'dakit', zu: 'dakizu', hura: 'daki' },
+      future: { ni: 'jakingo dut', zu: 'jakingo duzu', hura: 'jakingo du' },
     },
     sentences: {
       present: {
@@ -338,6 +364,14 @@ const VERBS = [
     dialect: 'batua',
     conjugations: {
       present: { ni: 'noa', zu: 'zoaz', hura: 'doa', gu: 'goaz', zuek: 'zoazte', haiek: 'doaz' },
+      future: {
+        ni: 'joango naiz',
+        zu: 'joango zara',
+        hura: 'joango da',
+        gu: 'joango gara',
+        zuek: 'joango zarete',
+        haiek: 'joango dira',
+      },
     },
     sentences: {
       present: {
@@ -386,6 +420,14 @@ const VERBS = [
     dialect: 'batua',
     conjugations: {
       present: { ni: 'nator', zu: 'zatoz', hura: 'dator', gu: 'gatoz', zuek: 'zatozte', haiek: 'datoz' },
+      future: {
+        ni: 'etorriko naiz',
+        zu: 'etorriko zara',
+        hura: 'etorriko da',
+        gu: 'etorriko gara',
+        zuek: 'etorriko zarete',
+        haiek: 'etorriko dira',
+      },
     },
     sentences: {
       present: {
@@ -483,6 +525,14 @@ const VERBS = [
         zuek: 'jaten duzue',
         haiek: 'jaten dute',
       },
+      future: {
+        ni: 'jango dut',
+        zu: 'jango duzu',
+        hura: 'jango du',
+        gu: 'jango dugu',
+        zuek: 'jango duzue',
+        haiek: 'jango dute',
+      },
     },
     sentences: {
       present: {
@@ -522,6 +572,14 @@ const VERBS = [
         gu: 'edaten dugu',
         zuek: 'edaten duzue',
         haiek: 'edaten dute',
+      },
+      future: {
+        ni: 'edango dut',
+        zu: 'edango duzu',
+        hura: 'edango du',
+        gu: 'edango dugu',
+        zuek: 'edango duzue',
+        haiek: 'edango dute',
       },
     },
     sentences: {
@@ -563,6 +621,14 @@ const VERBS = [
         zuek: 'erosten duzue',
         haiek: 'erosten dute',
       },
+      future: {
+        ni: 'erosiko dut',
+        zu: 'erosiko duzu',
+        hura: 'erosiko du',
+        gu: 'erosiko dugu',
+        zuek: 'erosiko duzue',
+        haiek: 'erosiko dute',
+      },
     },
     sentences: {
       present: {
@@ -602,6 +668,14 @@ const VERBS = [
         gu: 'ikusten dugu',
         zuek: 'ikusten duzue',
         haiek: 'ikusten dute',
+      },
+      future: {
+        ni: 'ikusiko dut',
+        zu: 'ikusiko duzu',
+        hura: 'ikusiko du',
+        gu: 'ikusiko dugu',
+        zuek: 'ikusiko duzue',
+        haiek: 'ikusiko dute',
       },
     },
     sentences: {
@@ -646,6 +720,14 @@ const VERBS = [
     dialect: 'batua',
     conjugations: {
       present: { ni: 'daukat', zu: 'daukazu', hura: 'dauka', gu: 'daukagu', zuek: 'daukazue', haiek: 'daukate' },
+      future: {
+        ni: 'edukiko dut',
+        zu: 'edukiko duzu',
+        hura: 'edukiko du',
+        gu: 'edukiko dugu',
+        zuek: 'edukiko duzue',
+        haiek: 'edukiko dute',
+      },
     },
     sentences: {
       present: {
@@ -690,6 +772,14 @@ const VERBS = [
     dialect: 'batua',
     conjugations: {
       present: { ni: 'nabil', zu: 'zabiltza', hura: 'dabil', gu: 'gabiltza', zuek: 'zabiltzate', haiek: 'dabiltza' },
+      future: {
+        ni: 'ibiliko naiz',
+        zu: 'ibiliko zara',
+        hura: 'ibiliko da',
+        gu: 'ibiliko gara',
+        zuek: 'ibiliko zarete',
+        haiek: 'ibiliko dira',
+      },
     },
     sentences: {
       present: {
@@ -722,6 +812,19 @@ const VERBS = [
   },
 ]
 
+// Unit 9 ("Intentions & Future Actions") gave every verb above (except `ari`,
+// see `docs/LANGUAGE_DECISIONS.md`) a `conjugations.future` table. The blank
+// in a `sentences`/`pronounSentences` template doesn't depend on tense — "Ni
+// irakaslea ___." fills equally well with `naiz` (present) or `izango naiz`
+// (future) — so rather than duplicate every present-tense sentence array
+// under a new `future` key, verbs with a `future` table simply reuse their
+// `present` ones by reference.
+for (const verb of VERBS) {
+  if (!verb.conjugations.future) continue
+  if (verb.sentences?.present) verb.sentences.future = verb.sentences.present
+  if (verb.pronounSentences?.present) verb.pronounSentences.future = verb.pronounSentences.present
+}
+
 // Maps grammatical persons / tenses / verb types / agreement roles to the
 // translation keys their UI labels live under (`src/i18n/translations.js`) —
 // looked up via `t()` at render time so labels follow the interface language.
@@ -740,6 +843,7 @@ const PERSON_LABEL_KEYS = {
 const TENSE_META = {
   present: { labelKey: 'tensePresent', basque: 'oraina' },
   past: { labelKey: 'tensePast', basque: 'lehena' },
+  future: { labelKey: 'tenseFuture', basque: 'geroa' },
 }
 
 const TYPE_META = {
@@ -919,6 +1023,65 @@ const LESSONS = [
     sources: [
       { verbId: 'eduki', tense: 'present' },
       { verbId: 'ibili', tense: 'present' },
+    ],
+  },
+  // Unit 9 ("Intentions & Future Actions", Phase II) — zero new verbs, "only
+  // the participle-formation rule is new" (`docs/LEARNING_JOURNEY.md`): every
+  // verb from Units 1-8 except `ari` (see `docs/LANGUAGE_DECISIONS.md`) gets a
+  // `future` practice lesson, reusing its existing present-tense auxiliary
+  // table under a `-ko`/`-go` participle. 13 practice lessons is more than any
+  // prior unit, so — following Units 5/6's precedent for oversized
+  // consolidation passes — the unit's review is split into four
+  // `unit-9-review-N` lessons of 3-4 sources each (~18 questions apiece)
+  // rather than one review covering all 13.
+  { id: 'izan-future', verbId: 'izan', tense: 'future' },
+  { id: 'egon-future', verbId: 'egon', tense: 'future' },
+  { id: 'ukan-future', verbId: 'ukan', tense: 'future' },
+  { id: 'nahi-future', verbId: 'nahi', tense: 'future' },
+  { id: 'jakin-future', verbId: 'jakin', tense: 'future' },
+  { id: 'joan-future', verbId: 'joan', tense: 'future' },
+  { id: 'etorri-future', verbId: 'etorri', tense: 'future' },
+  { id: 'jan-future', verbId: 'jan', tense: 'future' },
+  { id: 'edan-future', verbId: 'edan', tense: 'future' },
+  { id: 'erosi-future', verbId: 'erosi', tense: 'future' },
+  { id: 'ikusi-future', verbId: 'ikusi', tense: 'future' },
+  { id: 'eduki-future', verbId: 'eduki', tense: 'future' },
+  { id: 'ibili-future', verbId: 'ibili', tense: 'future' },
+  {
+    id: 'unit-9-review-1',
+    review: true,
+    sources: [
+      { verbId: 'izan', tense: 'future' },
+      { verbId: 'egon', tense: 'future' },
+      { verbId: 'ukan', tense: 'future' },
+    ],
+  },
+  {
+    id: 'unit-9-review-2',
+    review: true,
+    sources: [
+      { verbId: 'nahi', tense: 'future' },
+      { verbId: 'jakin', tense: 'future' },
+      { verbId: 'joan', tense: 'future' },
+      { verbId: 'etorri', tense: 'future' },
+    ],
+  },
+  {
+    id: 'unit-9-review-3',
+    review: true,
+    sources: [
+      { verbId: 'jan', tense: 'future' },
+      { verbId: 'edan', tense: 'future' },
+      { verbId: 'erosi', tense: 'future' },
+    ],
+  },
+  {
+    id: 'unit-9-review-4',
+    review: true,
+    sources: [
+      { verbId: 'ikusi', tense: 'future' },
+      { verbId: 'eduki', tense: 'future' },
+      { verbId: 'ibili', tense: 'future' },
     ],
   },
 ]
