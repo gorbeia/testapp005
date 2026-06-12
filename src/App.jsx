@@ -74,11 +74,13 @@ import { trackEvent } from './analytics'
 //
 // Per `docs/LEARNING_JOURNEY.md`'s Phase I ("Survival Present"), every verb's
 // first lesson is restricted to `ni`/`zu`/`hura` — `gu`/`zuek`/`haiek` (and,
-// much later, `hi`) are added once Unit 6 ("Expansion") is implemented. Until
-// then, a Phase I verb's `present` table simply *contains only* those three
-// person keys — `generateQuestions` already builds one question per key in
-// the table, so a smaller table is all a 3-person lesson needs (see
-// `docs/EXERCISE_ENGINE.md`, "Phase I's 3-person horizon", option (a)).
+// much later, `hi`) are added together in Unit 6 ("Expansion"). `izan`/`egon`/
+// `ukan`/`joan`/`etorri`'s `present` tables already contain all 6 persons (Unit
+// 6 grew them in place — see `docs/DECISIONS.md`); their pre-Unit-6 lessons
+// (`LESSONS` in `App.jsx`) use a `persons` filter to stay on the 3-person
+// horizon instead (`docs/EXERCISE_ENGINE.md`, "Phase I's 3-person horizon",
+// option (b)). Verbs whose first lesson is still pending (`nahi`/`jakin`/`ari`)
+// simply have 3-person tables (option (a)) since there's nothing to expand yet.
 // =============================================================================
 
 const VERBS = [
@@ -885,34 +887,47 @@ const DIALECT_LABELS = {
 // `LessonPreviewScreen`) before the next unit unlocks. The journey's Refresh
 // Gate units (5, 6, 11, 17, ...) are a bigger, cross-unit version of the same
 // shape once implemented.
+// Phase I's "Survival Present" horizon (`docs/LEARNING_JOURNEY.md`) restricts
+// every verb's first lessons to `ni`/`zu`/`hura` — `gu`/`zuek`/`haiek` arrive
+// together in Unit 6 ("Expansion"). Unit 6 grew `izan`/`egon`/`ukan`/`joan`/
+// `etorri`'s `conjugations.present` tables to 6 persons *in place*, which
+// cascaded into these verbs' own Units 1-3 lessons and Unit 5's reviews
+// (all of which run before Unit 6). `persons` re-restricts those lessons back
+// to the 3-person horizon — see `docs/DECISIONS.md`, "Restored Phase I's
+// 3-person pacing".
+const PHASE_1_PERSONS = ['ni', 'zu', 'hura']
+
 const LESSONS = [
-  { id: 'izan-present', verbId: 'izan', tense: 'present' },
-  { id: 'egon-present', verbId: 'egon', tense: 'present' },
+  { id: 'izan-present', verbId: 'izan', tense: 'present', persons: PHASE_1_PERSONS },
+  { id: 'egon-present', verbId: 'egon', tense: 'present', persons: PHASE_1_PERSONS },
   {
     id: 'unit-1-review',
     review: true,
+    persons: PHASE_1_PERSONS,
     sources: [
       { verbId: 'izan', tense: 'present' },
       { verbId: 'egon', tense: 'present' },
     ],
   },
-  { id: 'ukan-present', verbId: 'ukan', tense: 'present' },
+  { id: 'ukan-present', verbId: 'ukan', tense: 'present', persons: PHASE_1_PERSONS },
   { id: 'nahi-present', verbId: 'nahi', tense: 'present' },
   { id: 'jakin-present', verbId: 'jakin', tense: 'present' },
   {
     id: 'unit-2-review',
     review: true,
+    persons: PHASE_1_PERSONS,
     sources: [
       { verbId: 'ukan', tense: 'present' },
       { verbId: 'nahi', tense: 'present' },
       { verbId: 'jakin', tense: 'present' },
     ],
   },
-  { id: 'joan-present', verbId: 'joan', tense: 'present' },
-  { id: 'etorri-present', verbId: 'etorri', tense: 'present' },
+  { id: 'joan-present', verbId: 'joan', tense: 'present', persons: PHASE_1_PERSONS },
+  { id: 'etorri-present', verbId: 'etorri', tense: 'present', persons: PHASE_1_PERSONS },
   {
     id: 'unit-3-review',
     review: true,
+    persons: PHASE_1_PERSONS,
     sources: [
       { verbId: 'joan', tense: 'present' },
       { verbId: 'etorri', tense: 'present' },
@@ -929,17 +944,23 @@ const LESSONS = [
   // six Units 1–3 verbs whose present-tense form is a single word that stays
   // intact under negation. `negation: true` tells `createExerciseState` to
   // pass `includeNegation` through to `generateQuestions` for every source.
-  // Split into three reviews of two sources each — a single six-source review
-  // landed at ~33 questions (see `docs/DECISIONS.md`, 2026-06-12 "Implemented
-  // Unit 6"), well past `TARGET_EXERCISE_COUNT`; each of these three lands at
-  // exactly 12. Per `docs/LEARNING_JOURNEY.md`, a Refresh Gate's whole point is
-  // a cumulative cross-unit mixer, so sources are deliberately paired *across*
-  // their originating units (Unit 1: izan/egon, Unit 2: ukan/jakin, Unit 3:
+  // `persons: PHASE_1_PERSONS` keeps this Refresh Gate on Phase I's 3-person
+  // horizon (matching the lessons it reviews) — also conveniently the only
+  // persons with `negativeSentences` data, so every question stays focused on
+  // the `ez`/auxiliary-fronting drill instead of falling back to a plain
+  // `sentence`/`pronoun` question for `gu`/`zuek`/`haiek`. Split into three
+  // reviews of two sources each — a single six-source review landed at ~33
+  // questions (see `docs/DECISIONS.md`, 2026-06-12 "Implemented Unit 6"), well
+  // past `TARGET_EXERCISE_COUNT`; each of these three lands at exactly 12. Per
+  // `docs/LEARNING_JOURNEY.md`, a Refresh Gate's whole point is a cumulative
+  // cross-unit mixer, so sources are deliberately paired *across* their
+  // originating units (Unit 1: izan/egon, Unit 2: ukan/jakin, Unit 3:
   // joan/etorri) rather than keeping each origin unit's pair together.
   {
     id: 'unit-5-review-1',
     review: true,
     negation: true,
+    persons: PHASE_1_PERSONS,
     sources: [
       { verbId: 'izan', tense: 'present' },
       { verbId: 'ukan', tense: 'present' },
@@ -949,6 +970,7 @@ const LESSONS = [
     id: 'unit-5-review-2',
     review: true,
     negation: true,
+    persons: PHASE_1_PERSONS,
     sources: [
       { verbId: 'egon', tense: 'present' },
       { verbId: 'joan', tense: 'present' },
@@ -958,6 +980,7 @@ const LESSONS = [
     id: 'unit-5-review-3',
     review: true,
     negation: true,
+    persons: PHASE_1_PERSONS,
     sources: [
       { verbId: 'jakin', tense: 'present' },
       { verbId: 'etorri', tense: 'present' },
@@ -966,9 +989,10 @@ const LESSONS = [
   // Unit 6 ("Expansion — Bringing in the Plural", Refresh Gate A) — zero new
   // verbs. `izan`/`egon`/`ukan`/`joan`/`etorri`'s `conjugations.present`
   // (plus their `sentences`/`pronouns`/`pronounSentences`) gained `gu`/`zuek`/
-  // `haiek` rows directly (see `docs/DECISIONS.md`), so every practice lesson
-  // and review above that already references these verbs' present tense now
-  // covers the full 6-person grid automatically — no `persons` filter needed.
+  // `haiek` rows directly (see `docs/DECISIONS.md`). Units 1-3/5's lessons
+  // above stay on the 3-person horizon via `PHASE_1_PERSONS`, so this unit's
+  // own reviews are the *first* place those verbs' present tense is drilled
+  // at the full 6-person grid — no `persons` filter here, by design.
   // This unit's own consolidation pass is split into three reviews, using the
   // same cross-unit pairing as Unit 5 above (Unit 1: izan/egon, Unit 2: ukan,
   // Unit 3: joan/etorri all paired across origins) — a single five-source
@@ -1659,9 +1683,9 @@ function createExerciseState(lesson, attempts, errorStats = {}) {
   const targetPerSource = TARGET_EXERCISE_COUNT / sources.length
   const questions = sources.flatMap(({ verbId, tense }) => {
     const verb = VERBS.find((v) => v.id === verbId)
-    const personCount = Object.keys(verb.conjugations[tense]).length
+    const personCount = (lesson.persons ?? Object.keys(verb.conjugations[tense])).length
     const rounds = Math.max(1, Math.round(targetPerSource / personCount))
-    return generateQuestions(verb, tense, { noTyping, rounds, includeNegation: Boolean(lesson.negation) })
+    return generateQuestions(verb, tense, { noTyping, rounds, includeNegation: Boolean(lesson.negation), persons: lesson.persons })
   })
   // Review lessons get up to `EXTRA_REVIEW_EXERCISES` extra questions, drawn
   // from the verb/tense/person combinations this learner has most often

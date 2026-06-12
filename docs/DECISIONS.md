@@ -8,6 +8,45 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-12 — Restored Phase I's 3-person pacing with a `persons` filter on `generateQuestions`
+
+**Decision:** Added an optional `persons` field to `generateQuestions`'s
+options (`lessonLogic.js`) — when set, it replaces `Object.keys(table)` as the
+set of grammatical persons a lesson drills (and the pool `buildOptions`/
+`buildSpotErrorQuestion` draw distractors/companions from). `createExerciseState`
+(`App.jsx`) reads `lesson.persons` and uses its length (instead of the full
+table's) when computing `rounds`, so a filtered lesson's question count is
+unchanged. Added a `PHASE_1_PERSONS = ['ni', 'zu', 'hura']` constant and set
+`persons: PHASE_1_PERSONS` on `izan-present`, `egon-present`, `unit-1-review`,
+`ukan-present`, `unit-2-review`, `joan-present`, `etorri-present`,
+`unit-3-review`, and `unit-5-review-1/-2/-3`. `unit-6-review-*` (the
+"Expansion" reviews) are deliberately left unfiltered — that's the unit where
+`gu`/`zuek`/`haiek` are meant to first appear.
+
+**Why:** Unit 6 grew `izan`/`egon`/`ukan`/`joan`/`etorri`'s `conjugations.present`
+tables from 3 to 6 persons *in place* (2026-06-12 "Implemented Unit 6" below),
+and that entry's "Side effect" section flagged but accepted the resulting
+cascade: every earlier lesson reusing those tables (Units 1-3's own practice
+lessons, their reviews, and Unit 5's negation reviews) started drilling all 6
+persons too. In practice that meant a brand-new learner's very first exercise
+(`izan-present`) jumped straight to `ni`/`zu`/`hura`/`gu`/`zuek`/`haiek` —
+exactly the "too many new forms in one exercise" Unit 6 was supposed to be the
+*first* place to introduce. A `persons` filter (option (b) from
+`docs/EXERCISE_ENGINE.md`'s "Phase I's 3-person horizon", previously passed
+over in favor of (a) for Unit 6 itself) re-restricts just the affected
+pre-Expansion lessons back to `ni`/`zu`/`hura` without touching the underlying
+`VERBS` tables — Unit 6 remains the single deliberate point where the
+6-person grid is introduced, for every verb at once, as designed. As a side
+benefit, `unit-5-review-*` (negation drills) no longer falls back to
+non-negation `sentence`/`pronoun` questions for `gu`/`zuek`/`haiek` (which have
+no `negativeSentences`), since those persons are now filtered out entirely.
+
+**General principle for later units:** don't let a unit's exercises drill more
+grammatical persons/forms at once than that point in the journey has actually
+introduced — use `persons` (or author a smaller table) for any future lesson
+that would otherwise inherit a larger table than its place in the journey
+calls for.
+
 ## 2026-06-12 — Updated `base`/package names/CORS origin for the `gorbeia/testapp005` → `Mintzan/aditzak` repo rename
 
 **Decision:** The GitHub Pages deploy workflow (`.github/workflows/deploy.yml`)
