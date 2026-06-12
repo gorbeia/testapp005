@@ -8,6 +8,24 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-12 — Added a standalone Cloudflare Worker for feedback emails (Resend), no storage/UI yet
+
+**Decision:** Added `worker/` — a Cloudflare Worker (`wrangler.toml` +
+`src/index.js`) exposing a single `POST` endpoint that validates a
+`{ message, email?, context? }` JSON body and relays it as an email via the
+[Resend](https://resend.com/) API to `FEEDBACK_TO_EMAIL`. CORS is restricted
+to `ALLOWED_ORIGIN`. No database/KV — each submission is just forwarded, not
+stored. See `docs/CLOUDFLARE_FEEDBACK_WORKER.md` for setup/deploy.
+
+**Why:** chose the "lighter" of the options discussed (Worker+D1 vs.
+Worker+webhook/email) since feedback volume for this app doesn't justify a
+database yet — an email per submission is enough, and avoids provisioning/
+managing D1. Resend over a Discord/Slack webhook because feedback lands
+directly in the maintainer's inbox. This is infrastructure only: the app
+doesn't call this worker yet (no feedback form/UI, no `VITE_FEEDBACK_API_URL`
+wiring) — that's a deliberate follow-up so the worker can be deployed and its
+URL known first.
+
 ## 2026-06-12 — Implemented Unit 6 ("Expansion — Bringing in the Plural", Refresh Gate A), growing `izan`/`egon`/`ukan`/`joan`/`etorri`'s present tense to the full 6-person grid in place
 
 **Decision:** Added `gu`/`zuek`/`haiek` rows (per `docs/CONJUGATIONS.md` §1/§3/§6)
