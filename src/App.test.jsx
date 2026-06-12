@@ -21,8 +21,8 @@ describe('App', () => {
     expect(screen.getByRole('heading', { name: 'Aditzak' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 2, name: 'Phase I' })).toBeInTheDocument()
     expect(screen.getByText(/Who and Where/)).toBeInTheDocument()
-    expect(screen.getByText(/^izan — to be/)).toBeInTheDocument()
-    expect(screen.getByText(/egon — to be/)).toBeInTheDocument()
+    expect(screen.getAllByText(/^izan — to be/).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/egon — to be/).length).toBeGreaterThan(0)
     expect(screen.getAllByText('Coming soon').length).toBeGreaterThan(0)
   })
 
