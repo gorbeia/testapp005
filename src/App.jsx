@@ -447,6 +447,175 @@ const VERBS = [
       },
     },
   },
+  // Unit 7 ("Daily Routine (Transitive)") — first Phase II verbs, so per the
+  // Person-Expansion Rule (`docs/LEARNING_JOURNEY.md`) these start at the full
+  // 6-person grid from their first lesson, no separate expansion pass needed.
+  // All four are periphrastic `nor-nork` verbs (object fixed to `hura`, like
+  // `ukan`/`nahi`/`jakin`): imperfective participle (`jaten`/`edaten`/
+  // `erosten`/`ikusten`) + `ukan`'s present auxiliary (`dut`/`duzu`/`du`/
+  // `dugu`/`duzue`/`dute`), per `docs/CONJUGATIONS.md` §7's "Present (oraina)"
+  // columns for these four verbs. No `negativeSentences` — same as `nahi`/
+  // `ari`, these two-word forms break apart under negation.
+  {
+    id: 'jan',
+    verb: 'jan',
+    meaning: { en: 'to eat', es: 'comer', eu: 'jan' },
+    type: 'periphrastic',
+    agreement: ['nor', 'nork'],
+    object: 'hura',
+    dialect: 'batua',
+    conjugations: {
+      present: {
+        ni: 'jaten dut',
+        zu: 'jaten duzu',
+        hura: 'jaten du',
+        gu: 'jaten dugu',
+        zuek: 'jaten duzue',
+        haiek: 'jaten dute',
+      },
+    },
+    sentences: {
+      present: {
+        ni: ['Nik sagarra ___.', 'Nik ogia ___.', 'Nik tortilla ___.'],
+        zu: ['Zuk fruta ___?', 'Zuk arroza ___.'],
+        hura: ['Hark taloa ___.', 'Mikelek pizza ___.', 'Anek entsalada ___.', 'Umeak gaztaina ___.'],
+        gu: ['Guk arroza ___.', 'Guk ogitartekoa ___.'],
+        zuek: ['Zuek fruta ___?', 'Zuek taloa ___.'],
+        haiek: ['Haiek pastela ___.', 'Gurasoek arroza ___.'],
+      },
+    },
+    pronouns: { ni: 'Nik', zu: 'Zuk', hura: 'Hark', gu: 'Guk', zuek: 'Zuek', haiek: 'Haiek' },
+    pronounSentences: {
+      present: {
+        ni: '___ sagarra jaten dut.',
+        zu: '___ fruta jaten duzu?',
+        hura: '___ taloa jaten du.',
+        gu: '___ arroza jaten dugu.',
+        zuek: '___ fruta jaten duzue?',
+        haiek: '___ pastela jaten dute.',
+      },
+    },
+  },
+  {
+    id: 'edan',
+    verb: 'edan',
+    meaning: { en: 'to drink', es: 'beber', eu: 'edan' },
+    type: 'periphrastic',
+    agreement: ['nor', 'nork'],
+    object: 'hura',
+    dialect: 'batua',
+    conjugations: {
+      present: {
+        ni: 'edaten dut',
+        zu: 'edaten duzu',
+        hura: 'edaten du',
+        gu: 'edaten dugu',
+        zuek: 'edaten duzue',
+        haiek: 'edaten dute',
+      },
+    },
+    sentences: {
+      present: {
+        ni: ['Nik ura ___.', 'Nik esnea ___.', 'Nik zukua ___.'],
+        zu: ['Zuk ardoa ___?', 'Zuk kafea ___.'],
+        hura: ['Hark sagardoa ___.', 'Mikelek tea ___.', 'Anek ura ___.', 'Katuak esnea ___.'],
+        gu: ['Guk ura ___.', 'Guk kafea ___.'],
+        zuek: ['Zuek zukua ___?', 'Zuek ardoa ___.'],
+        haiek: ['Haiek garagardoa ___.', 'Lagunek sagardoa ___.'],
+      },
+    },
+    pronouns: { ni: 'Nik', zu: 'Zuk', hura: 'Hark', gu: 'Guk', zuek: 'Zuek', haiek: 'Haiek' },
+    pronounSentences: {
+      present: {
+        ni: '___ ura edaten dut.',
+        zu: '___ kafea edaten duzu.',
+        hura: '___ sagardoa edaten du.',
+        gu: '___ ura edaten dugu.',
+        zuek: '___ ardoa edaten duzue.',
+        haiek: '___ garagardoa edaten dute.',
+      },
+    },
+  },
+  {
+    id: 'erosi',
+    verb: 'erosi',
+    meaning: { en: 'to buy', es: 'comprar', eu: 'erosi' },
+    type: 'periphrastic',
+    agreement: ['nor', 'nork'],
+    object: 'hura',
+    dialect: 'batua',
+    conjugations: {
+      present: {
+        ni: 'erosten dut',
+        zu: 'erosten duzu',
+        hura: 'erosten du',
+        gu: 'erosten dugu',
+        zuek: 'erosten duzue',
+        haiek: 'erosten dute',
+      },
+    },
+    sentences: {
+      present: {
+        ni: ['Nik liburu bat ___.', 'Nik ogia ___.', 'Nik jaka berri bat ___.'],
+        zu: ['Zuk sagarrak ___?', 'Zuk diskoa ___.'],
+        hura: ['Hark autoa ___.', 'Mikelek opari bat ___.', 'Anek etxe bat ___.', 'Saltzaileak fruta ___.'],
+        gu: ['Guk etxe bat ___.', 'Guk txartelak ___.'],
+        zuek: ['Zuek opariak ___?', 'Zuek liburuak ___.'],
+        haiek: ['Haiek autoa ___.', 'Gurasoek etxe bat ___.'],
+      },
+    },
+    pronouns: { ni: 'Nik', zu: 'Zuk', hura: 'Hark', gu: 'Guk', zuek: 'Zuek', haiek: 'Haiek' },
+    pronounSentences: {
+      present: {
+        ni: '___ liburu bat erosten dut.',
+        zu: '___ diskoa erosten duzu.',
+        hura: '___ autoa erosten du.',
+        gu: '___ etxe bat erosten dugu.',
+        zuek: '___ liburuak erosten duzue.',
+        haiek: '___ autoa erosten dute.',
+      },
+    },
+  },
+  {
+    id: 'ikusi',
+    verb: 'ikusi',
+    meaning: { en: 'to see', es: 'ver', eu: 'ikusi' },
+    type: 'periphrastic',
+    agreement: ['nor', 'nork'],
+    object: 'hura',
+    dialect: 'batua',
+    conjugations: {
+      present: {
+        ni: 'ikusten dut',
+        zu: 'ikusten duzu',
+        hura: 'ikusten du',
+        gu: 'ikusten dugu',
+        zuek: 'ikusten duzue',
+        haiek: 'ikusten dute',
+      },
+    },
+    sentences: {
+      present: {
+        ni: ['Nik filma ___.', 'Nik mendia ___.', 'Nik zerua ___.'],
+        zu: ['Zuk hori ___?', 'Zuk Mikel ___?'],
+        hura: ['Hark itsasoa ___.', 'Anek filma ___.', 'Irakasleak ikasleak ___.', 'Txakurrak katua ___.'],
+        gu: ['Guk itsasoa ___.', 'Guk filma ___.'],
+        zuek: ['Zuek hori ___?', 'Zuek mendia ___?'],
+        haiek: ['Haiek filma ___.', 'Gurasoek etxea ___.'],
+      },
+    },
+    pronouns: { ni: 'Nik', zu: 'Zuk', hura: 'Hark', gu: 'Guk', zuek: 'Zuek', haiek: 'Haiek' },
+    pronounSentences: {
+      present: {
+        ni: '___ filma ikusten dut.',
+        zu: '___ hori ikusten duzu?',
+        hura: '___ itsasoa ikusten du.',
+        gu: '___ itsasoa ikusten dugu.',
+        zuek: '___ mendia ikusten duzue?',
+        haiek: '___ filma ikusten dute.',
+      },
+    },
+  },
 ]
 
 // Maps grammatical persons / tenses / verb types / agreement roles to the
@@ -582,6 +751,24 @@ const LESSONS = [
       { verbId: 'ukan', tense: 'present' },
       { verbId: 'joan', tense: 'present' },
       { verbId: 'etorri', tense: 'present' },
+    ],
+  },
+  // Unit 7 ("Daily Routine (Transitive)", Phase II) — first unit past Refresh
+  // Gate A, introducing four new periphrastic nor-nork verbs (`jan`/`edan`/
+  // `erosi`/`ikusi`), each already a full 6-person grid per the
+  // Person-Expansion Rule. `unit-7-review` covers all four.
+  { id: 'jan-present', verbId: 'jan', tense: 'present' },
+  { id: 'edan-present', verbId: 'edan', tense: 'present' },
+  { id: 'erosi-present', verbId: 'erosi', tense: 'present' },
+  { id: 'ikusi-present', verbId: 'ikusi', tense: 'present' },
+  {
+    id: 'unit-7-review',
+    review: true,
+    sources: [
+      { verbId: 'jan', tense: 'present' },
+      { verbId: 'edan', tense: 'present' },
+      { verbId: 'erosi', tense: 'present' },
+      { verbId: 'ikusi', tense: 'present' },
     ],
   },
 ]

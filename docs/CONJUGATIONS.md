@@ -1303,6 +1303,50 @@ periphrastic, built on `entzuten`/`entzun` + `ukan`'s NOR-NORK auxiliary
 | zuek | entzuten duzue | entzun zenuten |
 | haiek | entzuten dute | entzun zuten |
 
+### `jan` — "to eat" — nor-nork
+
+Regular `-n`-final periphrastic verb (`docs/VERB_COVERAGE.md` §4b's "`-i`
+verbs" group): imperfective/perfective participles `jaten`/`jan` + `ukan`'s
+NOR-NORK auxiliary (§3, `NOR` = `hura`):
+
+| Person | Present (oraina) | Past (lehena) |
+|---|---|---|
+| nik | jaten dut | jan nuen |
+| hark | jaten du | jan zuen |
+| guk | jaten dugu | jan genuen |
+| zuk | jaten duzu | jan zenuen |
+| zuek | jaten duzue | jan zenuten |
+| haiek | jaten dute | jan zuten |
+
+### `edan` — "to drink" — nor-nork
+
+Same shape as `jan`: imperfective/perfective participles `edaten`/`edan` +
+`ukan`'s NOR-NORK auxiliary (§3, `NOR` = `hura`):
+
+| Person | Present (oraina) | Past (lehena) |
+|---|---|---|
+| nik | edaten dut | edan nuen |
+| hark | edaten du | edan zuen |
+| guk | edaten dugu | edan genuen |
+| zuk | edaten duzu | edan zenuen |
+| zuek | edaten duzue | edan zenuten |
+| haiek | edaten dute | edan zuten |
+
+### `erosi` — "to buy" — nor-nork
+
+Regular `-i`-final periphrastic verb, same family as `ikusi`/`entzun`:
+imperfective/perfective participles `erosten`/`erosi` + `ukan`'s NOR-NORK
+auxiliary (§3, `NOR` = `hura`):
+
+| Person | Present (oraina) | Past (lehena) |
+|---|---|---|
+| nik | erosten dut | erosi nuen |
+| hark | erosten du | erosi zuen |
+| guk | erosten dugu | erosi genuen |
+| zuk | erosten duzu | erosi zenuen |
+| zuek | erosten duzue | erosi zenuten |
+| haiek | erosten dute | erosi zuten |
+
 ## 8. `iraun`, `jario`, `esan`, `irudi`, `etzan`
 
 ### `iraun` — "to last / endure" (unergative — nork-only)
