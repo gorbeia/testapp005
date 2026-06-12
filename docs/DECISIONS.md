@@ -8,6 +8,48 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-12 — App-wide "max 3 persons per exercise" rule, applied to Units 6-9 via singular/plural lesson pairs
+
+**Decision:** Generalized the previous entry's fix into a hard app-wide rule:
+no single exercise drills more than 3 grammatical persons at once. Added a
+second constant, `PHASE_1_PLURAL_PERSONS = ['gu', 'zuek', 'haiek']`, alongside
+`PHASE_1_PERSONS`. Applied it retroactively:
+
+- **Unit 6** ("Expansion — Bringing in the Plural"): `unit-6-review-1/-2/-3`
+  now use `persons: PHASE_1_PLURAL_PERSONS` instead of the full 6-person table
+  — fitting given the unit's framing is specifically "here are the new plural
+  forms".
+- **Units 7-9** (which previously gave every new verb/tense a full 6-person
+  grid in one lesson, per `LEARNING_JOURNEY.md`'s "Person-Expansion Rule"):
+  every (verb × tense) practice lesson and unit review is now split into a
+  `persons: PHASE_1_PERSONS` lesson immediately followed by a `-plural`
+  sibling using `persons: PHASE_1_PLURAL_PERSONS` — e.g. `jan-present` /
+  `jan-present-plural`, `unit-7-review` / `unit-7-review-plural`. `journey.js`'s
+  `lessonIds` for Units 7-9 were updated to interleave each pair in order.
+  `nahi`/`jakin` (3-person-only tables) and Unit 9's `nahi-future`/
+  `jakin-future` are unaffected (nothing to split). `unit-9-review-2-plural`
+  is asymmetric — its singular sibling covers `nahi`/`jakin`/`joan`/`etorri`
+  future, but the plural sibling only covers `joan`/`etorri` future since
+  `nahi`/`jakin` have no plural forms.
+- `describeLesson` (`App.jsx`) now reads `lesson.persons` and appends a
+  `personsLabel` (the persons joined with `/`, e.g. `ni/zu/hura` or
+  `gu/zuek/haiek` — literal Basque pronouns, language-independent like
+  `TENSE_META`'s `basque` field) to `title.secondary` and `heading`, so
+  singular/plural sibling lessons are visually distinguishable in the lesson
+  list, progress tab, and results screen. Previously two lessons with the same
+  `verbId`/`tense` (or the same review `sources`) would have rendered
+  identically.
+
+**Why:** doubles the lesson count for Units 7-9 (e.g. Unit 9 goes from 13
+lessons to 32), but keeps every exercise within the "≤3 persons" rule while
+still introducing each verb's full paradigm — just across two consecutive,
+clearly-labeled lessons instead of one overloaded one. No `STORAGE_KEY` bump:
+the new `-plural` ids are simply new entries in the progress map, and existing
+progress for ids that keep their id (`jan-present`, etc.) remains valid since
+`bestStars`/`bestScore` are ratio-based and the question count per lesson is
+unchanged (`TARGET_EXERCISE_COUNT`-driven `rounds` formula, now divided across
+3 persons instead of 6).
+
 ## 2026-06-12 — Restored Phase I's 3-person pacing with a `persons` filter on `generateQuestions`
 
 **Decision:** Added an optional `persons` field to `generateQuestions`'s
