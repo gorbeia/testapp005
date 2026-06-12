@@ -133,17 +133,16 @@ across the redeploys the GitHub Action triggers.
 ## Frontend integration
 
 The Profile tab has a "Send feedback" button opening a modal
-(`FeedbackModal` in `src/App.jsx`) that `fetch()`s this worker's URL,
-configured via the `VITE_FEEDBACK_API_URL` env var (repo variable
-`FEEDBACK_API_URL` in `.github/workflows/deploy.yml`, `.env.local` for dev) —
-following the same "build-time env var, no committed default" pattern as
-`VITE_POSTHOG_KEY`/`VITE_POSTHOG_HOST` (`docs/POSTHOG_ANALYTICS.md`). If the
-var is unset, the form still renders but submission fails with the generic
-error message.
+(`FeedbackModal` in `src/App.jsx`) that `fetch()`s this worker's URL. The
+deployed worker's URL (`https://aditzak-feedback.inakiibarrola.workers.dev`)
+is hardcoded as the default in `src/App.jsx` — it isn't a secret, since the
+worker's CORS is locked to `ALLOWED_ORIGIN` regardless of who knows the URL.
+Override it with the `VITE_FEEDBACK_API_URL` env var (repo variable
+`FEEDBACK_API_URL` in `.github/workflows/deploy.yml`, `.env.local` for dev)
+if you deploy your own worker — e.g. for a fork, or to point at a local
+`wrangler dev` instance.
 
 ## Next steps (not yet done)
 
-- Set `FEEDBACK_API_URL` once the worker is deployed (see "Develop and deploy
-  locally" above for the URL `wrangler deploy` prints).
 - Consider adding [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/)
   if spam becomes an issue — not included in this lighter setup.
