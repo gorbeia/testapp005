@@ -109,7 +109,8 @@ export const JOURNEY = [
             title: 'Daily Routine (Transitive)',
             focus: 'jan, edan, erosi (periphrastic + ukan), ikusi',
             payload: '"I ate." · "You drink water." · "I bought a book." · "Do you see it?"',
-            status: 'pending',
+            status: 'available',
+            lessonIds: ['jan-present', 'edan-present', 'erosi-present', 'ikusi-present', 'unit-7-review'],
           },
           {
             number: 8,

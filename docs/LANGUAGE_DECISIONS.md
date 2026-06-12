@@ -6,6 +6,19 @@ conjugation content being taught, as distinct from the app/code decisions
 (including the interface-language/i18n feature) in `docs/DECISIONS.md`.
 Newest entries at the top.
 
+## 2026-06-12 — Documented `jan`/`edan`/`erosi` in `CONJUGATIONS.md` §7, completing Unit 7's prerequisite
+
+**Decision:** Added `jan`/`edan`/`erosi` as new `###` subsections appended to
+§7 (after `entzun`), same placement precedent as `ikusi`/`entzun` themselves
+("avoid renumbering §8-§13"). All three are regular periphrastic NOR-NORK
+verbs (`docs/VERB_COVERAGE.md` §4b's "`-i`"/"`-n`" verb groups): imperfective
+participle (`jaten`/`edaten`/`erosten`) + `ukan`'s present auxiliary for
+"Present (oraina)", perfective participle (`jan`/`edan`/`erosi`) + `ukan`'s
+past auxiliary for "Past (lehena)" — the exact same table shape as `ikusi`/
+`entzun`, `NOR` fixed at `hura`. These are textbook A1 forms (no Gemini
+cross-check needed, unlike the riskier Ahalera/ditransitive grids elsewhere in
+this doc).
+
 ## 2026-06-11 — Filled `izan`/`ukan`'s missing `zu` rows in `CONJUGATIONS.md` §1/§3 — the v2 journey's one concrete prerequisite
 
 **Decision:** Added `zu` (`zara`/`zinen`) to `izan`'s §1 table and `zu`
