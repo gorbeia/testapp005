@@ -1552,9 +1552,15 @@ function SentenceWithBlank({ sentence }) {
 // right Basque form, just packaged differently.
 // `showVerb` (default `true`) controls whether the verb's name/meaning is
 // shown alongside the tense — set to `false` for review-lesson questions
-// (see `ExerciseScreen`), since naming the verb would give away the answer
-// for questions whose options include a cross-verb distractor (see
-// `getCrossVerbCandidates`). The tense label alone is still shown either way.
+// with `options` (see `ExerciseScreen`), since naming the verb would give
+// away the answer for questions whose options include a cross-verb
+// distractor (see `getCrossVerbCandidates`). Typed questions (`type-verb`/
+// `type-pronoun`/`type-negative`, no `options`) always show the verb: with
+// no options to narrow things down, hiding which verb's table a review's
+// blanked sentence belongs to can leave more than one real Basque word
+// fitting the blank (e.g. "Irakasleak erantzun zuzena ___." fits both
+// `jakin`'s `daki` and `edun`'s `du`), making the question unanswerable
+// rather than just harder. The tense label alone is still shown either way.
 function QuestionPrompt({ verb, tenseMeta, question, showVerb = true }) {
   const { t, language } = useLanguage()
   return (
@@ -1997,7 +2003,7 @@ function ExerciseScreen({ lesson, attempts, errorStats, onExit, onComplete, canS
           </div>
         )}
 
-        <QuestionPrompt verb={verb} tenseMeta={tenseMeta} question={question} showVerb={!lesson.review} />
+        <QuestionPrompt verb={verb} tenseMeta={tenseMeta} question={question} showVerb={!lesson.review || !question.options} />
 
         <p className="mt-8 mb-3 text-base font-semibold text-gray-700">{t(QUESTION_PROMPT_KEYS[question.kind])}</p>
         {question.options ? (

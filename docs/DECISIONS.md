@@ -8,6 +8,23 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-13 — Fixed unanswerable typed review questions hiding the verb name
+
+A learner reported a `type-verb` question in `unit-5-review-3` (mixes `jakin`
+and `etorri`) showing the sentence "Irakasleak erantzun zuzena ___." with no
+indication of which verb's table it came from. The blank fits more than one
+real Basque word depending on the verb (`jakin`'s `daki` "knows" vs. `edun`'s
+`du` "has") — without `options` to narrow it down and without the verb name,
+there was no way to tell which form was being asked for.
+
+**Decision:** `showVerb` (`QuestionPrompt`, `App.jsx`) is now
+`!lesson.review || !question.options` instead of just `!lesson.review`. The
+review-only hiding was originally about not giving away the answer via
+cross-verb `options` (Delivery 1 of the Exercise Variety Plan); typed kinds
+(`type-verb`/`type-pronoun`/`type-negative`) have no `options` to protect, so
+showing the verb name there can't leak anything — it just disambiguates the
+blank.
+
 ## 2026-06-13 — Resolved issue #97: "Share result" on 3-star lesson results
 
 Added a "Share" button to `LessonResultsScreen`, gated to `stars === 3`,
