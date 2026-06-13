@@ -7,6 +7,13 @@ compatibility_date = "2024-11-01"
 [vars]
 # Origin allowed to call this worker (no trailing slash).
 ALLOWED_ORIGIN = "https://mintzan.github.io"
+# Base URL of the deployed app, used as the magic-link redirect target
+# (the worker appends `?authToken=<token>`).
+APP_URL = "https://mintzan.github.io/aditzak/"
+# Resend "from" address for sign-in emails. Must be on a domain verified in
+# Resend, or "onboarding@resend.dev" for testing (see
+# docs/CLOUDFLARE_FEEDBACK_WORKER.md).
+AUTH_FROM_EMAIL = "onboarding@resend.dev"
 
 # D1 database used for users/sessions/magic links/progress snapshots. The
 # `database_id` below is a placeholder — replace it with the id printed by

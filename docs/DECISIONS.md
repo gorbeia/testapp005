@@ -8,6 +8,43 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-13 — Resolved issue #88: magic-link auth endpoints + rate limiting in `sync-worker/`
+
+**Decision:** Implemented `POST /auth/request-link`, `POST /auth/verify`, and
+`POST /auth/signout` per #86/#88's spec. Tokens (magic-link and session) are
+32 random bytes, base64url-encoded, and only their SHA-256 hash is ever
+stored (`src/crypto.js`) — so a leaked D1 row can't be replayed as a token.
+Magic links expire after 15 minutes and are single-use (`used_at` checked on
+verify); sessions last 60 days and have their `last_seen_at` bumped on every
+authenticated request (`src/session.js`'s `authenticateSession`, reused by
+the `/sync` follow-up in #89).
+
+**Rate limiting** (`src/rateLimit.js`, `migrations/0002_rate_limits.sql`) uses
+fixed-window counters in a single `rate_limits` table, keyed by
+`email:m:<email>` / `email:h:<email>` / `ip:m:<ip>` / `ip:h:<ip>` (1/minute
+and 5/hour per email and per IP). The four checks short-circuit on first
+failure, so a rejected request doesn't increment counters it never reached —
+simpler than atomic multi-counter updates, and the slight under-counting on
+rejection doesn't weaken the limit (a rejected request is already blocked).
+
+**Email delivery** (`src/email.js`) reuses `worker/`'s Resend pattern but
+with this worker's own `RESEND_API_KEY` secret and `AUTH_FROM_EMAIL`/`APP_URL`
+vars — kept separate from the feedback worker's secret even though both may
+use the same Resend account, since the two workers' configs shouldn't be
+coupled.
+
+**Testing:** `@cloudflare/vitest-pool-workers@0.16.15` doesn't expose a
+`./config` entrypoint compatible with vitest 4.1.8 (`defineWorkersConfig`
+import fails), and the API surface looked likely to keep shifting. Instead,
+`sync-worker/test/d1.js` wraps Node's built-in `node:sqlite` (`DatabaseSync`,
+experimental as of Node 22) behind a `prepare().bind().first/all/run()` shim
+matching D1's API, applying the real `migrations/*.sql` files — real SQLite
+semantics without the extra tooling dependency. This needed its own
+`sync-worker/vitest.config.js` (`environment: 'node'`) so it doesn't inherit
+the root's jsdom config, and the root `vite.config.js` test config now
+excludes `sync-worker/**` (and `worker/**`) so `npm test` at the root doesn't
+try to bundle `node:sqlite` for jsdom.
+
 ## 2026-06-13 — Resolved issue #87: stood up `sync-worker/` (Cloudflare Worker + D1), `/healthz` only for now
 
 **Decision:** Added `sync-worker/` as a sibling of `worker/` (the existing

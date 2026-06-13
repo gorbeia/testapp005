@@ -1,27 +1,9 @@
 // Cloudflare Worker: magic-link auth + cross-device progress sync backend
 // for the Aditzak app, backed by D1. See docs/CLOUDFLARE_SYNC_WORKER.md for
-// setup. The `/auth/*` and `/sync` endpoints land in follow-up issues — for
-// now this only exposes a health-check route.
+// setup. `/sync` (progress storage) lands in a follow-up issue.
 
-const JSON_HEADERS = { 'content-type': 'application/json' }
-
-function corsHeaders(origin, allowedOrigin) {
-  const headers = {
-    'Access-Control-Allow-Methods': 'GET, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
-  }
-  if (origin && origin === allowedOrigin) {
-    headers['Access-Control-Allow-Origin'] = allowedOrigin
-  }
-  return headers
-}
-
-function jsonResponse(body, status, cors) {
-  return new Response(JSON.stringify(body), {
-    status,
-    headers: { ...JSON_HEADERS, ...cors },
-  })
-}
+import { corsHeaders, jsonResponse } from './cors.js'
+import { handleRequestLink, handleSignout, handleVerify } from './routes/auth.js'
 
 export default {
   async fetch(request, env) {
@@ -35,6 +17,18 @@ export default {
 
     if (request.method === 'GET' && url.pathname === '/healthz') {
       return jsonResponse({ ok: true }, 200, cors)
+    }
+
+    if (request.method === 'POST' && url.pathname === '/auth/request-link') {
+      return handleRequestLink(request, env, cors)
+    }
+
+    if (request.method === 'POST' && url.pathname === '/auth/verify') {
+      return handleVerify(request, env, cors)
+    }
+
+    if (request.method === 'POST' && url.pathname === '/auth/signout') {
+      return handleSignout(request, env, cors)
     }
 
     return jsonResponse({ error: 'Not found' }, 404, cors)

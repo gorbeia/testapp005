@@ -4,13 +4,35 @@
 [Cloudflare D1](https://developers.cloudflare.com/d1/), that will back the
 Profile tab's account/sync feature: magic-link auth and cross-device
 progress sync (see issue #86 and its sub-issues). This doc covers
-provisioning D1, running migrations, and deploying the worker. The `/auth/*`
-and `/sync` endpoints themselves are added by follow-up issues — for now the
-worker only exposes a `GET /healthz` health check.
+provisioning D1, running migrations, and deploying the worker. The `/sync`
+endpoints land in a follow-up issue.
 
 ## How it works (so far)
 
-`GET /healthz` → `200 { "ok": true }`. Everything else → `404`.
+`GET /healthz` → `200 { "ok": true }`.
+
+### Magic-link auth
+
+- `POST /auth/request-link {email}` — validates `email`, rate limits (1/min
+  and 5/hour, per email and per IP — `429` if exceeded), creates a
+  single-use token (only its SHA-256 hash is stored, ~15 min expiry in
+  `magic_links`), and emails a sign-in link
+  (`${APP_URL}?authToken=<token>`) via Resend. Returns `200 { "ok": true }`.
+- `POST /auth/verify {token}` — looks up the token by hash; `400` if
+  unknown, already used, or expired. On success, marks it used,
+  finds-or-creates the `users` row by email, issues a new session token
+  (~60 day expiry, stored hashed in `sessions`), and returns
+  `{ sessionToken, email, hasCloudData }` — `hasCloudData` is `true` if a
+  `progress_snapshots` row already exists for this user.
+- `POST /auth/signout` (bearer-authenticated) — deletes the caller's
+  `sessions` row. Returns `401` without a valid, unexpired bearer token.
+
+Every other authenticated endpoint (the `/sync` follow-up) reuses
+`src/session.js`'s `authenticateSession` helper: validates
+`Authorization: Bearer <token>` against `sessions` (hash lookup + expiry
+check) and bumps `last_seen_at`.
+
+Everything else → `404`.
 
 CORS is locked to a single origin via the `ALLOWED_ORIGIN` var, same pattern
 as `worker/` (the feedback worker) — requests from other origins won't
@@ -29,9 +51,11 @@ This prints a `database_id`. Copy it into `sync-worker/wrangler.toml`'s
 
 ## 2. Run migrations
 
-Migration files live in `sync-worker/migrations/` (currently just
-`0001_init.sql`, creating the `users`/`magic_links`/`sessions`/
-`progress_snapshots` tables).
+Migration files live in `sync-worker/migrations/`:
+
+- `0001_init.sql` — `users`/`magic_links`/`sessions`/`progress_snapshots`.
+- `0002_rate_limits.sql` — `rate_limits` (fixed-window counters for
+  `/auth/request-link`).
 
 ```sh
 # Local D1 (used by `wrangler dev`)
@@ -51,10 +75,24 @@ Non-secret config lives in `[vars]`:
 
 - `ALLOWED_ORIGIN` — the app's origin (e.g. `https://mintzan.github.io` for
   the current GitHub Pages deploy). No trailing slash/path.
+- `APP_URL` — base URL of the deployed app; the magic-link email points here
+  with `?authToken=<token>` appended.
+- `AUTH_FROM_EMAIL` — Resend "from" address for sign-in emails
+  (`onboarding@resend.dev` for testing, or an address on your verified
+  domain).
 
-Secrets (Resend API key for magic-link emails, etc.) are added by the
-auth-endpoints follow-up issue, following the same `wrangler secret put`
-pattern as `worker/` — see `docs/CLOUDFLARE_FEEDBACK_WORKER.md`.
+### Set the Resend API key as a secret
+
+Same pattern as the feedback worker (`docs/CLOUDFLARE_FEEDBACK_WORKER.md`):
+
+```sh
+cd sync-worker
+npx wrangler secret put RESEND_API_KEY
+```
+
+This worker has its **own** `RESEND_API_KEY` secret — separate from
+`worker/`'s, even if both use the same Resend account/key value, since each
+worker's secrets are independent.
 
 ## 4. Develop and deploy locally
 
