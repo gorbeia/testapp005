@@ -275,10 +275,56 @@ function rollQuestionKind(availableKinds) {
 // sentence verb-form questions (table = conjugations) and pronoun questions
 // (table = declined pronouns), so every option is always a plausible answer of
 // the same kind as the correct one.
-function buildOptions(table, persons, person) {
+//
+// `extraCandidates` (optional) are additional forms — from a review's sibling
+// sources, see `getCrossVerbCandidates` — merged into the same pool before
+// picking distractors, occasionally surfacing a "right shape, wrong verb"
+// option (e.g. `egon`'s `nago` as a distractor for `izan`'s `naiz`) alongside
+// the usual "right verb, wrong person" ones. Deduplicated against `correct`
+// and each other so the same surface form never appears twice in `options`.
+function buildOptions(table, persons, person, extraCandidates = []) {
   const correct = table[person]
-  const distractors = shuffle(persons.filter((candidate) => candidate !== person).map((candidate) => table[candidate])).slice(0, 3)
+  const pool = [...persons.filter((candidate) => candidate !== person).map((candidate) => table[candidate]), ...extraCandidates].filter(
+    (form) => form !== correct,
+  )
+  const distractors = shuffle([...new Set(pool)]).slice(0, 3)
   return { correct, options: shuffle([correct, ...distractors]) }
+}
+
+// Whether two verbs' subject-marking is compatible enough that one's
+// conjugated form could plausibly (if incorrectly) fill the other's blank —
+// `nor` (absolutive-only: izan, egon, joan, etorri, ari) vs `nor-nork`
+// (ergative subject: ukan, nahi, jakin, ...). Mixing across this boundary
+// would produce a structurally broken sentence rather than a "wrong verb,
+// right shape" distractor — that's deliberately out of scope here (see
+// Delivery 3 in `docs/EXERCISE_VARIETY_PLAN.md`).
+function agreementsCompatible(a, b) {
+  return a.includes('nork') === b.includes('nork')
+}
+
+// For a review lesson's source `{ verbId, tense }` (already resolved to
+// `verb`), collects each grammatical person's conjugated form from the
+// review's *other* sources (`sources`, the full resolved list including this
+// one) — restricted to sources whose verb has compatible subject-marking (see
+// `agreementsCompatible`) — as extra distractor candidates. Returns
+// `{ [person]: string[] }`, passed through to `generateQuestions`'s
+// `extraCandidates` and from there into `buildOptions`. Only persons present
+// in `verb.conjugations[tense]` get an entry, and only if at least one
+// compatible sibling has a form for that person.
+export function getCrossVerbCandidates(verb, tense, sources, verbs) {
+  const siblings = sources.filter((source) => !(source.verbId === verb.id && source.tense === tense))
+  const candidates = {}
+  for (const person of Object.keys(verb.conjugations[tense] ?? {})) {
+    const forms = siblings
+      .map(({ verbId, tense: siblingTense }) => {
+        const siblingVerb = verbs.find((v) => v.id === verbId)
+        if (!siblingVerb || !agreementsCompatible(siblingVerb.agreement, verb.agreement)) return null
+        return siblingVerb.conjugations[siblingTense]?.[person]
+      })
+      .filter(Boolean)
+    if (forms.length > 0) candidates[person] = forms
+  }
+  return candidates
 }
 
 // `sentences[tense][person]` may be a single string or an array of phrasing
@@ -400,7 +446,15 @@ function buildSpotErrorQuestion(table, sentences, personsWithSentences, person) 
 // are drawn from this same subset, so a filtered lesson behaves exactly like a
 // lesson whose table only ever had that many persons. Defaults to every key in
 // the table (the original behaviour).
-export function generateQuestions(verb, tense, { noTyping = false, rounds = 1, includeNegation = false, persons: personsFilter } = {}) {
+//
+// `extraCandidates` (optional, `{ [person]: string[] }` — see
+// `getCrossVerbCandidates`) widens `buildOptions`'s distractor pool for the
+// `sentence`/`negative`/`form` kinds, which all draw their options from
+// `verb.conjugations[tense]`. Not used for `pronoun`, whose options come from
+// a different table (`verb.pronouns`) that cross-verb conjugated forms
+// wouldn't belong in. Defaults to no extra candidates (the original
+// same-table-only behaviour).
+export function generateQuestions(verb, tense, { noTyping = false, rounds = 1, includeNegation = false, persons: personsFilter, extraCandidates } = {}) {
   const table = verb.conjugations[tense]
   const sentences = verb.sentences?.[tense] ?? {}
   const pronounSentences = verb.pronounSentences?.[tense] ?? {}
@@ -434,9 +488,11 @@ export function generateQuestions(verb, tense, { noTyping = false, rounds = 1, i
     used.add(kind)
     usedKinds.set(person, used)
 
+    const extra = extraCandidates?.[person]
+
     switch (kind) {
       case 'sentence': {
-        const { correct, options } = buildOptions(table, persons, person)
+        const { correct, options } = buildOptions(table, persons, person, extra)
         return { ...source, kind: 'sentence', person, sentence, correct, options }
       }
       case 'type-verb':
@@ -450,13 +506,13 @@ export function generateQuestions(verb, tense, { noTyping = false, rounds = 1, i
       case 'type-pronoun':
         return { ...source, kind: 'type-pronoun', person, sentence: pronounSentence, correct: verb.pronouns[person] }
       case 'negative': {
-        const { correct, options } = buildOptions(table, persons, person)
+        const { correct, options } = buildOptions(table, persons, person, extra)
         return { ...source, kind: 'negative', person, sentence: negativeSentence, correct, options }
       }
       case 'type-negative':
         return { ...source, kind: 'type-negative', person, sentence: negativeSentence, correct: table[person] }
       default: {
-        const { correct, options } = buildOptions(table, persons, person)
+        const { correct, options } = buildOptions(table, persons, person, extra)
         return { ...source, kind: 'form', person, correct, options }
       }
     }

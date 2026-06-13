@@ -7,6 +7,7 @@ import {
   exerciseReducer,
   generateQuestions,
   getActiveStreak,
+  getCrossVerbCandidates,
   getExplanation,
   getEncouragement,
   getLastPlayedLessonId,
@@ -958,7 +959,18 @@ function createExerciseState(lesson, attempts, errorStats = {}) {
     const verb = VERBS.find((v) => v.id === verbId)
     const personCount = (lesson.persons ?? Object.keys(verb.conjugations[tense])).length
     const rounds = Math.max(1, Math.round(targetPerSource / personCount))
-    return generateQuestions(verb, tense, { noTyping, rounds, includeNegation: Boolean(lesson.negation), persons: lesson.persons })
+    // Review lessons widen the distractor pool with sibling sources' forms
+    // for the same person (see `getCrossVerbCandidates`) — occasionally
+    // offering a "right shape, wrong verb" option alongside the usual
+    // same-table distractors.
+    const extraCandidates = lesson.review ? getCrossVerbCandidates(verb, tense, sources, VERBS) : undefined
+    return generateQuestions(verb, tense, {
+      noTyping,
+      rounds,
+      includeNegation: Boolean(lesson.negation),
+      persons: lesson.persons,
+      extraCandidates,
+    })
   })
   // Review lessons get up to `EXTRA_REVIEW_EXERCISES` extra questions, drawn
   // from the verb/tense/person combinations this learner has most often
@@ -1157,12 +1169,23 @@ function SentenceWithBlank({ sentence }) {
 // multiple choice when `question.options` is present, typed in otherwise (see
 // `ExerciseScreen`). Every combination still tests recognising/recalling the
 // right Basque form, just packaged differently.
-function QuestionPrompt({ verb, tenseMeta, question }) {
+// `showVerb` (default `true`) controls whether the verb's name/meaning is
+// shown alongside the tense — set to `false` for review-lesson questions
+// (see `ExerciseScreen`), since naming the verb would give away the answer
+// for questions whose options include a cross-verb distractor (see
+// `getCrossVerbCandidates`). The tense label alone is still shown either way.
+function QuestionPrompt({ verb, tenseMeta, question, showVerb = true }) {
   const { t, language } = useLanguage()
   return (
     <>
       <p className="text-sm font-semibold tracking-wide text-gray-400 uppercase">
-        {verb.verb} — {verbMeaning(verb, language)} · {t(tenseMeta.labelKey)}
+        {showVerb ? (
+          <>
+            {verb.verb} — {verbMeaning(verb, language)} · {t(tenseMeta.labelKey)}
+          </>
+        ) : (
+          t(tenseMeta.labelKey)
+        )}
       </p>
       {question.sentence ? (
         <SentenceWithBlank sentence={question.sentence} />
@@ -1520,11 +1543,13 @@ function ExerciseScreen({ lesson, attempts, errorStats, onExit, onComplete, canS
       </div>
 
       <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-6 pt-8">
-        <div className="mb-6">
-          <VerbBadgeRow verb={verb} />
-        </div>
+        {!lesson.review && (
+          <div className="mb-6">
+            <VerbBadgeRow verb={verb} />
+          </div>
+        )}
 
-        <QuestionPrompt verb={verb} tenseMeta={tenseMeta} question={question} />
+        <QuestionPrompt verb={verb} tenseMeta={tenseMeta} question={question} showVerb={!lesson.review} />
 
         <p className="mt-8 mb-3 text-base font-semibold text-gray-700">{t(QUESTION_PROMPT_KEYS[question.kind])}</p>
         {question.options ? (
