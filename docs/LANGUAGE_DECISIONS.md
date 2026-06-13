@@ -6,6 +6,17 @@ conjugation content being taught, as distinct from the app/code decisions
 (including the interface-language/i18n feature) in `docs/DECISIONS.md`.
 Newest entries at the top.
 
+## 2026-06-13 — Resolved `egin`'s synthetic-vs-periphrastic conflict: both exist, periphrastic is the everyday form
+
+**Decision:** `egin` genuinely has both: rare synthetic forms (`dakit` "I do
+it", `egizu` as an hitano imperative in some dialects), mostly preserved in
+Western/Central dialects and literary Basque, *and* the everyday periphrastic
+`egiten dut`/`egin nuen` (§4b-bis) — also Basque's classic transitive "light
+verb" for compounds (`lo egin`, `dantza egin`, `barre egin`...). Not a
+conflict to reconcile, like `iraun`'s noted synthetic/periphrastic overlap —
+§4a's entry now describes the synthetic side, §4b-bis's the periphrastic side.
+Resolves the flag raised in the previous entry.
+
 ## 2026-06-13 — Resolved `itxi`'s present-tense form: `ixten dut`
 
 **Decision:** `VERB_COVERAGE.md` §4b-bis's `itxi` entry now reads `Ixten dut`
@@ -20,13 +31,10 @@ and `egin`, each with present/past `nor-nork` forms (user-supplied), as
 candidates for extending Unit 10's pooled `jan`/`edan`/`erosi`/`ikusi`-style
 drill or seeding later units. Documentation only — no `VERBS` entries yet.
 
-**Flags for whoever picks these up:** `egin` overlaps with §4a's existing
-`egin` entry (listed there as synthetic, but the supplied forms are
-periphrastic) and the two should be reconciled before either is used. `maite
-izan` ("to love") was *not* added to this table — its "Maite dut" shape is
-`maite` + `ukan`, the §5 `nahi`/`behar`-style fixed-expression pattern, not a
-participle+auxiliary periphrastic verb. (`itxi`'s present form, also flagged
-here, was resolved below.)
+`maite izan` ("to love") was *not* added to this table — its "Maite dut" shape
+is `maite` + `ukan`, the §5 `nahi`/`behar`-style fixed-expression pattern, not
+a participle+auxiliary periphrastic verb. (`itxi`'s and `egin`'s flags, also
+raised here, were resolved in later entries above.)
 
 ## 2026-06-12 — Simple past (`Lehenaldi Mugatua`) for `joan`/`etorri`/`jan`/`edan`/`erosi`/`ikusi`/`eduki`/`ibili`, for the new "Looking Back I/II" journey units
 

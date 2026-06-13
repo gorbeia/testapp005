@@ -164,7 +164,7 @@ cleanest route to `nor-nori`, `esan` to `nor-nori-nork`:
 | ekarri | to bring | nor-nork | 🔲 |
 | erabili | to use | nor-nork | 🔲 |
 | jakin | to know (a fact) | nor-nork | 🔲 — pairs naturally with periphrastic `ezagutu` ("to know/recognise *people*, places") for the classic savoir/connaître-style contrast, see §4b |
-| egin | to do / make | nor-nork | 🔲 |
+| egin | to do / make | nor-nork | 🔲 — like `iraun`, a genuine synthetic/periphrastic overlap: rare synthetic forms exist (e.g. `dakit` "I do it", `egizu` as an hitano imperative in some dialects), mostly preserved in Western/Central dialects and literary Basque, but everyday Batua uses the periphrastic `egiten dut`/`egin nuen` (§4b-bis) — also Basque's classic transitive "light verb" for compound verbs (`lo egin` "to sleep", `dantza egin` "to dance", `barre egin` "to laugh") |
 | iraun | to last / endure | nor-nork | 🔲 fully paradigmed (corrected — earlier guess of "defective `nor`" was wrong): "Nik diraut, Hik dirauk/n, Hark dirau, Guk diraugu, Zuk dirauzu, Zuek dirauzue, Haiek diraute" follows the *exact* `root + standard NORK suffix` shape `ukan`/`ekarri`/`eraman`/`eduki` all use (`-t`/`-k`-`n`/∅/`-gu`/`-zu`/`-zue`/`-te`) — about as regular and low-friction a `nor-nork` pick as exists. Also a genuine synthetic/periphrastic overlap in real usage: "Hiru ordu iraun du filmeak" pairs the *participle* `iraun` with `ukan` as auxiliary, right alongside the synthetic `dirau` forms |
 | jario | to flow / ooze / stream ("malkoak dario" = tears flow from him) | nor-nori | 🔲 defective (effectively fixed `nor`, varies by `nori` person) — **and** it already has its own present/past synthetic pair: `dario`/`darie` (present) ↔ `erion`/`erien` (past, Bizkaian) — `erion` isn't a separate verb, it's `jario`'s own past stem. That's a remarkably exact match for the app's present+past shape, on top of being the lowest-friction `nor-nori` route (native synthetic, no auxiliary, fits `object`-fixed `conjugations`) |
 | esan | to say | nor-nork / nor-nori-nork | 🔲 the everyday, central `nor-nori-nork` verb — its ditransitive forms (`dio`/`diot`/`diozu`...) run on the same defective `*-io-` root that `ukan` borrows for *its* ditransitive auxiliary use; `erran` is the northern (Lapurdian/Zuberoan) dialectal variant, again a `dialectVariants` candidate. A much better first `nor-nori-nork` pick than `eman` or `iritzi` |
@@ -224,7 +224,7 @@ extending Unit 10's pooled drill or seeding later units:
 | aurkitu | to find | Aurkitzen dut | Aurkitu nuen | |
 | zabaldu | to open / spread | Zabaltzen dut | Zabaldu nuen | |
 | itxi | to close | Ixten dut | Itxi nuen | |
-| egin | to do / make | Egiten dut | Egin nuen | §4a already lists `egin` as a 🔲 synthetic `nor-nork` candidate — these forms are periphrastic (participle + `ukan`), so reconcile the two entries before adding either |
+| egin | to do / make | Egiten dut | Egin nuen | the everyday Batua form — §4a's `egin` entry covers its rarer synthetic/dialectal forms; also Basque's common transitive "light verb" (`lo egin`, `dantza egin`, `barre egin`...) |
 
 `maite izan` ("to love", lit. "to hold dear") doesn't fit this table:
 "Maite dut"/"Maite nuen" are `maite` + `ukan`, the same fixed-expression-plus-
