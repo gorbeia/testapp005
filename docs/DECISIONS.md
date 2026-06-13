@@ -8,6 +8,40 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-13 — Scoped the real auth/sync backend follow-up (from the 2026-06-12 account prototype) into an epic + 5 sub-issues (#86-91)
+
+**Decision:** Filed `#86` (epic) plus five implementation sub-issues covering
+the work the 2026-06-12 "UI-only optional account prototype" decision
+deferred: `#87` stand up a new `sync-worker/` (Cloudflare Worker + D1 schema +
+deploy pipeline, sibling to `worker/`), `#88` magic-link auth endpoints
+(`/auth/request-link`, `/auth/verify`, `/auth/signout`) with rate limiting,
+`#89` progress-sync endpoints (`GET`/`PUT /sync`), `#90` wire
+`AccountModal`/`AccountSection` to the real auth API (session token in a new
+`aditzak:session:v1` key, bearer auth, `?authToken=` deep link), and `#91`
+first-sync merge (`keepBest`/`useDevice`/`useAccount`) plus ongoing background
+sync and a real sync-status indicator.
+
+**Key choices baked into the epic (open to revisiting during implementation):**
+- Separate Cloudflare Worker + D1 database, not an extension of the
+  stateless `worker/` feedback relay — different trust boundary (handles
+  PII/session tokens) and needs a D1 binding.
+- Bearer token (`Authorization` header, stored in `aditzak:session:v1`) rather
+  than cookies, since the app (GitHub Pages) and worker (`*.workers.dev`) are
+  different origins.
+- Sync payload mirrors the existing four localStorage shapes (`progress`,
+  `dailyStreak`, `points`, `errorStats`) as one JSON blob with a
+  `schemaVersion`, rather than normalizing into per-lesson rows — matches how
+  the merge UI already operates on "the whole local state" and keeps the
+  backend agnostic to lesson-shape changes.
+- Flagged one unresolved question for `#91`: `points` balance isn't
+  monotonic (spent on streak repairs), so the `keepBest` merge can't just take
+  `max(local, cloud)` for it the way `progress`/`dailyStreak`/`errorStats` can.
+
+**Why:** the prototype's mock state needed a concrete backend design before
+any of it could be built; breaking it into an epic + sequential sub-issues
+(infra → auth → sync storage → frontend wiring → merge/background sync) lets
+each land as an independently testable PR rather than one large effort.
+
 ## 2026-06-13 — Unit 10 ("Daily Routine (Transitive)") rebuilt as a pooled "ukan present auxiliary" drill across jan/edan/erosi/ikusi, replacing per-verb practice lessons
 
 **Decision:** Replaced Unit 10's 8 lessons (`jan-present`/`-plural`,
