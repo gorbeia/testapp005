@@ -5,6 +5,20 @@ decisions — it exists to capture an audit's findings before a fix is designed,
 so the reasoning doesn't have to be redone. Once a remediation is chosen, log
 it in `docs/DECISIONS.md` (and update/retire this doc).
 
+## Status
+
+Tracked by epic #115, split into three sub-issues:
+
+- **#112 (Layer 1, mechanical literal-sentence-collision check) — done**, see
+  `docs/DECISIONS.md` ("Excluded cross-verb distractors that collide with a
+  sibling verb's own sentence template"). This resolves the `unit-2-review`
+  `ukan`/`nahi` case described below.
+- **#113 (Layer 2a, generate a triage list)** and **#114 (Layer 2b/3, encode
+  curated exclusions)** — not yet done. These cover the broader
+  "different sentence text, both still valid" cases below (`eduki` vs
+  `ukan`/`ikusi`, `jakin`'s `dakit`, etc.), which need native-speaker triage
+  rather than a mechanical check.
+
 ## Summary
 
 Learners are occasionally seeing multiple-choice questions where more than one

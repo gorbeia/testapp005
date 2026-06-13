@@ -8,6 +8,38 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-13 — Excluded cross-verb distractors that collide with a sibling verb's own sentence template
+
+Layer 1 of the remediation plan from the cross-verb-distractor audit below
+(GitHub issue #112): added `sentenceTemplatesCollide(verbA, tenseA, verbB,
+tenseB, person)` to `src/lessonLogic.js` — a pure, zero-grammar-knowledge
+check for whether two verbs' `sentences[tense][person]` entries share a
+literal template string (handling `pickVariant`'s `string | string[]` shape
+on either side). Wired into `getCrossVerbCandidates` (skip a sibling's form
+for a person if its sentence collides with `verb`'s own) and
+`collectCrossSourceCandidates` (same skip for `verb-choice`/`case-mixer`
+siblings).
+
+This fixes the confirmed `unit-2-review` case: `ukan` and `nahi` both have
+`'Nik liburu bat ___.'` in their present-`ni` sentence lists (`dut` vs `nahi
+dut`, two different correct answers for the identical sentence) — `nahi dut`
+no longer appears as a distractor for `ukan`'s question on that sentence, and
+vice versa. A guard test in `src/logic.test.js` scans every
+`agreementsCompatible` pair in `VERBS` for any shared `(tense, person)`
+sentence template and asserts the exclusion covers it, so a future verb/
+sentence addition that reintroduces this kind of collision fails the test
+suite instead of shipping silently.
+
+Verified via `npm test`/`npm run lint`/`npm run build` plus the regression
+tests exercising the real `ukan`/`nahi`/`jakin` (`unit-2-review`) sources
+across a spread of `Math.random` rolls — not via an interactive `npm run dev`
+play-through, since this session runs headless.
+
+Out of scope (tracked in #113/#114): broader semantic overlaps where the
+sentence *text* differs but both completions are still valid (e.g. `eduki` vs
+`ukan`/`ikusi`) — those need native-speaker triage, not a literal-string
+check.
+
 ## 2026-06-13 — Audited cross-verb distractors for "multiple valid options"
 
 Following up on the Exercise Variety Plan (Deliveries 1-4, shipped earlier the

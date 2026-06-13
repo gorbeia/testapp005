@@ -458,6 +458,28 @@ function hasAmbiguousTypedForm(verb, tense, person, verbs) {
   )
 }
 
+// Whether `verbA`'s and `verbB`'s `sentences[tense][person]` entries share a
+// literal template string (accounting for either side being an array of
+// phrasing variants — see `pickVariant`). When two `agreementsCompatible`
+// verbs happen to use the *exact same sentence* for a person (e.g. `ukan` and
+// `nahi` both have `'Nik liburu bat ___.'` for `ni`/present —
+// `docs/AMBIGUOUS_DISTRACTORS_AUDIT.md`), each verb's correct form is *also* a
+// correct completion of the other's sentence — offering one as a distractor
+// in the other's question would mean two of the options are both right, just
+// with different meanings. This only catches that specific, mechanically
+// detectable case (identical sentence text); broader semantic overlaps where
+// the sentence text *differs* but both completions still read as valid are
+// out of scope here (see `docs/AMBIGUOUS_DISTRACTORS_AUDIT.md`'s remediation
+// directions).
+function sentenceTemplatesCollide(verbA, tenseA, verbB, tenseB, person) {
+  const a = verbA.sentences?.[tenseA]?.[person]
+  const b = verbB.sentences?.[tenseB]?.[person]
+  if (!a || !b) return false
+  const templatesA = Array.isArray(a) ? a : [a]
+  const templatesB = Array.isArray(b) ? b : [b]
+  return templatesA.some((template) => templatesB.includes(template))
+}
+
 // For a review lesson's source `{ verbId, tense }` (already resolved to
 // `verb`), collects each grammatical person's conjugated form from the
 // review's *other* sources (`sources`, the full resolved list including this
@@ -486,6 +508,7 @@ export function getCrossVerbCandidates(verb, tense, sources, verbs, extraSources
       .map(({ verbId, tense: siblingTense }) => {
         const siblingVerb = verbs.find((v) => v.id === verbId)
         if (!siblingVerb || !agreementsCompatible(siblingVerb.agreement, verb.agreement)) return null
+        if (sentenceTemplatesCollide(verb, tense, siblingVerb, siblingTense, person)) return null
         return siblingVerb.conjugations[siblingTense]?.[person]
       })
       .filter(Boolean)
@@ -728,6 +751,7 @@ function collectCrossSourceCandidates(resolvedSources, personsFilter, agreementM
       ]
       const siblingForms = siblings
         .filter((sibling) => agreementMatches(sibling.verb.agreement, verb.agreement))
+        .filter((sibling) => !sentenceTemplatesCollide(verb, tense, sibling.verb, sibling.tense, person))
         .map((sibling) => sibling.verb.conjugations[sibling.tense]?.[person])
         .filter(Boolean)
       // Capped at 3 distractors (4 options total, including `correct`) — same
