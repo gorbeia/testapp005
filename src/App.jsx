@@ -89,6 +89,41 @@ const streakStorage = createStorage(STREAK_STORAGE_KEY)
 const pointsStorage = createStorage(POINTS_STORAGE_KEY)
 const errorStorage = createStorage(ERROR_STORAGE_KEY)
 
+// The signed-in account session (sync-worker bearer token + email), set on a
+// successful `/auth/verify` and restored on later loads. Unlike the maps
+// above, "missing/invalid" is `null` rather than `{}` — and an expired
+// session is treated as missing so a stale token never gets sent.
+const SESSION_STORAGE_KEY = 'aditzak:session:v1'
+
+// Mirrors sync-worker's SESSION_TTL_MS (sync-worker/src/session.js) — used to
+// compute a local expiry, since `/auth/verify` doesn't return one.
+const SESSION_TTL_MS = 60 * 24 * 60 * 60 * 1000
+
+const accountSessionStorage = {
+  load() {
+    try {
+      const raw = localStorage.getItem(SESSION_STORAGE_KEY)
+      if (!raw) return null
+      const session = JSON.parse(raw)
+      if (!session?.token || !session?.email || !(session.expiresAt > Date.now())) return null
+      return session
+    } catch {
+      return null
+    }
+  },
+  save(session) {
+    try {
+      if (session) {
+        localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(session))
+      } else {
+        localStorage.removeItem(SESSION_STORAGE_KEY)
+      }
+    } catch {
+      // localStorage may be unavailable (private browsing, quota) — ignore.
+    }
+  },
+}
+
 // Looks up a verb's English/Spanish/Basque gloss, falling back to English if
 // the active interface language has no translation for this verb.
 function verbMeaning(verb, language) {
@@ -415,6 +450,11 @@ const FEEDBACK_API_URL = import.meta.env.VITE_FEEDBACK_API_URL || 'https://aditz
 const FEEDBACK_MESSAGE_MAX_LENGTH = 2000
 const FEEDBACK_EMAIL_MAX_LENGTH = 320
 
+// Cloudflare Worker endpoint for the account/sync backend — see
+// docs/CLOUDFLARE_SYNC_WORKER.md. Defaults to the deployed worker; override
+// with VITE_SYNC_API_URL for forks or local `wrangler dev`.
+const SYNC_API_URL = import.meta.env.VITE_SYNC_API_URL || 'https://aditzak-sync.inakiibarrola.workers.dev'
+
 function FeedbackModal({ onClose }) {
   const { t } = useLanguage()
   const [message, setMessage] = useState('')
@@ -535,33 +575,45 @@ function FeedbackModal({ onClose }) {
   )
 }
 
-// Mock sign-in flow for the optional-account UI prototype — no real
-// authentication or backend yet (see docs/DECISIONS.md). "Sending" a
-// sign-in link transitions straight to the "check your email" step, with a
-// clearly-labeled demo button standing in for clicking the email link.
-const ACCOUNT_MERGE_OPTIONS = [
-  { value: 'keepBest', labelKey: 'accountMergeKeepBest' },
-  { value: 'useDevice', labelKey: 'accountMergeUseDevice' },
-  { value: 'useAccount', labelKey: 'accountMergeUseAccount' },
-]
-
-function AccountModal({ hasLocalProgress, onClose, onSignedIn }) {
+// Sign-in bottom sheet, wired to sync-worker's magic-link endpoints (see
+// docs/CLOUDFLARE_SYNC_WORKER.md). Submitting the email step calls
+// `POST /auth/request-link`; the actual session is created out-of-band when
+// the learner clicks the emailed link (handled by `AppShell` on load), so
+// this modal's job ends at "check your email".
+function AccountModal({ onClose }) {
   const { t } = useLanguage()
   const [email, setEmail] = useState('')
-  const [step, setStep] = useState('email') // email | sent | merge
-  const [mergeChoice, setMergeChoice] = useState('keepBest')
+  const [step, setStep] = useState('email') // email | sent
+  const [status, setStatus] = useState('idle') // idle | sending | error
+  const [errorKey, setErrorKey] = useState('')
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault()
-    if (!email.trim()) return
-    setStep('sent')
-  }
-
-  function handleDemoContinue() {
-    if (hasLocalProgress) {
-      setStep('merge')
-    } else {
-      onSignedIn(email.trim())
+    const trimmedEmail = email.trim()
+    if (!trimmedEmail || status === 'sending') return
+    setStatus('sending')
+    setErrorKey('')
+    try {
+      const response = await fetch(`${SYNC_API_URL}/auth/request-link`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: trimmedEmail }),
+      })
+      if (response.status === 429) {
+        setStatus('error')
+        setErrorKey('accountErrorRateLimited')
+        return
+      }
+      if (!response.ok) {
+        setStatus('error')
+        setErrorKey('accountErrorInvalidEmail')
+        return
+      }
+      setStatus('idle')
+      setStep('sent')
+    } catch {
+      setStatus('error')
+      setErrorKey('accountErrorNetwork')
     }
   }
 
@@ -576,7 +628,7 @@ function AccountModal({ hasLocalProgress, onClose, onSignedIn }) {
       >
         <div className="mb-3 flex items-center justify-between">
           <h2 id="account-title" className="text-lg font-bold text-gray-900">
-            {t(step === 'merge' ? 'accountMergeTitle' : 'accountSignInTitle')}
+            {t('accountSignInTitle')}
           </h2>
           <button type="button" onClick={onClose} aria-label={t('accountClose')} className="text-2xl leading-none text-gray-400">
             ×
@@ -599,13 +651,14 @@ function AccountModal({ hasLocalProgress, onClose, onSignedIn }) {
                 className="w-full rounded-2xl border border-gray-200 p-3 text-sm text-gray-900 focus:border-green-500 focus:outline-none"
               />
             </div>
+            {status === 'error' && <p className="text-sm text-red-500">{t(errorKey)}</p>}
             <button
               type="submit"
-              disabled={!email.trim()}
+              disabled={!email.trim() || status === 'sending'}
               style={{ minHeight: 48 }}
               className="rounded-2xl bg-green-500 text-sm font-extrabold tracking-wide text-white uppercase transition hover:bg-green-600 active:scale-[0.98] disabled:opacity-50"
             >
-              {t('accountSendLink')}
+              {status === 'sending' ? t('accountSending') : t('accountSendLink')}
             </button>
           </form>
         )}
@@ -617,45 +670,7 @@ function AccountModal({ hasLocalProgress, onClose, onSignedIn }) {
             </span>
             <p className="text-sm font-bold text-gray-900">{t('accountLinkSentTitle')}</p>
             <p className="text-sm text-gray-500">{t('accountLinkSentBody', { email: email.trim() })}</p>
-            <button
-              type="button"
-              onClick={handleDemoContinue}
-              style={{ minHeight: 48 }}
-              className="w-full rounded-2xl bg-green-500 text-sm font-extrabold tracking-wide text-white uppercase transition hover:bg-green-600 active:scale-[0.98]"
-            >
-              {t('accountDemoContinue')}
-            </button>
-          </div>
-        )}
-
-        {step === 'merge' && (
-          <div className="flex flex-col gap-3">
-            <p className="text-sm text-gray-500">{t('accountMergeBody')}</p>
-            <div className="flex flex-col gap-2">
-              {ACCOUNT_MERGE_OPTIONS.map((option) => (
-                <button
-                  key={option.value}
-                  type="button"
-                  onClick={() => setMergeChoice(option.value)}
-                  style={{ minHeight: 48 }}
-                  className={`rounded-2xl border-2 px-4 text-left text-sm font-bold transition ${
-                    mergeChoice === option.value
-                      ? 'border-green-500 bg-green-50 text-green-700'
-                      : 'border-gray-200 text-gray-500 hover:border-gray-300'
-                  }`}
-                >
-                  {t(option.labelKey)}
-                </button>
-              ))}
-            </div>
-            <button
-              type="button"
-              onClick={() => onSignedIn(email.trim())}
-              style={{ minHeight: 48 }}
-              className="rounded-2xl bg-green-500 text-sm font-extrabold tracking-wide text-white uppercase transition hover:bg-green-600 active:scale-[0.98]"
-            >
-              {t('accountMergeConfirm')}
-            </button>
+            <p className="text-xs text-gray-400">{t('accountLinkSentWaiting')}</p>
           </div>
         )}
       </div>
@@ -663,8 +678,9 @@ function AccountModal({ hasLocalProgress, onClose, onSignedIn }) {
   )
 }
 
-// Card shown in the Profile tab for the optional-account prototype — purely
-// presentational, driven by the mock `account` state held in `HomeScreen`.
+// Card shown in the Profile tab — purely presentational, driven by the
+// `account` state held in `AppShell` (restored from/persisted to
+// `aditzak:session:v1`).
 function AccountSection({ account, onOpenSignIn, onSignOut }) {
   const { t } = useLanguage()
   if (account) {
@@ -837,16 +853,25 @@ function BottomNav({ active, onSelect }) {
   )
 }
 
-function HomeScreen({ progress, streak, points, tab, onChangeTab, onSelectLesson, onResetProgress, onRepairStreak, scrollTarget }) {
+function HomeScreen({
+  progress,
+  streak,
+  points,
+  account,
+  onSignOut,
+  tab,
+  onChangeTab,
+  onSelectLesson,
+  onResetProgress,
+  onRepairStreak,
+  scrollTarget,
+}) {
   const { t } = useLanguage()
   const totalStars = LESSONS.reduce((sum, lesson) => sum + (progress[lesson.id]?.bestStars ?? 0), 0)
   const maxStars = LESSONS.length * 3
   const currentStreak = getActiveStreak(streak, getLocalDateString())
   const balance = points?.balance ?? 0
   const [showFeedback, setShowFeedback] = useState(false)
-  // Mock account state for the optional-account UI prototype — not
-  // persisted, see docs/DECISIONS.md.
-  const [account, setAccount] = useState(null)
   const [showAccountModal, setShowAccountModal] = useState(false)
 
   // Restores the scroll position the learner had before starting an exercise,
@@ -906,7 +931,7 @@ function HomeScreen({ progress, streak, points, tab, onChangeTab, onSelectLesson
             points={points}
             account={account}
             onOpenSignIn={() => setShowAccountModal(true)}
-            onSignOut={() => setAccount(null)}
+            onSignOut={onSignOut}
             onResetProgress={onResetProgress}
             onRepairStreak={onRepairStreak}
             onOpenFeedback={() => setShowFeedback(true)}
@@ -917,16 +942,7 @@ function HomeScreen({ progress, streak, points, tab, onChangeTab, onSelectLesson
       <BottomNav active={tab} onSelect={onChangeTab} />
 
       {showFeedback && <FeedbackModal onClose={() => setShowFeedback(false)} />}
-      {showAccountModal && (
-        <AccountModal
-          hasLocalProgress={Object.keys(progress).length > 0}
-          onClose={() => setShowAccountModal(false)}
-          onSignedIn={(email) => {
-            setAccount({ email, syncedAt: Date.now() })
-            setShowAccountModal(false)
-          }}
-        />
-      )}
+      {showAccountModal && <AccountModal onClose={() => setShowAccountModal(false)} />}
     </div>
   )
 }
@@ -1676,6 +1692,10 @@ function AppShell() {
   const [errorStats, setErrorStats] = useState(errorStorage.load)
   const [tab, setTab] = useState('home')
   const [activeLessonId, setActiveLessonId] = useState(null)
+  const [account, setAccount] = useState(() => {
+    const session = accountSessionStorage.load()
+    return session ? { email: session.email } : null
+  })
   // Session-level gate for the mid-lesson streak nudge: counts down once a
   // nudge has been shown, so the next one waits a few lessons rather than
   // popping up again the moment another milestone streak comes around.
@@ -1704,6 +1724,51 @@ function AppShell() {
   useEffect(() => {
     errorStorage.save(errorStats)
   }, [errorStats])
+
+  // Completes a magic-link sign-in: if the URL has `?authToken=...` (the
+  // learner just clicked the emailed link), exchange it for a session via
+  // `/auth/verify`, persist it, and strip the token from the URL either way
+  // so it isn't left in the address bar or re-submitted on refresh.
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const url = new URL(window.location.href)
+    const authToken = url.searchParams.get('authToken')
+    if (!authToken) return
+
+    url.searchParams.delete('authToken')
+    window.history.replaceState({}, '', url.toString())
+
+    fetch(`${SYNC_API_URL}/auth/verify`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token: authToken }),
+    })
+      .then(async (response) => {
+        if (!response.ok) return
+        const { sessionToken, email, hasCloudData } = await response.json()
+        accountSessionStorage.save({ token: sessionToken, email, expiresAt: Date.now() + SESSION_TTL_MS })
+        setAccount({ email, hasCloudData })
+      })
+      .catch(() => {
+        // Network failure verifying the magic link — leave the learner
+        // signed out; they can request a new link from the Profile tab.
+      })
+  }, [])
+
+  const handleSignOut = useCallback(async () => {
+    const session = accountSessionStorage.load()
+    accountSessionStorage.save(null)
+    setAccount(null)
+    if (!session?.token) return
+    try {
+      await fetch(`${SYNC_API_URL}/auth/signout`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${session.token}` },
+      })
+    } catch {
+      // Best-effort — the local session is already cleared above.
+    }
+  }, [])
 
   const handleStreakNudgeShown = useCallback(() => {
     setStreakNudgeCooldown(randomStreakNudgeCooldown())
@@ -1784,6 +1849,8 @@ function AppShell() {
       progress={progress}
       streak={dailyStreak}
       points={points}
+      account={account}
+      onSignOut={handleSignOut}
       tab={tab}
       onChangeTab={setTab}
       onSelectLesson={handleSelectLesson}
