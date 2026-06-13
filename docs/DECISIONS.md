@@ -8,6 +8,64 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-13 — Resolved issue #84: pooled Units 8/9's past tense into izan-past/ukan-past auxiliary pools, moved egon-past/eduki-past to their own units (Stage 3/5 reshuffle)
+
+**Decision:** Replaced Units 8/9's six per-verb `-past`/`-past-plural` pairs
+(`izan-past`, `egon-past`, `ukan-past`, `joan-past`, `etorri-past`,
+`ikusi-past`, plus `looking-back-1a-review`/`looking-back-1b-review` and their
+`-plural` siblings) and Units 12/13's five (`jan-past`, `edan-past`,
+`erosi-past`, `eduki-past`, `ibili-past`, plus `looking-back-2a-review`/
+`looking-back-2b-review` and their `-plural` siblings) — 30 lessons total —
+with:
+
+- **Unit 8** ("Looking Back I — The 'izan' Past Pool"): `izan-past-pool` /
+  `izan-past-pool-plural`, `sources` covering `izan`/`joan`/`etorri`/`ibili`'s
+  past tense — all four conjugate via `izan`'s past auxiliary
+  (`nintzen`/`zinen`/`zen`/`ginen`/`zineten`/`ziren`).
+- **Unit 9** ("Looking Back I — The 'ukan' Past Pool"): `ukan-past-pool` /
+  `ukan-past-pool-plural`, `sources` covering `ukan`/`jan`/`edan`/`erosi`/
+  `ikusi`'s past tense — all five conjugate via `ukan`'s past auxiliary
+  (`nuen`/`zenuen`/`zuen`/`genuen`/`zenuten`/`zuten`).
+- **Unit 12** ("Looking Back II — 'I Was There'"): `egon-past` /
+  `egon-past-review` / `egon-past-plural` / `egon-past-plural-review` — `egon`
+  keeps its own distinct synthetic past paradigm (`nengoen`/`zeunden`/
+  `zegoen`/...), same single-verb practice+review shape as Unit 3/5's
+  `ikusi-present`/`ikusi-present-review`.
+- **Unit 13** ("Looking Back II — 'I Had It'"): the same shape for
+  `eduki-past` (`neukan`/`zeneukan`/...).
+
+12 lessons total, down from 30. No new `VERBS` data — `conjugations.past` for
+all eleven verbs already existed from the two prior "Looking Back"
+implementation passes — this is purely a `journey.js`/`lessons.js`
+restructure following Unit 10's pooling pattern (see the entry below).
+
+**Why a reshuffle across Stages 3 and 5, not a one-unit edit:** issue #84
+identified that `izan`-past's auxiliary is shared by verbs originally spread
+across Units 8/9/13, and `ukan`-past's by verbs spread across Units 8/9/12 —
+pooling either family means moving lessons across unit *and* stage
+boundaries. Kept the unit count at 4 (8, 9, 12, 13) and left Units
+10/11/14+ untouched — no renumbering cascade — by redistributing *within*
+that four-unit budget: Stage 3 (Units 8-9) becomes "the two shared-auxiliary
+pools", Stage 5 (Units 12-13) becomes "the two odd-ones-out with their own
+paradigm" (`egon`, `eduki`). This still preserves the redesign's "pair each
+verb's past with its present soon after" framing for every pooled verb
+(`ibili`'s past, Unit 8, is one unit after its present, Unit 11; `jan`/`edan`/
+`erosi`/`ikusi`'s past, Unit 9, is right after their present, Unit 10) — the
+one regression is `egon`, whose present→past gap grows from Unit 1→8 (7
+units) to Unit 1→12 (11 units), accepted as the cost of giving `egon` and
+`eduki` each a focused single-verb unit rather than forcing them into a pool
+they don't fit.
+
+**`journeyTranslations.js` left untouched**, same precedent as the Unit 10
+entry below — its `units` keys are already out of sync with `journey.js`'s
+current numbering (a pre-existing issue flagged there), and this redesign
+doesn't make that worse; both need the same holistic re-audit.
+
+**No `STORAGE_KEY` bump**: removed lesson ids (`izan-past`, `joan-past`, ...,
+`looking-back-*-review*`) leave orphaned-but-harmless `progress` entries, same
+precedent as Unit 10's redesign. `egon-past`/`eduki-past` keep their existing
+ids, so any progress already recorded against them carries over.
+
 ## 2026-06-13 — Unit 10 ("Daily Routine (Transitive)") rebuilt as a pooled "ukan present auxiliary" drill across jan/edan/erosi/ikusi, replacing per-verb practice lessons
 
 **Decision:** Replaced Unit 10's 8 lessons (`jan-present`/`-plural`,

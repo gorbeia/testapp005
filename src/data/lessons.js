@@ -196,69 +196,66 @@ export const LESSONS = [
       { verbId: 'etorri', tense: 'present' },
     ],
   },
-  // Unit 8 ("Looking Back I" — "I Was, I Had, I Saw...") — the first "Looking
-  // Back" companion unit: simple past for the Phase I verbs just consolidated
-  // in Units 5 and 7 (`izan`/`egon`/`ukan`), pairing each verb group's past with
-  // its present soon after rather than saving *all* past tense for Phase III
-  // (see `docs/DECISIONS.md`). Full 6-person grids from the first lesson
-  // (Person-Expansion Rule, since `gu`/`zuek`/`haiek` already exist for these
-  // verbs) — same singular/plural split as Units 10-11.
-  { id: 'izan-past', verbId: 'izan', tense: 'past', persons: PHASE_1_PERSONS },
-  { id: 'izan-past-plural', verbId: 'izan', tense: 'past', persons: PHASE_1_PLURAL_PERSONS },
-  { id: 'egon-past', verbId: 'egon', tense: 'past', persons: PHASE_1_PERSONS },
-  { id: 'egon-past-plural', verbId: 'egon', tense: 'past', persons: PHASE_1_PLURAL_PERSONS },
-  { id: 'ukan-past', verbId: 'ukan', tense: 'past', persons: PHASE_1_PERSONS },
-  { id: 'ukan-past-plural', verbId: 'ukan', tense: 'past', persons: PHASE_1_PLURAL_PERSONS },
+  // Unit 8 ("Looking Back I — The izan-Past Pool") — `izan`'s past auxiliary
+  // (nintzen/zinen/zen/ginen/zineten/ziren) is shared *exactly* by `izan`
+  // itself (synthetic — it *is* these forms) and by `joan`/`etorri`/`ibili`
+  // (periphrastic simple past — "joan/etorri/ibili" + these forms). Pooled
+  // into two mixed-verb lessons following Unit 10's "pooled auxiliary" design
+  // (`docs/DECISIONS.md`) rather than four near-identical per-verb
+  // singular/plural pairs (issue #84) — every question still isolates the
+  // auxiliary-by-person pattern within whichever verb's table it rolls, but
+  // which verb supplies a given question varies question-to-question. Per the
+  // app-wide "max 3 persons per exercise" rule, split into a `PHASE_1_PERSONS`
+  // lesson and a `-plural` `PHASE_1_PLURAL_PERSONS` lesson, mirroring
+  // `unit-10-present`/`unit-10-present-plural`.
   {
-    id: 'looking-back-1a-review',
-    review: true,
+    id: 'izan-past-pool',
     persons: PHASE_1_PERSONS,
     sources: [
       { verbId: 'izan', tense: 'past' },
-      { verbId: 'egon', tense: 'past' },
-      { verbId: 'ukan', tense: 'past' },
+      { verbId: 'joan', tense: 'past' },
+      { verbId: 'etorri', tense: 'past' },
+      { verbId: 'ibili', tense: 'past' },
     ],
   },
   {
-    id: 'looking-back-1a-review-plural',
-    review: true,
+    id: 'izan-past-pool-plural',
     persons: PHASE_1_PLURAL_PERSONS,
     sources: [
       { verbId: 'izan', tense: 'past' },
-      { verbId: 'egon', tense: 'past' },
-      { verbId: 'ukan', tense: 'past' },
-    ],
-  },
-  // Unit 9 ("Looking Back I" continued — "I Went, I Came, I Saw") — simple
-  // past for `joan`/`etorri`/`ikusi`. `joan`/`etorri`'s past is the
-  // periphrastic participle + `izan`'s past auxiliary (`joan nintzen`,
-  // `etorri nintzen`) — distinct from §6's *imperfective* `nindoan`/`zetorren`
-  // forms, which stay reserved for Phase III's "Motion in Progress (Past)"
-  // unit. `ikusi`'s past is participle + `ukan`'s past auxiliary
-  // (`ikusi nuen`). See `docs/LANGUAGE_DECISIONS.md` for sourcing.
-  { id: 'joan-past', verbId: 'joan', tense: 'past', persons: PHASE_1_PERSONS },
-  { id: 'joan-past-plural', verbId: 'joan', tense: 'past', persons: PHASE_1_PLURAL_PERSONS },
-  { id: 'etorri-past', verbId: 'etorri', tense: 'past', persons: PHASE_1_PERSONS },
-  { id: 'etorri-past-plural', verbId: 'etorri', tense: 'past', persons: PHASE_1_PLURAL_PERSONS },
-  { id: 'ikusi-past', verbId: 'ikusi', tense: 'past', persons: PHASE_1_PERSONS },
-  { id: 'ikusi-past-plural', verbId: 'ikusi', tense: 'past', persons: PHASE_1_PLURAL_PERSONS },
-  {
-    id: 'looking-back-1b-review',
-    review: true,
-    persons: PHASE_1_PERSONS,
-    sources: [
       { verbId: 'joan', tense: 'past' },
       { verbId: 'etorri', tense: 'past' },
+      { verbId: 'ibili', tense: 'past' },
+    ],
+  },
+  // Unit 9 ("Looking Back I — The ukan-Past Pool") — `ukan`'s past auxiliary
+  // (nuen/zenuen/zuen/genuen/zenuten/zuten) is shared *exactly* by `ukan`
+  // itself (synthetic) and by `jan`/`edan`/`erosi`/`ikusi` (periphrastic
+  // simple past — "jan/edan/erosi/ikusi" + these forms). Same pooling as Unit
+  // 8, for the larger of the two past-auxiliary families (issue #84).
+  // `joan`/`etorri`/`ibili`'s past is distinct from §6's *imperfective*
+  // `nindoan`/`zetorren`/`nenbilen` forms, which stay reserved for Phase III's
+  // "Motion in Progress (Past)" unit. See `docs/LANGUAGE_DECISIONS.md` for
+  // sourcing.
+  {
+    id: 'ukan-past-pool',
+    persons: PHASE_1_PERSONS,
+    sources: [
+      { verbId: 'ukan', tense: 'past' },
+      { verbId: 'jan', tense: 'past' },
+      { verbId: 'edan', tense: 'past' },
+      { verbId: 'erosi', tense: 'past' },
       { verbId: 'ikusi', tense: 'past' },
     ],
   },
   {
-    id: 'looking-back-1b-review-plural',
-    review: true,
+    id: 'ukan-past-pool-plural',
     persons: PHASE_1_PLURAL_PERSONS,
     sources: [
-      { verbId: 'joan', tense: 'past' },
-      { verbId: 'etorri', tense: 'past' },
+      { verbId: 'ukan', tense: 'past' },
+      { verbId: 'jan', tense: 'past' },
+      { verbId: 'edan', tense: 'past' },
+      { verbId: 'erosi', tense: 'past' },
       { verbId: 'ikusi', tense: 'past' },
     ],
   },
@@ -322,60 +319,45 @@ export const LESSONS = [
       { verbId: 'ibili', tense: 'present' },
     ],
   },
-  // Unit 12 ("Looking Back II" — "I Ate, I Drank, I Bought") — simple past for
-  // `jan`/`edan`/`erosi`, directly documented in `docs/CONJUGATIONS.md` §7
-  // (participle + `ukan`'s past auxiliary, e.g. `jan nuen`).
-  { id: 'jan-past', verbId: 'jan', tense: 'past', persons: PHASE_1_PERSONS },
-  { id: 'jan-past-plural', verbId: 'jan', tense: 'past', persons: PHASE_1_PLURAL_PERSONS },
-  { id: 'edan-past', verbId: 'edan', tense: 'past', persons: PHASE_1_PERSONS },
-  { id: 'edan-past-plural', verbId: 'edan', tense: 'past', persons: PHASE_1_PLURAL_PERSONS },
-  { id: 'erosi-past', verbId: 'erosi', tense: 'past', persons: PHASE_1_PERSONS },
-  { id: 'erosi-past-plural', verbId: 'erosi', tense: 'past', persons: PHASE_1_PLURAL_PERSONS },
+  // Unit 12 ("Looking Back II — egon's Own Past") — `egon`'s past
+  // (nengoen/zeunden/zegoen/geunden/zeundeten/zeuden) is its own synthetic
+  // paradigm, sharing no suffix family with either Unit 8 or Unit 9's pools
+  // (issue #84) — `joan`/`ibili` moved into Unit 8's pool, leaving `egon` on
+  // its own. Keeps a dedicated practice + review pair, singular and plural,
+  // same shape as Unit 3/5's single-verb `ikusi-present`/`ikusi-present-plural`
+  // (+ their own `-review` lessons).
+  { id: 'egon-past', verbId: 'egon', tense: 'past', persons: PHASE_1_PERSONS },
   {
-    id: 'looking-back-2a-review',
+    id: 'egon-past-review',
     review: true,
     persons: PHASE_1_PERSONS,
-    sources: [
-      { verbId: 'jan', tense: 'past' },
-      { verbId: 'edan', tense: 'past' },
-      { verbId: 'erosi', tense: 'past' },
-    ],
+    sources: [{ verbId: 'egon', tense: 'past' }],
   },
+  { id: 'egon-past-plural', verbId: 'egon', tense: 'past', persons: PHASE_1_PLURAL_PERSONS },
   {
-    id: 'looking-back-2a-review-plural',
+    id: 'egon-past-plural-review',
     review: true,
     persons: PHASE_1_PLURAL_PERSONS,
-    sources: [
-      { verbId: 'jan', tense: 'past' },
-      { verbId: 'edan', tense: 'past' },
-      { verbId: 'erosi', tense: 'past' },
-    ],
+    sources: [{ verbId: 'egon', tense: 'past' }],
   },
-  // Unit 13 ("Looking Back II" continued — "I Had, I Walked Around") — simple
-  // past for `eduki` (synthetic, `neukan`/`zeneukan`/...) and `ibili`
-  // (periphrastic, `ibili nintzen` — distinct from §6's imperfective
-  // `nenbilen`, reserved for Phase III's "Motion in Progress (Past)" unit).
+  // Unit 13 ("Looking Back II — eduki's Own Past") — `eduki`'s past
+  // (neukan/zeneukan/zeukan/geneukan/zeneukaten/zeukaten) is likewise its own
+  // synthetic paradigm, the other "odd one out" from issue #84 — `jan`/`edan`/
+  // `erosi`/`ikusi` moved into Unit 9's pool, leaving `eduki` on its own. Same
+  // practice + review, singular + plural shape as Unit 12.
   { id: 'eduki-past', verbId: 'eduki', tense: 'past', persons: PHASE_1_PERSONS },
-  { id: 'eduki-past-plural', verbId: 'eduki', tense: 'past', persons: PHASE_1_PLURAL_PERSONS },
-  { id: 'ibili-past', verbId: 'ibili', tense: 'past', persons: PHASE_1_PERSONS },
-  { id: 'ibili-past-plural', verbId: 'ibili', tense: 'past', persons: PHASE_1_PLURAL_PERSONS },
   {
-    id: 'looking-back-2b-review',
+    id: 'eduki-past-review',
     review: true,
     persons: PHASE_1_PERSONS,
-    sources: [
-      { verbId: 'eduki', tense: 'past' },
-      { verbId: 'ibili', tense: 'past' },
-    ],
+    sources: [{ verbId: 'eduki', tense: 'past' }],
   },
+  { id: 'eduki-past-plural', verbId: 'eduki', tense: 'past', persons: PHASE_1_PLURAL_PERSONS },
   {
-    id: 'looking-back-2b-review-plural',
+    id: 'eduki-past-plural-review',
     review: true,
     persons: PHASE_1_PLURAL_PERSONS,
-    sources: [
-      { verbId: 'eduki', tense: 'past' },
-      { verbId: 'ibili', tense: 'past' },
-    ],
+    sources: [{ verbId: 'eduki', tense: 'past' }],
   },
   // Units 14-17 ("Intentions & Future Actions", Phase II) — zero new verbs,
   // "only the participle-formation rule is new" (`docs/LEARNING_JOURNEY.md`):
