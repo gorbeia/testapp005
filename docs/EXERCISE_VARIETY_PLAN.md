@@ -242,19 +242,32 @@ ceiling noted during planning, without weakening Delivery 1/2's "this review
 
 ### Tasks
 
-1. **4.1** — Add a helper, e.g. `getIntroducedVerbIds(lessons, upToLessonId)`,
-   deriving "verbs taught so far" from `LESSONS` order (position-based,
-   mirroring how `getUnlockedLessonIds` already reasons about `LESSONS`
-   order).
-2. **4.2** — Extend Delivery 1/2's candidate-pool logic to fall back to this
+1. ~~**4.1** — Add a helper, e.g. `getIntroducedVerbIds(lessons,
+   upToLessonId)`, deriving "verbs taught so far" from `LESSONS` order
+   (position-based, mirroring how `getUnlockedLessonIds` already reasons about
+   `LESSONS` order).~~ Done: `getIntroducedSources(lessons, upToLessonId)` —
+   returns `{ verbId, tense }` pairs (tense-level, not just verb ids — needed
+   for 4.3's spoiler guard) — see `docs/DECISIONS.md` (2026-06-13, Delivery
+   4).
+2. ~~**4.2** — Extend Delivery 1/2's candidate-pool logic to fall back to this
    broader set only when a review's own sibling sources don't provide enough
-   candidates (e.g. fewer than 1-2 cross-verb candidates available).
-3. **4.3** — Guard against spoilers: exclude tenses/forms not yet introduced
+   candidates (e.g. fewer than 1-2 cross-verb candidates available).~~ Done:
+   gated on `sources.length < 3` in `createExerciseState`, threaded into
+   `getCrossVerbCandidates` (`extraSources`) and
+   `generateCrossVerbQuestions`/`generateCaseMixerQuestions`
+   (`extraSiblingSources`) — see `docs/DECISIONS.md` (2026-06-13, Delivery 4).
+3. ~~**4.3** — Guard against spoilers: exclude tenses/forms not yet introduced
    for a given verb even if the verb itself has been introduced elsewhere
    (e.g. don't pull a verb's `future` form into a present-tense review if that
-   verb's `future` lesson hasn't been reached yet).
-4. **4.4** — Tests + manual validation on a 2-source review (e.g.
-   `unit-1-review` or `unit-3-review`).
+   verb's `future` lesson hasn't been reached yet).~~ Done:
+   `getIntroducedSources` only looks *before* the review's own position in
+   `LESSONS`, so this falls out for free — see `docs/DECISIONS.md` (2026-06-13,
+   Delivery 4).
+4. ~~**4.4** — Tests + manual validation on a 2-source review (e.g.
+   `unit-1-review` or `unit-3-review`).~~ Done: `unit-1-review` (izan+egon) is
+   unaffected (its sources already cover every prior lesson);
+   `unit-3-review` (joan+etorri) gains izan/egon/ukan/nahi/jakin/ikusi as
+   fallback siblings — see `docs/DECISIONS.md` (2026-06-13, Delivery 4).
 
 ---
 
@@ -266,3 +279,12 @@ resolved items and link to the `docs/DECISIONS.md` entry, the way
 `docs/EXERCISE_ENGINE.md` does for its own resolved items). Deliveries don't
 need to ship in a single pass each — e.g. Delivery 1 could ship for
 `unit-1-review` alone first (task 1.6) before 1.7's wider rollout.
+
+**Status: all four deliveries shipped** (see `docs/DECISIONS.md`, 2026-06-13
+entries for Deliveries 1-4). Delivery 3 deliberately left Unit 24
+(`journey.js`) `pending` — its full NOR/NORI/NORK scope needs Units 22-23's
+dative verbs, which don't exist yet; `case-mixer` instead ships as a general
+review-lesson mechanism active wherever a review's sources (including
+Delivery 4's fallback pool) mix `nor`/`nor-nork`. Any further follow-up
+(e.g. revisiting Unit 24 once Units 22-23 land) should start a new planning
+doc rather than reopen this one.

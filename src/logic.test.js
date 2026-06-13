@@ -15,6 +15,7 @@ import {
   getCrossVerbCandidates,
   getEncouragement,
   getExplanation,
+  getIntroducedSources,
   getLocalDateString,
   getStreakEncouragement,
   getUnlockedLessonIds,
@@ -320,6 +321,47 @@ describe('getUnlockedLessonIds', () => {
     const progress = { a: { attempts: 1 }, c: { attempts: 1 } }
 
     expect(getUnlockedLessonIds(lessons, progress)).toEqual(new Set(['a', 'b', 'c']))
+  })
+})
+
+describe('getIntroducedSources', () => {
+  const lessons = [
+    { id: 'izan-present', verbId: 'izan', tense: 'present' },
+    { id: 'egon-present', verbId: 'egon', tense: 'present' },
+    { id: 'unit-1-review', review: true, sources: [{ verbId: 'izan', tense: 'present' }, { verbId: 'egon', tense: 'present' }] },
+    { id: 'izan-past', verbId: 'izan', tense: 'past' },
+  ]
+
+  it('returns every practice lesson before the given lesson, in order', () => {
+    expect(getIntroducedSources(lessons, 'unit-1-review')).toEqual([
+      { verbId: 'izan', tense: 'present' },
+      { verbId: 'egon', tense: 'present' },
+    ])
+  })
+
+  it('does not surface a verb/tense introduced only after the given lesson (no spoilers)', () => {
+    const sources = getIntroducedSources(lessons, 'unit-1-review')
+
+    expect(sources).not.toContainEqual({ verbId: 'izan', tense: 'past' })
+  })
+
+  it('skips review lessons, which have no verbId/tense of their own', () => {
+    expect(getIntroducedSources(lessons, 'izan-past')).toEqual([
+      { verbId: 'izan', tense: 'present' },
+      { verbId: 'egon', tense: 'present' },
+    ])
+  })
+
+  it('returns an empty array for the first lesson', () => {
+    expect(getIntroducedSources(lessons, 'izan-present')).toEqual([])
+  })
+
+  it('returns every practice lesson when the given id is not found', () => {
+    expect(getIntroducedSources(lessons, 'does-not-exist')).toEqual([
+      { verbId: 'izan', tense: 'present' },
+      { verbId: 'egon', tense: 'present' },
+      { verbId: 'izan', tense: 'past' },
+    ])
   })
 })
 
@@ -958,6 +1000,41 @@ describe('getCrossVerbCandidates', () => {
 
     expect(getCrossVerbCandidates(izan, 'present', sources, verbs)).toEqual({})
   })
+
+  it('falls back to extraSources when the review has too few sources of its own', () => {
+    const sources = [{ verbId: 'izan', tense: 'present' }]
+    const extraSources = [{ verbId: 'egon', tense: 'present' }]
+
+    expect(getCrossVerbCandidates(izan, 'present', sources, verbs, extraSources)).toEqual({
+      ni: ['nago'],
+      zu: ['zaude'],
+      hura: ['dago'],
+    })
+  })
+
+  it('ignores extraSources with incompatible agreement or a different tense', () => {
+    const sources = [{ verbId: 'izan', tense: 'present' }]
+    const extraSources = [
+      { verbId: 'ukan', tense: 'present' },
+      { verbId: 'egon', tense: 'past' },
+    ]
+
+    expect(getCrossVerbCandidates(izan, 'present', sources, verbs, extraSources)).toEqual({})
+  })
+
+  it('does not duplicate a source already present in sources when also passed as an extraSource', () => {
+    const sources = [
+      { verbId: 'izan', tense: 'present' },
+      { verbId: 'egon', tense: 'present' },
+    ]
+    const extraSources = [{ verbId: 'egon', tense: 'present' }]
+
+    expect(getCrossVerbCandidates(izan, 'present', sources, verbs, extraSources)).toEqual({
+      ni: ['nago'],
+      zu: ['zaude'],
+      hura: ['dago'],
+    })
+  })
 })
 
 describe('generateCrossVerbQuestions', () => {
@@ -1055,6 +1132,34 @@ describe('generateCrossVerbQuestions', () => {
     expect(questions.length).toBeGreaterThan(0)
     questions.forEach((question) => expect(question.person).toBe('ni'))
   })
+
+  it('uses extraSiblingSources to produce questions for a single-source review', () => {
+    const sources = [{ verb: izan, tense: 'present' }]
+    const extraSiblingSources = [{ verb: egon, tense: 'present' }]
+
+    const questions = generateCrossVerbQuestions(sources, { count: 10, extraSiblingSources })
+
+    expect(questions.length).toBeGreaterThan(0)
+    questions.forEach((question) => {
+      expect(question.kind).toBe('verb-choice')
+      expect(question.options).toContain(question.correct)
+      expect(question.options.length).toBe(2)
+    })
+  })
+
+  it('ignores an extraSiblingSource that duplicates one of the review\'s own sources', () => {
+    const sources = [
+      { verb: izan, tense: 'present' },
+      { verb: egon, tense: 'present' },
+    ]
+    const extraSiblingSources = [{ verb: egon, tense: 'present' }]
+
+    const withExtra = generateCrossVerbQuestions(sources, { count: 10, extraSiblingSources })
+    const withoutExtra = generateCrossVerbQuestions(sources, { count: 10 })
+
+    withExtra.forEach((question) => expect(question.options.length).toBe(2))
+    expect(withExtra.length).toBe(withoutExtra.length)
+  })
 })
 
 describe('generateCaseMixerQuestions', () => {
@@ -1149,6 +1254,20 @@ describe('generateCaseMixerQuestions', () => {
 
     expect(questions.length).toBeGreaterThan(0)
     questions.forEach((question) => expect(question.person).toBe('ni'))
+  })
+
+  it('uses extraSiblingSources to produce a case-mixer question for a single-agreement review', () => {
+    const sources = [{ verb: izan, tense: 'present' }]
+    const extraSiblingSources = [{ verb: ukan, tense: 'present' }]
+
+    const questions = generateCaseMixerQuestions(sources, { count: 10, extraSiblingSources })
+
+    expect(questions.length).toBeGreaterThan(0)
+    questions.forEach((question) => {
+      expect(question.kind).toBe('case-mixer')
+      expect(question.options).toContain(question.correct)
+      expect(question.options.length).toBe(2)
+    })
   })
 })
 
