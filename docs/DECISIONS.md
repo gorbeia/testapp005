@@ -8,6 +8,27 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-13 — Resolved issue #96: "Invite a friend" share entry point
+
+Added `src/shareUtils.js` (`getShareUrl`, `shareContent`) and an "Invite a
+friend" button to the Profile tab. `shareContent` uses the Web Share API
+(`navigator.share`) where available, falling back to copying
+`"${text} ${url}"` to the clipboard with a brief inline "Link copied!"
+confirmation (no toast system exists, so this is local state + a 2s
+`setTimeout` revert, mirroring `syncTimeoutRef` in `App.jsx`).
+
+**v1 has no referral tracking** — the shared URL is just `getShareUrl()`
+(origin + `BASE_URL`), with no query params or codes identifying the sharer.
+Analytics only records that a share happened (`share_app` event with the
+result: `shared`/`copied`/`cancelled`/`failed`), not who shared or whether the
+recipient ever opens the link. Referral tracking could be added later if
+needed, but would need its own privacy/consent consideration.
+
+**Share text follows the sender's current UI language** (`shareGenericTitle`/
+`shareGenericText` via `t()`), with no special handling for the recipient's
+language — the recipient picks their own language on first launch like any
+other user, same as the app's existing onboarding flow.
+
 ## 2026-06-13 — Resolved issue #92: flag-a-question with diagnostics
 
 Added a 🚩 button to `FeedbackBar` (shown once a question is answered) that
