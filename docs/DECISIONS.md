@@ -8,6 +8,43 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-13 — Resolved issue #90: wired `AccountModal`/`AccountSection` to the real magic-link auth API, superseding the 2026-06-12 UI-only prototype
+
+**Decision:** `AccountModal`'s email step now calls `POST {SYNC_API_URL}/auth/request-link`
+(new `SYNC_API_URL` constant, `VITE_SYNC_API_URL` override following the
+`FEEDBACK_API_URL`/`VITE_FEEDBACK_API_URL` pattern — `.env.example`,
+`src/App.jsx`, `.github/workflows/deploy.yml`). Errors map to new
+translation keys: `accountErrorRateLimited` (429), `accountErrorInvalidEmail`
+(other non-2xx), `accountErrorNetwork` (thrown/fetch failure).
+
+`AppShell` now owns `account` state (lifted out of `HomeScreen`, which held
+mock `useState(null)` per the 2026-06-12 prototype decision — **that decision
+is now superseded**). On mount, it checks the URL for `?authToken=...`: if
+present, it's exchanged via `/auth/verify`, the result is stored in a new
+`aditzak:session:v1` localStorage key (`{ token, email, expiresAt }` — `load()`
+returns `null` for a missing/expired session, unlike the `{}`-defaulting
+`createStorage` helper used by `progress`/`streak`/etc.), and `authToken` is
+stripped from the URL via `history.replaceState` either way. On later loads
+with no `authToken`, a non-expired stored session restores `account` directly
+— no network call, per the issue's scope. `expiresAt` is computed client-side
+as `now + SESSION_TTL_MS` (60 days, mirroring sync-worker's
+`SESSION_TTL_MS`), since `/auth/verify` doesn't return one. "Sign out" calls
+`POST /auth/signout` with the stored bearer token best-effort (errors ignored)
+and always clears the local session.
+
+**Removed the modal's "merge" step** (`ACCOUNT_MERGE_OPTIONS`, `mergeChoice`,
+`hasLocalProgress`/`onSignedIn` props, and the "Continue (demo)" button/
+`accountDemoContinue` key). The prototype's flow assumed sign-in *completed*
+inside the modal (so a merge choice could follow immediately), but real
+sign-in completes out-of-band — the learner clicks the emailed link, which
+loads the app fresh and runs the `/auth/verify` effect above; the modal that
+requested the link is long gone by then. The `accountMerge*` translation keys
+are left in place (unused) since #91 ("first-sync merge") will need similar
+copy when it designs where/how the merge choice is actually surfaced — likely
+a banner driven by `account.hasCloudData` (now returned by `/auth/verify` and
+threaded through, though not yet used) plus local-progress presence, rather
+than a modal step.
+
 ## 2026-06-13 — Resolved issue #89: progress sync endpoints (`GET`/`PUT /sync`) in `sync-worker/`
 
 **Decision:** `GET /sync` and `PUT /sync` (`src/routes/sync.js`) are
