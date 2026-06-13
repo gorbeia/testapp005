@@ -8,6 +8,111 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-13 — Fixed a pre-existing crash in cross-verb question generation for "pool"-shaped lessons
+
+While building #113's triage script (below), `getIntroducedSources` crashed
+`generateCrossVerbQuestions`/`generateCaseMixerQuestions` for 7 review lessons
+(`unit-8-review`, `unit-8-review-plural`, `egon-past-review`,
+`egon-past-plural-review`, `eduki-past-review`, `eduki-past-plural-review`,
+`unit-9-review-2-plural`) — all `review: true` with `sources.length < 3`, so
+`createExerciseState` (`src/App.jsx`) falls back to `getIntroducedSources` for
+`extraSiblingSources`.
+
+Root cause: `getIntroducedSources`'s old filter (`!lesson.review`) let through
+"pool" lessons — `izan-past-pool`, `izan-past-pool-plural`, `ukan-past-pool`,
+`ukan-past-pool-plural`, `unit-10-present`, `unit-10-present-plural`
+(`src/data/lessons.js`) — which are shaped like a review (`{ id, persons,
+sources }`) but aren't marked `review: true`. Mapping them to `{ verbId:
+verbId, tense: tense }` produced `{ verbId: undefined, tense: undefined }`
+entries, and `collectCrossSourceCandidates` (`src/lessonLogic.js`) then read
+`sibling.verb.id` on the resulting `{ verb: undefined, tense: undefined }`
+sibling source — a `TypeError`.
+
+Fix: `getIntroducedSources`'s filter is now `!lesson.review && lesson.verbId`,
+skipping pool lessons entirely (they don't represent a single
+verb/tense "introduction" anyway). This is a real production crash, distinct
+from the ambiguous-distractors remediation plan itself (Delivery 4's bug, not
+a new issue) — fixed alongside #113 because the triage script couldn't run
+without it. Covered by two new tests in `src/logic.test.js`
+(`getIntroducedSources`'s pool-lesson case, and an integration test running
+`generateCrossVerbQuestions`/`generateCaseMixerQuestions` for all 7 affected
+lessons with real `LESSONS`/`VERBS`).
+
+## 2026-06-13 — Generated a cross-candidate substitution checklist for native-speaker triage
+
+Layer 2a of the remediation plan (#113): added `scripts/list-cross-candidates.mjs`,
+a one-off Node ESM script (not part of `npm test`/`npm run build`) that walks every
+`review: true` lesson in `LESSONS` and enumerates every cross-verb form substitution
+reachable through `getCrossVerbCandidates` (the `sentence`/`negative`/`form`
+distractor pools) and `generateCrossVerbQuestions`/`generateCaseMixerQuestions`
+(the `verb-choice`/`case-mixer` kinds), including Delivery 4's `getIntroducedSources`
+fallback for reviews with fewer than 3 sources. Each de-duplicated
+`(template, substituted form)` combination is rendered as a checklist entry in
+`docs/CROSS_CANDIDATE_REVIEW.md` (2101 entries) with both the source verb's own
+sentence and the substituted sentence, for a reviewer to mark "both valid" (→ #114's
+`CROSS_CANDIDATE_EXCLUSIONS`) or "wrong/ungrammatical" (no action).
+
+Exported `agreementsCompatible` and `pickVariant` from `src/lessonLogic.js` (both
+were already pure helpers, just not previously needed outside the module) so the
+script can reuse the exact same compatibility/variant logic as the runtime — no
+duplicated logic to drift out of sync.
+
+Cross-checked the output against `docs/AMBIGUOUS_DISTRACTORS_AUDIT.md`'s confirmed
+examples: `ukan`↔`nahi` (now via different `hura`/`hark`/`anek` sentence templates
+than the one #112 already excluded), `eduki`↔`ukan`/`ikusi`, and `jakin`'s `dakit`
+all appear as entries. `src/lessonLogic.js` runtime logic is otherwise untouched by
+this issue (read-only, per #113's scope) — see the crash fix above for the one
+exception, which was a separate pre-existing bug blocking the script from running
+at all.
+
+## 2026-06-13 — Excluded cross-verb distractors that collide with a sibling verb's own sentence template
+
+Layer 1 of the remediation plan from the cross-verb-distractor audit below
+(GitHub issue #112): added `sentenceTemplatesCollide(verbA, tenseA, verbB,
+tenseB, person)` to `src/lessonLogic.js` — a pure, zero-grammar-knowledge
+check for whether two verbs' `sentences[tense][person]` entries share a
+literal template string (handling `pickVariant`'s `string | string[]` shape
+on either side). Wired into `getCrossVerbCandidates` (skip a sibling's form
+for a person if its sentence collides with `verb`'s own) and
+`collectCrossSourceCandidates` (same skip for `verb-choice`/`case-mixer`
+siblings).
+
+This fixes the confirmed `unit-2-review` case: `ukan` and `nahi` both have
+`'Nik liburu bat ___.'` in their present-`ni` sentence lists (`dut` vs `nahi
+dut`, two different correct answers for the identical sentence) — `nahi dut`
+no longer appears as a distractor for `ukan`'s question on that sentence, and
+vice versa. A guard test in `src/logic.test.js` scans every
+`agreementsCompatible` pair in `VERBS` for any shared `(tense, person)`
+sentence template and asserts the exclusion covers it, so a future verb/
+sentence addition that reintroduces this kind of collision fails the test
+suite instead of shipping silently.
+
+Verified via `npm test`/`npm run lint`/`npm run build` plus the regression
+tests exercising the real `ukan`/`nahi`/`jakin` (`unit-2-review`) sources
+across a spread of `Math.random` rolls — not via an interactive `npm run dev`
+play-through, since this session runs headless.
+
+Out of scope (tracked in #113/#114): broader semantic overlaps where the
+sentence *text* differs but both completions are still valid (e.g. `eduki` vs
+`ukan`/`ikusi`) — those need native-speaker triage, not a literal-string
+check.
+
+## 2026-06-13 — Audited cross-verb distractors for "multiple valid options"
+
+Following up on the Exercise Variety Plan (Deliveries 1-4, shipped earlier the
+same day): learners reported multiple-choice questions where more than one
+option is independently grammatical for the shown sentence (just with a
+different meaning), since `agreementsCompatible`'s NOR/NOR-NORK check doesn't
+catch this — Basque's transitive clause frame is shared across semantically
+unrelated `nor-nork` verbs (`ukan`/`nahi`/`jakin`/`eduki`/`jan`/`edan`/`erosi`/
+`ikusi`), so their forms are often mutually substitutable without becoming
+ungrammatical. Confirmed concretely in `unit-2-review` (`ukan`'s and `nahi`'s
+`ni`-present sentence lists share the literal string `'Nik liburu bat ___.'`,
+with two different correct answers: `dut`/`nahi dut`) and `unit-8-review`
+(`eduki` vs `ukan`/`ikusi` via Delivery 4's fallback pool). No remediation
+chosen yet — findings and possible directions logged in
+`docs/AMBIGUOUS_DISTRACTORS_AUDIT.md`.
+
 ## 2026-06-13 — Sign-in form's "invalid email" error was masking unrelated server errors
 
 A learner with a perfectly valid email saw "Enter a valid email address" when

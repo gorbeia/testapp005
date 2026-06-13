@@ -36,6 +36,7 @@ import {
   shuffle,
   STREAK_REPAIR_COST,
 } from './lessonLogic'
+import { LESSONS } from './data/lessons'
 import { VERBS } from './data/verbs'
 
 describe('computeStars', () => {
@@ -502,6 +503,26 @@ describe('getIntroducedSources', () => {
 
   it('returns every practice lesson when the given id is not found', () => {
     expect(getIntroducedSources(lessons, 'does-not-exist')).toEqual([
+      { verbId: 'izan', tense: 'present' },
+      { verbId: 'egon', tense: 'present' },
+      { verbId: 'izan', tense: 'past' },
+    ])
+  })
+
+  it('skips "pool" lessons (non-review, but no verbId/tense of their own) without producing undefined entries', () => {
+    // e.g. `unit-10-present`/`izan-past-pool` in src/data/lessons.js: shaped like a review
+    // (`{ id, persons, sources }`) but `review` isn't set, so the old `!lesson.review` filter
+    // let them through and produced bogus `{ verbId: undefined, tense: undefined }` entries.
+    const lessonsWithPool = [
+      ...lessons,
+      { id: 'some-pool', persons: ['ni'], sources: [{ verbId: 'izan', tense: 'past' }] },
+      { id: 'after-pool', verbId: 'egon', tense: 'past' },
+    ]
+
+    const sources = getIntroducedSources(lessonsWithPool, 'after-pool')
+
+    expect(sources).not.toContainEqual({ verbId: undefined, tense: undefined })
+    expect(sources).toEqual([
       { verbId: 'izan', tense: 'present' },
       { verbId: 'egon', tense: 'present' },
       { verbId: 'izan', tense: 'past' },
@@ -1274,6 +1295,91 @@ describe('getCrossVerbCandidates', () => {
       hura: ['dago'],
     })
   })
+
+  // Regression coverage for docs/AMBIGUOUS_DISTRACTORS_AUDIT.md: when two
+  // agreement-compatible verbs use the *exact same sentence* for a person,
+  // each verb's own form already correctly completes that sentence — offering
+  // the other as a distractor would mean two options are both "correct", just
+  // with different meanings.
+  it('excludes a sibling form for a person whose sentence is identical to the source verb\'s own sentence', () => {
+    const ukanWithSentence = {
+      ...ukan,
+      sentences: { present: { ni: 'Nik liburu bat ___.' } },
+    }
+    const nahi = {
+      id: 'nahi',
+      agreement: ['nor', 'nork'],
+      conjugations: { present: { ni: 'nahi dut', zu: 'nahi duzu', hura: 'nahi du' } },
+      sentences: { present: { ni: 'Nik liburu bat ___.' } },
+    }
+    const sources = [
+      { verbId: 'ukan', tense: 'present' },
+      { verbId: 'nahi', tense: 'present' },
+    ]
+
+    expect(getCrossVerbCandidates(ukanWithSentence, 'present', sources, [izan, egon, ukanWithSentence, nahi])).toEqual({
+      zu: ['nahi duzu'],
+      hura: ['nahi du'],
+    })
+  })
+
+  it('treats sentence templates as colliding even when one side uses an array of phrasing variants', () => {
+    const ukanWithSentence = {
+      ...ukan,
+      sentences: { present: { ni: ['Nik liburu bat ___.', 'Nik arreba bat ___.'] } },
+    }
+    const nahi = {
+      id: 'nahi',
+      agreement: ['nor', 'nork'],
+      conjugations: { present: { ni: 'nahi dut' } },
+      sentences: { present: { ni: 'Nik liburu bat ___.' } },
+    }
+    const sources = [
+      { verbId: 'ukan', tense: 'present' },
+      { verbId: 'nahi', tense: 'present' },
+    ]
+
+    expect(getCrossVerbCandidates(ukanWithSentence, 'present', sources, [izan, egon, ukanWithSentence, nahi])).toEqual({})
+  })
+
+  it('still offers a sibling form for persons whose sentences differ', () => {
+    const ukanWithSentence = {
+      ...ukan,
+      sentences: { present: { ni: 'Nik liburu bat ___.', zu: 'Zuk auto bat ___.' } },
+    }
+    const nahi = {
+      id: 'nahi',
+      agreement: ['nor', 'nork'],
+      conjugations: { present: { ni: 'nahi dut', zu: 'nahi duzu', hura: 'nahi du' } },
+      sentences: { present: { ni: 'Nik liburu bat ___.', zu: 'Zuk kafe bat ___?' } },
+    }
+    const sources = [
+      { verbId: 'ukan', tense: 'present' },
+      { verbId: 'nahi', tense: 'present' },
+    ]
+
+    expect(getCrossVerbCandidates(ukanWithSentence, 'present', sources, [izan, egon, ukanWithSentence, nahi])).toEqual({
+      zu: ['nahi duzu'],
+      hura: ['nahi du'],
+    })
+  })
+
+  // Regression test for the real ukan/nahi collision used by unit-2-review
+  // (docs/AMBIGUOUS_DISTRACTORS_AUDIT.md): both verbs' present-ni sentence
+  // lists include the literal 'Nik liburu bat ___.', with two different
+  // correct answers (`dut` / `nahi dut`).
+  it('excludes nahi\'s present-ni form from ukan\'s candidates, and vice versa, with the real VERBS list', () => {
+    const ukanReal = VERBS.find((v) => v.id === 'ukan')
+    const nahiReal = VERBS.find((v) => v.id === 'nahi')
+    const sources = [
+      { verbId: 'ukan', tense: 'present' },
+      { verbId: 'nahi', tense: 'present' },
+      { verbId: 'jakin', tense: 'present' },
+    ]
+
+    expect(getCrossVerbCandidates(ukanReal, 'present', sources, VERBS).ni ?? []).not.toContain('nahi dut')
+    expect(getCrossVerbCandidates(nahiReal, 'present', sources, VERBS).ni ?? []).not.toContain('dut')
+  })
 })
 
 describe('generateCrossVerbQuestions', () => {
@@ -1507,6 +1613,102 @@ describe('generateCaseMixerQuestions', () => {
       expect(question.options).toContain(question.correct)
       expect(question.options.length).toBe(2)
     })
+  })
+})
+
+// Regression coverage for docs/AMBIGUOUS_DISTRACTORS_AUDIT.md's unit-2-review
+// example, on the verb-choice/case-mixer side: ukan's and nahi's present-ni
+// sentences are the literal string 'Nik liburu bat ___.', so a verb-choice/
+// case-mixer question built from one should never offer the other's form
+// (`dut` / `nahi dut`) as if it were a wrong answer for that sentence.
+describe('cross-verb sentence-template collisions (real VERBS)', () => {
+  const ukanReal = VERBS.find((v) => v.id === 'ukan')
+  const nahiReal = VERBS.find((v) => v.id === 'nahi')
+  const jakinReal = VERBS.find((v) => v.id === 'jakin')
+  const sources = [
+    { verb: ukanReal, tense: 'present' },
+    { verb: nahiReal, tense: 'present' },
+    { verb: jakinReal, tense: 'present' },
+  ]
+
+  it('never offers nahi\'s "nahi dut" as a distractor for ukan\'s present-ni question, or vice versa', () => {
+    for (let roll = 0; roll < 1; roll += 0.1) {
+      vi.spyOn(Math, 'random').mockReturnValue(roll)
+      const questions = [
+        ...generateCrossVerbQuestions(sources, { persons: ['ni'], count: 10 }),
+        ...generateCaseMixerQuestions(sources, { persons: ['ni'], count: 10 }),
+      ]
+      questions.forEach((question) => {
+        const options = new Set(question.options)
+        if (question.correct === 'dut') expect(options.has('nahi dut')).toBe(false)
+        if (question.correct === 'nahi dut') expect(options.has('dut')).toBe(false)
+      })
+      vi.restoreAllMocks()
+    }
+  })
+
+  // "No undetected collisions" guard: for every agreement-compatible pair of
+  // real verbs that share a literal sentences[tense][person] template (the
+  // same condition the ukan/nahi case meets), getCrossVerbCandidates must
+  // never offer either verb's form for that person as a candidate for the
+  // other. A future verb/sentence addition that reintroduces a collision like
+  // that one should fail this test rather than silently ship.
+  it('excludes every agreement-compatible VERBS pair sharing a sentence template, for any tense/person', () => {
+    for (const a of VERBS) {
+      for (const b of VERBS) {
+        if (a.id === b.id) continue
+        if (a.agreement.includes('nork') !== b.agreement.includes('nork')) continue
+        for (const tense of Object.keys(a.sentences ?? {})) {
+          if (!b.sentences?.[tense]) continue
+          for (const person of Object.keys(a.sentences[tense])) {
+            const aTemplates = [].concat(a.sentences[tense][person] ?? [])
+            const bTemplates = [].concat(b.sentences[tense][person] ?? [])
+            if (!aTemplates.some((template) => bTemplates.includes(template))) continue
+            const bForm = b.conjugations[tense]?.[person]
+            if (!bForm) continue
+            const sources = [
+              { verbId: a.id, tense },
+              { verbId: b.id, tense },
+            ]
+            expect(getCrossVerbCandidates(a, tense, sources, VERBS)[person] ?? []).not.toContain(bForm)
+          }
+        }
+      }
+    }
+  })
+})
+
+describe('getIntroducedSources + cross-verb question generation (real LESSONS/VERBS)', () => {
+  // Reviews with < 3 sources fall back to getIntroducedSources for extraSiblingSources
+  // (mirrors src/App.jsx's createExerciseState). Before getIntroducedSources excluded
+  // "pool" lessons (e.g. unit-10-present, izan-past-pool — shaped like a review but not
+  // `review: true`, so they have no verbId/tense), these reviews crashed
+  // generateCrossVerbQuestions/generateCaseMixerQuestions on `sibling.verb.id` of an
+  // undefined `verb`.
+  const reviewsWithFewSources = LESSONS.filter((lesson) => lesson.review && lesson.sources.length < 3)
+
+  it('returns only well-formed {verbId, tense} entries for every review with fewer than 3 sources', () => {
+    expect(reviewsWithFewSources.length).toBeGreaterThan(0)
+
+    for (const lesson of reviewsWithFewSources) {
+      for (const source of getIntroducedSources(LESSONS, lesson.id)) {
+        expect(source.verbId).toBeTypeOf('string')
+        expect(source.tense).toBeTypeOf('string')
+      }
+    }
+  })
+
+  it('does not crash generateCrossVerbQuestions/generateCaseMixerQuestions for reviews relying on the getIntroducedSources fallback', () => {
+    for (const lesson of reviewsWithFewSources) {
+      const resolvedSources = lesson.sources.map(({ verbId, tense }) => ({ verb: VERBS.find((v) => v.id === verbId), tense }))
+      const extraSiblingSources = getIntroducedSources(LESSONS, lesson.id).map(({ verbId, tense }) => ({
+        verb: VERBS.find((v) => v.id === verbId),
+        tense,
+      }))
+
+      expect(() => generateCrossVerbQuestions(resolvedSources, { persons: lesson.persons, extraSiblingSources })).not.toThrow()
+      expect(() => generateCaseMixerQuestions(resolvedSources, { persons: lesson.persons, extraSiblingSources })).not.toThrow()
+    }
   })
 })
 
