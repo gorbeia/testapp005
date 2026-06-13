@@ -5,6 +5,7 @@ import {
   computeLessonPoints,
   computeStars,
   exerciseReducer,
+  generateCaseMixerQuestions,
   generateCrossVerbQuestions,
   generateQuestions,
   getActiveStreak,
@@ -983,13 +984,15 @@ function createExerciseState(lesson, attempts, errorStats = {}) {
   // "which verb fits this sentence" questions (see
   // `generateCrossVerbQuestions`) — the deliberate, single-focus counterpart
   // to Delivery 1's occasional cross-verb distractor.
-  const crossVerbQuestions = lesson.review
-    ? generateCrossVerbQuestions(
-        sources.map(({ verbId, tense }) => ({ verb: VERBS.find((v) => v.id === verbId), tense })),
-        { persons: lesson.persons },
-      )
-    : []
-  const allQuestions = shuffle([...questions, ...extraQuestions, ...crossVerbQuestions])
+  const resolvedSources = sources.map(({ verbId, tense }) => ({ verb: VERBS.find((v) => v.id === verbId), tense }))
+  const crossVerbQuestions = lesson.review ? generateCrossVerbQuestions(resolvedSources, { persons: lesson.persons }) : []
+  // Reviews whose sources mix `nor` and `nor-nork` verbs also get up to
+  // `CASE_MIXER_QUESTION_COUNT` "which form matches this sentence's subject"
+  // questions (see `generateCaseMixerQuestions`) — `verb-choice`'s mirror
+  // image, framed around `-k` ergative-subject marking. Reviews with no such
+  // mix simply get none.
+  const caseMixerQuestions = lesson.review ? generateCaseMixerQuestions(resolvedSources, { persons: lesson.persons }) : []
+  const allQuestions = shuffle([...questions, ...extraQuestions, ...crossVerbQuestions, ...caseMixerQuestions])
   return {
     queue: allQuestions,
     total: allQuestions.length,
@@ -1224,6 +1227,7 @@ const QUESTION_PROMPT_KEYS = {
   negative: 'questionNegation',
   'type-negative': 'questionTypeNegation',
   'verb-choice': 'questionVerbChoice',
+  'case-mixer': 'questionCaseMixer',
 }
 
 // The explanation toggle is its own pill-shaped button above the

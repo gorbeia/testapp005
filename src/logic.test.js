@@ -3,10 +3,12 @@ import {
   addPoints,
   canRepairStreak,
   computeLessonPoints,
+  CASE_MIXER_QUESTION_COUNT,
   computeStars,
   CROSS_VERB_QUESTION_COUNT,
   EXTRA_REVIEW_EXERCISES,
   exerciseReducer,
+  generateCaseMixerQuestions,
   generateCrossVerbQuestions,
   generateQuestions,
   getActiveStreak,
@@ -1055,6 +1057,101 @@ describe('generateCrossVerbQuestions', () => {
   })
 })
 
+describe('generateCaseMixerQuestions', () => {
+  const izan = {
+    id: 'izan',
+    verb: 'izan',
+    agreement: ['nor'],
+    conjugations: { present: { ni: 'naiz', zu: 'zara', hura: 'da' } },
+    sentences: {
+      present: {
+        ni: 'Ni irakaslea ___.',
+        zu: 'Zu irakaslea ___.',
+        hura: 'Hura irakaslea ___.',
+      },
+    },
+  }
+  const egon = {
+    id: 'egon',
+    verb: 'egon',
+    agreement: ['nor'],
+    conjugations: { present: { ni: 'nago', zu: 'zaude', hura: 'dago' } },
+    sentences: {
+      present: {
+        ni: 'Ni etxean ___.',
+        zu: 'Zu etxean ___.',
+        hura: 'Hura etxean ___.',
+      },
+    },
+  }
+  const ukan = {
+    id: 'ukan',
+    verb: 'ukan',
+    agreement: ['nor', 'nork'],
+    conjugations: { present: { ni: 'dut', zu: 'duzu', hura: 'du' } },
+    sentences: {
+      present: {
+        ni: 'Nik liburua ___.',
+        zu: 'Zuk liburua ___.',
+        hura: 'Hark liburua ___.',
+      },
+    },
+  }
+
+  it('produces case-mixer questions pairing nor and nor-nork sources, with the correct form always among the options', () => {
+    const sources = [
+      { verb: izan, tense: 'present' },
+      { verb: ukan, tense: 'present' },
+    ]
+
+    const questions = generateCaseMixerQuestions(sources, { count: 10 })
+
+    expect(questions.length).toBeGreaterThan(0)
+    questions.forEach((question) => {
+      expect(question.kind).toBe('case-mixer')
+      expect(question.options).toContain(question.correct)
+      expect(new Set(question.options).size).toBe(question.options.length)
+      expect(question.options.length).toBe(2)
+      expect(question.sentence).toContain('___')
+    })
+  })
+
+  it('caps the number of returned questions at `count`', () => {
+    const sources = [
+      { verb: izan, tense: 'present' },
+      { verb: ukan, tense: 'present' },
+    ]
+
+    expect(generateCaseMixerQuestions(sources, { count: 1 })).toHaveLength(1)
+    expect(generateCaseMixerQuestions(sources)).toHaveLength(CASE_MIXER_QUESTION_COUNT)
+  })
+
+  it('returns nothing when every source shares the same agreement (no nor/nor-nork mix)', () => {
+    const sources = [
+      { verb: izan, tense: 'present' },
+      { verb: egon, tense: 'present' },
+    ]
+
+    expect(generateCaseMixerQuestions(sources)).toEqual([])
+  })
+
+  it('returns nothing for a single-source review', () => {
+    expect(generateCaseMixerQuestions([{ verb: izan, tense: 'present' }])).toEqual([])
+  })
+
+  it('restricts questions to the given persons when `persons` is provided', () => {
+    const sources = [
+      { verb: izan, tense: 'present' },
+      { verb: ukan, tense: 'present' },
+    ]
+
+    const questions = generateCaseMixerQuestions(sources, { persons: ['ni'], count: 10 })
+
+    expect(questions.length).toBeGreaterThan(0)
+    questions.forEach((question) => expect(question.person).toBe('ni'))
+  })
+})
+
 describe('getExplanation', () => {
   const verbAbsolutive = {
     id: 'verb',
@@ -1110,6 +1207,13 @@ describe('getExplanation', () => {
     const question = { kind: 'verb-choice', tense: 'present', person: 'ni', correct: 'naiz' }
 
     expect(getExplanation(verbAbsolutive, question, t)).toBe('explanationVerbChoice:{"verb":"izan","form":"naiz"}')
+  })
+
+  it('explains case-mixer questions differently depending on whether the verb takes an ergative subject', () => {
+    const question = { kind: 'case-mixer', tense: 'present', person: 'ni', correct: 'naiz' }
+
+    expect(getExplanation(verbAbsolutive, question, t)).toBe('explanationCaseMixerAbsolutive:{"verb":"izan","form":"naiz"}')
+    expect(getExplanation(verbErgative, { ...question, correct: 'dut' }, t)).toBe('explanationCaseMixerErgative:{"verb":"ukan","form":"dut"}')
   })
 })
 

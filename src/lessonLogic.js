@@ -521,6 +521,52 @@ export function generateQuestions(verb, tense, { noTyping = false, rounds = 1, i
   return Array.from({ length: rounds }, () => shuffle(persons).map(buildQuestion)).flat()
 }
 
+// Shared by `generateCrossVerbQuestions` and `generateCaseMixerQuestions`:
+// for every (source, person) with both a `sentences[tense][person]` and a
+// `conjugations[tense][person]`, collects the other sources' same-person
+// forms that `agreementMatches` accepts as siblings, and keeps the
+// combination only if that yields at least 2 distinct option values (the
+// source's own correct form plus 1+ siblings) — a source with no accepted
+// siblings for a given person (e.g. a single-source review, or one where
+// every sibling's agreement is rejected) simply contributes nothing.
+function collectCrossSourceCandidates(resolvedSources, personsFilter, agreementMatches) {
+  const candidates = []
+  for (const { verb, tense } of resolvedSources) {
+    const sentences = verb.sentences?.[tense] ?? {}
+    const persons = personsFilter ?? Object.keys(verb.conjugations[tense] ?? {})
+    for (const person of persons) {
+      const sentence = sentences[person]
+      const correct = verb.conjugations[tense]?.[person]
+      if (!sentence || !correct) continue
+      const siblingForms = resolvedSources
+        .filter((sibling) => !(sibling.verb.id === verb.id && sibling.tense === tense))
+        .filter((sibling) => agreementMatches(sibling.verb.agreement, verb.agreement))
+        .map((sibling) => sibling.verb.conjugations[sibling.tense]?.[person])
+        .filter(Boolean)
+      const options = [...new Set([correct, ...siblingForms])]
+      if (options.length < 2) continue
+      candidates.push({ verbId: verb.id, tense, person, sentence: pickVariant(sentence), correct, options })
+    }
+  }
+  return candidates
+}
+
+// Picks up to `count` candidates at random and shapes them into questions of
+// the given `kind`, shuffling each one's `options`.
+function pickCrossSourceQuestions(candidates, count, kind) {
+  return shuffle(candidates)
+    .slice(0, count)
+    .map(({ verbId, tense, person, sentence, correct, options }) => ({
+      verbId,
+      tense,
+      kind,
+      person,
+      sentence,
+      correct,
+      options: shuffle(options),
+    }))
+}
+
 // Up to this many `kind: 'verb-choice'` cross-verb questions (see
 // `generateCrossVerbQuestions`) get added to a review lesson's queue — kept
 // small/"a handful" since each one is a deliberately harder, single-focus
@@ -549,35 +595,37 @@ export const CROSS_VERB_QUESTION_COUNT = 2
 // single-source review, where there are no siblings to choose between at
 // all) simply returns fewer, down to none.
 export function generateCrossVerbQuestions(resolvedSources, { persons: personsFilter, count = CROSS_VERB_QUESTION_COUNT } = {}) {
-  const candidates = []
-  for (const { verb, tense } of resolvedSources) {
-    const sentences = verb.sentences?.[tense] ?? {}
-    const persons = personsFilter ?? Object.keys(verb.conjugations[tense] ?? {})
-    for (const person of persons) {
-      const sentence = sentences[person]
-      const correct = verb.conjugations[tense]?.[person]
-      if (!sentence || !correct) continue
-      const siblingForms = resolvedSources
-        .filter((sibling) => !(sibling.verb.id === verb.id && sibling.tense === tense))
-        .filter((sibling) => agreementsCompatible(sibling.verb.agreement, verb.agreement))
-        .map((sibling) => sibling.verb.conjugations[sibling.tense]?.[person])
-        .filter(Boolean)
-      const options = [...new Set([correct, ...siblingForms])]
-      if (options.length < 2) continue
-      candidates.push({ verbId: verb.id, tense, person, sentence: pickVariant(sentence), correct, options })
-    }
-  }
-  return shuffle(candidates)
-    .slice(0, count)
-    .map(({ verbId, tense, person, sentence, correct, options }) => ({
-      verbId,
-      tense,
-      kind: 'verb-choice',
-      person,
-      sentence,
-      correct,
-      options: shuffle(options),
-    }))
+  return pickCrossSourceQuestions(collectCrossSourceCandidates(resolvedSources, personsFilter, agreementsCompatible), count, 'verb-choice')
+}
+
+// Up to this many `kind: 'case-mixer'` questions (see
+// `generateCaseMixerQuestions`) get added to a review lesson's queue — kept
+// to a bare minimum (1), since this drill is narrower and harder than
+// `verb-choice`: it only fires for reviews that happen to mix `nor` and
+// `nor-nork` sources, which is most of them but not the point of any of them
+// yet (that's Refresh Gate C / Unit 24's job, once Units 22-23 exist — see
+// `docs/DECISIONS.md`).
+export const CASE_MIXER_QUESTION_COUNT = 1
+
+// A `kind: 'case-mixer'` question is `generateCrossVerbQuestions`'s mirror
+// image: same shape (one source's example sentence, `options` mixing its
+// correct form with sibling sources' same-person forms), but
+// `agreementsCompatible`'s filter is *inverted* — only sources whose
+// `agreement` differs on the `nork` axis (`nor` vs `nor-nork`) qualify as
+// siblings. Where `verb-choice` asks "which verb fits this sentence" among
+// same-shape verbs, `case-mixer` asks it among verbs that differ in subject
+// case-marking (absolutive "Ni..." vs ergative "Nik..."), e.g. izan's `naiz`
+// vs ukan's `dut` for a `ni`-person sentence — the wrong option doesn't just
+// belong to a different verb, it carries the wrong case for that sentence's
+// subject. Reviews with no `nor`/`nor-nork` mix among their sources (or none
+// for the given `persons`) simply yield none, same graceful-degradation
+// pattern as `generateCrossVerbQuestions`.
+export function generateCaseMixerQuestions(resolvedSources, { persons: personsFilter, count = CASE_MIXER_QUESTION_COUNT } = {}) {
+  return pickCrossSourceQuestions(
+    collectCrossSourceCandidates(resolvedSources, personsFilter, (a, b) => !agreementsCompatible(a, b)),
+    count,
+    'case-mixer',
+  )
 }
 
 // =============================================================================
@@ -646,7 +694,10 @@ export function getWeakSpotQuestions(errorStats, sources, verbs, count = EXTRA_R
 // no equivalent in English/Spanish word order. `verb-choice` (see
 // `generateCrossVerbQuestions`) is the third: the "why" is exactly which verb
 // this sentence's structure calls for, as opposed to its sibling option(s).
-// Every other kind (`form`, `sentence`, `type-verb`, `spot-error`) is
+// `case-mixer` (see `generateCaseMixerQuestions`) is `verb-choice`'s mirror
+// image, framed around the `-k` ergative-subject distinction instead — its
+// explanation reuses the pronoun explanations' "doer always gets '-k'"
+// framing. Every other kind (`form`, `sentence`, `type-verb`, `spot-error`) is
 // "produce/recognize this conjugated form", which doesn't have a similarly
 // compact "why" beyond "that's the form" — `getExplanation` returns `null`
 // for those, and `FeedbackBar` simply doesn't show the toggle.
@@ -660,6 +711,10 @@ export function getExplanation(verb, question, t) {
   }
   if (question.kind === 'verb-choice') {
     return t('explanationVerbChoice', { verb: verb.verb, form: question.correct })
+  }
+  if (question.kind === 'case-mixer') {
+    const key = verb.agreement.includes('nork') ? 'explanationCaseMixerErgative' : 'explanationCaseMixerAbsolutive'
+    return t(key, { verb: verb.verb, form: question.correct })
   }
   if (question.kind !== 'pronoun' && question.kind !== 'type-pronoun') return null
   const key = verb.agreement.includes('nork') ? 'explanationPronounErgative' : 'explanationPronounAbsolutive'

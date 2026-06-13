@@ -200,22 +200,29 @@ mechanism reusing Delivery 2's machinery.
 
 ### Tasks
 
-1. **3.1** — Audit existing `sentences`/`pronouns` data for the relevant verbs
-   to confirm cross-pairing produces unambiguous right/wrong answers — e.g.
-   confirm `"Nik liburu bat naiz"` (ukan's sentence + izan's `ni` form) reads
-   as clearly wrong, not as an alternate-but-valid phrasing, for every pair
-   this delivery would generate.
-2. **3.2** — Extend `generateCrossVerbQuestions` (or add a sibling function)
+1. ~~**3.1** — Audit existing `sentences`/`pronouns` data for the relevant
+   verbs to confirm cross-pairing produces unambiguous right/wrong answers —
+   e.g. confirm `"Nik liburu bat naiz"` (ukan's sentence + izan's `ni` form)
+   reads as clearly wrong, not as an alternate-but-valid phrasing, for every
+   pair this delivery would generate.~~ Done — see `docs/DECISIONS.md`
+   (2026-06-13, Delivery 3).
+2. ~~**3.2** — Extend `generateCrossVerbQuestions` (or add a sibling function)
    to allow mixed-agreement source pairs, with Delivery 1.4's filter
-   deliberately disabled/inverted for these questions.
-3. **3.3** — Flesh out Unit 24's spec in `docs/LEARNING_JOURNEY.md` describing
-   this mechanism concretely (what sources, what persons, how many
-   questions), then add a real review lesson to `data/lessons.js` and flip
-   Unit 24's `status`/`lessonIds` in `journey.js`.
-4. **3.4** — Update `docs/EXERCISE_ENGINE.md`'s "Score-gating Refresh Gates"
-   and "Refresh Gate C" notes to reference this as the resolved approach
-   (mirroring how the doc already tracks Gate A's negation-kind resolution).
-5. **3.5** — Add a `docs/DECISIONS.md` entry once shipped.
+   deliberately disabled/inverted for these questions.~~ Done:
+   `generateCaseMixerQuestions`, `kind: 'case-mixer'` — see
+   `docs/DECISIONS.md` (2026-06-13, Delivery 3).
+3. ~~**3.3** — Flesh out Unit 24's spec in `docs/LEARNING_JOURNEY.md`... then
+   add a real review lesson to `data/lessons.js` and flip Unit 24's
+   `status`/`lessonIds` in `journey.js`.~~ **Deferred** — Unit 24 stays
+   `pending`; its full NOR/NORI/NORK scope needs Units 22-23's dative verbs,
+   which don't exist yet. `case-mixer` instead ships as a general
+   review-lesson mechanism (active wherever sources already mix
+   `nor`/`nor-nork`). See `docs/DECISIONS.md` (2026-06-13, Delivery 3).
+4. ~~**3.4** — Update `docs/EXERCISE_ENGINE.md`'s "Score-gating Refresh Gates"
+   and "Refresh Gate C" notes to reference this as the resolved approach...~~
+   Done (Refresh Gate C note updated to reference Delivery 3 and the
+   deferral above).
+5. ~~**3.5** — Add a `docs/DECISIONS.md` entry once shipped.~~ Done.
 
 **Dependencies:** builds directly on Delivery 2; don't start before 2 is
 validated and shipped.

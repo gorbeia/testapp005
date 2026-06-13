@@ -8,6 +8,53 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-13 — Delivery 3 of the Exercise Variety Plan: `case-mixer` questions (mechanism only, Unit 24 deferred)
+
+**Decision:** added `generateCaseMixerQuestions` (`lessonLogic.js`) — Delivery
+2's `generateCrossVerbQuestions` with `agreementsCompatible`'s filter
+*inverted*, so it pairs sources whose `agreement` differs on the `nork` axis
+(`nor` vs `nor-nork`) instead of matching ones. Both functions now share a
+`collectCrossSourceCandidates`/`pickCrossSourceQuestions` pair of helpers.
+`kind: 'case-mixer'` questions are wired into `createExerciseState` for every
+review lesson (capped at `CASE_MIXER_QUESTION_COUNT = 1`, deliberately lower
+than `verb-choice`'s 2 — this drill is narrower/harder) — reviews whose
+sources don't mix `nor`/`nor-nork` simply get none, same graceful
+degradation as `verb-choice`. No new UI: `QuestionPrompt` already renders any
+`question.sentence`; `getExplanation` gains a `case-mixer` case
+(`explanationCaseMixerErgative`/`Absolutive`, reusing the pronoun
+explanations' "-k marks the doer" framing) and `QUESTION_PROMPT_KEYS` gains
+`questionCaseMixer`.
+
+**Audit (resolves task 3.1):** checked existing mixed-agreement review pairs
+(`izan`/`ukan` in `unit-5-review-1`/`unit-6-review-1`, `jakin`/`etorri` in
+`unit-5-review-3`, `izan`/`egon`/`ukan` in the `looking-back-1a-review*`
+pairs) — every `nor` sentence's subject is written as the bare pronoun
+("Ni...", "Zu...", "Hura...") while every `nor-nork` sentence's subject
+carries `-k` ("Nik...", "Zuk...", "Hark..."/"Berak..."/a `-k`-marked noun).
+Swapping in the wrong verb's form (e.g. "Txakurrak hezur bat da" instead of
+"...du") always produces a case-marking mismatch — i.e. a clearly wrong
+sentence, never an alternate-but-valid phrasing. Piloted via a throwaway
+script against `unit-5-review-1`, `unit-5-review-3`, `unit-6-review-1`, and
+`looking-back-1a-review`; `unit-1-review` (izan+egon, both `nor`) correctly
+produced zero `case-mixer` questions.
+
+**Unit 24 deferred (resolves the "ship Unit 24 now?" question):** `journey.js`
+Unit 24 ("REFRESH — The Case-Ending Mixer", Refresh Gate C) stays `pending`.
+Its `docs/LEARNING_JOURNEY.md` description is a full NOR/NORK/**NORI**
+role-swap drill depending on Units 22-23's dative verbs (still `pending`,
+zero data today) and `docs/EXERCISE_ENGINE.md` describes its likely mechanism
+as a `spot-error`-style "pick the right/wrong full sentence" kind — neither
+matches this delivery's narrower NOR-vs-NOR-NORK, multiple-choice
+`case-mixer` mechanism. Rather than ship a reduced-scope Unit 24 now and
+revisit its spec twice, `case-mixer` ships as a general review-lesson
+mechanism (active wherever `nor`/`nor-nork` sources already mix, e.g. Gate A's
+`unit-5-review-1`/`-3` and `unit-6-review-1`) and Unit 24 itself waits for
+Units 22-23 to land so it can be specced and built in its originally-described
+full form in one pass.
+
+See `docs/EXERCISE_VARIETY_PLAN.md` for the full plan (Delivery 4 remains
+open).
+
 ## 2026-06-13 — Delivery 2 of the Exercise Variety Plan: dedicated `verb-choice` cross-verb question kind
 
 **Decision:** review lessons (`lesson.review: true` with 2+ `sources`) now
