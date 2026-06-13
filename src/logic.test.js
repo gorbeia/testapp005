@@ -8,6 +8,7 @@ import {
   exerciseReducer,
   generateQuestions,
   getActiveStreak,
+  getCrossVerbCandidates,
   getEncouragement,
   getExplanation,
   getLocalDateString,
@@ -460,6 +461,73 @@ describe('generateQuestions', () => {
     })
   })
 
+  describe('with extraCandidates', () => {
+    it('can surface an extra candidate as a distractor without breaking option invariants', () => {
+      vi.spyOn(Math, 'random').mockReturnValue(0)
+
+      const extraCandidates = { ni: ['nago'], hi: ['hago'], hura: ['dago'], gu: ['gaude'], zuek: ['zaudete'], haiek: ['daude'] }
+      const questions = generateQuestions(verb, 'present', { extraCandidates })
+
+      questions.forEach((question) => {
+        expect(question.options).toContain(question.correct)
+        expect(new Set(question.options).size).toBe(question.options.length)
+        expect(question.options.length).toBeLessThanOrEqual(4)
+      })
+    })
+
+    it('never duplicates an option when an extra candidate matches an existing distractor', () => {
+      // `naiz`/`da` are already present as `verb.conjugations.present` forms
+      // for `ni`/`hura` — offering them again as "extra" candidates for other
+      // persons must not produce duplicate options.
+      const extraCandidates = { hi: ['naiz', 'da'], gu: ['naiz'], zuek: ['da'], haiek: ['naiz'] }
+      const questions = generateQuestions(verb, 'present', { extraCandidates })
+
+      questions.forEach((question) => {
+        expect(new Set(question.options).size).toBe(question.options.length)
+        expect(question.options).toContain(question.correct)
+      })
+    })
+
+    it('ignores extra candidates for pronoun questions', () => {
+      const verbWithPronouns = {
+        ...verb,
+        sentences: {
+          present: {
+            ni: 'Ni irakaslea ___.',
+            hi: 'Hi ikaslea ___.',
+            hura: 'Hura medikua ___.',
+            gu: 'Gu lagunak ___.',
+            zuek: 'Zuek azkarrak ___.',
+            haiek: 'Haiek euskaldunak ___.',
+          },
+        },
+        pronouns: { ni: 'Nik', hi: 'Hik', hura: 'Hark', gu: 'Guk', zuek: 'Zuek', haiek: 'Haiek' },
+        pronounSentences: {
+          present: {
+            ni: '___ liburu bat dut.',
+            hi: '___ auto bat duk.',
+            hura: '___ etxe bat du.',
+            gu: '___ denbora dugu.',
+            zuek: '___ arazo bat duzue.',
+            haiek: '___ aukera bat dute.',
+          },
+        },
+      }
+      // [0, 0.75) / 5 kinds ('sentence','type-verb','spot-error','pronoun','type-pronoun')
+      // -> slice 3 (0.45-0.6) is 'pronoun'.
+      vi.spyOn(Math, 'random').mockReturnValue(0.5)
+
+      const extraCandidates = { ni: ['nago'], hi: ['hago'], hura: ['dago'], gu: ['gaude'], zuek: ['zaudete'], haiek: ['daude'] }
+      generateQuestions(verbWithPronouns, 'present', { extraCandidates }).forEach((question) => {
+        if (question.kind === 'pronoun') {
+          question.options.forEach((option) => {
+            expect(Object.values(verbWithPronouns.pronouns)).toContain(option)
+          })
+        }
+      })
+    })
+  })
+
   describe('spot-error questions', () => {
     const verbWithManySentences = {
       ...verb,
@@ -829,6 +897,62 @@ describe('generateQuestions', () => {
         expect(new Set(kinds)).toEqual(new Set(['form', 'sentence', 'pronoun']))
       })
     })
+  })
+})
+
+describe('getCrossVerbCandidates', () => {
+  const izan = {
+    id: 'izan',
+    agreement: ['nor'],
+    conjugations: { present: { ni: 'naiz', zu: 'zara', hura: 'da' } },
+  }
+  const egon = {
+    id: 'egon',
+    agreement: ['nor'],
+    conjugations: { present: { ni: 'nago', zu: 'zaude', hura: 'dago' } },
+  }
+  const ukan = {
+    id: 'ukan',
+    agreement: ['nor', 'nork'],
+    conjugations: { present: { ni: 'dut', zu: 'duzu', hura: 'du' } },
+  }
+  const verbs = [izan, egon, ukan]
+
+  it('collects same-person forms from other sources with compatible agreement', () => {
+    const sources = [
+      { verbId: 'izan', tense: 'present' },
+      { verbId: 'egon', tense: 'present' },
+    ]
+
+    expect(getCrossVerbCandidates(izan, 'present', sources, verbs)).toEqual({
+      ni: ['nago'],
+      zu: ['zaude'],
+      hura: ['dago'],
+    })
+  })
+
+  it('excludes sources with incompatible agreement (nor vs nor-nork)', () => {
+    const sources = [
+      { verbId: 'izan', tense: 'present' },
+      { verbId: 'ukan', tense: 'present' },
+    ]
+
+    expect(getCrossVerbCandidates(izan, 'present', sources, verbs)).toEqual({})
+  })
+
+  it('excludes the verb itself even if it appears again under a different tense', () => {
+    const sources = [
+      { verbId: 'izan', tense: 'present' },
+      { verbId: 'izan', tense: 'past' },
+    ]
+
+    expect(getCrossVerbCandidates({ ...izan, conjugations: { ...izan.conjugations, past: { ni: 'nintzen' } } }, 'present', sources, verbs)).toEqual({})
+  })
+
+  it('returns an empty object when there are no compatible siblings', () => {
+    const sources = [{ verbId: 'izan', tense: 'present' }]
+
+    expect(getCrossVerbCandidates(izan, 'present', sources, verbs)).toEqual({})
   })
 })
 

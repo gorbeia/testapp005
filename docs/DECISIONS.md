@@ -8,6 +8,49 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-13 — Delivery 1 of the Exercise Variety Plan: cross-verb distractors in review lessons
+
+**Decision:** Review lessons (`lesson.review: true` with 2+ `sources`) now
+widen `buildOptions`'s distractor pool with each source's *sibling* sources'
+same-person conjugated forms (`getCrossVerbCandidates`, `lessonLogic.js`) —
+e.g. an `egon-present` `ni` question in `unit-1-review` (sources: izan + egon)
+can now occasionally offer `izan`'s `naiz` as a distractor alongside `egon`'s
+own `zaude`/`dago`/etc. Only applied to `sentence`/`negative`/`form` kinds
+(whose options come from `conjugations[tense]`) — not `pronoun`, whose options
+come from a different table (`verb.pronouns`).
+
+**Compatibility filter (resolves task 1.4):** a sibling source's forms are only
+mixed in if its verb's `agreement` matches on the `nork` axis (`nor` ↔ `nor`,
+`nor-nork` ↔ `nor-nork`) — so a cross-verb distractor is "right shape, wrong
+verb" (a real but wrong sentence, e.g. "Ni etxean naiz") rather than
+structurally broken ("Nik liburu bat naiz"). The latter — mixing across the
+`nor`/`nor-nork` boundary — is deliberately Delivery 3's territory (NOR vs
+NOR-NORK case-marking drills).
+
+**Aggressiveness (resolves the "how aggressively to mix" open decision):**
+candidates are merged into the pool and `shuffle().slice(0, 3)` picks from the
+combined set — so a cross-verb option is *occasional*, not guaranteed every
+question. Simpler than forcing one in, and keeps "right verb, wrong person"
+distractors (the original behaviour) as the common case.
+
+**Badge treatment (resolves task 1.3 / the badge open decision):** for review
+lessons, `ExerciseScreen` no longer renders the per-question `VerbBadgeRow`
+(type/agreement/dialect badges), and `QuestionPrompt`'s verb-name/meaning line
+is replaced with just the tense label. Chose "hide entirely" over a generic
+"Mixed review" badge — hiding is simpler (no new badge component or i18n
+strings), and applying it uniformly to *all* review questions (not just ones
+whose options happen to include a cross-verb distractor) avoids the badge's
+presence/absence itself becoming a tell. Practice lessons are unaffected.
+
+**Rollout (task 1.7):** since `getCrossVerbCandidates` is computed generically
+for any review lesson in `createExerciseState`, every multi-source review
+benefits automatically — no per-lesson changes needed. Single-source reviews
+(`ikusi-present-review`, `unit-4-review`, etc.) get an empty candidate set and
+behave exactly as before.
+
+See `docs/EXERCISE_VARIETY_PLAN.md` for the full plan (Deliveries 2-4 remain
+open).
+
 ## 2026-06-13 — Moved the Expansion gate earlier (now Unit 5, right after "Moving Around")
 
 **Decision:** Reordered Phase I's last three units. "Expansion — Bringing in
