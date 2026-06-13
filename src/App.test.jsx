@@ -118,6 +118,46 @@ describe('App', () => {
     expect(await screen.findByText('Something went wrong. Please try again later.')).toBeInTheDocument()
   })
 
+  describe('share app', () => {
+    afterEach(() => {
+      vi.unstubAllGlobals()
+    })
+
+    it('shares the app via the native share sheet when available', async () => {
+      const share = vi.fn().mockResolvedValue(undefined)
+      vi.stubGlobal('navigator', { ...navigator, share })
+      const user = userEvent.setup()
+      render(<App />)
+
+      await user.click(screen.getByRole('button', { name: /Profile/ }))
+      await user.click(screen.getByRole('button', { name: 'Invite a friend' }))
+
+      expect(share).toHaveBeenCalledWith({
+        title: 'Aditzak — Basque Verb Conjugation',
+        text: "I'm learning Basque verb conjugation with Aditzak — come give it a try:",
+        url: `${window.location.origin}${import.meta.env.BASE_URL}`,
+      })
+    })
+
+    it('falls back to copying the link and shows a brief confirmation', async () => {
+      // `userEvent.setup()` installs its own `navigator.clipboard` stub (with a
+      // working `writeText`), so spy on that rather than replacing
+      // `navigator` wholesale — `navigator.share` is already `undefined` in
+      // jsdom, so the fallback path is taken without needing to stub it away.
+      const user = userEvent.setup()
+      const writeText = vi.spyOn(navigator.clipboard, 'writeText').mockResolvedValue(undefined)
+      render(<App />)
+
+      await user.click(screen.getByRole('button', { name: /Profile/ }))
+      await user.click(screen.getByRole('button', { name: 'Invite a friend' }))
+
+      expect(writeText).toHaveBeenCalledWith(
+        `I'm learning Basque verb conjugation with Aditzak — come give it a try: ${window.location.origin}${import.meta.env.BASE_URL}`,
+      )
+      expect(await screen.findByRole('button', { name: 'Link copied!' })).toBeInTheDocument()
+    })
+  })
+
   describe('question flagging', () => {
     async function startLessonAndAnswer(user) {
       vi.spyOn(Math, 'random').mockReturnValue(0.99)

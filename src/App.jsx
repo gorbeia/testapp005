@@ -34,6 +34,7 @@ import { JOURNEY } from './journey'
 import { JOURNEY_TRANSLATIONS } from './i18n/journeyTranslations'
 import { LanguageProvider, useLanguage } from './i18n/LanguageContext'
 import { trackEvent } from './analytics'
+import { getShareUrl, shareContent } from './shareUtils'
 import { VERBS, TENSE_META, TYPE_META, AGREEMENT_META, DIALECT_LABELS, PERSON_LABEL_KEYS } from './data/verbs'
 import { LESSONS } from './data/lessons'
 
@@ -1031,6 +1032,24 @@ function ProfileTab({ streak, points, account, syncStatus, lastSyncedAt, onOpenS
   const longestStreak = streak?.longestStreak ?? 0
   const balance = getPointsBalance(points)
   const canRepair = canRepairStreak(streak, points, today)
+
+  // Briefly swaps the "Invite a friend" button's label for `shareCopied`
+  // after a clipboard-fallback share (see `shareContent`) — there's no toast
+  // system in the app, so this inline revert-after-2s is the confirmation.
+  const [shareCopied, setShareCopied] = useState(false)
+  const shareCopiedTimeoutRef = useRef(null)
+  useEffect(() => () => clearTimeout(shareCopiedTimeoutRef.current), [])
+
+  async function handleShareApp() {
+    const result = await shareContent({ title: t('shareGenericTitle'), text: t('shareGenericText'), url: getShareUrl() })
+    trackEvent('share_app', { variant: 'generic', result })
+    if (result === 'copied') {
+      setShareCopied(true)
+      clearTimeout(shareCopiedTimeoutRef.current)
+      shareCopiedTimeoutRef.current = setTimeout(() => setShareCopied(false), 2000)
+    }
+  }
+
   return (
     <div className="flex flex-col items-center gap-4 py-12 text-center">
       <div className="flex h-20 w-20 items-center justify-center rounded-full bg-green-100 text-4xl">🧑‍🎓</div>
@@ -1103,6 +1122,14 @@ function ProfileTab({ streak, points, account, syncStatus, lastSyncedAt, onOpenS
           ))}
         </div>
       </div>
+      <button
+        type="button"
+        onClick={handleShareApp}
+        style={{ minHeight: 48 }}
+        className="w-full rounded-2xl border-2 border-gray-200 px-5 text-sm font-bold text-gray-700 transition hover:border-green-300 hover:text-green-600"
+      >
+        {shareCopied ? t('shareCopied') : t('shareInviteButton')}
+      </button>
       <button
         type="button"
         onClick={onOpenFeedback}
