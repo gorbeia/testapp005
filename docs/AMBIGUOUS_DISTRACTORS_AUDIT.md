@@ -13,11 +13,19 @@ Tracked by epic #115, split into three sub-issues:
   `docs/DECISIONS.md` ("Excluded cross-verb distractors that collide with a
   sibling verb's own sentence template"). This resolves the `unit-2-review`
   `ukan`/`nahi` case described below.
-- **#113 (Layer 2a, generate a triage list)** and **#114 (Layer 2b/3, encode
-  curated exclusions)** — not yet done. These cover the broader
-  "different sentence text, both still valid" cases below (`eduki` vs
-  `ukan`/`ikusi`, `jakin`'s `dakit`, etc.), which need native-speaker triage
-  rather than a mechanical check.
+- **#113 (Layer 2a, generate a triage list) — done.** `scripts/list-cross-candidates.mjs`
+  enumerates every cross-verb substitution reachable via `getCrossVerbCandidates`/
+  `generateCrossVerbQuestions`/`generateCaseMixerQuestions` across all `review: true`
+  lessons (2101 entries as of 2026-06-13) and writes them as a checklist to
+  `docs/CROSS_CANDIDATE_REVIEW.md`. **Next step (#114): a native speaker/maintainer
+  ticks each entry's "both valid" or "wrong/ungrammatical" checkbox** — those ticks
+  become the input for #114's curated `CROSS_CANDIDATE_EXCLUSIONS` table. Regenerate
+  the doc with `node scripts/list-cross-candidates.mjs` after a `LESSONS`/`VERBS`
+  change (re-triage only the new/changed entries).
+- **#114 (Layer 2b/3, encode curated exclusions)** — not yet done, blocked on the
+  triage above. Covers the broader "different sentence text, both still valid"
+  cases below (`eduki` vs `ukan`/`ikusi`, `jakin`'s `dakit`, etc.), which need
+  native-speaker triage rather than a mechanical check.
 
 ## Summary
 

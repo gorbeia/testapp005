@@ -36,6 +36,7 @@ import {
   shuffle,
   STREAK_REPAIR_COST,
 } from './lessonLogic'
+import { LESSONS } from './data/lessons'
 import { VERBS } from './data/verbs'
 
 describe('computeStars', () => {
@@ -502,6 +503,26 @@ describe('getIntroducedSources', () => {
 
   it('returns every practice lesson when the given id is not found', () => {
     expect(getIntroducedSources(lessons, 'does-not-exist')).toEqual([
+      { verbId: 'izan', tense: 'present' },
+      { verbId: 'egon', tense: 'present' },
+      { verbId: 'izan', tense: 'past' },
+    ])
+  })
+
+  it('skips "pool" lessons (non-review, but no verbId/tense of their own) without producing undefined entries', () => {
+    // e.g. `unit-10-present`/`izan-past-pool` in src/data/lessons.js: shaped like a review
+    // (`{ id, persons, sources }`) but `review` isn't set, so the old `!lesson.review` filter
+    // let them through and produced bogus `{ verbId: undefined, tense: undefined }` entries.
+    const lessonsWithPool = [
+      ...lessons,
+      { id: 'some-pool', persons: ['ni'], sources: [{ verbId: 'izan', tense: 'past' }] },
+      { id: 'after-pool', verbId: 'egon', tense: 'past' },
+    ]
+
+    const sources = getIntroducedSources(lessonsWithPool, 'after-pool')
+
+    expect(sources).not.toContainEqual({ verbId: undefined, tense: undefined })
+    expect(sources).toEqual([
       { verbId: 'izan', tense: 'present' },
       { verbId: 'egon', tense: 'present' },
       { verbId: 'izan', tense: 'past' },
@@ -1653,6 +1674,40 @@ describe('cross-verb sentence-template collisions (real VERBS)', () => {
           }
         }
       }
+    }
+  })
+})
+
+describe('getIntroducedSources + cross-verb question generation (real LESSONS/VERBS)', () => {
+  // Reviews with < 3 sources fall back to getIntroducedSources for extraSiblingSources
+  // (mirrors src/App.jsx's createExerciseState). Before getIntroducedSources excluded
+  // "pool" lessons (e.g. unit-10-present, izan-past-pool — shaped like a review but not
+  // `review: true`, so they have no verbId/tense), these reviews crashed
+  // generateCrossVerbQuestions/generateCaseMixerQuestions on `sibling.verb.id` of an
+  // undefined `verb`.
+  const reviewsWithFewSources = LESSONS.filter((lesson) => lesson.review && lesson.sources.length < 3)
+
+  it('returns only well-formed {verbId, tense} entries for every review with fewer than 3 sources', () => {
+    expect(reviewsWithFewSources.length).toBeGreaterThan(0)
+
+    for (const lesson of reviewsWithFewSources) {
+      for (const source of getIntroducedSources(LESSONS, lesson.id)) {
+        expect(source.verbId).toBeTypeOf('string')
+        expect(source.tense).toBeTypeOf('string')
+      }
+    }
+  })
+
+  it('does not crash generateCrossVerbQuestions/generateCaseMixerQuestions for reviews relying on the getIntroducedSources fallback', () => {
+    for (const lesson of reviewsWithFewSources) {
+      const resolvedSources = lesson.sources.map(({ verbId, tense }) => ({ verb: VERBS.find((v) => v.id === verbId), tense }))
+      const extraSiblingSources = getIntroducedSources(LESSONS, lesson.id).map(({ verbId, tense }) => ({
+        verb: VERBS.find((v) => v.id === verbId),
+        tense,
+      }))
+
+      expect(() => generateCrossVerbQuestions(resolvedSources, { persons: lesson.persons, extraSiblingSources })).not.toThrow()
+      expect(() => generateCaseMixerQuestions(resolvedSources, { persons: lesson.persons, extraSiblingSources })).not.toThrow()
     }
   })
 })

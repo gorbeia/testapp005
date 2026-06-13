@@ -327,19 +327,27 @@ export function getUnlockedLessonIds(lessons, progress) {
 // Every `{ verbId, tense }` a practice lesson before `upToLessonId` (in
 // `lessons` order) introduces — "what a learner reaching `upToLessonId` has
 // already seen", position-based like `getUnlockedLessonIds`. Review lessons
-// (no `verbId`/`tense` of their own) are skipped. Used to broaden the
-// cross-verb candidate pools (`getCrossVerbCandidates`,
-// `generateCrossVerbQuestions`, `generateCaseMixerQuestions`) beyond a small
-// review's own `sources` — since it only ever looks *before* `upToLessonId`,
-// it can't surface a verb/tense the learner hasn't reached yet (no `future`
-// spoilers in a `present`-tense review, etc.), even if that verb appears
-// again later under a different tense.
+// (no `verbId`/`tense` of their own) are skipped — as are "pool" lessons
+// (`izan-past-pool`, `unit-10-present`, ...), which also lack `verbId`/`tense`
+// of their own (they carry a `sources: [{ verbId, tense }, ...]` list instead,
+// like a review). Without this second skip, those lessons would map to
+// `{ verbId: undefined, tense: undefined }`; `getCrossVerbCandidates` happens
+// to drop such entries silently (its `tense` filter never matches `undefined`),
+// but `generateCrossVerbQuestions`/`generateCaseMixerQuestions` build
+// `extraSiblingSources` by looking up `verbId` in `VERBS` and then reading
+// `.id`/`.agreement` off the result — `VERBS.find` returns `undefined` for
+// `verbId: undefined`, so `collectCrossSourceCandidates` would crash. Used to
+// broaden the cross-verb candidate pools beyond a small review's own
+// `sources` — since it only ever looks *before* `upToLessonId`, it can't
+// surface a verb/tense the learner hasn't reached yet (no `future` spoilers in
+// a `present`-tense review, etc.), even if that verb appears again later under
+// a different tense.
 export function getIntroducedSources(lessons, upToLessonId) {
   const cutoff = lessons.findIndex((lesson) => lesson.id === upToLessonId)
   const end = cutoff === -1 ? lessons.length : cutoff
   return lessons
     .slice(0, end)
-    .filter((lesson) => !lesson.review)
+    .filter((lesson) => !lesson.review && lesson.verbId)
     .map(({ verbId, tense }) => ({ verbId, tense }))
 }
 
@@ -431,7 +439,7 @@ function buildOptions(table, persons, person, extraCandidates = []) {
 // would produce a structurally broken sentence rather than a "wrong verb,
 // right shape" distractor — that's deliberately out of scope here (see
 // Delivery 3 in `docs/EXERCISE_VARIETY_PLAN.md`).
-function agreementsCompatible(a, b) {
+export function agreementsCompatible(a, b) {
   return a.includes('nork') === b.includes('nork')
 }
 
@@ -523,7 +531,7 @@ export function getCrossVerbCandidates(verb, tense, sources, verbs, extraSources
 // lesson from showing the exact same sentence every time it cycles back to a
 // given person, while a plain string (still used by verbs without variants)
 // is returned as-is.
-function pickVariant(value) {
+export function pickVariant(value) {
   return Array.isArray(value) ? value[Math.floor(Math.random() * value.length)] : value
 }
 
