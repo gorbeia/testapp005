@@ -8,6 +8,40 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-13 — Moved the Expansion gate earlier (now Unit 5, right after "Moving Around")
+
+**Decision:** Reordered Phase I's last three units. "Expansion — Bringing in
+the Plural" (zero new verbs; adds `gu`/`zuek`/`haiek` to `izan`/`egon`/`ukan`/
+`joan`/`etorri`/`ikusi`) is now **Unit 5**, in Stage 2 right after "Moving
+Around" (Unit 4). "The Immediate Continuous" (`ari`) becomes Unit 6, and
+"REFRESH — The Inversion Matrix" (negation) becomes Unit 7, still Refresh Gate
+A — now a single-unit gate, its title shortened from `Refresh Gate A — The
+"Ez" Trap & Person Expansion` to `Refresh Gate A — The "Ez" Trap`. Units 8+ are
+unaffected — no renumbering cascade. Lesson ids (`unit-5-review-*` for
+negation, `unit-6-review-*` + `ikusi-present-plural*` for Expansion) were left
+unchanged, matching existing precedent for ids predating a renumbering; only
+`LESSONS`' array order and `journey.js`'s unit/stage placement changed.
+`gate: true` no longer implies "sits at a phase/stage boundary" — Unit 5 is
+mid-Stage-2, kept the shield icon since it's still zero-new-verbs.
+`journeyTranslations.js`'s `units` keys 4/5/6 (which track `unit.number - 1`
+for Phase I) were rotated to match, and the Expansion translations gained the
+`ikusi` mention the English `focus` already had but the ES/EU strings were
+missing.
+
+**Why:** All six verbs Unit 5 expands are introduced by Unit 4, so this is the
+earliest point in the journey the expansion can run — previously it ran last
+(old Unit 7), meaning a verb's `gu`/`zuek`/`haiek` forms (e.g. `izan`'s
+`zarete`) weren't drilled until *three* units after that verb's own present-tense
+lesson. Moving Expansion to Unit 5 cuts that gap to one unit for `izan`/`egon`
+(Unit 1) and `ukan` (Unit 2), and zero for `joan`/`etorri`/`ikusi` (Units 3-4).
+Considered but rejected: pairing every Phase I verb's plural lesson
+immediately after its singular one from Unit 1 onward (the Unit 8+ pattern,
+applied retroactively) — this would roughly double Units 1-4's lesson count
+and walk back the documented "batch the plural unlock once you have a base of
+verbs" rationale (`docs/LEARNING_JOURNEY.md`, "The 'Me, You, and It' horizon").
+The chosen reorder gets most of the benefit (a much shorter `zarete`-style gap)
+via a same-day, low-risk reorder with no new lessons and no data changes.
+
 ## 2026-06-12 — Extracted `VERBS`/`LESSONS` out of `App.jsx` into `src/data/`, added a `journey.test.js` consistency check
 
 **Decision:** The previous entry's journey redesign touched `journey.js`,

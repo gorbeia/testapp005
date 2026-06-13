@@ -48,8 +48,8 @@ export const JOURNEY_TRANSLATIONS = {
     },
     'phase-1-gate-a': {
       title: {
-        es: 'Puerta de Repaso A — La trampa del "ez" y la ampliación de personas',
-        eu: 'A Berrikuspen Atea — "Ez"-aren tranpa eta pertsonen zabalpena',
+        es: 'Puerta de Repaso A — La trampa del "ez"',
+        eu: 'A Berrikuspen Atea — "Ez"-aren tranpa',
       },
     },
     'phase-2-stage-3': {
@@ -121,6 +121,13 @@ export const JOURNEY_TRANSLATIONS = {
       },
     },
     4: {
+      title: { es: 'Ampliación — Incorporando el plural', eu: 'Zabalpena — Plurala sartzen' },
+      focus: {
+        es: 'Añade gu/zuek/haiek a izan, egon, ukan, joan, etorri e ikusi — sin verbos nuevos',
+        eu: 'gu/zuek/haiek gehitzen dizkie izan, egon, ukan, joan, etorri eta ikusi aditzei — aditz berririk gabe',
+      },
+    },
+    5: {
       title: { es: 'El continuo inmediato', eu: 'Oraingo jarduera (ari + izan)' },
       focus: { es: 'ari + izan', eu: 'ari + izan' },
       payload: {
@@ -128,18 +135,11 @@ export const JOURNEY_TRANSLATIONS = {
         eu: '"Zer ari zara?" (¿Qué estás haciendo?) · "Jaten ari naiz" (Estoy comiendo)',
       },
     },
-    5: {
+    6: {
       title: { es: 'REPASO — La matriz de inversión', eu: 'BERRIKUSPENA — Aldrebeskeriaren matrizea' },
       focus: {
-        es: 'Ejercicios de negación sobre las unidades 1–4 — sin verbos nuevos',
-        eu: '1–4 unitateetako ezeztapen-ariketak — aditz berririk gabe',
-      },
-    },
-    6: {
-      title: { es: 'Ampliación — Incorporando el plural', eu: 'Zabalpena — Plurala sartzen' },
-      focus: {
-        es: 'Añade gu/zuek/haiek a izan, egon, ukan, joan, etorri — sin verbos nuevos',
-        eu: 'gu/zuek/haiek gehitzen dizkie izan, egon, ukan, joan, etorri aditzei — aditz berririk gabe',
+        es: 'Ejercicios de negación sobre las unidades 1–6 — sin verbos nuevos',
+        eu: '1–6 unitateetako ezeztapen-ariketak — aditz berririk gabe',
       },
     },
     7: {

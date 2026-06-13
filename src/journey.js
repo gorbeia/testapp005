@@ -13,8 +13,11 @@
 //     roadmap card (title/focus/payload only), so the full curriculum is
 //     visible from day one even as units are filled in one at a time.
 //
-// `gate: true` marks the Refresh Gate units (zero-new-verb consolidation
-// checkpoints between phases).
+// `gate: true` marks Refresh Gate units — zero-new-verb consolidation or
+// expansion checkpoints. Most sit between phases/stages, but Phase I's
+// "Expansion" gate (Unit 5) sits mid-phase, right after the verbs it expands
+// are introduced — see `docs/DECISIONS.md`, "Moved the Expansion gate
+// earlier".
 //
 // Two units after each "present tense" cluster ("Looking Back I"/"Looking
 // Back II") teach the simple past for verbs already met, so tense variety
@@ -76,28 +79,6 @@ export const JOURNEY = [
           },
           {
             number: 5,
-            title: 'The Immediate Continuous',
-            focus: 'ari + izan',
-            payload: '"What are you doing?" (Zer ari zara?) · "I\'m eating." (Jaten ari naiz)',
-            status: 'available',
-            lessonIds: ['ari-present', 'unit-4-review'],
-          },
-        ],
-      },
-      {
-        id: 'phase-1-gate-a',
-        title: 'Refresh Gate A — The "Ez" Trap & Person Expansion',
-        units: [
-          {
-            number: 6,
-            title: 'REFRESH — The Inversion Matrix',
-            focus: 'Negation drills across Units 1–5 — zero new verbs',
-            status: 'available',
-            gate: true,
-            lessonIds: ['unit-5-review-1', 'unit-5-review-2', 'unit-5-review-3'],
-          },
-          {
-            number: 7,
             title: 'Expansion — Bringing in the Plural',
             focus:
               'Adds gu/zuek/haiek to izan, egon, ukan, joan, etorri, and ikusi — zero new verbs',
@@ -110,6 +91,28 @@ export const JOURNEY = [
               'ikusi-present-plural',
               'ikusi-present-plural-review',
             ],
+          },
+          {
+            number: 6,
+            title: 'The Immediate Continuous',
+            focus: 'ari + izan',
+            payload: '"What are you doing?" (Zer ari zara?) · "I\'m eating." (Jaten ari naiz)',
+            status: 'available',
+            lessonIds: ['ari-present', 'unit-4-review'],
+          },
+        ],
+      },
+      {
+        id: 'phase-1-gate-a',
+        title: 'Refresh Gate A — The "Ez" Trap',
+        units: [
+          {
+            number: 7,
+            title: 'REFRESH — The Inversion Matrix',
+            focus: 'Negation drills across Units 1–6 — zero new verbs',
+            status: 'available',
+            gate: true,
+            lessonIds: ['unit-5-review-1', 'unit-5-review-2', 'unit-5-review-3'],
           },
         ],
       },

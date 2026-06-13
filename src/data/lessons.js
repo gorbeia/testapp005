@@ -24,13 +24,16 @@
 // shape once implemented.
 // Phase I's "Survival Present" horizon (`docs/LEARNING_JOURNEY.md`) restricts
 // every verb's first lessons to `ni`/`zu`/`hura` — `gu`/`zuek`/`haiek` arrive
-// together in Unit 7 ("Expansion"). Unit 7 grew `izan`/`egon`/`ukan`/`joan`/
-// `etorri`'s `conjugations.present` tables to 6 persons *in place*, which
-// cascaded into these verbs' own early-unit lessons and Unit 6's negation
-// reviews (all of which run before Unit 7). `persons` re-restricts those
-// lessons back to the 3-person horizon — see `docs/DECISIONS.md`, "Restored
-// Phase I's 3-person pacing". The app-wide rule is: never drill more than 3
-// grammatical persons in a single exercise.
+// together in Unit 5 ("Expansion"), positioned right after Unit 4 since every
+// verb it expands (`izan`/`egon`/`ukan`/`joan`/`etorri`/`ikusi`) is introduced
+// by then — see `docs/DECISIONS.md`, "Moved the Expansion gate earlier". Unit
+// 5 grew `izan`/`egon`/`ukan`/`joan`/`etorri`'s `conjugations.present` tables
+// to 6 persons *in place*, so every other lesson reusing those tables — Units
+// 1-4's own practice lessons and Unit 7's negation reviews alike — needs a
+// `persons` filter to stay within its place in the journey. `persons`
+// re-restricts those lessons back to the 3-person horizon — see
+// `docs/DECISIONS.md`, "Restored Phase I's 3-person pacing". The app-wide
+// rule is: never drill more than 3 grammatical persons in a single exercise.
 export const PHASE_1_PERSONS = ['ni', 'zu', 'hura']
 export const PHASE_1_PLURAL_PERSONS = ['gu', 'zuek', 'haiek']
 
@@ -64,7 +67,7 @@ export const LESSONS = [
   // Unit 2's `ukan` so the synthetic/periphrastic contrast shows up early
   // rather than only at Unit 10. Reuses `ikusi`'s existing 6-person
   // `conjugations.present` table (from Unit 10's verb data) restricted to
-  // `PHASE_1_PERSONS` here — its `gu`/`zuek`/`haiek` forms arrive in Unit 7
+  // `PHASE_1_PERSONS` here — its `gu`/`zuek`/`haiek` forms arrive in Unit 5
   // ("Expansion") alongside `izan`/`egon`/`ukan`/`joan`/`etorri`'s.
   { id: 'ikusi-present', verbId: 'ikusi', tense: 'present', persons: PHASE_1_PERSONS },
   {
@@ -84,13 +87,66 @@ export const LESSONS = [
       { verbId: 'etorri', tense: 'present' },
     ],
   },
+  // Unit 5 ("Expansion — Bringing in the Plural") — zero new verbs for
+  // `izan`/`egon`/`ukan`/`joan`/`etorri`. Their `conjugations.present`
+  // (plus their `sentences`/`pronouns`/`pronounSentences`) gained `gu`/`zuek`/
+  // `haiek` rows directly (see `docs/DECISIONS.md`). Their own lessons above
+  // stay on the 3-person horizon via `PHASE_1_PERSONS`, so this unit's own
+  // reviews are the *first* place those verbs' present tense is drilled with
+  // `gu`/`zuek`/`haiek` — `persons: PHASE_1_PLURAL_PERSONS` keeps each review
+  // focused on exactly those three new forms (never more than 3 persons per
+  // exercise), matching the unit's "bringing in the plural" focus. This unit's
+  // own consolidation pass is split into three reviews, using the same
+  // cross-unit pairing as Unit 7 below (Unit 1: izan/egon, Unit 2: ukan, Unit
+  // 4: joan/etorri all paired across origins) — a single five-source review
+  // landed at 30 questions; each of these three lands at exactly 12. `ikusi`
+  // (Unit 3) also expands to `gu`/`zuek`/`haiek` here via its own
+  // `-plural`/review pair, mirroring Units 10-11's singular/plural split.
+  // Positioned right after Unit 4 ("Moving Around") rather than after the
+  // negation gate — every verb this unit expands (`izan`/`egon`/`ukan`/
+  // `joan`/`etorri`/`ikusi`) is introduced by Unit 4, so this is the earliest
+  // point in the journey `zuek`/`gu`/`haiek` forms (e.g. `zarete`) can appear
+  // — see `docs/DECISIONS.md`, "Moved the Expansion gate earlier".
+  {
+    id: 'unit-6-review-1',
+    review: true,
+    persons: PHASE_1_PLURAL_PERSONS,
+    sources: [
+      { verbId: 'izan', tense: 'present' },
+      { verbId: 'ukan', tense: 'present' },
+    ],
+  },
+  {
+    id: 'unit-6-review-2',
+    review: true,
+    persons: PHASE_1_PLURAL_PERSONS,
+    sources: [
+      { verbId: 'egon', tense: 'present' },
+      { verbId: 'joan', tense: 'present' },
+    ],
+  },
+  {
+    id: 'unit-6-review-3',
+    review: true,
+    persons: PHASE_1_PLURAL_PERSONS,
+    sources: [{ verbId: 'etorri', tense: 'present' }],
+  },
+  { id: 'ikusi-present-plural', verbId: 'ikusi', tense: 'present', persons: PHASE_1_PLURAL_PERSONS },
+  {
+    id: 'ikusi-present-plural-review',
+    review: true,
+    persons: PHASE_1_PLURAL_PERSONS,
+    sources: [{ verbId: 'ikusi', tense: 'present' }],
+  },
+  // Unit 6 ("The Immediate Continuous") — `ari`, riding `izan`'s present
+  // table.
   { id: 'ari-present', verbId: 'ari', tense: 'present' },
   {
     id: 'unit-4-review',
     review: true,
     sources: [{ verbId: 'ari', tense: 'present' }],
   },
-  // Unit 6 ("REFRESH — The Inversion Matrix", Refresh Gate A) — zero new
+  // Unit 7 ("REFRESH — The Inversion Matrix", Refresh Gate A) — zero new
   // verbs, drilling `ez` + auxiliary-fronting (`negativeSentences`) across the
   // six Units 1-4 verbs whose present-tense form is a single word that stays
   // intact under negation (`ikusi`, Unit 3's periphrastic verb, has no
@@ -140,55 +196,9 @@ export const LESSONS = [
       { verbId: 'etorri', tense: 'present' },
     ],
   },
-  // Unit 7 ("Expansion — Bringing in the Plural", Refresh Gate A) — zero new
-  // verbs for `izan`/`egon`/`ukan`/`joan`/`etorri`. Their `conjugations.present`
-  // (plus their `sentences`/`pronouns`/`pronounSentences`) gained `gu`/`zuek`/
-  // `haiek` rows directly (see `docs/DECISIONS.md`). Their own lessons above
-  // stay on the 3-person horizon via `PHASE_1_PERSONS`, so this unit's own
-  // reviews are the *first* place those verbs' present tense is drilled with
-  // `gu`/`zuek`/`haiek` — `persons: PHASE_1_PLURAL_PERSONS` keeps each review
-  // focused on exactly those three new forms (never more than 3 persons per
-  // exercise), matching the unit's "bringing in the plural" focus. This unit's
-  // own consolidation pass is split into three reviews, using the same
-  // cross-unit pairing as Unit 6 above (Unit 1: izan/egon, Unit 2: ukan, Unit
-  // 4: joan/etorri all paired across origins) — a single five-source review
-  // landed at 30 questions; each of these three lands at exactly 12. `ikusi`
-  // (Unit 3) also expands to `gu`/`zuek`/`haiek` here via its own
-  // `-plural`/review pair, mirroring Units 10-11's singular/plural split.
-  {
-    id: 'unit-6-review-1',
-    review: true,
-    persons: PHASE_1_PLURAL_PERSONS,
-    sources: [
-      { verbId: 'izan', tense: 'present' },
-      { verbId: 'ukan', tense: 'present' },
-    ],
-  },
-  {
-    id: 'unit-6-review-2',
-    review: true,
-    persons: PHASE_1_PLURAL_PERSONS,
-    sources: [
-      { verbId: 'egon', tense: 'present' },
-      { verbId: 'joan', tense: 'present' },
-    ],
-  },
-  {
-    id: 'unit-6-review-3',
-    review: true,
-    persons: PHASE_1_PLURAL_PERSONS,
-    sources: [{ verbId: 'etorri', tense: 'present' }],
-  },
-  { id: 'ikusi-present-plural', verbId: 'ikusi', tense: 'present', persons: PHASE_1_PLURAL_PERSONS },
-  {
-    id: 'ikusi-present-plural-review',
-    review: true,
-    persons: PHASE_1_PLURAL_PERSONS,
-    sources: [{ verbId: 'ikusi', tense: 'present' }],
-  },
   // Unit 8 ("Looking Back I" — "I Was, I Had, I Saw...") — the first "Looking
   // Back" companion unit: simple past for the Phase I verbs just consolidated
-  // in Units 6-7 (`izan`/`egon`/`ukan`), pairing each verb group's past with
+  // in Units 5 and 7 (`izan`/`egon`/`ukan`), pairing each verb group's past with
   // its present soon after rather than saving *all* past tense for Phase III
   // (see `docs/DECISIONS.md`). Full 6-person grids from the first lesson
   // (Person-Expansion Rule, since `gu`/`zuek`/`haiek` already exist for these

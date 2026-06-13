@@ -33,23 +33,27 @@
    goes where" sorting. Gates are the device that gives the otherwise-linear
    `getUnlockedLessonIds` progression its spaced-repetition character.
 5. **Person-Expansion Rule**: the 3-persons-first restriction applies only to
-   **Phase I** (Units 1–5).
-   Refresh Gate A's "Expansion" unit (Unit 7) completes the `gu`/`zuek`/
+   **Phase I** (Units 1–4).
+   The "Expansion" unit (Unit 5) completes the `gu`/`zuek`/
    `haiek` columns for *every* verb introduced so far (`izan`, `egon`,
-   `ukan`, `joan`, `etorri`, `ikusi` — `ari`/`nahi` ride `izan`/`ukan`'s
-   tables and need no separate expansion). `ikusi`'s table was already
-   6-person when it arrived in Unit 3 (reused from Phase II's original
-   table), so Unit 7 adds it via a dedicated `ikusi-present-plural`
+   `ukan`, `joan`, `etorri`, `ikusi` — `ari`/`nahi`/`jakin` have no
+   `gu`/`zuek`/`haiek` data and need no separate expansion). `ikusi`'s table
+   was already 6-person when it arrived in Unit 3 (reused from Phase II's
+   original table), so Unit 5 adds it via a dedicated `ikusi-present-plural`
    lesson+review rather than retrofitting data, alongside the
-   `izan`/`egon`/`ukan`/`joan`/`etorri` retrofit. From Unit 8 onward, **every
-   new verb is taught with its full 6-person grid (`ni`/`zu`/`hura`/`gu`/
-   `zuek`/`haiek`)** — but per the app-wide "max 3 persons per exercise" rule
-   (`docs/DECISIONS.md`, 2026-06-12), that grid is now split across **two**
-   lessons per (verb × tense) — a `ni`/`zu`/`hura` lesson immediately
-   followed by a `gu`/`zuek`/`haiek` `-plural` sibling — rather than drilled
-   all 6 persons in one lesson. Unit 7's own reviews (still ids'd
-   `unit-6-review-*`, predating this redesign's renumbering) are similarly
-   scoped to `gu`/`zuek`/`haiek` only.
+   `izan`/`egon`/`ukan`/`joan`/`etorri` retrofit. Unit 5 sits right after Unit
+   4 — the earliest point every verb it expands has been introduced — rather
+   than at the end of Refresh Gate A, so e.g. `izan`'s `zuek` form (`zarete`)
+   is drilled only one unit after `izan-present` instead of three (see
+   `docs/DECISIONS.md`, "Moved the Expansion gate earlier"). From Unit 8
+   onward, **every new verb is taught with its full 6-person grid
+   (`ni`/`zu`/`hura`/`gu`/`zuek`/`haiek`)** — but per the app-wide "max 3
+   persons per exercise" rule (`docs/DECISIONS.md`, 2026-06-12), that grid is
+   now split across **two** lessons per (verb × tense) — a `ni`/`zu`/`hura`
+   lesson immediately followed by a `gu`/`zuek`/`haiek` `-plural` sibling —
+   rather than drilled all 6 persons in one lesson. Unit 5's own reviews
+   (still ids'd `unit-6-review-*`, predating this redesign's renumbering) are
+   similarly scoped to `gu`/`zuek`/`haiek` only.
 6. **Difficulty-weighted extra practice.** Most units introduce one new verb
    in a pattern the learner already knows (same `nor`/`nor-nork` shape, just
    new vocabulary) and get the standard treatment: one practice lesson per new
@@ -79,7 +83,7 @@
    the same `nor`/`nor-nork` shape the learner already drilled in Units 1-2/
    4/10-11, so nothing here is a "new relation" in this section's sense (the
    full 6-person grid itself was already introduced for these verbs by Unit
-   7's Expansion).
+   5's Expansion).
 
    These extra lessons compound with the engine's per-lesson ramp (a lesson's
    first `BARE_FORM_ATTEMPTS` attempts stay multiple-choice/recognition-only,
@@ -120,14 +124,14 @@ here so they're decided once, deliberately, rather than discovered mid-build.
   `persons` filter applied in `generateQuestions`/`buildOptions`/
   `buildSpotErrorQuestion` (more code, but keeps `VERBS` tables complete from
   the start and is reusable for any future partial-grid lesson).
-- **Negation (`ez`) drills (Unit 6)** needed a sentence pattern this app
+- **Negation (`ez`) drills (Unit 7)** needed a sentence pattern this app
   didn't have: Basque negation moves the auxiliary in front of the
   participle/predicate (`Mutila etorri da` → `Mutila ez da etorri`), so it's
   not just "swap in a different conjugated form" — the *word order* changes.
   **Resolved**: implemented as a `negativeSentences` table (mirroring
   `pronounSentences`'s shape) plus `negative`/`type-negative` question kinds —
   see `docs/DECISIONS.md`'s "Implemented Unit 5" entry (predates this
-  redesign's renumbering; that unit is now Unit 6). **Refresh Gate C (Unit
+  redesign's renumbering; that unit is now Unit 7). **Refresh Gate C (Unit
   24)** drills the same "candidate full sentences, pick the right/wrong one"
   shape for NOR/NORI/NORK role-swaps instead of negation, and is expected to
   reuse this same question-kind machinery with a role-swapped sentence-pair
@@ -147,7 +151,7 @@ here so they're decided once, deliberately, rather than discovered mid-build.
   8 ("Looking Back I — I Was, I Had") despite riding `ukan`'s suffix family
   there too — see `docs/LANGUAGE_DECISIONS.md` for the deferral. Revisit if
   `jakin`'s past gap gets sourced.
-- **Unit 5's `ari` examples need at least one verb's imperfective participle
+- **Unit 6's `ari` examples need at least one verb's imperfective participle
   as vocabulary** before any concrete "I am doing X" sentence can be written —
   `jaten` (`jan`'s participle, Unit 10's verb) is the natural choice, since
   Unit 10 will teach `jan`'s full table anyway, so introducing its participle
@@ -182,14 +186,14 @@ Persons in scope throughout Phase I: **`ni` / `zu` / `hura`** only.
 | Unit | Focus | Payload | Persons | Ref | Data status |
 |---|---|---|---|---|---|
 | 4 | **Moving Around** — `joan` + `etorri` present | "I'm going to the beach." / "She's coming tomorrow." | ni/zu/hura: `noa`/`zoaz`/`doa`, `nator`/`zatoz`/`dator` | §6 | ✅ implemented |
-| 5 | **The Immediate Continuous** — `ari` + `izan` | "What are you doing?" (`Zer ari zara?`) / "I'm eating." (`Jaten ari naiz`) | reuses Unit 1's `izan` present table under `ari` | VERB_COVERAGE §5 | ✅ implemented — `jaten` (`jan`'s imperfective participle, Unit 10's verb) introduced here as a single fixed vocabulary item |
+| 5 | 🛡️ **Expansion — Bringing in the Plural** | "We are teachers." (`Irakasleak gara.`) / "You all are at home." (`Etxean zaudete.`) | gu/zuek/haiek: completes `izan`, `egon`, `ukan`, `joan`, `etorri`, `ikusi` | §1/§3/§6/§7 | ✅ implemented — zero new verbs; via a dedicated `ikusi-present-plural` lesson+review for `ikusi` alongside the rest. Per the Person-Expansion Rule, this is the *only* expansion pass; every verb from Unit 8 on starts at the full 6-person grid. Positioned right after Unit 4 (the earliest point every expanded verb exists) rather than at the end of Refresh Gate A, so e.g. `izan`'s `zarete` is drilled just one unit after `izan-present` |
+| 6 | **The Immediate Continuous** — `ari` + `izan` | "What are you doing?" (`Zer ari zara?`) / "I'm eating." (`Jaten ari naiz`) | reuses Unit 1's `izan` present table under `ari` | VERB_COVERAGE §5 | ✅ implemented — `jaten` (`jan`'s imperfective participle, Unit 10's verb) introduced here as a single fixed vocabulary item |
 
-### 🛡️ Refresh Gate A — The "Ez" Trap & Person Expansion
+### 🛡️ Refresh Gate A — The "Ez" Trap
 
 | Unit | Focus | Constraint | Notes |
 |---|---|---|---|
-| 6 | **REFRESH — The Inversion Matrix** | zero new verbs; negation only | Drills `ez` + auxiliary-fronting across Units 1–5's verbs (`Mutila etorri da` → `Mutila ez da etorri`). `ikusi` (Unit 3) has no `negativeSentences` — like `nahi`/`ari`, its auxiliary splits from the invariant participle under negation, out of scope for this exclusive-negation lesson. |
-| 7 | **Expansion — Bringing in the Plural** | zero new verbs; completes grids | Adds `gu`/`zuek`/`haiek` to `izan`, `egon`, `ukan`, `joan`, `etorri`, and `ikusi` (via a dedicated `ikusi-present-plural` lesson+review) — per the Person-Expansion Rule, this is the *only* expansion pass; every verb from Unit 8 on starts at the full 6-person grid |
+| 7 | **REFRESH — The Inversion Matrix** | zero new verbs; negation only | Drills `ez` + auxiliary-fronting across Units 1–6's verbs (`Mutila etorri da` → `Mutila ez da etorri`). `ikusi` (Unit 3) has no `negativeSentences` — like `nahi`/`ari`, its auxiliary splits from the invariant participle under negation, out of scope for this exclusive-negation lesson. |
 
 ---
 
