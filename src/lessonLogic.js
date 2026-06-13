@@ -210,6 +210,25 @@ export function getUnlockedLessonIds(lessons, progress) {
   return unlocked
 }
 
+// Every `{ verbId, tense }` a practice lesson before `upToLessonId` (in
+// `lessons` order) introduces — "what a learner reaching `upToLessonId` has
+// already seen", position-based like `getUnlockedLessonIds`. Review lessons
+// (no `verbId`/`tense` of their own) are skipped. Used to broaden the
+// cross-verb candidate pools (`getCrossVerbCandidates`,
+// `generateCrossVerbQuestions`, `generateCaseMixerQuestions`) beyond a small
+// review's own `sources` — since it only ever looks *before* `upToLessonId`,
+// it can't surface a verb/tense the learner hasn't reached yet (no `future`
+// spoilers in a `present`-tense review, etc.), even if that verb appears
+// again later under a different tense.
+export function getIntroducedSources(lessons, upToLessonId) {
+  const cutoff = lessons.findIndex((lesson) => lesson.id === upToLessonId)
+  const end = cutoff === -1 ? lessons.length : cutoff
+  return lessons
+    .slice(0, end)
+    .filter((lesson) => !lesson.review)
+    .map(({ verbId, tense }) => ({ verbId, tense }))
+}
+
 // The id of the lesson the learner most recently completed (by `lastPlayed`),
 // or `null` if no lesson has been attempted yet — used to scroll the home
 // screen to that lesson on initial load.
@@ -311,8 +330,19 @@ function agreementsCompatible(a, b) {
 // `extraCandidates` and from there into `buildOptions`. Only persons present
 // in `verb.conjugations[tense]` get an entry, and only if at least one
 // compatible sibling has a form for that person.
-export function getCrossVerbCandidates(verb, tense, sources, verbs) {
-  const siblings = sources.filter((source) => !(source.verbId === verb.id && source.tense === tense))
+//
+// `extraSources` (optional, same `{ verbId, tense }` shape as `sources` —
+// see `getIntroducedSources`) is a fallback pool for reviews whose own
+// `sources` are too few to give much variety (Delivery 4): merged in
+// alongside `sources`, deduped, and restricted to the same `tense` as this
+// candidate lookup (so a `present`-tense review never pulls in a sibling
+// verb's `past`/`future` forms as same-person distractors — that'd be a
+// tense mismatch on top of a verb mismatch, not the "right shape, wrong
+// verb" distractor this is meant to be).
+export function getCrossVerbCandidates(verb, tense, sources, verbs, extraSources = []) {
+  const known = new Set(sources.map((source) => `${source.verbId}:${source.tense}`))
+  const pool = [...sources, ...extraSources.filter((source) => source.tense === tense && !known.has(`${source.verbId}:${source.tense}`))]
+  const siblings = pool.filter((source) => !(source.verbId === verb.id && source.tense === tense))
   const candidates = {}
   for (const person of Object.keys(verb.conjugations[tense] ?? {})) {
     const forms = siblings
@@ -322,7 +352,7 @@ export function getCrossVerbCandidates(verb, tense, sources, verbs) {
         return siblingVerb.conjugations[siblingTense]?.[person]
       })
       .filter(Boolean)
-    if (forms.length > 0) candidates[person] = forms
+    if (forms.length > 0) candidates[person] = [...new Set(forms)]
   }
   return candidates
 }
@@ -529,8 +559,17 @@ export function generateQuestions(verb, tense, { noTyping = false, rounds = 1, i
 // source's own correct form plus 1+ siblings) — a source with no accepted
 // siblings for a given person (e.g. a single-source review, or one where
 // every sibling's agreement is rejected) simply contributes nothing.
-function collectCrossSourceCandidates(resolvedSources, personsFilter, agreementMatches) {
+//
+// `extraSiblingSources` (optional, `{ verb, tense }` shape like
+// `resolvedSources` — see `getIntroducedSources`) is Delivery 4's fallback
+// pool for reviews whose own `resolvedSources` are too few to produce much
+// variety: merged into the sibling pool (never as new anchors), deduped
+// against `resolvedSources`, and restricted to the same `tense` as the
+// anchor — same rationale as `getCrossVerbCandidates`'s `extraSources`.
+function collectCrossSourceCandidates(resolvedSources, personsFilter, agreementMatches, extraSiblingSources = []) {
   const candidates = []
+  const known = new Set(resolvedSources.map(({ verb, tense }) => `${verb.id}:${tense}`))
+  const extras = extraSiblingSources.filter(({ verb, tense }) => !known.has(`${verb.id}:${tense}`))
   for (const { verb, tense } of resolvedSources) {
     const sentences = verb.sentences?.[tense] ?? {}
     const persons = personsFilter ?? Object.keys(verb.conjugations[tense] ?? {})
@@ -538,13 +577,21 @@ function collectCrossSourceCandidates(resolvedSources, personsFilter, agreementM
       const sentence = sentences[person]
       const correct = verb.conjugations[tense]?.[person]
       if (!sentence || !correct) continue
-      const siblingForms = resolvedSources
-        .filter((sibling) => !(sibling.verb.id === verb.id && sibling.tense === tense))
+      const siblings = [
+        ...resolvedSources.filter((sibling) => !(sibling.verb.id === verb.id && sibling.tense === tense)),
+        ...extras.filter((sibling) => sibling.tense === tense),
+      ]
+      const siblingForms = siblings
         .filter((sibling) => agreementMatches(sibling.verb.agreement, verb.agreement))
         .map((sibling) => sibling.verb.conjugations[sibling.tense]?.[person])
         .filter(Boolean)
-      const options = [...new Set([correct, ...siblingForms])]
-      if (options.length < 2) continue
+      // Capped at 3 distractors (4 options total, including `correct`) — same
+      // ceiling as `buildOptions` — so Delivery 4's broader fallback pool
+      // widens *variety* (which siblings show up) without ever showing more
+      // options than a regular multiple-choice question.
+      const distractors = shuffle([...new Set(siblingForms)].filter((form) => form !== correct)).slice(0, 3)
+      if (distractors.length === 0) continue
+      const options = [correct, ...distractors]
       candidates.push({ verbId: verb.id, tense, person, sentence: pickVariant(sentence), correct, options })
     }
   }
@@ -589,13 +636,19 @@ export const CROSS_VERB_QUESTION_COUNT = 2
 // `resolvedSources` is the review's `{ verb, tense }` sources, already
 // resolved from `VERBS` (as `createExerciseState` produces). `persons`
 // (optional) restricts which grammatical persons are eligible, mirroring
-// `generateQuestions`'s `persons` filter. Up to `count` questions are
+// `generateQuestions`'s `persons` filter. `extraSiblingSources` (optional,
+// see `collectCrossSourceCandidates`) widens the sibling pool for reviews
+// with too few sources of their own (Delivery 4). Up to `count` questions are
 // returned, picked at random from every eligible (source, person)
 // combination — a review with too few eligible combinations (e.g. a
 // single-source review, where there are no siblings to choose between at
 // all) simply returns fewer, down to none.
-export function generateCrossVerbQuestions(resolvedSources, { persons: personsFilter, count = CROSS_VERB_QUESTION_COUNT } = {}) {
-  return pickCrossSourceQuestions(collectCrossSourceCandidates(resolvedSources, personsFilter, agreementsCompatible), count, 'verb-choice')
+export function generateCrossVerbQuestions(resolvedSources, { persons: personsFilter, count = CROSS_VERB_QUESTION_COUNT, extraSiblingSources = [] } = {}) {
+  return pickCrossSourceQuestions(
+    collectCrossSourceCandidates(resolvedSources, personsFilter, agreementsCompatible, extraSiblingSources),
+    count,
+    'verb-choice',
+  )
 }
 
 // Up to this many `kind: 'case-mixer'` questions (see
@@ -620,9 +673,9 @@ export const CASE_MIXER_QUESTION_COUNT = 1
 // subject. Reviews with no `nor`/`nor-nork` mix among their sources (or none
 // for the given `persons`) simply yield none, same graceful-degradation
 // pattern as `generateCrossVerbQuestions`.
-export function generateCaseMixerQuestions(resolvedSources, { persons: personsFilter, count = CASE_MIXER_QUESTION_COUNT } = {}) {
+export function generateCaseMixerQuestions(resolvedSources, { persons: personsFilter, count = CASE_MIXER_QUESTION_COUNT, extraSiblingSources = [] } = {}) {
   return pickCrossSourceQuestions(
-    collectCrossSourceCandidates(resolvedSources, personsFilter, (a, b) => !agreementsCompatible(a, b)),
+    collectCrossSourceCandidates(resolvedSources, personsFilter, (a, b) => !agreementsCompatible(a, b), extraSiblingSources),
     count,
     'case-mixer',
   )

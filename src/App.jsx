@@ -12,6 +12,7 @@ import {
   getCrossVerbCandidates,
   getExplanation,
   getEncouragement,
+  getIntroducedSources,
   getLastPlayedLessonId,
   getLocalDateString,
   pickEncouragementVariantIndex,
@@ -957,6 +958,11 @@ function createExerciseState(lesson, attempts, errorStats = {}) {
   const sources = lesson.sources ?? [{ verbId: lesson.verbId, tense: lesson.tense }]
   const noTyping = !lesson.review && attempts < NO_TYPING_ATTEMPTS
   const targetPerSource = TARGET_EXERCISE_COUNT / sources.length
+  // Reviews with fewer than 3 sources fall back to forms from verbs/tenses
+  // already introduced earlier in `LESSONS` (see `getIntroducedSources`) when
+  // widening the cross-verb candidate pools below — a 2-source review (e.g.
+  // `unit-1-review`) otherwise has only a single sibling to draw from.
+  const extraSources = lesson.review && sources.length < 3 ? getIntroducedSources(LESSONS, lesson.id) : []
   const questions = sources.flatMap(({ verbId, tense }) => {
     const verb = VERBS.find((v) => v.id === verbId)
     const personCount = (lesson.persons ?? Object.keys(verb.conjugations[tense])).length
@@ -965,7 +971,7 @@ function createExerciseState(lesson, attempts, errorStats = {}) {
     // for the same person (see `getCrossVerbCandidates`) — occasionally
     // offering a "right shape, wrong verb" option alongside the usual
     // same-table distractors.
-    const extraCandidates = lesson.review ? getCrossVerbCandidates(verb, tense, sources, VERBS) : undefined
+    const extraCandidates = lesson.review ? getCrossVerbCandidates(verb, tense, sources, VERBS, extraSources) : undefined
     return generateQuestions(verb, tense, {
       noTyping,
       rounds,
@@ -985,13 +991,18 @@ function createExerciseState(lesson, attempts, errorStats = {}) {
   // `generateCrossVerbQuestions`) — the deliberate, single-focus counterpart
   // to Delivery 1's occasional cross-verb distractor.
   const resolvedSources = sources.map(({ verbId, tense }) => ({ verb: VERBS.find((v) => v.id === verbId), tense }))
-  const crossVerbQuestions = lesson.review ? generateCrossVerbQuestions(resolvedSources, { persons: lesson.persons }) : []
+  const extraSiblingSources = extraSources.map(({ verbId, tense }) => ({ verb: VERBS.find((v) => v.id === verbId), tense }))
+  const crossVerbQuestions = lesson.review
+    ? generateCrossVerbQuestions(resolvedSources, { persons: lesson.persons, extraSiblingSources })
+    : []
   // Reviews whose sources mix `nor` and `nor-nork` verbs also get up to
   // `CASE_MIXER_QUESTION_COUNT` "which form matches this sentence's subject"
   // questions (see `generateCaseMixerQuestions`) — `verb-choice`'s mirror
   // image, framed around `-k` ergative-subject marking. Reviews with no such
   // mix simply get none.
-  const caseMixerQuestions = lesson.review ? generateCaseMixerQuestions(resolvedSources, { persons: lesson.persons }) : []
+  const caseMixerQuestions = lesson.review
+    ? generateCaseMixerQuestions(resolvedSources, { persons: lesson.persons, extraSiblingSources })
+    : []
   const allQuestions = shuffle([...questions, ...extraQuestions, ...crossVerbQuestions, ...caseMixerQuestions])
   return {
     queue: allQuestions,

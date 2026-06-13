@@ -8,6 +8,50 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-13 — Delivery 4 of the Exercise Variety Plan: broaden the cross-verb candidate pool for small reviews
+
+**Decision:** added `getIntroducedSources(lessons, upToLessonId)`
+(`lessonLogic.js`) — position-based like `getUnlockedLessonIds`, returning
+every practice lesson's `{ verbId, tense }` before `upToLessonId` in `LESSONS`
+order (review lessons skipped, since they have no `verbId`/`tense` of their
+own). Because it only looks *before* the review's own position, it's
+inherently spoiler-safe (task 4.3) — a verb's `future` form can't leak into a
+`present`-tense review if that verb's `future` lesson hasn't been reached yet.
+
+In `createExerciseState` (`App.jsx`), reviews with fewer than 3 sources
+(`unit-1-review`, `unit-3-review`, ...) compute this as `extraSources` and
+pass it through three places:
+- `getCrossVerbCandidates(verb, tense, sources, VERBS, extraSources)` — its
+  new 5th parameter, merged into the sibling pool for Delivery 1's
+  `extraCandidates`, deduped against `sources` and restricted to the same
+  `tense` as the lookup.
+- `generateCrossVerbQuestions`/`generateCaseMixerQuestions`'s new
+  `extraSiblingSources` option, threaded into
+  `collectCrossSourceCandidates`'s shared sibling pool with the same
+  dedup/same-tense rules.
+
+Reviews with 3+ sources are untouched — "this review = these sources" stays
+intact where there's already enough variety, per the plan's framing.
+
+**Option-count cap added as part of this delivery:**
+`collectCrossSourceCandidates` now caps every `verb-choice`/`case-mixer`
+question at 4 options (`correct` + up to 3 randomly-sampled distractors),
+matching `buildOptions`'s existing ceiling. Before Delivery 4, a 2-3-source
+review's sibling pool was small enough that this never mattered (capped
+naturally), but `unit-3-review`'s fallback pool (6 additional `present`-tense
+verbs) could otherwise produce 5+ option `case-mixer` questions — capping
+keeps every multiple-choice question's option count consistent regardless of
+how big the candidate pool gets.
+
+**Pilot:** `unit-1-review` (izan+egon) gets no new candidates — its 2 sources
+*are* the only two practice lessons before it, so `extraSources` dedupes to
+empty and Delivery 3's behaviour is unchanged. `unit-3-review` (joan+etorri,
+both `nor`) is the more useful case: `extraSources` picks up
+izan/egon/ukan/nahi/jakin/ikusi's `present` tables, so `verb-choice` options
+grow from 2 to 4 (izan/egon now compatible siblings) and `case-mixer` —
+previously empty, since joan/etorri are both `nor` — now fires using
+ukan/nahi/jakin/ikusi (`nor-nork`) as siblings.
+
 ## 2026-06-13 — Delivery 3 of the Exercise Variety Plan: `case-mixer` questions (mechanism only, Unit 24 deferred)
 
 **Decision:** added `generateCaseMixerQuestions` (`lessonLogic.js`) — Delivery
