@@ -81,6 +81,7 @@ export const TRANSLATIONS = {
     questionNegation: 'Which word completes the negative sentence?',
     questionTypeNegation: 'Type the word that completes the negative sentence.',
     questionVerbChoice: 'Which verb form fits this sentence?',
+    questionCaseMixer: "Which form matches this sentence's subject?",
     personNi: 'I',
     personHi: 'you (familiar)',
     personZu: 'you',
@@ -160,6 +161,10 @@ export const TRANSLATIONS = {
       "To say 'not', Basque puts 'ez' right before the verb — and 'ez {form}' moves to right after the subject, with the rest of the sentence following after it.",
     explanationVerbChoice:
       "'{form}' is the right form of '{verb}' for this sentence — the other option(s) are forms of a different verb, which wouldn't fit this sentence's structure.",
+    explanationCaseMixerErgative:
+      "'{form}' is right because this sentence's subject takes the '-k' ending (Nik, Zuk...) — '{verb}' marks its subject that way. The other option(s) belong to a verb whose subject takes no '-k', so they wouldn't fit this sentence.",
+    explanationCaseMixerAbsolutive:
+      "'{form}' is right because this sentence's subject takes no '-k' ending (Ni, Zu...) — '{verb}' doesn't mark its subject that way. The other option(s) belong to a verb whose subject takes '-k', so they wouldn't fit this sentence.",
   },
   es: {
     navLearn: 'Aprender',
@@ -212,6 +217,7 @@ export const TRANSLATIONS = {
     questionNegation: '¿Qué palabra completa la frase negativa?',
     questionTypeNegation: 'Escribe la palabra que completa la frase negativa.',
     questionVerbChoice: '¿Qué forma verbal completa esta frase?',
+    questionCaseMixer: '¿Qué forma corresponde al sujeto de esta frase?',
     personNi: 'yo',
     personHi: 'tú (familiar)',
     personZu: 'tú',
@@ -291,6 +297,10 @@ export const TRANSLATIONS = {
       "Para decir 'no', el euskera coloca 'ez' justo antes del verbo — y 'ez {form}' se desplaza justo después del sujeto, quedando el resto de la frase a continuación.",
     explanationVerbChoice:
       "'{form}' es la forma correcta de '{verb}' para esta frase — la(s) otra(s) opción(es) son formas de otro verbo, que no encajarían en la estructura de esta frase.",
+    explanationCaseMixerErgative:
+      "'{form}' es correcto porque el sujeto de esta frase lleva la terminación '-k' (Nik, Zuk...) — '{verb}' marca así su sujeto. La(s) otra(s) opción(es) pertenecen a un verbo cuyo sujeto no lleva '-k', así que no encajarían en esta frase.",
+    explanationCaseMixerAbsolutive:
+      "'{form}' es correcto porque el sujeto de esta frase no lleva la terminación '-k' (Ni, Zu...) — '{verb}' no marca así su sujeto. La(s) otra(s) opción(es) pertenecen a un verbo cuyo sujeto lleva '-k', así que no encajarían en esta frase.",
   },
   eu: {
     navLearn: 'Ikasi',
@@ -343,6 +353,7 @@ export const TRANSLATIONS = {
     questionNegation: 'Zein hitzek osatzen du esaldi ezeztatzailea?',
     questionTypeNegation: 'Idatzi esaldi ezeztatzailea osatzen duen hitza.',
     questionVerbChoice: 'Zein aditz-formak osatzen du esaldi hau?',
+    questionCaseMixer: 'Zein formak dagokio esaldi honetako subjektuari?',
     personNi: 'ni',
     personHi: 'hi (hurbila)',
     personZu: 'zu',
@@ -422,5 +433,9 @@ export const TRANSLATIONS = {
       "Ezeztatzeko, euskarak 'ez' aditzaren aurrean jartzen du — eta 'ez {form}' subjektuaren ondora pasatzen da, gainerako esaldia horren ondoren utziz.",
     explanationVerbChoice:
       "'{form}' da '{verb}'-en forma egokia esaldi honetarako — beste aukera(k) beste aditz baten formak dira, eta ez dute esaldi honen egiturarekin bat egiten.",
+    explanationCaseMixerErgative:
+      "'{form}' zuzena da, esaldi honetako subjektuak '-k' atzizkia hartzen duelako (Nik, Zuk...) — '{verb}'-ek horrela markatzen du bere subjektua. Beste aukera(k) '-k' gabeko subjektua duen aditz batenak dira, eta ez dute esaldi honetan tokirik.",
+    explanationCaseMixerAbsolutive:
+      "'{form}' zuzena da, esaldi honetako subjektuak '-k' atzizkirik ez duelako (Ni, Zu...) — '{verb}'-ek ez du horrela markatzen bere subjektua. Beste aukera(k) '-k' atzizkia duen subjektua eskatzen duen aditz batenak dira, eta ez dute esaldi honetan tokirik.",
   },
 }
