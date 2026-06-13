@@ -8,6 +8,22 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-13 — Audited cross-verb distractors for "multiple valid options"
+
+Following up on the Exercise Variety Plan (Deliveries 1-4, shipped earlier the
+same day): learners reported multiple-choice questions where more than one
+option is independently grammatical for the shown sentence (just with a
+different meaning), since `agreementsCompatible`'s NOR/NOR-NORK check doesn't
+catch this — Basque's transitive clause frame is shared across semantically
+unrelated `nor-nork` verbs (`ukan`/`nahi`/`jakin`/`eduki`/`jan`/`edan`/`erosi`/
+`ikusi`), so their forms are often mutually substitutable without becoming
+ungrammatical. Confirmed concretely in `unit-2-review` (`ukan`'s and `nahi`'s
+`ni`-present sentence lists share the literal string `'Nik liburu bat ___.'`,
+with two different correct answers: `dut`/`nahi dut`) and `unit-8-review`
+(`eduki` vs `ukan`/`ikusi` via Delivery 4's fallback pool). No remediation
+chosen yet — findings and possible directions logged in
+`docs/AMBIGUOUS_DISTRACTORS_AUDIT.md`.
+
 ## 2026-06-13 — Sign-in form's "invalid email" error was masking unrelated server errors
 
 A learner with a perfectly valid email saw "Enter a valid email address" when
