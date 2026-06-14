@@ -8,6 +8,24 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-14 — #121: `kind: 'form'` questions are exempt from `extraCandidates`
+
+**Decision:** `generateQuestions`'s `default` (`kind: 'form'`) branch in
+`lessonLogic.js` no longer passes `extraCandidates` into `buildOptions` — its
+options are always same-table "other person" distractors only, same as
+`pronoun`/`type-pronoun`.
+
+**Why:** `kind: 'form'` is a bare "Zein forma da zuzena?" question with no
+sentence. The `nor`-cluster "safe to mix" reasoning in
+`docs/AMBIGUOUS_DISTRACTORS_AUDIT.md` relied on each verb's *sentence* having
+a distinguishing adjunct that makes a sibling verb's form read as wrong in
+context — with no sentence at all, a sibling's same-person form (e.g.
+`egon`'s `gaude`/`dago` offered for an `izan` "gu"/"hura" question) is simply
+a second correct answer, not a distractor. The audit's "where this is not a
+problem" section exempted `pronoun`/`type-pronoun` for the same reason but
+missed `form` — this closes that gap. `sentence`/`negative` keep
+`extraCandidates`, since they have a sentence to anchor the judgment.
+
 ## 2026-06-14 — Scroll-to-last-lesson aligns to top instead of centering
 
 **Decision:** Changed the initial-load scroll behavior in `HomeScreen`

@@ -708,6 +708,23 @@ describe('generateQuestions', () => {
       })
     })
 
+    it('never includes a cross-verb candidate in kind: "form" questions', () => {
+      // `verb` has no sentences, so every question is `kind: 'form'` — a bare
+      // "which form is correct?" question with no sentence to make a sibling
+      // verb's same-person form (e.g. `egon`'s `gaude`/`dago`) read as wrong.
+      vi.spyOn(Math, 'random').mockReturnValue(0)
+
+      const extraCandidates = { ni: ['nago'], hi: ['hago'], hura: ['dago'], gu: ['gaude'], zuek: ['zaudete'], haiek: ['daude'] }
+      const questions = generateQuestions(verb, 'present', { extraCandidates })
+
+      questions.forEach((question) => {
+        expect(question.kind).toBe('form')
+        question.options.forEach((option) => {
+          expect(Object.values(verb.conjugations.present)).toContain(option)
+        })
+      })
+    })
+
     it('ignores extra candidates for pronoun questions', () => {
       const verbWithPronouns = {
         ...verb,
