@@ -8,6 +8,33 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-14 — #122: per-sentence `validFor` tag replaces pair-level cross-candidate exclusions
+
+**Decision:** `docs/SENTENCE_FRAMES.md` documents a new `validFor: string[]`
+field on each `sentences`/`pronounSentences`/`negativeSentences` variant
+(`{ text, validFor }`, replacing today's bare string/string-array shape,
+with bare strings still accepted as `validFor: []`). It lists sibling verb
+ids whose same-person form would *also* correctly complete that exact
+sentence — `[]` means no `agreementsCompatible` sibling fits, the
+maximally-discriminating case. One field is consumed identically by both
+`extraCandidates` (`sentence`/`negative`) and `verb-choice`/`case-mixer`
+candidate pools — the old `'always'`/`'verb-choice-only'` two-tier split in
+`CROSS_CANDIDATE_EXCLUSIONS` is dropped (it had zero `'verb-choice-only'`
+entries, so nothing is lost).
+
+**Why:** correctness depends on the *sentence*, not the *verb pair* —
+`ukan`'s `'Nik liburu bat ___.'` ("book") makes `nahi`/`eduki`/`ikusi`'s forms
+all valid, but a hypothetical `'Nik denbora ___.'` ("time") wouldn't, even
+though both are `ukan` sentences and both pairs are `'always'`-excluded today.
+Conversely, `etorri`'s `'Hura orain ___.'` has *no* sentence-level fix at the
+pair level — every `nor`-cluster verb's form fits because the sentence itself
+has no discriminating adjunct; `validFor` makes "this sentence can't usefully
+discriminate" an explicit, taggable state (and #125 rewrites that sentence
+rather than tagging it). Pure design issue — no `src/` runtime or data changes
+here; #123 reimplements `lessonLogic.js` around this schema, #124 backfills
+`VERBS`, #125 fixes `etorri`'s frameless variants, #126 retires the
+pair-level system.
+
 ## 2026-06-14 — #121: `kind: 'form'` questions are exempt from `extraCandidates`
 
 **Decision:** `generateQuestions`'s `default` (`kind: 'form'`) branch in
