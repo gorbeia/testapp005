@@ -321,7 +321,7 @@ function LessonNode({ lesson, locked, stars, onSelect }) {
       disabled={locked}
       onClick={() => onSelect(lesson.id)}
       style={{ minHeight: 48 }}
-      className={`flex w-full items-center gap-4 rounded-2xl border-2 p-4 text-left transition active:scale-[0.98] ${
+      className={`flex w-full scroll-mt-20 items-center gap-4 rounded-2xl border-2 p-4 text-left transition active:scale-[0.98] ${
         locked
           ? 'cursor-not-allowed border-gray-200 bg-gray-100 opacity-60'
           : 'border-gray-200 bg-white hover:border-green-400 hover:shadow-md'
@@ -1221,7 +1221,10 @@ function HomeScreen({
       if (scrollTarget.type === 'restore') {
         window.scrollTo(0, scrollTarget.y)
       } else if (scrollTarget.type === 'lastLesson') {
-        document.getElementById(`lesson-${scrollTarget.lessonId}`)?.scrollIntoView?.({ block: 'center' })
+        // `block: 'start'` (with the `scroll-mt-20` on `LessonNode` clearing the
+        // sticky header) leaves the rest of the viewport free to show the
+        // upcoming lessons below, rather than centering and hiding them.
+        document.getElementById(`lesson-${scrollTarget.lessonId}`)?.scrollIntoView?.({ block: 'start' })
       }
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
