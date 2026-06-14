@@ -8,6 +8,55 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-14 — #124: backfilled `validFor` across the 12 in-review verbs
+
+**Decision:** Tagged every `sentences.present`/`negativeSentences.present`
+variant (reused by reference for `future`/`past`) for the `nor` cluster
+(`izan`, `egon`, `joan`, `etorri`) and the `nor-nork` cluster (`ukan`, `nahi`,
+`jakin`, `eduki`, `ikusi`, `jan`, `edan`, `erosi`) with `validFor: string[]`,
+per `docs/SENTENCE_FRAMES.md`'s schema and the Tier-1 "both valid" pairs
+catalogued in `docs/AMBIGUOUS_DISTRACTORS_AUDIT.md`. Added a coverage test
+(`src/logic.test.js`, "validFor coverage for the in-review nor/nor-nork
+clusters") asserting every variant for these 12 verbs carries a `validFor`
+array, so a future sentence added without one fails fast instead of silently
+falling back to "exclude everything".
+
+**Per-object reasoning is documented inline in `src/data/verbs.js`** next to
+each verb's `sentences`/`negativeSentences` block — summary:
+- `izan`/`egon`: predicate-nominal/locative frames are verb-specific →
+  `validFor: []` (nothing else fits).
+- `joan`/`etorri`: the allative `-ra` frames are mutually valid (opposite
+  directions of the same journey) → each tags the other (`['etorri']` /
+  `['joan']`).
+- `ukan`/`nahi`/`jakin`/`eduki`/`ikusi`/`jan`/`edan`/`erosi`: tagged per
+  object category (concrete/purchasable objects pull in the whole
+  possession/desire/perception/purchase cluster; food vs. drink objects pull
+  in `jan`/`edan`/`erosi` per the confirmed jan↔erosi and edan↔erosi overlaps,
+  while the confirmed-wrong jan↔edan, ukan↔jakin, and eduki↔jakin pairs stay
+  untagged). `jakin` only admits siblings where the object reads as a
+  "knowable fact" (`erantzuna`/`egia`/`sekretua`/`bidea`), never `ukan`/`eduki`
+  (eduki↔jakin and ukan↔jakin are genuinely wrong, not just untagged by
+  oversight).
+
+**Frameless variants flagged, not fixed (deferred to #125):** `etorri` has 20
+present-tense variants (18 `sentences` + 2 `negativeSentences`) with no
+discriminating adjunct — `'Hura orain ___.'` ("She ___ now") is satisfied by
+`izan`, `egon`, or `joan` just as much as `etorri`. These are tagged
+`validFor: ['izan', 'egon', 'joan']` (every other `nor`-cluster sibling) —
+honest (literally true) and functionally equivalent to the unsafe
+no-`validFor` default, but *explicit*, so the coverage test can't mistake them
+for an oversight. `ikusi`'s `'Zuk/Zuek hori ___?'` ("Do you ___ that?") is the
+`nor-nork` analogue — `"hori"` is a fully generic demonstrative that every
+other `nor-nork` sibling's form also completes, so it's tagged with all seven
+siblings for the same reason. #125 should give these sentences a
+discriminating object/adjunct.
+
+**Why:** Restores cross-verb distractor variety (case-mixer/verb-choice
+questions) for these 12 verbs' reviews now that #123 made `validFor` the
+single chokepoint — without this backfill, every sentence was an untagged
+bare string and `extraCandidates`/`crossVerbQuestions`/`caseMixerQuestions`
+were empty everywhere.
+
 ## 2026-06-14 — #123: `lessonLogic.js` rebuilt around per-sentence `validFor`
 
 **Decision:** Implemented #122's schema. `normalizeSentence(value)` turns a
