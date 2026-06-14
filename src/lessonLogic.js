@@ -309,7 +309,15 @@ export function mergeSyncPayload(local, cloud) {
 // once, or once the lesson itself has — so a lesson the learner already
 // completed never re-locks just because a new lesson (e.g. a unit review)
 // gets inserted before it later.
-export function getUnlockedLessonIds(lessons, progress) {
+//
+// Undocumented `?dev=unlock-all` query param bypasses this entirely and
+// unlocks every lesson — for trying out/demoing any lesson without grinding
+// through the journey. No UI toggle by design.
+export function getUnlockedLessonIds(lessons, progress, search = window.location.search) {
+  if (new URLSearchParams(search).get('dev') === 'unlock-all') {
+    return new Set(lessons.map((lesson) => lesson.id))
+  }
+
   const unlocked = new Set()
   lessons.forEach((lesson, index) => {
     const previous = lessons[index - 1]
