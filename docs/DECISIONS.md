@@ -8,6 +8,20 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-14 — `?dev=unlock-all` query param bypasses lesson unlocking
+
+**Decision:** `getUnlockedLessonIds` (`lessonLogic.js`) now takes an optional
+`search` param (defaulting to `window.location.search`) — if it contains
+`dev=unlock-all`, every lesson in `LESSONS` is returned as unlocked,
+short-circuiting the normal "previous lesson attempted" check entirely.
+
+**Why:** useful for trying out/demoing any lesson (e.g. ones deep in the
+journey) without grinding through prerequisites first. A query param needs no
+routing/server config (unlike a path segment, which would 404 on GitHub
+Pages without a SPA fallback) and requires no UI — kept deliberately
+undocumented/no toggle, since it's a developer convenience, not a feature for
+learners.
+
 ## 2026-06-13 — Fixed a pre-existing crash in cross-verb question generation for "pool"-shaped lessons
 
 While building #113's triage script (below), `getIntroducedSources` crashed

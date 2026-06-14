@@ -467,6 +467,14 @@ describe('getUnlockedLessonIds', () => {
 
     expect(getUnlockedLessonIds(lessons, progress)).toEqual(new Set(['a', 'b', 'c']))
   })
+
+  it('unlocks every lesson when `?dev=unlock-all` is present, regardless of progress', () => {
+    expect(getUnlockedLessonIds(lessons, {}, '?dev=unlock-all')).toEqual(new Set(['a', 'b', 'c']))
+  })
+
+  it('ignores unrelated query params', () => {
+    expect(getUnlockedLessonIds(lessons, {}, '?dev=something-else')).toEqual(new Set(['a']))
+  })
 })
 
 describe('getIntroducedSources', () => {
