@@ -8,6 +8,20 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-14 — Scroll-to-last-lesson aligns to top instead of centering
+
+**Decision:** Changed the initial-load scroll behavior in `HomeScreen`
+(`App.jsx`) from `scrollIntoView({ block: 'center' })` to
+`scrollIntoView({ block: 'start' })`, and added a `scroll-mt-20` class to
+`LessonNode`'s button so the target lesson lands just below the sticky
+header instead of underneath it.
+
+**Why:** Centering the last-played lesson left only ~1-2 upcoming lessons
+visible below the fold, often with one of them clipped. Aligning it to the
+top of the viewport (with the scroll margin to clear the header) surfaces
+several more upcoming lessons — including locked/"pending" ones — giving
+the learner a preview of what's coming next.
+
 ## 2026-06-14 — `?dev=unlock-all` query param bypasses lesson unlocking
 
 **Decision:** `getUnlockedLessonIds` (`lessonLogic.js`) now takes an optional
