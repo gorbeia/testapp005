@@ -8,6 +8,19 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-14 — Answer feedback triggers a short vibration via the Vibration API
+
+**Decision:** Added `src/hapticsUtils.js` (`vibrateCorrect`/`vibrateIncorrect`),
+called from `submitAnswer` in `App.jsx` right after `isCorrect` is computed —
+a short single pulse for correct, a slightly longer triple pulse for
+incorrect. Both just call `navigator.vibrate?.(...)`, so on iOS Safari and
+other browsers without the Vibration API it's a silent no-op.
+
+**Why:** Cheap, immediate tactile feedback that reinforces the
+correct/incorrect visual state, Duolingo-style. No settings toggle was added —
+if it turns out to be annoying on some devices, a mute/haptics setting can be
+added later, but it didn't seem worth the UI for a first cut.
+
 ## 2026-06-14 — #123: `lessonLogic.js` rebuilt around per-sentence `validFor`
 
 **Decision:** Implemented #122's schema. `normalizeSentence(value)` turns a

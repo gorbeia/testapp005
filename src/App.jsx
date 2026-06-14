@@ -35,6 +35,7 @@ import { JOURNEY_TRANSLATIONS } from './i18n/journeyTranslations'
 import { LanguageProvider, useLanguage } from './i18n/LanguageContext'
 import { trackEvent } from './analytics'
 import { getShareUrl, shareContent } from './shareUtils'
+import { vibrateCorrect, vibrateIncorrect } from './hapticsUtils'
 import { VERBS, TENSE_META, TYPE_META, AGREEMENT_META, DIALECT_LABELS, PERSON_LABEL_KEYS } from './data/verbs'
 import { LESSONS } from './data/lessons'
 
@@ -1956,6 +1957,8 @@ function ExerciseScreen({ lesson, attempts, errorStats, onExit, onComplete, canS
     // milestone streak doesn't *always* trigger a nudge — it should read as
     // an occasional surprise, not a mechanical popup.
     const isCorrect = isAnswerCorrect(value, question.correct)
+    if (isCorrect) vibrateCorrect()
+    else vibrateIncorrect()
     const milestone = isCorrect ? getStreakEncouragement(state.streak + 1) : null
     const showEncouragement = milestone !== null && canShowStreakNudge && rollStreakNudgeChance()
     setStreakEncouragement(showEncouragement ? milestone : null)
