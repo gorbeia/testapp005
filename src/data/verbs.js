@@ -73,30 +73,56 @@ export const VERBS = [
         haiek: 'izango dira',
       },
     },
+    // Every variant here is a predicate-nominal/adjective frame ("Ni
+    // irakaslea ___." = "I am a teacher", "Txakurra handia ___." = "The dog is
+    // big") — none of egon/joan/etorri's locative/allative forms fit a bare
+    // predicate this way, so every variant gets `validFor: []` (#124).
     sentences: {
       present: {
-        ni: ['Ni irakaslea ___.', 'Ni ikaslea ___.', 'Ni aita ___.', 'Ni turista ___.', 'Ni langilea ___.'],
-        zu: ['Zu ikaslea ___.', 'Zu irakaslea ___.', 'Zu ama ___.', 'Zu gidaria ___.', 'Zu auzokidea ___.'],
-        hura: [
-          'Hura medikua ___.',
-          'Hura zuzendaria ___.',
-          'Hura aitona ___.',
-          'Hura bidaiaria ___.',
-          'Hura saltzailea ___.',
-          'Mikel irakaslea ___.',
-          'Ane ikaslea ___.',
-          'Txakurra handia ___.',
-          'Katua beltza ___.',
-          'Autoa berria ___.',
+        ni: [
+          { text: 'Ni irakaslea ___.', validFor: [] },
+          { text: 'Ni ikaslea ___.', validFor: [] },
+          { text: 'Ni aita ___.', validFor: [] },
+          { text: 'Ni turista ___.', validFor: [] },
+          { text: 'Ni langilea ___.', validFor: [] },
         ],
-        gu: ['Gu ikasleak ___.', 'Gu irakasleak ___.', 'Gu lagunak ___.', 'Gu langileak ___.'],
-        zuek: ['Zuek ikasleak ___.', 'Zuek irakasleak ___.', 'Zuek auzokideak ___.', 'Zuek gidariak ___.'],
+        zu: [
+          { text: 'Zu ikaslea ___.', validFor: [] },
+          { text: 'Zu irakaslea ___.', validFor: [] },
+          { text: 'Zu ama ___.', validFor: [] },
+          { text: 'Zu gidaria ___.', validFor: [] },
+          { text: 'Zu auzokidea ___.', validFor: [] },
+        ],
+        hura: [
+          { text: 'Hura medikua ___.', validFor: [] },
+          { text: 'Hura zuzendaria ___.', validFor: [] },
+          { text: 'Hura aitona ___.', validFor: [] },
+          { text: 'Hura bidaiaria ___.', validFor: [] },
+          { text: 'Hura saltzailea ___.', validFor: [] },
+          { text: 'Mikel irakaslea ___.', validFor: [] },
+          { text: 'Ane ikaslea ___.', validFor: [] },
+          { text: 'Txakurra handia ___.', validFor: [] },
+          { text: 'Katua beltza ___.', validFor: [] },
+          { text: 'Autoa berria ___.', validFor: [] },
+        ],
+        gu: [
+          { text: 'Gu ikasleak ___.', validFor: [] },
+          { text: 'Gu irakasleak ___.', validFor: [] },
+          { text: 'Gu lagunak ___.', validFor: [] },
+          { text: 'Gu langileak ___.', validFor: [] },
+        ],
+        zuek: [
+          { text: 'Zuek ikasleak ___.', validFor: [] },
+          { text: 'Zuek irakasleak ___.', validFor: [] },
+          { text: 'Zuek auzokideak ___.', validFor: [] },
+          { text: 'Zuek gidariak ___.', validFor: [] },
+        ],
         haiek: [
-          'Haiek medikuak ___.',
-          'Haiek zuzendariak ___.',
-          'Haiek bidaiariak ___.',
-          'Mikel eta Ane ikasleak ___.',
-          'Txakurrak eta katuak handiak ___.',
+          { text: 'Haiek medikuak ___.', validFor: [] },
+          { text: 'Haiek zuzendariak ___.', validFor: [] },
+          { text: 'Haiek bidaiariak ___.', validFor: [] },
+          { text: 'Mikel eta Ane ikasleak ___.', validFor: [] },
+          { text: 'Txakurrak eta katuak handiak ___.', validFor: [] },
         ],
       },
     },
@@ -113,9 +139,9 @@ export const VERBS = [
     },
     negativeSentences: {
       present: {
-        ni: 'Ni ez ___ irakaslea.',
-        zu: 'Zu ez ___ ikaslea.',
-        hura: 'Hura ez ___ medikua.',
+        ni: { text: 'Ni ez ___ irakaslea.', validFor: [] },
+        zu: { text: 'Zu ez ___ ikaslea.', validFor: [] },
+        hura: { text: 'Hura ez ___ medikua.', validFor: [] },
       },
     },
   },
@@ -145,30 +171,56 @@ export const VERBS = [
         haiek: 'egongo dira',
       },
     },
+    // Every variant here is a locative `-an`/`-en` frame ("Ni etxean ___." =
+    // "I am at home") — izan doesn't take a bare locative this way, and
+    // joan/etorri need an allative (`-ra`/`-tik`), not a locative, so every
+    // variant gets `validFor: []` (#124, see docs/SENTENCE_FRAMES.md worked
+    // example 1).
     sentences: {
       present: {
-        ni: ['Ni etxean ___.', 'Ni ikasgelan ___.', 'Ni Bilbon ___.', 'Ni lanean ___.'],
-        zu: ['Zu kalean ___.', 'Zu liburutegian ___.', 'Zu sukaldean ___.', 'Zu Donostian ___.', 'Zu dendan ___.'],
-        hura: [
-          'Hura eskolan ___.',
-          'Hura patioan ___.',
-          'Hura logelan ___.',
-          'Hura Gasteizen ___.',
-          'Hura kalean ___.',
-          'Mikel eskolan ___.',
-          'Ane etxean ___.',
-          'Txakurra parkean ___.',
-          'Katua sukaldean ___.',
-          'Liburua mahai gainean ___.',
+        ni: [
+          { text: 'Ni etxean ___.', validFor: [] },
+          { text: 'Ni ikasgelan ___.', validFor: [] },
+          { text: 'Ni Bilbon ___.', validFor: [] },
+          { text: 'Ni lanean ___.', validFor: [] },
         ],
-        gu: ['Gu etxean ___.', 'Gu lanean ___.', 'Gu Bilbon ___.', 'Gu liburutegian ___.'],
-        zuek: ['Zuek kalean ___.', 'Zuek dendan ___.', 'Zuek Donostian ___.', 'Zuek ikasgelan ___.'],
+        zu: [
+          { text: 'Zu kalean ___.', validFor: [] },
+          { text: 'Zu liburutegian ___.', validFor: [] },
+          { text: 'Zu sukaldean ___.', validFor: [] },
+          { text: 'Zu Donostian ___.', validFor: [] },
+          { text: 'Zu dendan ___.', validFor: [] },
+        ],
+        hura: [
+          { text: 'Hura eskolan ___.', validFor: [] },
+          { text: 'Hura patioan ___.', validFor: [] },
+          { text: 'Hura logelan ___.', validFor: [] },
+          { text: 'Hura Gasteizen ___.', validFor: [] },
+          { text: 'Hura kalean ___.', validFor: [] },
+          { text: 'Mikel eskolan ___.', validFor: [] },
+          { text: 'Ane etxean ___.', validFor: [] },
+          { text: 'Txakurra parkean ___.', validFor: [] },
+          { text: 'Katua sukaldean ___.', validFor: [] },
+          { text: 'Liburua mahai gainean ___.', validFor: [] },
+        ],
+        gu: [
+          { text: 'Gu etxean ___.', validFor: [] },
+          { text: 'Gu lanean ___.', validFor: [] },
+          { text: 'Gu Bilbon ___.', validFor: [] },
+          { text: 'Gu liburutegian ___.', validFor: [] },
+        ],
+        zuek: [
+          { text: 'Zuek kalean ___.', validFor: [] },
+          { text: 'Zuek dendan ___.', validFor: [] },
+          { text: 'Zuek Donostian ___.', validFor: [] },
+          { text: 'Zuek ikasgelan ___.', validFor: [] },
+        ],
         haiek: [
-          'Haiek eskolan ___.',
-          'Haiek kalean ___.',
-          'Gurasoak etxean ___.',
-          'Mikel eta Ane patioan ___.',
-          'Liburuak mahai gainean ___.',
+          { text: 'Haiek eskolan ___.', validFor: [] },
+          { text: 'Haiek kalean ___.', validFor: [] },
+          { text: 'Gurasoak etxean ___.', validFor: [] },
+          { text: 'Mikel eta Ane patioan ___.', validFor: [] },
+          { text: 'Liburuak mahai gainean ___.', validFor: [] },
         ],
       },
     },
@@ -185,9 +237,9 @@ export const VERBS = [
     },
     negativeSentences: {
       present: {
-        ni: 'Ni ez ___ etxean.',
-        zu: 'Zu ez ___ kalean.',
-        hura: 'Hura ez ___ eskolan.',
+        ni: { text: 'Ni ez ___ etxean.', validFor: [] },
+        zu: { text: 'Zu ez ___ kalean.', validFor: [] },
+        hura: { text: 'Hura ez ___ eskolan.', validFor: [] },
       },
     },
   },
@@ -362,21 +414,53 @@ export const VERBS = [
         haiek: 'joango dira',
       },
     },
+    // Every variant here is an allative `-ra` frame ("Ni hondartzara ___." =
+    // "I go to the beach"). `etorri`'s same-person form ("Ni hondartzara
+    // nator" = "I'm coming to the beach") is an equally natural, differently-
+    // meant completion of the same allative — confirmed Tier-2 finding
+    // (docs/SENTENCE_FRAMES.md worked example 2) — so every variant gets
+    // `validFor: ['etorri']`. izan/egon don't take an allative this way, so
+    // they're never listed.
     sentences: {
       present: {
-        ni: ['Ni hondartzara ___.', 'Ni eskolara ___.', 'Ni lanera ___.', 'Ni dendara ___.'],
-        zu: ['Zu eskolara ___.', 'Zu hondartzara ___.', 'Zu lanera ___.', 'Zu liburutegira ___.'],
-        hura: [
-          'Hura lanera ___.',
-          'Hura eskolara ___.',
-          'Hura hondartzara ___.',
-          'Mikel dendara ___.',
-          'Ane unibertsitatera ___.',
-          'Txakurra parkera ___.',
+        ni: [
+          { text: 'Ni hondartzara ___.', validFor: ['etorri'] },
+          { text: 'Ni eskolara ___.', validFor: ['etorri'] },
+          { text: 'Ni lanera ___.', validFor: ['etorri'] },
+          { text: 'Ni dendara ___.', validFor: ['etorri'] },
         ],
-        gu: ['Gu hondartzara ___.', 'Gu lanera ___.', 'Gu eskolara ___.', 'Gu dendara ___.'],
-        zuek: ['Zuek eskolara ___.', 'Zuek hondartzara ___.', 'Zuek lanera ___.', 'Zuek parkera ___.'],
-        haiek: ['Haiek lanera ___.', 'Haiek eskolara ___.', 'Haiek hondartzara ___.', 'Mikel eta Ane dendara ___.'],
+        zu: [
+          { text: 'Zu eskolara ___.', validFor: ['etorri'] },
+          { text: 'Zu hondartzara ___.', validFor: ['etorri'] },
+          { text: 'Zu lanera ___.', validFor: ['etorri'] },
+          { text: 'Zu liburutegira ___.', validFor: ['etorri'] },
+        ],
+        hura: [
+          { text: 'Hura lanera ___.', validFor: ['etorri'] },
+          { text: 'Hura eskolara ___.', validFor: ['etorri'] },
+          { text: 'Hura hondartzara ___.', validFor: ['etorri'] },
+          { text: 'Mikel dendara ___.', validFor: ['etorri'] },
+          { text: 'Ane unibertsitatera ___.', validFor: ['etorri'] },
+          { text: 'Txakurra parkera ___.', validFor: ['etorri'] },
+        ],
+        gu: [
+          { text: 'Gu hondartzara ___.', validFor: ['etorri'] },
+          { text: 'Gu lanera ___.', validFor: ['etorri'] },
+          { text: 'Gu eskolara ___.', validFor: ['etorri'] },
+          { text: 'Gu dendara ___.', validFor: ['etorri'] },
+        ],
+        zuek: [
+          { text: 'Zuek eskolara ___.', validFor: ['etorri'] },
+          { text: 'Zuek hondartzara ___.', validFor: ['etorri'] },
+          { text: 'Zuek lanera ___.', validFor: ['etorri'] },
+          { text: 'Zuek parkera ___.', validFor: ['etorri'] },
+        ],
+        haiek: [
+          { text: 'Haiek lanera ___.', validFor: ['etorri'] },
+          { text: 'Haiek eskolara ___.', validFor: ['etorri'] },
+          { text: 'Haiek hondartzara ___.', validFor: ['etorri'] },
+          { text: 'Mikel eta Ane dendara ___.', validFor: ['etorri'] },
+        ],
       },
     },
     pronouns: { ni: 'Ni', zu: 'Zu', hura: 'Hura', gu: 'Gu', zuek: 'Zuek', haiek: 'Haiek' },
@@ -392,9 +476,9 @@ export const VERBS = [
     },
     negativeSentences: {
       present: {
-        ni: 'Ni ez ___ hondartzara.',
-        zu: 'Zu ez ___ eskolara.',
-        hura: 'Hura ez ___ lanera.',
+        ni: { text: 'Ni ez ___ hondartzara.', validFor: ['etorri'] },
+        zu: { text: 'Zu ez ___ eskolara.', validFor: ['etorri'] },
+        hura: { text: 'Hura ez ___ lanera.', validFor: ['etorri'] },
       },
     },
   },
@@ -426,14 +510,60 @@ export const VERBS = [
         haiek: 'etorriko dira',
       },
     },
+    // Allative `-ra` variants ("Ni etxera ___." = "I'm coming home") get
+    // `validFor: ['joan']` — joan's same-person form ("Ni etxera noa" = "I'm
+    // going home") is an equally natural, opposite-direction completion of
+    // the same allative (docs/SENTENCE_FRAMES.md worked example 2;
+    // "Ane etxera ___." is the confirmed Tier-2 spot-check). The bare
+    // temporal ("orain"/"gaur"/"bihar") variants have no destination,
+    // location, or predicate at all — da/dago/doa/dator are *all* grammatical
+    // completions (worked example 3), so there's no useful `validFor` to
+    // write; `validFor: ['izan', 'egon', 'joan']` lists every other
+    // `nor`-cluster sibling as an explicit, honest "still ambiguous, every
+    // sibling fits" marker (same exclude-everything effect as the untagged
+    // default, but distinguishable from "forgot to tag" by the coverage
+    // test). Flagged for #125, which rewrites these to carry a discriminating
+    // adjunct — see docs/DECISIONS.md.
     sentences: {
       present: {
-        ni: ['Ni etxera ___.', 'Ni eskolara ___.', 'Ni orain ___.', 'Ni gaur ___.'],
-        zu: ['Zu bihar ___.', 'Zu etxera ___.', 'Zu orain ___.', 'Zu gaur ___.'],
-        hura: ['Hura orain ___.', 'Hura etxera ___.', 'Hura bihar ___.', 'Mikel gaur ___.', 'Ane etxera ___.', 'Txakurra orain ___.'],
-        gu: ['Gu etxera ___.', 'Gu orain ___.', 'Gu gaur ___.', 'Gu bihar ___.'],
-        zuek: ['Zuek bihar ___.', 'Zuek etxera ___.', 'Zuek orain ___.', 'Zuek gaur ___.'],
-        haiek: ['Haiek orain ___.', 'Haiek etxera ___.', 'Haiek bihar ___.', 'Mikel eta Ane gaur ___.'],
+        ni: [
+          { text: 'Ni etxera ___.', validFor: ['joan'] },
+          { text: 'Ni eskolara ___.', validFor: ['joan'] },
+          { text: 'Ni orain ___.', validFor: ['izan', 'egon', 'joan'] },
+          { text: 'Ni gaur ___.', validFor: ['izan', 'egon', 'joan'] },
+        ],
+        zu: [
+          { text: 'Zu bihar ___.', validFor: ['izan', 'egon', 'joan'] },
+          { text: 'Zu etxera ___.', validFor: ['joan'] },
+          { text: 'Zu orain ___.', validFor: ['izan', 'egon', 'joan'] },
+          { text: 'Zu gaur ___.', validFor: ['izan', 'egon', 'joan'] },
+        ],
+        hura: [
+          { text: 'Hura orain ___.', validFor: ['izan', 'egon', 'joan'] },
+          { text: 'Hura etxera ___.', validFor: ['joan'] },
+          { text: 'Hura bihar ___.', validFor: ['izan', 'egon', 'joan'] },
+          { text: 'Mikel gaur ___.', validFor: ['izan', 'egon', 'joan'] },
+          { text: 'Ane etxera ___.', validFor: ['joan'] },
+          { text: 'Txakurra orain ___.', validFor: ['izan', 'egon', 'joan'] },
+        ],
+        gu: [
+          { text: 'Gu etxera ___.', validFor: ['joan'] },
+          { text: 'Gu orain ___.', validFor: ['izan', 'egon', 'joan'] },
+          { text: 'Gu gaur ___.', validFor: ['izan', 'egon', 'joan'] },
+          { text: 'Gu bihar ___.', validFor: ['izan', 'egon', 'joan'] },
+        ],
+        zuek: [
+          { text: 'Zuek bihar ___.', validFor: ['izan', 'egon', 'joan'] },
+          { text: 'Zuek etxera ___.', validFor: ['joan'] },
+          { text: 'Zuek orain ___.', validFor: ['izan', 'egon', 'joan'] },
+          { text: 'Zuek gaur ___.', validFor: ['izan', 'egon', 'joan'] },
+        ],
+        haiek: [
+          { text: 'Haiek orain ___.', validFor: ['izan', 'egon', 'joan'] },
+          { text: 'Haiek etxera ___.', validFor: ['joan'] },
+          { text: 'Haiek bihar ___.', validFor: ['izan', 'egon', 'joan'] },
+          { text: 'Mikel eta Ane gaur ___.', validFor: ['izan', 'egon', 'joan'] },
+        ],
       },
     },
     pronouns: { ni: 'Ni', zu: 'Zu', hura: 'Hura', gu: 'Gu', zuek: 'Zuek', haiek: 'Haiek' },
@@ -449,9 +579,9 @@ export const VERBS = [
     },
     negativeSentences: {
       present: {
-        ni: 'Ni ez ___ etxera.',
-        zu: 'Zu ez ___ bihar.',
-        hura: 'Hura ez ___ orain.',
+        ni: { text: 'Ni ez ___ etxera.', validFor: ['joan'] },
+        zu: { text: 'Zu ez ___ bihar.', validFor: ['izan', 'egon', 'joan'] },
+        hura: { text: 'Hura ez ___ orain.', validFor: ['izan', 'egon', 'joan'] },
       },
     },
   },
