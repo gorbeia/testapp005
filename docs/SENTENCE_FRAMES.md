@@ -80,36 +80,57 @@ sentences: {
   indirection layer with its own maintenance burden for no benefit).
 - The sentence's own verb is never listed in its own `validFor` — it's
   implicit (the `correct` answer is always the source verb's form).
-- **Empty/absent `validFor` (`[]`) is the strong, useful, common case**: no
+- **`validFor: []` (explicitly empty) is the strong, useful, common case**: no
   `agreementsCompatible` sibling's same-person form is an acceptable
   completion of this exact sentence, so it's safe to draw cross-verb
   candidates from *and* a maximally-discriminating `verb-choice`/`case-mixer`
-  source.
+  source. (An *absent* `validFor` — a not-yet-tagged bare string — means the
+  opposite; see "Migration compatibility" below.)
 - `pronounSentences`/`negativeSentences` entries get the same `{ text,
   validFor }` shape, for consistency and so the contract is uniform across all
   three sentence-bearing fields — see "Fields that don't consume `validFor`
   yet" below for why `pronounSentences`' tag is currently inert.
 
-### Migration compatibility (bare strings)
+### Migration compatibility (bare strings) — and why "absent" ≠ `[]`
 
 #123 lands the candidate-selection rewrite *before* #124 backfills `validFor`
 across `VERBS` — so for a transitional period, most variants are still bare
-strings. The reimplementation must treat a bare string identically to `{
-text: <string>, validFor: [] }`:
+strings (no `validFor` key at all). Critically, **an absent `validFor` is not
+the same as `validFor: []`** — they're opposite ends of the exclusion range:
+
+- **`validFor: []`** (explicitly tagged, empty) — "no sibling is *also*
+  valid here". Nothing gets excluded: every `agreementsCompatible` sibling's
+  same-person form remains eligible as a distractor / `verb-choice` option.
+  This is the maximally-discriminating, fully-vetted state (see `egon`'s
+  `'Ni etxean ___.'` worked example below).
+- **`validFor` absent** (a bare string, or an object with no `validFor` key —
+  not yet reached by #124's backfill) — "not yet vetted". The **safe
+  default** treats this as if *every* `agreementsCompatible` sibling were
+  listed, i.e. **all** cross-verb candidates are excluded, falling back to
+  same-table-only distractors (the pre-Exercise-Variety-Plan floor). Never
+  "fail open" into offering an unvetted sibling form just because nothing
+  says it's invalid yet.
 
 ```js
 function normalizeSentence(value) {
-  if (typeof value === 'string') return { text: value, validFor: [] }
-  return value
+  if (value === undefined) return undefined
+  if (typeof value === 'string') return { text: value } // validFor: absent
+  return value // { text, validFor } — validFor may or may not be present
+}
+
+// Candidate filter: `validFor` is the *picked* variant's tag (possibly
+// `undefined`). `candidates` is this person's agreement-compatible sibling
+// forms (see `getCrossVerbCandidates`).
+function filterExtraCandidates(candidates, validFor) {
+  if (!candidates || validFor === undefined) return []
+  return candidates.filter(({ verbId }) => !validFor.includes(verbId)).map((c) => c.form)
 }
 ```
 
-This is also exactly the epic's required **safe default**: an untagged
-variant behaves as `validFor: []`, i.e. *no* cross-verb candidates — never
-"fail open" into offering an untagged sibling form. `pickVariant` should pick
-a variant (string or object) and the caller normalizes it, so `pickVariant`
-itself doesn't need to know about the new shape — see the call-site list
-below for where normalization needs to be inserted.
+`pickVariant` should pick a variant (string or object) and the caller
+normalizes it, so `pickVariant` itself doesn't need to know about the new
+shape — see the call-site list below for where normalization needs to be
+inserted.
 
 ### Alternative considered and rejected: parallel `sentenceValidFor` lookup
 
@@ -216,7 +237,7 @@ carry-over:
 
 The 3 pairs #114 checked and confirmed **genuinely wrong** (`ukan`↔`jakin`,
 `eduki`↔`jakin`, `jan`↔`edan`) need no `validFor` entries — #124 doesn't need
-to re-litigate these; they simply stay untagged (`validFor: []`, the safe
+to re-litigate these; they simply stay untagged (`validFor` absent, the safe
 default) for the relevant sentences.
 
 A pair not in `CROSS_CANDIDATE_EXCLUSIONS` at all (e.g. anything in the `nor`
