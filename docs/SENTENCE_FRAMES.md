@@ -392,11 +392,15 @@ filtering site:
 ### `src/logic.test.js`
 
 Many fixtures construct `sentences: { present: { ni: 'Ni irakaslea ___.' } }`
-as bare strings. Per "Migration compatibility" above, bare strings remain
-valid (`validFor: []`) indefinitely, so **existing fixtures don't need to
-change** for #123 to land — #123's new tests add `{ text, validFor }`
-fixtures alongside, and #124's backfill is a separate, incremental data change
-to `src/data/verbs.js`.
+as bare strings. Per "Migration compatibility" above, a bare string now means
+`validFor` *absent* (the safe default, excluding all cross-verb candidates) —
+**not** `validFor: []`. Fixtures whose tests assert non-empty
+`extraCandidates`/`crossVerbQuestions`/`caseMixerQuestions` results need their
+`sentences` updated to `{ text, validFor: [] }` for #123 to land without
+regressing those assertions; fixtures that don't depend on cross-verb
+candidates can stay as bare strings. #123's new tests additionally add
+`{ text, validFor: [...] }` fixtures to cover the exclusion cases, and #124's
+backfill is a separate, incremental data change to `src/data/verbs.js`.
 
 ## Follow-up issues
 

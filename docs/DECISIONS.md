@@ -8,6 +8,37 @@ Decisions about the Basque conjugation research behind
 `CONJUGATIONS.md`/`VERB_COVERAGE.md` live in `docs/LANGUAGE_DECISIONS.md`
 instead.
 
+## 2026-06-14 — #123: `lessonLogic.js` rebuilt around per-sentence `validFor`
+
+**Decision:** Implemented #122's schema. `normalizeSentence(value)` turns a
+bare string into `{ text }` (`validFor: undefined`) and passes a `{ text,
+validFor }` object through unchanged. `filterExtraCandidates(candidates,
+validFor)` is the single chokepoint both `extraCandidates` (the `sentence`/
+`negative` cases in `generateQuestions`) and `collectCrossSourceCandidates`
+(`verb-choice`/`case-mixer`) go through to decide which sibling forms survive.
+`getCrossVerbCandidates` now returns `{ [person]: Array<{ verbId, form }> }`
+(was `string[]`) so callers have the `verbId` to check against a sentence's
+`validFor`. `sentenceTemplatesCollide`, `CROSS_CANDIDATE_EXCLUSIONS`, and
+`isCrossCandidateExcluded` are removed — their job is now done per-sentence by
+`validFor`.
+
+**Semantics (correcting #122's entry below, which had this backwards):**
+`validFor` *absent* (a not-yet-tagged bare string) is the safe default and
+excludes every sibling; `validFor: []` is the vetted, maximally-permissive
+state and excludes nothing; `validFor: ['x', ...]` excludes only those
+siblings. #122's entry below says "bare strings still accepted as
+`validFor: []`" — that was an error (echoed, inconsistently, in #123's own
+issue body). The implemented behaviour follows #122's design-doc prose and
+#123's algorithm spec (point 2), and `docs/SENTENCE_FRAMES.md` has been
+corrected to match.
+
+**Why:** Until #124 backfills `validFor` across `VERBS`, every real sentence
+is still an untagged bare string, so `extraCandidates`/`crossVerbQuestions`/
+`caseMixerQuestions` are now empty everywhere (verified across all 26 reviews:
+0 cross-verb/case-mixer questions, no question with fewer than 2 options) —
+expected and temporary, the safe default working as designed. #124 restores
+variety by tagging real sentences.
+
 ## 2026-06-14 — #122: per-sentence `validFor` tag replaces pair-level cross-candidate exclusions
 
 **Decision:** `docs/SENTENCE_FRAMES.md` documents a new `validFor: string[]`
