@@ -716,11 +716,14 @@ function buildSpotErrorQuestion(table, sentences, personsWithSentences, person) 
 //
 // `extraCandidates` (optional, `{ [person]: string[] }` — see
 // `getCrossVerbCandidates`) widens `buildOptions`'s distractor pool for the
-// `sentence`/`negative`/`form` kinds, which all draw their options from
-// `verb.conjugations[tense]`. Not used for `pronoun`, whose options come from
-// a different table (`verb.pronouns`) that cross-verb conjugated forms
-// wouldn't belong in. Defaults to no extra candidates (the original
-// same-table-only behaviour).
+// `sentence`/`negative` kinds, which draw their options from
+// `verb.conjugations[tense]` and have a sentence that can make a sibling
+// verb's same-person form read as genuinely wrong. Not used for `pronoun`,
+// whose options come from a different table (`verb.pronouns`) that
+// cross-verb conjugated forms wouldn't belong in, nor for `form`
+// (bare "which form is correct?" questions have no sentence to anchor a
+// sibling verb's form as wrong — see `docs/DECISIONS.md`). Defaults to no
+// extra candidates (the original same-table-only behaviour).
 //
 // `verbs` (optional, the full `VERBS` list) lets `hasAmbiguousTypedForm` rule
 // out `type-verb`/`type-negative` for a person whose form is a "particle +
@@ -787,7 +790,7 @@ export function generateQuestions(verb, tense, { noTyping = false, rounds = 1, i
       case 'type-negative':
         return { ...source, kind: 'type-negative', person, sentence: negativeSentence, correct: table[person] }
       default: {
-        const { correct, options } = buildOptions(table, persons, person, extra)
+        const { correct, options } = buildOptions(table, persons, person)
         return { ...source, kind: 'form', person, correct, options }
       }
     }
