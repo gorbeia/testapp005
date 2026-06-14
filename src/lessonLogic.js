@@ -451,66 +451,6 @@ export function agreementsCompatible(a, b) {
   return a.includes('nork') === b.includes('nork')
 }
 
-// Layer 2b/3 of `docs/AMBIGUOUS_DISTRACTORS_AUDIT.md` (#114): curated pairs
-// where `agreementsCompatible` and `sentenceTemplatesCollide` aren't enough —
-// two verbs share the same `nor-nork` "Subject(-k) [Object] Verb" frame
-// closely enough that *either*'s form reads as a valid (if differently-meant)
-// completion of the other's sentence, even when the sentence *text* differs
-// (so `sentenceTemplatesCollide` doesn't catch it). `siblingVerbId` is
-// excluded from `verbId`'s cross-candidate pool:
-// - `'always'` — excluded from `getCrossVerbCandidates`'s `extraCandidates`
-//   *and* `collectCrossSourceCandidates`'s `verb-choice`/`case-mixer` pools.
-// - `'verb-choice-only'` — still allowed as a same-table-style distractor in
-//   `extraCandidates`, but excluded from `verb-choice`/`case-mixer` (where
-//   "which verb fits this sentence" *is* the whole question, so any
-//   also-valid sibling makes it unanswerable).
-//
-// Confirmed pairs so far (see `docs/CROSS_CANDIDATE_REVIEW.md` for the full
-// triage; pair-level verdicts recorded in `docs/DECISIONS.md`):
-// - `ukan`/`nahi` ("have" vs "want" — #112 already excludes their one
-//   *literal* shared sentence for `ni`/present; this pair-level entry
-//   additionally covers other persons/templates, e.g. `nahi`'s "Katuak esne
-//   pixka bat ___." accepting `ukan`'s `du` as "the cat has some milk",
-//   equally valid alongside the intended `nahi du` "the cat wants some milk").
-// - `eduki`/`ukan` — near-synonyms ("to have/hold" vs "to have"),
-//   interchangeable in any `nor-nork` possession sentence.
-// - `eduki`/`ikusi`, `ukan`/`ikusi`, `jakin`/`ikusi`, `ikusi`/`nahi` — "see X"
-//   is a sensible alternate reading of most concrete-object sentences used
-//   for `eduki`/`ukan`/`jakin`/`nahi`.
-// - `jakin`/`nahi` — "know X" / "want X" both read sensibly for the same
-//   object sentences.
-// - `eduki`/`nahi` — "hold X" / "want X", both sensible.
-// - `jan`/`erosi`, `edan`/`erosi` — "eat/drink X" vs "buy X" are both
-//   sensible for the same food/drink object.
-// - `joan`/`etorri` (`nor`-only, not `nor-nork`) — same allative adjunct,
-//   opposite direction ("Ane etxera doa" "Ane is going home" vs "Ane etxera
-//   dator" "Ane is coming home") — both grammatical, different meaning.
-//
-// Checked and NOT excluded (substitution reads as genuinely odd/wrong, so
-// remains a useful distractor): `ukan`/`jakin` ("Anek auto bat daki" — "Anek
-// knows a car" — doesn't make sense), `eduki`/`jakin` ("...eskuan daki" —
-// "...knows in hand" — doesn't make sense), `jan`/`edan` ("Anek entsalada
-// edango du" — "Anek will drink salad" — doesn't make sense).
-const CROSS_CANDIDATE_EXCLUSIONS = {
-  ukan: { nahi: 'always', eduki: 'always', ikusi: 'always' },
-  nahi: { ukan: 'always', jakin: 'always', ikusi: 'always', eduki: 'always' },
-  eduki: { ukan: 'always', ikusi: 'always', nahi: 'always' },
-  ikusi: { ukan: 'always', eduki: 'always', jakin: 'always', nahi: 'always' },
-  jakin: { nahi: 'always', ikusi: 'always' },
-  jan: { erosi: 'always' },
-  erosi: { jan: 'always', edan: 'always' },
-  edan: { erosi: 'always' },
-  joan: { etorri: 'always' },
-  etorri: { joan: 'always' },
-}
-
-export function isCrossCandidateExcluded(verbId, siblingVerbId, context) {
-  const entry = CROSS_CANDIDATE_EXCLUSIONS[verbId]?.[siblingVerbId]
-  if (!entry) return false
-  if (entry === 'always') return true
-  return entry === 'verb-choice-only' && context !== 'extra-candidates'
-}
-
 // Whether `verb`'s `[tense][person]` form is a "particle + auxiliary"
 // compound (e.g. `nahi`'s `nahi dut`) whose trailing word is *itself* a
 // complete, correct form of some other agreement-compatible verb for the same
@@ -534,37 +474,18 @@ function hasAmbiguousTypedForm(verb, tense, person, verbs) {
   )
 }
 
-// Whether `verbA`'s and `verbB`'s `sentences[tense][person]` entries share a
-// literal template string (accounting for either side being an array of
-// phrasing variants — see `pickVariant`). When two `agreementsCompatible`
-// verbs happen to use the *exact same sentence* for a person (e.g. `ukan` and
-// `nahi` both have `'Nik liburu bat ___.'` for `ni`/present —
-// `docs/AMBIGUOUS_DISTRACTORS_AUDIT.md`), each verb's correct form is *also* a
-// correct completion of the other's sentence — offering one as a distractor
-// in the other's question would mean two of the options are both right, just
-// with different meanings. This only catches that specific, mechanically
-// detectable case (identical sentence text); broader semantic overlaps where
-// the sentence text *differs* but both completions still read as valid are
-// out of scope here (see `docs/AMBIGUOUS_DISTRACTORS_AUDIT.md`'s remediation
-// directions).
-function sentenceTemplatesCollide(verbA, tenseA, verbB, tenseB, person) {
-  const a = verbA.sentences?.[tenseA]?.[person]
-  const b = verbB.sentences?.[tenseB]?.[person]
-  if (!a || !b) return false
-  const templatesA = Array.isArray(a) ? a : [a]
-  const templatesB = Array.isArray(b) ? b : [b]
-  return templatesA.some((template) => templatesB.includes(template))
-}
-
 // For a review lesson's source `{ verbId, tense }` (already resolved to
 // `verb`), collects each grammatical person's conjugated form from the
 // review's *other* sources (`sources`, the full resolved list including this
 // one) — restricted to sources whose verb has compatible subject-marking (see
 // `agreementsCompatible`) — as extra distractor candidates. Returns
-// `{ [person]: string[] }`, passed through to `generateQuestions`'s
-// `extraCandidates` and from there into `buildOptions`. Only persons present
-// in `verb.conjugations[tense]` get an entry, and only if at least one
-// compatible sibling has a form for that person.
+// `{ [person]: Array<{ verbId, form }> }`, passed through to
+// `generateQuestions`'s `extraCandidates`; `filterExtraCandidates` then narrows
+// each person's list down to the forms a given sentence's `validFor` tag (see
+// `docs/SENTENCE_FRAMES.md`) allows, before handing the survivors to
+// `buildOptions`. Only persons present in `verb.conjugations[tense]` get an
+// entry, and only if at least one compatible sibling has a form for that
+// person.
 //
 // `extraSources` (optional, same `{ verbId, tense }` shape as `sources` —
 // see `getIntroducedSources`) is a fallback pool for reviews whose own
@@ -584,12 +505,11 @@ export function getCrossVerbCandidates(verb, tense, sources, verbs, extraSources
       .map(({ verbId, tense: siblingTense }) => {
         const siblingVerb = verbs.find((v) => v.id === verbId)
         if (!siblingVerb || !agreementsCompatible(siblingVerb.agreement, verb.agreement)) return null
-        if (sentenceTemplatesCollide(verb, tense, siblingVerb, siblingTense, person)) return null
-        if (isCrossCandidateExcluded(verb.id, siblingVerb.id, 'extra-candidates')) return null
-        return siblingVerb.conjugations[siblingTense]?.[person]
+        const form = siblingVerb.conjugations[siblingTense]?.[person]
+        return form ? { verbId: siblingVerb.id, form } : null
       })
       .filter(Boolean)
-    if (forms.length > 0) candidates[person] = [...new Set(forms)]
+    if (forms.length > 0) candidates[person] = forms
   }
   return candidates
 }
@@ -602,6 +522,36 @@ export function getCrossVerbCandidates(verb, tense, sources, verbs, extraSources
 // is returned as-is.
 export function pickVariant(value) {
   return Array.isArray(value) ? value[Math.floor(Math.random() * value.length)] : value
+}
+
+// A sentence-bearing entry (`sentences`/`pronounSentences`/`negativeSentences`
+// `[tense][person]`, after `pickVariant`) is either a bare string — untagged,
+// pre-`validFor` migration (see `docs/SENTENCE_FRAMES.md`) — or a
+// `{ text, validFor }` object. Normalizes either shape to `{ text, validFor }`
+// so callers can read `.text` uniformly; a bare string normalizes to
+// `validFor: undefined` (the "not yet vetted" state — see
+// `filterExtraCandidates`). `undefined` (no sentence for this person) passes
+// through unchanged, so callers can keep using its truthiness to detect that.
+export function normalizeSentence(value) {
+  if (value === undefined) return undefined
+  if (typeof value === 'string') return { text: value }
+  return value
+}
+
+// Narrows a person's cross-verb candidates (`Array<{ verbId, form }>` from
+// `getCrossVerbCandidates`/`collectCrossSourceCandidates`'s sibling pool, or
+// `undefined` if there are none) down to the forms allowed to appear as
+// distractors alongside a sentence with the given `validFor` tag — see
+// `docs/SENTENCE_FRAMES.md`:
+//   - `validFor` absent (untagged, not yet vetted) — the safe default: exclude
+//     every sibling, returning `[]`.
+//   - `validFor: []` (explicitly empty, vetted) — exclude nothing: every
+//     candidate's form stays eligible.
+//   - `validFor: [...verbIds]` — exclude only the listed siblings (their form
+//     would *also* correctly complete this exact sentence).
+export function filterExtraCandidates(candidates, validFor) {
+  if (!candidates || validFor === undefined) return []
+  return candidates.filter(({ verbId }) => !validFor.includes(verbId)).map(({ form }) => form)
 }
 
 // Builds a "spot the error" question: four fully filled-in example sentences —
@@ -623,7 +573,7 @@ function buildSpotErrorQuestion(table, sentences, personsWithSentences, person) 
   const items = candidates.map((candidate, index) => {
     const isWrong = index === wrongIndex
     const form = isWrong ? table[shuffle(personsWithSentences.filter((other) => other !== candidate))[0]] : table[candidate]
-    return { person: candidate, sentence: pickVariant(sentences[candidate]).replace('___', form) }
+    return { person: candidate, sentence: normalizeSentence(pickVariant(sentences[candidate])).text.replace('___', form) }
   })
   return {
     kind: 'spot-error',
@@ -714,16 +664,20 @@ function buildSpotErrorQuestion(table, sentences, personsWithSentences, person) 
 // lesson whose table only ever had that many persons. Defaults to every key in
 // the table (the original behaviour).
 //
-// `extraCandidates` (optional, `{ [person]: string[] }` — see
+// `extraCandidates` (optional, `{ [person]: Array<{ verbId, form }> }` — see
 // `getCrossVerbCandidates`) widens `buildOptions`'s distractor pool for the
 // `sentence`/`negative` kinds, which draw their options from
 // `verb.conjugations[tense]` and have a sentence that can make a sibling
-// verb's same-person form read as genuinely wrong. Not used for `pronoun`,
-// whose options come from a different table (`verb.pronouns`) that
-// cross-verb conjugated forms wouldn't belong in, nor for `form`
-// (bare "which form is correct?" questions have no sentence to anchor a
-// sibling verb's form as wrong — see `docs/DECISIONS.md`). Defaults to no
-// extra candidates (the original same-table-only behaviour).
+// verb's same-person form read as genuinely wrong. Each kind narrows its
+// person's candidates via `filterExtraCandidates` against that *specific*
+// sentence's `validFor` tag (see `docs/SENTENCE_FRAMES.md`) — so an untagged
+// sentence contributes no extra candidates (the safe default), while a
+// `validFor: []` sentence admits all of them. Not used for `pronoun`, whose
+// options come from a different table (`verb.pronouns`) that cross-verb
+// conjugated forms wouldn't belong in, nor for `form` (bare "which form is
+// correct?" questions have no sentence to anchor a sibling verb's form as
+// wrong — see `docs/DECISIONS.md`). Defaults to no extra candidates (the
+// original same-table-only behaviour).
 //
 // `verbs` (optional, the full `VERBS` list) lets `hasAmbiguousTypedForm` rule
 // out `type-verb`/`type-negative` for a person whose form is a "particle +
@@ -742,9 +696,9 @@ export function generateQuestions(verb, tense, { noTyping = false, rounds = 1, i
   const usedKinds = new Map()
 
   function buildQuestion(person) {
-    const sentence = pickVariant(sentences[person])
-    const pronounSentence = verb.pronouns && pronounSentences[person]
-    const negativeSentence = pickVariant(negativeSentences[person])
+    const sentence = normalizeSentence(pickVariant(sentences[person]))
+    const pronounSentence = verb.pronouns && normalizeSentence(pronounSentences[person])
+    const negativeSentence = normalizeSentence(pickVariant(negativeSentences[person]))
     const ambiguousTyping = hasAmbiguousTypedForm(verb, tense, person, verbs)
     const availableKinds =
       includeNegation && negativeSentence
@@ -766,29 +720,29 @@ export function generateQuestions(verb, tense, { noTyping = false, rounds = 1, i
     used.add(kind)
     usedKinds.set(person, used)
 
-    const extra = extraCandidates?.[person]
-
     switch (kind) {
       case 'sentence': {
+        const extra = filterExtraCandidates(extraCandidates?.[person], sentence.validFor)
         const { correct, options } = buildOptions(table, persons, person, extra)
-        return { ...source, kind: 'sentence', person, sentence, correct, options }
+        return { ...source, kind: 'sentence', person, sentence: sentence.text, correct, options }
       }
       case 'type-verb':
-        return { ...source, kind: 'type-verb', person, sentence, correct: table[person] }
+        return { ...source, kind: 'type-verb', person, sentence: sentence.text, correct: table[person] }
       case 'spot-error':
         return { ...source, ...buildSpotErrorQuestion(table, sentences, personsWithSentences, person) }
       case 'pronoun': {
         const { correct, options } = buildOptions(verb.pronouns, persons, person)
-        return { ...source, kind: 'pronoun', person, sentence: pronounSentence, correct, options }
+        return { ...source, kind: 'pronoun', person, sentence: pronounSentence.text, correct, options }
       }
       case 'type-pronoun':
-        return { ...source, kind: 'type-pronoun', person, sentence: pronounSentence, correct: verb.pronouns[person] }
+        return { ...source, kind: 'type-pronoun', person, sentence: pronounSentence.text, correct: verb.pronouns[person] }
       case 'negative': {
+        const extra = filterExtraCandidates(extraCandidates?.[person], negativeSentence.validFor)
         const { correct, options } = buildOptions(table, persons, person, extra)
-        return { ...source, kind: 'negative', person, sentence: negativeSentence, correct, options }
+        return { ...source, kind: 'negative', person, sentence: negativeSentence.text, correct, options }
       }
       case 'type-negative':
-        return { ...source, kind: 'type-negative', person, sentence: negativeSentence, correct: table[person] }
+        return { ...source, kind: 'type-negative', person, sentence: negativeSentence.text, correct: table[person] }
       default: {
         const { correct, options } = buildOptions(table, persons, person)
         return { ...source, kind: 'form', person, correct, options }
@@ -802,11 +756,15 @@ export function generateQuestions(verb, tense, { noTyping = false, rounds = 1, i
 // Shared by `generateCrossVerbQuestions` and `generateCaseMixerQuestions`:
 // for every (source, person) with both a `sentences[tense][person]` and a
 // `conjugations[tense][person]`, collects the other sources' same-person
-// forms that `agreementMatches` accepts as siblings, and keeps the
-// combination only if that yields at least 2 distinct option values (the
+// forms that `agreementMatches` accepts as siblings *and* that the anchor
+// sentence's `validFor` tag (see `docs/SENTENCE_FRAMES.md`, via
+// `filterExtraCandidates`) doesn't exclude — an untagged sentence excludes all
+// of them (the safe default), while `validFor: []` excludes none — and keeps
+// the combination only if that yields at least 2 distinct option values (the
 // source's own correct form plus 1+ siblings) — a source with no accepted
-// siblings for a given person (e.g. a single-source review, or one where
-// every sibling's agreement is rejected) simply contributes nothing.
+// siblings for a given person (e.g. a single-source review, one where every
+// sibling's agreement is rejected, or an untagged sentence) simply
+// contributes nothing.
 //
 // `extraSiblingSources` (optional, `{ verb, tense }` shape like
 // `resolvedSources` — see `getIntroducedSources`) is Delivery 4's fallback
@@ -822,19 +780,21 @@ function collectCrossSourceCandidates(resolvedSources, personsFilter, agreementM
     const sentences = verb.sentences?.[tense] ?? {}
     const persons = personsFilter ?? Object.keys(verb.conjugations[tense] ?? {})
     for (const person of persons) {
-      const sentence = sentences[person]
+      const sentence = normalizeSentence(pickVariant(sentences[person]))
       const correct = verb.conjugations[tense]?.[person]
       if (!sentence || !correct) continue
       const siblings = [
         ...resolvedSources.filter((sibling) => !(sibling.verb.id === verb.id && sibling.tense === tense)),
         ...extras.filter((sibling) => sibling.tense === tense),
       ]
-      const siblingForms = siblings
+      const siblingCandidates = siblings
         .filter((sibling) => agreementMatches(sibling.verb.agreement, verb.agreement))
-        .filter((sibling) => !sentenceTemplatesCollide(verb, tense, sibling.verb, sibling.tense, person))
-        .filter((sibling) => !isCrossCandidateExcluded(verb.id, sibling.verb.id, 'verb-choice'))
-        .map((sibling) => sibling.verb.conjugations[sibling.tense]?.[person])
+        .map((sibling) => {
+          const form = sibling.verb.conjugations[sibling.tense]?.[person]
+          return form ? { verbId: sibling.verb.id, form } : null
+        })
         .filter(Boolean)
+      const siblingForms = filterExtraCandidates(siblingCandidates, sentence.validFor)
       // Capped at 3 distractors (4 options total, including `correct`) — same
       // ceiling as `buildOptions` — so Delivery 4's broader fallback pool
       // widens *variety* (which siblings show up) without ever showing more
@@ -842,7 +802,7 @@ function collectCrossSourceCandidates(resolvedSources, personsFilter, agreementM
       const distractors = shuffle([...new Set(siblingForms)].filter((form) => form !== correct)).slice(0, 3)
       if (distractors.length === 0) continue
       const options = [correct, ...distractors]
-      candidates.push({ verbId: verb.id, tense, person, sentence: pickVariant(sentence), correct, options })
+      candidates.push({ verbId: verb.id, tense, person, sentence: sentence.text, correct, options })
     }
   }
   return candidates
