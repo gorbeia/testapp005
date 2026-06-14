@@ -22,6 +22,49 @@ Pages without a SPA fallback) and requires no UI — kept deliberately
 undocumented/no toggle, since it's a developer convenience, not a feature for
 learners.
 
+## 2026-06-14 — #114: pair-level triage of Tier 1 + `joan`↔`etorri`, expanded `CROSS_CANDIDATE_EXCLUSIONS`
+
+Following the `ukan`↔`nahi` fix (below), the maintainer reviewed one
+representative example sentence per remaining `docs/CROSS_CANDIDATE_TRIAGE_PRIORITY.md`
+Tier 1 pair plus the flagged `joan`↔`etorri` (Tier 2) — a pair-level review
+rather than ticking all ~2100 individual `docs/CROSS_CANDIDATE_REVIEW.md`
+entries, since `CROSS_CANDIDATE_EXCLUSIONS` operates at pair granularity and a
+verdict for one example sentence generalizes to every tense/person/template
+for that pair.
+
+**Confirmed "both valid", added to `CROSS_CANDIDATE_EXCLUSIONS`** (all
+`'always'`, both directions): `eduki`↔`ukan` ("have/hold" vs "have" —
+maintainer: "interchangeable"), `eduki`↔`ikusi`, `ukan`↔`ikusi`,
+`jakin`↔`ikusi`, `ikusi`↔`nahi`, `jakin`↔`nahi`, `eduki`↔`nahi`, `jan`↔`erosi`,
+`edan`↔`erosi` (consumption verbs — "eat/drink X" vs "buy X", both sensible
+for the same object), and `joan`↔`etorri` (`nor`-only — "Ane etxera dator"
+"coming to" vs "Ane etxera doa" "going to", same allative adjunct, opposite
+direction — maintainer: "it is correct").
+
+**Checked and NOT excluded** (confirmed genuinely-wrong distractors, no
+`CROSS_CANDIDATE_EXCLUSIONS` entry): `ukan`↔`jakin` ("Anek auto bat daki" —
+"Anek knows a car" — maintainer: "makes no sense"), `eduki`↔`jakin`
+("...eskuan daki" — "...knows in hand" — "makes no sense"), `jan`↔`edan`
+("Anek entsalada edango du" — "Anek will drink salad" — "doesn't make
+semantic sense").
+
+Ticked all 330 newly-resolved `docs/CROSS_CANDIDATE_REVIEW.md` entries (plus
+the 20 from the `ukan`↔`nahi` pass, 350 total) via a small one-off script
+(`/tmp/tick_pairs.mjs`, not committed) that matches entries by `{verbA, verbB}`
+set membership and appends a "Resolved by #114" note — same approach as the
+manual `ukan`↔`nahi` edits, just scripted given the volume.
+
+Verified no regression: re-ran the option-pool-size check across all review
+lessons (all `roll` values 0-0.95) before/after — unique "fewer than 3 options"
+cases went from 85 to 76 (net improvement, some pairs gained a 3rd option
+elsewhere), no new 0/1-option cases. `npm test`/`lint`/`build` all pass (214
+tests).
+
+Remaining: rest of Tier 2 (`izan`↔`egon`/`etorri`/`joan`, `*`↔`ari`/`ibili`)
+and Tier 3 (`case-mixer` pairs) are un-triaged — the audit didn't flag these as
+likely "both valid", so they're lower priority; see
+`docs/CROSS_CANDIDATE_TRIAGE_PRIORITY.md`'s "Remaining work".
+
 ## 2026-06-13 — #114: added `CROSS_CANDIDATE_EXCLUSIONS`, scoped to the confirmed `ukan`↔`nahi` pair
 
 #114 (Layer 2b/3 of `docs/AMBIGUOUS_DISTRACTORS_AUDIT.md`) is blocked on a

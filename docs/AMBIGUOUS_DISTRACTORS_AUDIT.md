@@ -28,16 +28,21 @@ Tracked by epic #115, split into three sub-issues:
   `ikusi`/`jakin`: `joan`↔`etorri` (shared allative adjunct, opposite direction —
   "Ane etxera dator." vs "Ane etxera doa." are both grammatical, different-meaning
   sentences).
-- **#114 (Layer 2b/3, encode curated exclusions)** — **partially done**: the
-  `ukan`↔`nahi` pair (both directions) is now encoded in
-  `CROSS_CANDIDATE_EXCLUSIONS` (`src/lessonLogic.js`), prompted by a live
-  in-the-wild report (the `nahi` `hura` sentence "Katuak esne pixka bat ___."
-  offering `ukan`'s `du` as a distractor — see `docs/DECISIONS.md`,
-  2026-06-13). The corresponding 20 `docs/CROSS_CANDIDATE_REVIEW.md` entries
-  (1865-1872, 2090-2101) are ticked. The broader "different sentence text,
-  both still valid" cases below (`eduki` vs `ukan`/`ikusi`, `jakin`'s `dakit`,
-  `joan`↔`etorri`, etc.) remain blocked on the native-speaker triage above —
-  see `docs/CROSS_CANDIDATE_TRIAGE_PRIORITY.md`.
+- **#114 (Layer 2b/3, encode curated exclusions)** — **done for Tier 1 +
+  `joan`↔`etorri`**. Prompted by a live in-the-wild report (the `nahi` `hura`
+  sentence "Katuak esne pixka bat ___." offering `ukan`'s `du` as a
+  distractor), the maintainer gave pair-level verdicts for all of Tier 1 and
+  the flagged `joan`↔`etorri` pair (`docs/CROSS_CANDIDATE_TRIAGE_PRIORITY.md`).
+  10 pairs were confirmed "both valid" and are now in
+  `CROSS_CANDIDATE_EXCLUSIONS` (`src/lessonLogic.js`): `ukan`↔`nahi`,
+  `eduki`↔`ukan`, `eduki`↔`ikusi`, `ukan`↔`ikusi`, `jakin`↔`ikusi`,
+  `ikusi`↔`nahi`, `jakin`↔`nahi`, `eduki`↔`nahi`, `jan`↔`erosi`,
+  `edan`↔`erosi`, and `joan`↔`etorri`. 3 pairs (`ukan`↔`jakin`,
+  `eduki`↔`jakin`, `jan`↔`edan`) were confirmed genuinely-wrong distractors —
+  not excluded. All 350 corresponding `docs/CROSS_CANDIDATE_REVIEW.md` entries
+  are ticked/annotated "Resolved by #114". Remaining: the rest of Tier 2 (minus
+  `joan`↔`etorri`) and Tier 3, which the audit didn't flag as likely "both
+  valid" — see `docs/CROSS_CANDIDATE_TRIAGE_PRIORITY.md`'s "Remaining work".
 
 ## Summary
 

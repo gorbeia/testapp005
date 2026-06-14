@@ -1118,8 +1118,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - edan (to drink) — correct: `edango du` → "Anek ura edango du."
 - erosi (to buy) — substitute: `erosiko du` → "Anek ura erosiko du."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 122. `edan` (future) vs `erosi` (future)
 
@@ -1127,8 +1128,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - edan (to drink) — correct: `edango dugu` → "Guk kafea edango dugu."
 - erosi (to buy) — substitute: `erosiko dugu` → "Guk kafea erosiko dugu."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 123. `edan` (future) vs `erosi` (future)
 
@@ -1136,8 +1138,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - edan (to drink) — correct: `edango dugu` → "Guk ura edango dugu."
 - erosi (to buy) — substitute: `erosiko dugu` → "Guk ura erosiko dugu."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 124. `edan` (future) vs `erosi` (future)
 
@@ -1145,8 +1148,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - edan (to drink) — correct: `edango dute` → "Haiek garagardoa edango dute."
 - erosi (to buy) — substitute: `erosiko dute` → "Haiek garagardoa erosiko dute."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 125. `edan` (future) vs `erosi` (future)
 
@@ -1154,8 +1158,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - edan (to drink) — correct: `edango du` → "Hark sagardoa edango du."
 - erosi (to buy) — substitute: `erosiko du` → "Hark sagardoa erosiko du."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 126. `edan` (future) vs `erosi` (future)
 
@@ -1163,8 +1168,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - edan (to drink) — correct: `edango du` → "Katuak esnea edango du."
 - erosi (to buy) — substitute: `erosiko du` → "Katuak esnea erosiko du."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 127. `edan` (future) vs `erosi` (future)
 
@@ -1172,8 +1178,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - edan (to drink) — correct: `edango dute` → "Lagunek sagardoa edango dute."
 - erosi (to buy) — substitute: `erosiko dute` → "Lagunek sagardoa erosiko dute."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 128. `edan` (future) vs `erosi` (future)
 
@@ -1181,8 +1188,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - edan (to drink) — correct: `edango du` → "Mikelek tea edango du."
 - erosi (to buy) — substitute: `erosiko du` → "Mikelek tea erosiko du."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 129. `edan` (future) vs `erosi` (future)
 
@@ -1190,8 +1198,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - edan (to drink) — correct: `edango dut` → "Nik esnea edango dut."
 - erosi (to buy) — substitute: `erosiko dut` → "Nik esnea erosiko dut."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 130. `edan` (future) vs `erosi` (future)
 
@@ -1199,8 +1208,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - edan (to drink) — correct: `edango dut` → "Nik ura edango dut."
 - erosi (to buy) — substitute: `erosiko dut` → "Nik ura erosiko dut."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 131. `edan` (future) vs `erosi` (future)
 
@@ -1208,8 +1218,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - edan (to drink) — correct: `edango dut` → "Nik zukua edango dut."
 - erosi (to buy) — substitute: `erosiko dut` → "Nik zukua erosiko dut."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 132. `edan` (future) vs `erosi` (future)
 
@@ -1217,8 +1228,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - edan (to drink) — correct: `edango duzue` → "Zuek ardoa edango duzue."
 - erosi (to buy) — substitute: `erosiko duzue` → "Zuek ardoa erosiko duzue."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 133. `edan` (future) vs `erosi` (future)
 
@@ -1226,8 +1238,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - edan (to drink) — correct: `edango duzue` → "Zuek zukua edango duzue?"
 - erosi (to buy) — substitute: `erosiko duzue` → "Zuek zukua erosiko duzue?"
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 134. `edan` (future) vs `erosi` (future)
 
@@ -1235,8 +1248,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - edan (to drink) — correct: `edango duzu` → "Zuk ardoa edango duzu?"
 - erosi (to buy) — substitute: `erosiko duzu` → "Zuk ardoa erosiko duzu?"
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 135. `edan` (future) vs `erosi` (future)
 
@@ -1244,8 +1258,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - edan (to drink) — correct: `edango duzu` → "Zuk kafea edango duzu."
 - erosi (to buy) — substitute: `erosiko duzu` → "Zuk kafea erosiko duzu."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `edan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 136. `edan` (future) vs `jan` (future)
 
@@ -2144,8 +2159,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `dauka` → "Anek liburua eskuan dauka."
 - ikusi (to see) — substitute: `ikusten du` → "Anek liburua eskuan ikusten du."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 236. `eduki` (future) vs `ikusi` (future)
 
@@ -2153,8 +2169,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `edukiko du` → "Anek liburua eskuan edukiko du."
 - ikusi (to see) — substitute: `ikusiko du` → "Anek liburua eskuan ikusiko du."
 - Found in: unit-9-review-4 (extra candidate), unit-9-review-4 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 237. `eduki` (present) vs `ikusi` (present)
 
@@ -2162,8 +2179,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukagu` → "Guk dirua eskuan daukagu."
 - ikusi (to see) — substitute: `ikusten dugu` → "Guk dirua eskuan ikusten dugu."
 - Found in: unit-8-review-plural (extra candidate), unit-8-review-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 238. `eduki` (future) vs `ikusi` (future)
 
@@ -2171,8 +2189,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `edukiko dugu` → "Guk dirua eskuan edukiko dugu."
 - ikusi (to see) — substitute: `ikusiko dugu` → "Guk dirua eskuan ikusiko dugu."
 - Found in: unit-9-review-4-plural (extra candidate), unit-9-review-4-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 239. `eduki` (present) vs `ikusi` (present)
 
@@ -2180,8 +2199,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukagu` → "Guk giltza poltsikoan daukagu."
 - ikusi (to see) — substitute: `ikusten dugu` → "Guk giltza poltsikoan ikusten dugu."
 - Found in: unit-8-review-plural (extra candidate), unit-8-review-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 240. `eduki` (future) vs `ikusi` (future)
 
@@ -2189,8 +2209,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `edukiko dugu` → "Guk giltza poltsikoan edukiko dugu."
 - ikusi (to see) — substitute: `ikusiko dugu` → "Guk giltza poltsikoan ikusiko dugu."
 - Found in: unit-9-review-4-plural (extra candidate), unit-9-review-4-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 241. `eduki` (present) vs `ikusi` (present)
 
@@ -2198,8 +2219,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukate` → "Gurasoek dirua eskuan daukate."
 - ikusi (to see) — substitute: `ikusten dute` → "Gurasoek dirua eskuan ikusten dute."
 - Found in: unit-8-review-plural (extra candidate), unit-8-review-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 242. `eduki` (future) vs `ikusi` (future)
 
@@ -2207,8 +2229,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `edukiko dute` → "Gurasoek dirua eskuan edukiko dute."
 - ikusi (to see) — substitute: `ikusiko dute` → "Gurasoek dirua eskuan ikusiko dute."
 - Found in: unit-9-review-4-plural (extra candidate), unit-9-review-4-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 243. `eduki` (present) vs `ikusi` (present)
 
@@ -2216,8 +2239,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukate` → "Haiek giltza poltsikoan daukate."
 - ikusi (to see) — substitute: `ikusten dute` → "Haiek giltza poltsikoan ikusten dute."
 - Found in: unit-8-review-plural (extra candidate), unit-8-review-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 244. `eduki` (future) vs `ikusi` (future)
 
@@ -2225,8 +2249,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `edukiko dute` → "Haiek giltza poltsikoan edukiko dute."
 - ikusi (to see) — substitute: `ikusiko dute` → "Haiek giltza poltsikoan ikusiko dute."
 - Found in: unit-9-review-4-plural (extra candidate), unit-9-review-4-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 245. `eduki` (present) vs `ikusi` (present)
 
@@ -2234,8 +2259,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `dauka` → "Hark giltza poltsikoan dauka."
 - ikusi (to see) — substitute: `ikusten du` → "Hark giltza poltsikoan ikusten du."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 246. `eduki` (future) vs `ikusi` (future)
 
@@ -2243,8 +2269,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `edukiko du` → "Hark giltza poltsikoan edukiko du."
 - ikusi (to see) — substitute: `ikusiko du` → "Hark giltza poltsikoan ikusiko du."
 - Found in: unit-9-review-4 (extra candidate), unit-9-review-4 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 247. `eduki` (present) vs `ikusi` (present)
 
@@ -2252,8 +2279,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `dauka` → "Mikelek dirua eskuan dauka."
 - ikusi (to see) — substitute: `ikusten du` → "Mikelek dirua eskuan ikusten du."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 248. `eduki` (future) vs `ikusi` (future)
 
@@ -2261,8 +2289,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `edukiko du` → "Mikelek dirua eskuan edukiko du."
 - ikusi (to see) — substitute: `ikusiko du` → "Mikelek dirua eskuan ikusiko du."
 - Found in: unit-9-review-4 (extra candidate), unit-9-review-4 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 249. `eduki` (present) vs `ikusi` (present)
 
@@ -2270,8 +2299,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukat` → "Nik dirua eskuan daukat."
 - ikusi (to see) — substitute: `ikusten dut` → "Nik dirua eskuan ikusten dut."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 250. `eduki` (future) vs `ikusi` (future)
 
@@ -2279,8 +2309,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `edukiko dut` → "Nik dirua eskuan edukiko dut."
 - ikusi (to see) — substitute: `ikusiko dut` → "Nik dirua eskuan ikusiko dut."
 - Found in: unit-9-review-4 (extra candidate), unit-9-review-4 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 251. `eduki` (present) vs `ikusi` (present)
 
@@ -2288,8 +2319,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukat` → "Nik giltza poltsikoan daukat."
 - ikusi (to see) — substitute: `ikusten dut` → "Nik giltza poltsikoan ikusten dut."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 252. `eduki` (future) vs `ikusi` (future)
 
@@ -2297,8 +2329,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `edukiko dut` → "Nik giltza poltsikoan edukiko dut."
 - ikusi (to see) — substitute: `ikusiko dut` → "Nik giltza poltsikoan ikusiko dut."
 - Found in: unit-9-review-4 (extra candidate), unit-9-review-4 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 253. `eduki` (present) vs `ikusi` (present)
 
@@ -2306,8 +2339,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukat` → "Nik liburu bat eskuan daukat."
 - ikusi (to see) — substitute: `ikusten dut` → "Nik liburu bat eskuan ikusten dut."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 254. `eduki` (future) vs `ikusi` (future)
 
@@ -2315,8 +2349,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `edukiko dut` → "Nik liburu bat eskuan edukiko dut."
 - ikusi (to see) — substitute: `ikusiko dut` → "Nik liburu bat eskuan ikusiko dut."
 - Found in: unit-9-review-4 (extra candidate), unit-9-review-4 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 255. `eduki` (present) vs `ikusi` (present)
 
@@ -2324,8 +2359,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `dauka` → "Umeak jostailua eskuan dauka."
 - ikusi (to see) — substitute: `ikusten du` → "Umeak jostailua eskuan ikusten du."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 256. `eduki` (future) vs `ikusi` (future)
 
@@ -2333,8 +2369,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `edukiko du` → "Umeak jostailua eskuan edukiko du."
 - ikusi (to see) — substitute: `ikusiko du` → "Umeak jostailua eskuan ikusiko du."
 - Found in: unit-9-review-4 (extra candidate), unit-9-review-4 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 257. `eduki` (present) vs `ikusi` (present)
 
@@ -2342,8 +2379,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukazue` → "Zuek giltza poltsikoan daukazue?"
 - ikusi (to see) — substitute: `ikusten duzue` → "Zuek giltza poltsikoan ikusten duzue?"
 - Found in: unit-8-review-plural (extra candidate), unit-8-review-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 258. `eduki` (future) vs `ikusi` (future)
 
@@ -2351,8 +2389,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `edukiko duzue` → "Zuek giltza poltsikoan edukiko duzue?"
 - ikusi (to see) — substitute: `ikusiko duzue` → "Zuek giltza poltsikoan ikusiko duzue?"
 - Found in: unit-9-review-4-plural (extra candidate), unit-9-review-4-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 259. `eduki` (present) vs `ikusi` (present)
 
@@ -2360,8 +2399,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukazue` → "Zuek txartela eskuan daukazue."
 - ikusi (to see) — substitute: `ikusten duzue` → "Zuek txartela eskuan ikusten duzue."
 - Found in: unit-8-review-plural (extra candidate), unit-8-review-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 260. `eduki` (future) vs `ikusi` (future)
 
@@ -2369,8 +2409,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `edukiko duzue` → "Zuek txartela eskuan edukiko duzue."
 - ikusi (to see) — substitute: `ikusiko duzue` → "Zuek txartela eskuan ikusiko duzue."
 - Found in: unit-9-review-4-plural (extra candidate), unit-9-review-4-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 261. `eduki` (present) vs `ikusi` (present)
 
@@ -2378,8 +2419,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukazu` → "Zuk giltza poltsikoan daukazu?"
 - ikusi (to see) — substitute: `ikusten duzu` → "Zuk giltza poltsikoan ikusten duzu?"
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 262. `eduki` (future) vs `ikusi` (future)
 
@@ -2387,8 +2429,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `edukiko duzu` → "Zuk giltza poltsikoan edukiko duzu?"
 - ikusi (to see) — substitute: `ikusiko duzu` → "Zuk giltza poltsikoan ikusiko duzu?"
 - Found in: unit-9-review-4 (extra candidate), unit-9-review-4 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 263. `eduki` (present) vs `ikusi` (present)
 
@@ -2396,8 +2439,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukazu` → "Zuk telefonoa eskuan daukazu."
 - ikusi (to see) — substitute: `ikusten duzu` → "Zuk telefonoa eskuan ikusten duzu."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 264. `eduki` (future) vs `ikusi` (future)
 
@@ -2405,8 +2449,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `edukiko duzu` → "Zuk telefonoa eskuan edukiko duzu."
 - ikusi (to see) — substitute: `ikusiko duzu` → "Zuk telefonoa eskuan ikusiko duzu."
 - Found in: unit-9-review-4 (extra candidate), unit-9-review-4 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 265. `eduki` (present) vs `izan` (present)
 
@@ -2765,8 +2810,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `dauka` → "Anek liburua eskuan dauka."
 - nahi (to want) — substitute: `nahi du` → "Anek liburua eskuan nahi du."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 305. `eduki` (present) vs `nahi` (present)
 
@@ -2774,8 +2820,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `dauka` → "Hark giltza poltsikoan dauka."
 - nahi (to want) — substitute: `nahi du` → "Hark giltza poltsikoan nahi du."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 306. `eduki` (present) vs `nahi` (present)
 
@@ -2783,8 +2830,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `dauka` → "Mikelek dirua eskuan dauka."
 - nahi (to want) — substitute: `nahi du` → "Mikelek dirua eskuan nahi du."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 307. `eduki` (present) vs `nahi` (present)
 
@@ -2792,8 +2840,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukat` → "Nik dirua eskuan daukat."
 - nahi (to want) — substitute: `nahi dut` → "Nik dirua eskuan nahi dut."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 308. `eduki` (present) vs `nahi` (present)
 
@@ -2801,8 +2850,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukat` → "Nik giltza poltsikoan daukat."
 - nahi (to want) — substitute: `nahi dut` → "Nik giltza poltsikoan nahi dut."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 309. `eduki` (present) vs `nahi` (present)
 
@@ -2810,8 +2860,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukat` → "Nik liburu bat eskuan daukat."
 - nahi (to want) — substitute: `nahi dut` → "Nik liburu bat eskuan nahi dut."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 310. `eduki` (present) vs `nahi` (present)
 
@@ -2819,8 +2870,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `dauka` → "Umeak jostailua eskuan dauka."
 - nahi (to want) — substitute: `nahi du` → "Umeak jostailua eskuan nahi du."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 311. `eduki` (present) vs `nahi` (present)
 
@@ -2828,8 +2880,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukazu` → "Zuk giltza poltsikoan daukazu?"
 - nahi (to want) — substitute: `nahi duzu` → "Zuk giltza poltsikoan nahi duzu?"
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 312. `eduki` (present) vs `nahi` (present)
 
@@ -2837,8 +2890,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukazu` → "Zuk telefonoa eskuan daukazu."
 - nahi (to want) — substitute: `nahi duzu` → "Zuk telefonoa eskuan nahi duzu."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 313. `eduki` (present) vs `ukan` (present)
 
@@ -2846,8 +2900,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `dauka` → "Anek liburua eskuan dauka."
 - ukan (to have) — substitute: `du` → "Anek liburua eskuan du."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 314. `eduki` (present) vs `ukan` (present)
 
@@ -2855,8 +2910,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukagu` → "Guk dirua eskuan daukagu."
 - ukan (to have) — substitute: `dugu` → "Guk dirua eskuan dugu."
 - Found in: unit-8-review-plural (extra candidate), unit-8-review-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 315. `eduki` (present) vs `ukan` (present)
 
@@ -2864,8 +2920,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukagu` → "Guk giltza poltsikoan daukagu."
 - ukan (to have) — substitute: `dugu` → "Guk giltza poltsikoan dugu."
 - Found in: unit-8-review-plural (extra candidate), unit-8-review-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 316. `eduki` (present) vs `ukan` (present)
 
@@ -2873,8 +2930,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukate` → "Gurasoek dirua eskuan daukate."
 - ukan (to have) — substitute: `dute` → "Gurasoek dirua eskuan dute."
 - Found in: unit-8-review-plural (extra candidate), unit-8-review-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 317. `eduki` (present) vs `ukan` (present)
 
@@ -2882,8 +2940,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukate` → "Haiek giltza poltsikoan daukate."
 - ukan (to have) — substitute: `dute` → "Haiek giltza poltsikoan dute."
 - Found in: unit-8-review-plural (extra candidate), unit-8-review-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 318. `eduki` (present) vs `ukan` (present)
 
@@ -2891,8 +2950,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `dauka` → "Hark giltza poltsikoan dauka."
 - ukan (to have) — substitute: `du` → "Hark giltza poltsikoan du."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 319. `eduki` (present) vs `ukan` (present)
 
@@ -2900,8 +2960,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `dauka` → "Mikelek dirua eskuan dauka."
 - ukan (to have) — substitute: `du` → "Mikelek dirua eskuan du."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 320. `eduki` (present) vs `ukan` (present)
 
@@ -2909,8 +2970,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukat` → "Nik dirua eskuan daukat."
 - ukan (to have) — substitute: `dut` → "Nik dirua eskuan dut."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 321. `eduki` (present) vs `ukan` (present)
 
@@ -2918,8 +2980,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukat` → "Nik giltza poltsikoan daukat."
 - ukan (to have) — substitute: `dut` → "Nik giltza poltsikoan dut."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 322. `eduki` (present) vs `ukan` (present)
 
@@ -2927,8 +2990,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukat` → "Nik liburu bat eskuan daukat."
 - ukan (to have) — substitute: `dut` → "Nik liburu bat eskuan dut."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 323. `eduki` (present) vs `ukan` (present)
 
@@ -2936,8 +3000,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `dauka` → "Umeak jostailua eskuan dauka."
 - ukan (to have) — substitute: `du` → "Umeak jostailua eskuan du."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 324. `eduki` (present) vs `ukan` (present)
 
@@ -2945,8 +3010,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukazue` → "Zuek giltza poltsikoan daukazue?"
 - ukan (to have) — substitute: `duzue` → "Zuek giltza poltsikoan duzue?"
 - Found in: unit-8-review-plural (extra candidate), unit-8-review-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 325. `eduki` (present) vs `ukan` (present)
 
@@ -2954,8 +3020,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukazue` → "Zuek txartela eskuan daukazue."
 - ukan (to have) — substitute: `duzue` → "Zuek txartela eskuan duzue."
 - Found in: unit-8-review-plural (extra candidate), unit-8-review-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 326. `eduki` (present) vs `ukan` (present)
 
@@ -2963,8 +3030,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukazu` → "Zuk giltza poltsikoan daukazu?"
 - ukan (to have) — substitute: `duzu` → "Zuk giltza poltsikoan duzu?"
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 327. `eduki` (present) vs `ukan` (present)
 
@@ -2972,8 +3040,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - eduki (to have / hold (physically)) — correct: `daukazu` → "Zuk telefonoa eskuan daukazu."
 - ukan (to have) — substitute: `duzu` → "Zuk telefonoa eskuan duzu."
 - Found in: unit-8-review (extra candidate), unit-8-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `eduki`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 328. `egon` (present) vs `ari` (present)
 
@@ -5492,8 +5561,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko du` → "Anek etxe bat erosiko du."
 - edan (to drink) — substitute: `edango du` → "Anek etxe bat edango du."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 608. `erosi` (future) vs `edan` (future)
 
@@ -5501,8 +5571,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko dugu` → "Guk etxe bat erosiko dugu."
 - edan (to drink) — substitute: `edango dugu` → "Guk etxe bat edango dugu."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 609. `erosi` (future) vs `edan` (future)
 
@@ -5510,8 +5581,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko dugu` → "Guk txartelak erosiko dugu."
 - edan (to drink) — substitute: `edango dugu` → "Guk txartelak edango dugu."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 610. `erosi` (future) vs `edan` (future)
 
@@ -5519,8 +5591,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko dute` → "Gurasoek etxe bat erosiko dute."
 - edan (to drink) — substitute: `edango dute` → "Gurasoek etxe bat edango dute."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 611. `erosi` (future) vs `edan` (future)
 
@@ -5528,8 +5601,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko dute` → "Haiek autoa erosiko dute."
 - edan (to drink) — substitute: `edango dute` → "Haiek autoa edango dute."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 612. `erosi` (future) vs `edan` (future)
 
@@ -5537,8 +5611,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko du` → "Hark autoa erosiko du."
 - edan (to drink) — substitute: `edango du` → "Hark autoa edango du."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 613. `erosi` (future) vs `edan` (future)
 
@@ -5546,8 +5621,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko du` → "Mikelek opari bat erosiko du."
 - edan (to drink) — substitute: `edango du` → "Mikelek opari bat edango du."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 614. `erosi` (future) vs `edan` (future)
 
@@ -5555,8 +5631,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko dut` → "Nik jaka berri bat erosiko dut."
 - edan (to drink) — substitute: `edango dut` → "Nik jaka berri bat edango dut."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 615. `erosi` (future) vs `edan` (future)
 
@@ -5564,8 +5641,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko dut` → "Nik liburu bat erosiko dut."
 - edan (to drink) — substitute: `edango dut` → "Nik liburu bat edango dut."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 616. `erosi` (future) vs `edan` (future)
 
@@ -5573,8 +5651,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko du` → "Saltzaileak fruta erosiko du."
 - edan (to drink) — substitute: `edango du` → "Saltzaileak fruta edango du."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 617. `erosi` (future) vs `edan` (future)
 
@@ -5582,8 +5661,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko duzue` → "Zuek liburuak erosiko duzue."
 - edan (to drink) — substitute: `edango duzue` → "Zuek liburuak edango duzue."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 618. `erosi` (future) vs `edan` (future)
 
@@ -5591,8 +5671,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko duzue` → "Zuek opariak erosiko duzue?"
 - edan (to drink) — substitute: `edango duzue` → "Zuek opariak edango duzue?"
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 619. `erosi` (future) vs `edan` (future)
 
@@ -5600,8 +5681,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko duzu` → "Zuk diskoa erosiko duzu."
 - edan (to drink) — substitute: `edango duzu` → "Zuk diskoa edango duzu."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 620. `erosi` (future) vs `edan` (future)
 
@@ -5609,8 +5691,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko duzu` → "Zuk sagarrak erosiko duzu?"
 - edan (to drink) — substitute: `edango duzu` → "Zuk sagarrak edango duzu?"
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `edan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `edan`/`erosi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 621. `erosi` (future) vs `jan` (future)
 
@@ -5618,8 +5701,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko du` → "Anek etxe bat erosiko du."
 - jan (to eat) — substitute: `jango du` → "Anek etxe bat jango du."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 622. `erosi` (future) vs `jan` (future)
 
@@ -5627,8 +5711,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko dugu` → "Guk etxe bat erosiko dugu."
 - jan (to eat) — substitute: `jango dugu` → "Guk etxe bat jango dugu."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 623. `erosi` (future) vs `jan` (future)
 
@@ -5636,8 +5721,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko dugu` → "Guk txartelak erosiko dugu."
 - jan (to eat) — substitute: `jango dugu` → "Guk txartelak jango dugu."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 624. `erosi` (future) vs `jan` (future)
 
@@ -5645,8 +5731,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko dute` → "Gurasoek etxe bat erosiko dute."
 - jan (to eat) — substitute: `jango dute` → "Gurasoek etxe bat jango dute."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 625. `erosi` (future) vs `jan` (future)
 
@@ -5654,8 +5741,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko dute` → "Haiek autoa erosiko dute."
 - jan (to eat) — substitute: `jango dute` → "Haiek autoa jango dute."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 626. `erosi` (future) vs `jan` (future)
 
@@ -5663,8 +5751,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko du` → "Hark autoa erosiko du."
 - jan (to eat) — substitute: `jango du` → "Hark autoa jango du."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 627. `erosi` (future) vs `jan` (future)
 
@@ -5672,8 +5761,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko du` → "Mikelek opari bat erosiko du."
 - jan (to eat) — substitute: `jango du` → "Mikelek opari bat jango du."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 628. `erosi` (future) vs `jan` (future)
 
@@ -5681,8 +5771,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko du` → "Saltzaileak fruta erosiko du."
 - jan (to eat) — substitute: `jango du` → "Saltzaileak fruta jango du."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 629. `erosi` (future) vs `jan` (future)
 
@@ -5690,8 +5781,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko duzue` → "Zuek liburuak erosiko duzue."
 - jan (to eat) — substitute: `jango duzue` → "Zuek liburuak jango duzue."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 630. `erosi` (future) vs `jan` (future)
 
@@ -5699,8 +5791,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko duzue` → "Zuek opariak erosiko duzue?"
 - jan (to eat) — substitute: `jango duzue` → "Zuek opariak jango duzue?"
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 631. `erosi` (future) vs `jan` (future)
 
@@ -5708,8 +5801,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko duzu` → "Zuk diskoa erosiko duzu."
 - jan (to eat) — substitute: `jango duzu` → "Zuk diskoa jango duzu."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 632. `erosi` (future) vs `jan` (future)
 
@@ -5717,8 +5811,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - erosi (to buy) — correct: `erosiko duzu` → "Zuk sagarrak erosiko duzu?"
 - jan (to eat) — substitute: `jango duzu` → "Zuk sagarrak jango duzu?"
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jan` from `erosi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 633. `etorri` (present) vs `ari` (present)
 
@@ -6968,8 +7063,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `dator` → "Ane etxera dator."
 - joan (to go) — substitute: `doa` → "Ane etxera doa."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 772. `etorri` (future) vs `joan` (future)
 
@@ -6977,8 +7073,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko da` → "Ane etxera etorriko da."
 - joan (to go) — substitute: `joango da` → "Ane etxera joango da."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 773. `etorri` (present) vs `joan` (present)
 
@@ -6986,8 +7083,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `gatoz` → "Gu bihar gatoz."
 - joan (to go) — substitute: `goaz` → "Gu bihar goaz."
 - Found in: unit-6-review-3 (extra candidate), unit-6-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 774. `etorri` (future) vs `joan` (future)
 
@@ -6995,8 +7093,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko gara` → "Gu bihar etorriko gara."
 - joan (to go) — substitute: `joango gara` → "Gu bihar joango gara."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 775. `etorri` (present) vs `joan` (present)
 
@@ -7004,8 +7103,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `gatoz` → "Gu etxera gatoz."
 - joan (to go) — substitute: `goaz` → "Gu etxera goaz."
 - Found in: unit-6-review-3 (extra candidate), unit-6-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 776. `etorri` (future) vs `joan` (future)
 
@@ -7013,8 +7113,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko gara` → "Gu etxera etorriko gara."
 - joan (to go) — substitute: `joango gara` → "Gu etxera joango gara."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 777. `etorri` (present) vs `joan` (present)
 
@@ -7022,8 +7123,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `gatoz` → "Gu gaur gatoz."
 - joan (to go) — substitute: `goaz` → "Gu gaur goaz."
 - Found in: unit-6-review-3 (extra candidate), unit-6-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 778. `etorri` (future) vs `joan` (future)
 
@@ -7031,8 +7133,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko gara` → "Gu gaur etorriko gara."
 - joan (to go) — substitute: `joango gara` → "Gu gaur joango gara."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 779. `etorri` (present) vs `joan` (present)
 
@@ -7040,8 +7143,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `gatoz` → "Gu orain gatoz."
 - joan (to go) — substitute: `goaz` → "Gu orain goaz."
 - Found in: unit-6-review-3 (extra candidate), unit-6-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 780. `etorri` (future) vs `joan` (future)
 
@@ -7049,8 +7153,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko gara` → "Gu orain etorriko gara."
 - joan (to go) — substitute: `joango gara` → "Gu orain joango gara."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 781. `etorri` (present) vs `joan` (present)
 
@@ -7058,8 +7163,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `datoz` → "Haiek bihar datoz."
 - joan (to go) — substitute: `doaz` → "Haiek bihar doaz."
 - Found in: unit-6-review-3 (extra candidate), unit-6-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 782. `etorri` (future) vs `joan` (future)
 
@@ -7067,8 +7173,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko dira` → "Haiek bihar etorriko dira."
 - joan (to go) — substitute: `joango dira` → "Haiek bihar joango dira."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 783. `etorri` (present) vs `joan` (present)
 
@@ -7076,8 +7183,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `datoz` → "Haiek etxera datoz."
 - joan (to go) — substitute: `doaz` → "Haiek etxera doaz."
 - Found in: unit-6-review-3 (extra candidate), unit-6-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 784. `etorri` (future) vs `joan` (future)
 
@@ -7085,8 +7193,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko dira` → "Haiek etxera etorriko dira."
 - joan (to go) — substitute: `joango dira` → "Haiek etxera joango dira."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 785. `etorri` (present) vs `joan` (present)
 
@@ -7094,8 +7203,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `datoz` → "Haiek orain datoz."
 - joan (to go) — substitute: `doaz` → "Haiek orain doaz."
 - Found in: unit-6-review-3 (extra candidate), unit-6-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 786. `etorri` (future) vs `joan` (future)
 
@@ -7103,8 +7213,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko dira` → "Haiek orain etorriko dira."
 - joan (to go) — substitute: `joango dira` → "Haiek orain joango dira."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 787. `etorri` (present) vs `joan` (present)
 
@@ -7112,8 +7223,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `dator` → "Hura bihar dator."
 - joan (to go) — substitute: `doa` → "Hura bihar doa."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 788. `etorri` (future) vs `joan` (future)
 
@@ -7121,8 +7233,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko da` → "Hura bihar etorriko da."
 - joan (to go) — substitute: `joango da` → "Hura bihar joango da."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 789. `etorri` (present) vs `joan` (present)
 
@@ -7130,8 +7243,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `dator` → "Hura etxera dator."
 - joan (to go) — substitute: `doa` → "Hura etxera doa."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 790. `etorri` (future) vs `joan` (future)
 
@@ -7139,8 +7253,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko da` → "Hura etxera etorriko da."
 - joan (to go) — substitute: `joango da` → "Hura etxera joango da."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 791. `etorri` (present) vs `joan` (present)
 
@@ -7148,8 +7263,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `dator` → "Hura orain dator."
 - joan (to go) — substitute: `doa` → "Hura orain doa."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 792. `etorri` (future) vs `joan` (future)
 
@@ -7157,8 +7273,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko da` → "Hura orain etorriko da."
 - joan (to go) — substitute: `joango da` → "Hura orain joango da."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 793. `etorri` (present) vs `joan` (present)
 
@@ -7166,8 +7283,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `datoz` → "Mikel eta Ane gaur datoz."
 - joan (to go) — substitute: `doaz` → "Mikel eta Ane gaur doaz."
 - Found in: unit-6-review-3 (extra candidate), unit-6-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 794. `etorri` (future) vs `joan` (future)
 
@@ -7175,8 +7293,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko dira` → "Mikel eta Ane gaur etorriko dira."
 - joan (to go) — substitute: `joango dira` → "Mikel eta Ane gaur joango dira."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 795. `etorri` (present) vs `joan` (present)
 
@@ -7184,8 +7303,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `dator` → "Mikel gaur dator."
 - joan (to go) — substitute: `doa` → "Mikel gaur doa."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 796. `etorri` (future) vs `joan` (future)
 
@@ -7193,8 +7313,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko da` → "Mikel gaur etorriko da."
 - joan (to go) — substitute: `joango da` → "Mikel gaur joango da."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 797. `etorri` (present) vs `joan` (present)
 
@@ -7202,8 +7323,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `dator` → "Txakurra orain dator."
 - joan (to go) — substitute: `doa` → "Txakurra orain doa."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 798. `etorri` (future) vs `joan` (future)
 
@@ -7211,8 +7333,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko da` → "Txakurra orain etorriko da."
 - joan (to go) — substitute: `joango da` → "Txakurra orain joango da."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 799. `etorri` (present) vs `joan` (present)
 
@@ -7220,8 +7343,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `zatoz` → "Zu bihar zatoz."
 - joan (to go) — substitute: `zoaz` → "Zu bihar zoaz."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 800. `etorri` (future) vs `joan` (future)
 
@@ -7229,8 +7353,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko zara` → "Zu bihar etorriko zara."
 - joan (to go) — substitute: `joango zara` → "Zu bihar joango zara."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 801. `etorri` (present) vs `joan` (present)
 
@@ -7238,8 +7363,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `zatoz` → "Zu etxera zatoz."
 - joan (to go) — substitute: `zoaz` → "Zu etxera zoaz."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 802. `etorri` (future) vs `joan` (future)
 
@@ -7247,8 +7373,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko zara` → "Zu etxera etorriko zara."
 - joan (to go) — substitute: `joango zara` → "Zu etxera joango zara."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 803. `etorri` (present) vs `joan` (present)
 
@@ -7256,8 +7383,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `zatoz` → "Zu gaur zatoz."
 - joan (to go) — substitute: `zoaz` → "Zu gaur zoaz."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 804. `etorri` (future) vs `joan` (future)
 
@@ -7265,8 +7393,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko zara` → "Zu gaur etorriko zara."
 - joan (to go) — substitute: `joango zara` → "Zu gaur joango zara."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 805. `etorri` (present) vs `joan` (present)
 
@@ -7274,8 +7403,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `zatoz` → "Zu orain zatoz."
 - joan (to go) — substitute: `zoaz` → "Zu orain zoaz."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 806. `etorri` (future) vs `joan` (future)
 
@@ -7283,8 +7413,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko zara` → "Zu orain etorriko zara."
 - joan (to go) — substitute: `joango zara` → "Zu orain joango zara."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 807. `etorri` (present) vs `joan` (present)
 
@@ -7292,8 +7423,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `zatozte` → "Zuek bihar zatozte."
 - joan (to go) — substitute: `zoazte` → "Zuek bihar zoazte."
 - Found in: unit-6-review-3 (extra candidate), unit-6-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 808. `etorri` (future) vs `joan` (future)
 
@@ -7301,8 +7433,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko zarete` → "Zuek bihar etorriko zarete."
 - joan (to go) — substitute: `joango zarete` → "Zuek bihar joango zarete."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 809. `etorri` (present) vs `joan` (present)
 
@@ -7310,8 +7443,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `zatozte` → "Zuek etxera zatozte."
 - joan (to go) — substitute: `zoazte` → "Zuek etxera zoazte."
 - Found in: unit-6-review-3 (extra candidate), unit-6-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 810. `etorri` (future) vs `joan` (future)
 
@@ -7319,8 +7453,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko zarete` → "Zuek etxera etorriko zarete."
 - joan (to go) — substitute: `joango zarete` → "Zuek etxera joango zarete."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 811. `etorri` (present) vs `joan` (present)
 
@@ -7328,8 +7463,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `zatozte` → "Zuek gaur zatozte."
 - joan (to go) — substitute: `zoazte` → "Zuek gaur zoazte."
 - Found in: unit-6-review-3 (extra candidate), unit-6-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 812. `etorri` (future) vs `joan` (future)
 
@@ -7337,8 +7473,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko zarete` → "Zuek gaur etorriko zarete."
 - joan (to go) — substitute: `joango zarete` → "Zuek gaur joango zarete."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 813. `etorri` (present) vs `joan` (present)
 
@@ -7346,8 +7483,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `zatozte` → "Zuek orain zatozte."
 - joan (to go) — substitute: `zoazte` → "Zuek orain zoazte."
 - Found in: unit-6-review-3 (extra candidate), unit-6-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 814. `etorri` (future) vs `joan` (future)
 
@@ -7355,8 +7493,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - etorri (to come) — correct: `etorriko zarete` → "Zuek orain etorriko zarete."
 - joan (to go) — substitute: `joango zarete` → "Zuek orain joango zarete."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `joan` from `etorri`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 815. `etorri` (present) vs `nahi` (present)
 
@@ -9218,8 +9357,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusiko du` → "Anek filma ikusiko du."
 - eduki (to have / hold (physically)) — substitute: `edukiko du` → "Anek filma edukiko du."
 - Found in: unit-9-review-4 (extra candidate), unit-9-review-4 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1022. `ikusi` (future) vs `eduki` (future)
 
@@ -9227,8 +9367,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusiko dugu` → "Guk filma ikusiko dugu."
 - eduki (to have / hold (physically)) — substitute: `edukiko dugu` → "Guk filma edukiko dugu."
 - Found in: unit-9-review-4-plural (extra candidate), unit-9-review-4-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1023. `ikusi` (future) vs `eduki` (future)
 
@@ -9236,8 +9377,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusiko dugu` → "Guk itsasoa ikusiko dugu."
 - eduki (to have / hold (physically)) — substitute: `edukiko dugu` → "Guk itsasoa edukiko dugu."
 - Found in: unit-9-review-4-plural (extra candidate), unit-9-review-4-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1024. `ikusi` (future) vs `eduki` (future)
 
@@ -9245,8 +9387,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusiko dute` → "Gurasoek etxea ikusiko dute."
 - eduki (to have / hold (physically)) — substitute: `edukiko dute` → "Gurasoek etxea edukiko dute."
 - Found in: unit-9-review-4-plural (extra candidate), unit-9-review-4-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1025. `ikusi` (future) vs `eduki` (future)
 
@@ -9254,8 +9397,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusiko dute` → "Haiek filma ikusiko dute."
 - eduki (to have / hold (physically)) — substitute: `edukiko dute` → "Haiek filma edukiko dute."
 - Found in: unit-9-review-4-plural (extra candidate), unit-9-review-4-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1026. `ikusi` (future) vs `eduki` (future)
 
@@ -9263,8 +9407,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusiko du` → "Hark itsasoa ikusiko du."
 - eduki (to have / hold (physically)) — substitute: `edukiko du` → "Hark itsasoa edukiko du."
 - Found in: unit-9-review-4 (extra candidate), unit-9-review-4 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1027. `ikusi` (future) vs `eduki` (future)
 
@@ -9272,8 +9417,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusiko du` → "Irakasleak ikasleak ikusiko du."
 - eduki (to have / hold (physically)) — substitute: `edukiko du` → "Irakasleak ikasleak edukiko du."
 - Found in: unit-9-review-4 (extra candidate), unit-9-review-4 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1028. `ikusi` (future) vs `eduki` (future)
 
@@ -9281,8 +9427,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusiko dut` → "Nik filma ikusiko dut."
 - eduki (to have / hold (physically)) — substitute: `edukiko dut` → "Nik filma edukiko dut."
 - Found in: unit-9-review-4 (extra candidate), unit-9-review-4 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1029. `ikusi` (future) vs `eduki` (future)
 
@@ -9290,8 +9437,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusiko dut` → "Nik mendia ikusiko dut."
 - eduki (to have / hold (physically)) — substitute: `edukiko dut` → "Nik mendia edukiko dut."
 - Found in: unit-9-review-4 (extra candidate), unit-9-review-4 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1030. `ikusi` (future) vs `eduki` (future)
 
@@ -9299,8 +9447,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusiko dut` → "Nik zerua ikusiko dut."
 - eduki (to have / hold (physically)) — substitute: `edukiko dut` → "Nik zerua edukiko dut."
 - Found in: unit-9-review-4 (extra candidate), unit-9-review-4 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1031. `ikusi` (future) vs `eduki` (future)
 
@@ -9308,8 +9457,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusiko du` → "Txakurrak katua ikusiko du."
 - eduki (to have / hold (physically)) — substitute: `edukiko du` → "Txakurrak katua edukiko du."
 - Found in: unit-9-review-4 (extra candidate), unit-9-review-4 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1032. `ikusi` (future) vs `eduki` (future)
 
@@ -9317,8 +9467,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusiko duzue` → "Zuek hori ikusiko duzue?"
 - eduki (to have / hold (physically)) — substitute: `edukiko duzue` → "Zuek hori edukiko duzue?"
 - Found in: unit-9-review-4-plural (extra candidate), unit-9-review-4-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1033. `ikusi` (future) vs `eduki` (future)
 
@@ -9326,8 +9477,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusiko duzue` → "Zuek mendia ikusiko duzue?"
 - eduki (to have / hold (physically)) — substitute: `edukiko duzue` → "Zuek mendia edukiko duzue?"
 - Found in: unit-9-review-4-plural (extra candidate), unit-9-review-4-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1034. `ikusi` (future) vs `eduki` (future)
 
@@ -9335,8 +9487,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusiko duzu` → "Zuk hori ikusiko duzu?"
 - eduki (to have / hold (physically)) — substitute: `edukiko duzu` → "Zuk hori edukiko duzu?"
 - Found in: unit-9-review-4 (extra candidate), unit-9-review-4 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1035. `ikusi` (future) vs `eduki` (future)
 
@@ -9344,8 +9497,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusiko duzu` → "Zuk Mikel ikusiko duzu?"
 - eduki (to have / hold (physically)) — substitute: `edukiko duzu` → "Zuk Mikel edukiko duzu?"
 - Found in: unit-9-review-4 (extra candidate), unit-9-review-4 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `eduki` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `eduki`/`ikusi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1036. `ikusi` (present) vs `egon` (present)
 
@@ -9812,8 +9966,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten du` → "Anek filma ikusten du."
 - jakin (to know (a fact)) — substitute: `daki` → "Anek filma daki."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1088. `ikusi` (present) vs `jakin` (present)
 
@@ -9821,8 +9976,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten du` → "Hark itsasoa ikusten du."
 - jakin (to know (a fact)) — substitute: `daki` → "Hark itsasoa daki."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1089. `ikusi` (present) vs `jakin` (present)
 
@@ -9830,8 +9986,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten du` → "Irakasleak ikasleak ikusten du."
 - jakin (to know (a fact)) — substitute: `daki` → "Irakasleak ikasleak daki."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1090. `ikusi` (present) vs `jakin` (present)
 
@@ -9839,8 +9996,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten dut` → "Nik filma ikusten dut."
 - jakin (to know (a fact)) — substitute: `dakit` → "Nik filma dakit."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1091. `ikusi` (present) vs `jakin` (present)
 
@@ -9848,8 +10006,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten dut` → "Nik mendia ikusten dut."
 - jakin (to know (a fact)) — substitute: `dakit` → "Nik mendia dakit."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1092. `ikusi` (present) vs `jakin` (present)
 
@@ -9857,8 +10016,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten dut` → "Nik zerua ikusten dut."
 - jakin (to know (a fact)) — substitute: `dakit` → "Nik zerua dakit."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1093. `ikusi` (present) vs `jakin` (present)
 
@@ -9866,8 +10026,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten du` → "Txakurrak katua ikusten du."
 - jakin (to know (a fact)) — substitute: `daki` → "Txakurrak katua daki."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1094. `ikusi` (present) vs `jakin` (present)
 
@@ -9875,8 +10036,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten duzu` → "Zuk hori ikusten duzu?"
 - jakin (to know (a fact)) — substitute: `dakizu` → "Zuk hori dakizu?"
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1095. `ikusi` (present) vs `jakin` (present)
 
@@ -9884,8 +10046,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten duzu` → "Zuk Mikel ikusten duzu?"
 - jakin (to know (a fact)) — substitute: `dakizu` → "Zuk Mikel dakizu?"
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1096. `ikusi` (present) vs `joan` (present)
 
@@ -9947,8 +10110,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten du` → "Anek filma ikusten du."
 - nahi (to want) — substitute: `nahi du` → "Anek filma nahi du."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1103. `ikusi` (present) vs `nahi` (present)
 
@@ -9956,8 +10120,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten du` → "Hark itsasoa ikusten du."
 - nahi (to want) — substitute: `nahi du` → "Hark itsasoa nahi du."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1104. `ikusi` (present) vs `nahi` (present)
 
@@ -9965,8 +10130,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten du` → "Irakasleak ikasleak ikusten du."
 - nahi (to want) — substitute: `nahi du` → "Irakasleak ikasleak nahi du."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1105. `ikusi` (present) vs `nahi` (present)
 
@@ -9974,8 +10140,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten dut` → "Nik filma ikusten dut."
 - nahi (to want) — substitute: `nahi dut` → "Nik filma nahi dut."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1106. `ikusi` (present) vs `nahi` (present)
 
@@ -9983,8 +10150,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten dut` → "Nik mendia ikusten dut."
 - nahi (to want) — substitute: `nahi dut` → "Nik mendia nahi dut."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1107. `ikusi` (present) vs `nahi` (present)
 
@@ -9992,8 +10160,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten dut` → "Nik zerua ikusten dut."
 - nahi (to want) — substitute: `nahi dut` → "Nik zerua nahi dut."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1108. `ikusi` (present) vs `nahi` (present)
 
@@ -10001,8 +10170,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten du` → "Txakurrak katua ikusten du."
 - nahi (to want) — substitute: `nahi du` → "Txakurrak katua nahi du."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1109. `ikusi` (present) vs `nahi` (present)
 
@@ -10010,8 +10180,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten duzu` → "Zuk hori ikusten duzu?"
 - nahi (to want) — substitute: `nahi duzu` → "Zuk hori nahi duzu?"
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1110. `ikusi` (present) vs `nahi` (present)
 
@@ -10019,8 +10190,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten duzu` → "Zuk Mikel ikusten duzu?"
 - nahi (to want) — substitute: `nahi duzu` → "Zuk Mikel nahi duzu?"
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1111. `ikusi` (present) vs `ukan` (present)
 
@@ -10028,8 +10200,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten du` → "Anek filma ikusten du."
 - ukan (to have) — substitute: `du` → "Anek filma du."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1112. `ikusi` (present) vs `ukan` (present)
 
@@ -10037,8 +10210,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten dugu` → "Guk filma ikusten dugu."
 - ukan (to have) — substitute: `dugu` → "Guk filma dugu."
 - Found in: ikusi-present-plural-review (extra candidate), ikusi-present-plural-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1113. `ikusi` (present) vs `ukan` (present)
 
@@ -10046,8 +10220,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten dugu` → "Guk itsasoa ikusten dugu."
 - ukan (to have) — substitute: `dugu` → "Guk itsasoa dugu."
 - Found in: ikusi-present-plural-review (extra candidate), ikusi-present-plural-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1114. `ikusi` (present) vs `ukan` (present)
 
@@ -10055,8 +10230,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten dute` → "Gurasoek etxea ikusten dute."
 - ukan (to have) — substitute: `dute` → "Gurasoek etxea dute."
 - Found in: ikusi-present-plural-review (extra candidate), ikusi-present-plural-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1115. `ikusi` (present) vs `ukan` (present)
 
@@ -10064,8 +10240,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten dute` → "Haiek filma ikusten dute."
 - ukan (to have) — substitute: `dute` → "Haiek filma dute."
 - Found in: ikusi-present-plural-review (extra candidate), ikusi-present-plural-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1116. `ikusi` (present) vs `ukan` (present)
 
@@ -10073,8 +10250,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten du` → "Hark itsasoa ikusten du."
 - ukan (to have) — substitute: `du` → "Hark itsasoa du."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1117. `ikusi` (present) vs `ukan` (present)
 
@@ -10082,8 +10260,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten du` → "Irakasleak ikasleak ikusten du."
 - ukan (to have) — substitute: `du` → "Irakasleak ikasleak du."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1118. `ikusi` (present) vs `ukan` (present)
 
@@ -10091,8 +10270,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten dut` → "Nik filma ikusten dut."
 - ukan (to have) — substitute: `dut` → "Nik filma dut."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1119. `ikusi` (present) vs `ukan` (present)
 
@@ -10100,8 +10280,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten dut` → "Nik mendia ikusten dut."
 - ukan (to have) — substitute: `dut` → "Nik mendia dut."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1120. `ikusi` (present) vs `ukan` (present)
 
@@ -10109,8 +10290,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten dut` → "Nik zerua ikusten dut."
 - ukan (to have) — substitute: `dut` → "Nik zerua dut."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1121. `ikusi` (present) vs `ukan` (present)
 
@@ -10118,8 +10300,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten du` → "Txakurrak katua ikusten du."
 - ukan (to have) — substitute: `du` → "Txakurrak katua du."
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1122. `ikusi` (present) vs `ukan` (present)
 
@@ -10127,8 +10310,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten duzue` → "Zuek hori ikusten duzue?"
 - ukan (to have) — substitute: `duzue` → "Zuek hori duzue?"
 - Found in: ikusi-present-plural-review (extra candidate), ikusi-present-plural-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1123. `ikusi` (present) vs `ukan` (present)
 
@@ -10136,8 +10320,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten duzue` → "Zuek mendia ikusten duzue?"
 - ukan (to have) — substitute: `duzue` → "Zuek mendia duzue?"
 - Found in: ikusi-present-plural-review (extra candidate), ikusi-present-plural-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1124. `ikusi` (present) vs `ukan` (present)
 
@@ -10145,8 +10330,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten duzu` → "Zuk hori ikusten duzu?"
 - ukan (to have) — substitute: `duzu` → "Zuk hori duzu?"
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1125. `ikusi` (present) vs `ukan` (present)
 
@@ -10154,8 +10340,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ikusi (to see) — correct: `ikusten duzu` → "Zuk Mikel ikusten duzu?"
 - ukan (to have) — substitute: `duzu` → "Zuk Mikel duzu?"
 - Found in: ikusi-present-review (extra candidate), ikusi-present-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ukan` from `ikusi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1126. `izan` (present) vs `ari` (present)
 
@@ -13106,8 +13293,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `daki` → "Hark sekretua daki."
 - ikusi (to see) — substitute: `ikusten du` → "Hark sekretua ikusten du."
 - Found in: unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1454. `jakin` (present) vs `ikusi` (present)
 
@@ -13115,8 +13303,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `daki` → "Irakasleak erantzun zuzena daki."
 - ikusi (to see) — substitute: `ikusten du` → "Irakasleak erantzun zuzena ikusten du."
 - Found in: unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1455. `jakin` (present) vs `ikusi` (present)
 
@@ -13124,8 +13313,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `daki` → "Mikelek erantzuna daki."
 - ikusi (to see) — substitute: `ikusten du` → "Mikelek erantzuna ikusten du."
 - Found in: unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1456. `jakin` (present) vs `ikusi` (present)
 
@@ -13133,8 +13323,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `dakit` → "Nik bidea dakit."
 - ikusi (to see) — substitute: `ikusten dut` → "Nik bidea ikusten dut."
 - Found in: unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1457. `jakin` (present) vs `ikusi` (present)
 
@@ -13142,8 +13333,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `dakit` → "Nik egia dakit."
 - ikusi (to see) — substitute: `ikusten dut` → "Nik egia ikusten dut."
 - Found in: unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1458. `jakin` (present) vs `ikusi` (present)
 
@@ -13151,8 +13343,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `dakit` → "Nik erantzuna dakit."
 - ikusi (to see) — substitute: `ikusten dut` → "Nik erantzuna ikusten dut."
 - Found in: unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1459. `jakin` (present) vs `ikusi` (present)
 
@@ -13160,8 +13353,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `dakit` → "Nik sekretua dakit."
 - ikusi (to see) — substitute: `ikusten dut` → "Nik sekretua ikusten dut."
 - Found in: unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1460. `jakin` (present) vs `ikusi` (present)
 
@@ -13169,8 +13363,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `daki` → "Txakurrak etxerako bidea daki."
 - ikusi (to see) — substitute: `ikusten du` → "Txakurrak etxerako bidea ikusten du."
 - Found in: unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1461. `jakin` (present) vs `ikusi` (present)
 
@@ -13178,8 +13373,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `dakizu` → "Zuk bidea dakizu."
 - ikusi (to see) — substitute: `ikusten duzu` → "Zuk bidea ikusten duzu."
 - Found in: unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1462. `jakin` (present) vs `ikusi` (present)
 
@@ -13187,8 +13383,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `dakizu` → "Zuk egia dakizu."
 - ikusi (to see) — substitute: `ikusten duzu` → "Zuk egia ikusten duzu."
 - Found in: unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1463. `jakin` (present) vs `ikusi` (present)
 
@@ -13196,8 +13393,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `dakizu` → "Zuk erantzuna dakizu."
 - ikusi (to see) — substitute: `ikusten duzu` → "Zuk erantzuna ikusten duzu."
 - Found in: unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1464. `jakin` (present) vs `ikusi` (present)
 
@@ -13205,8 +13403,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `dakizu` → "Zuk sekretua dakizu."
 - ikusi (to see) — substitute: `ikusten duzu` → "Zuk sekretua ikusten duzu."
 - Found in: unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`jakin` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1465. `jakin` (present) vs `izan` (present)
 
@@ -13538,8 +13737,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `daki` → "Hark sekretua daki."
 - nahi (to want) — substitute: `nahi du` → "Hark sekretua nahi du."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1502. `jakin` (future) vs `nahi` (future)
 
@@ -13547,8 +13747,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `jakingo du` → "Hark sekretua jakingo du."
 - nahi (to want) — substitute: `nahiko du` → "Hark sekretua nahiko du."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1503. `jakin` (present) vs `nahi` (present)
 
@@ -13556,8 +13757,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `daki` → "Irakasleak erantzun zuzena daki."
 - nahi (to want) — substitute: `nahi du` → "Irakasleak erantzun zuzena nahi du."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1504. `jakin` (future) vs `nahi` (future)
 
@@ -13565,8 +13767,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `jakingo du` → "Irakasleak erantzun zuzena jakingo du."
 - nahi (to want) — substitute: `nahiko du` → "Irakasleak erantzun zuzena nahiko du."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1505. `jakin` (present) vs `nahi` (present)
 
@@ -13574,8 +13777,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `daki` → "Mikelek erantzuna daki."
 - nahi (to want) — substitute: `nahi du` → "Mikelek erantzuna nahi du."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1506. `jakin` (future) vs `nahi` (future)
 
@@ -13583,8 +13787,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `jakingo du` → "Mikelek erantzuna jakingo du."
 - nahi (to want) — substitute: `nahiko du` → "Mikelek erantzuna nahiko du."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1507. `jakin` (present) vs `nahi` (present)
 
@@ -13592,8 +13797,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `dakit` → "Nik bidea dakit."
 - nahi (to want) — substitute: `nahi dut` → "Nik bidea nahi dut."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1508. `jakin` (future) vs `nahi` (future)
 
@@ -13601,8 +13807,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `jakingo dut` → "Nik bidea jakingo dut."
 - nahi (to want) — substitute: `nahiko dut` → "Nik bidea nahiko dut."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1509. `jakin` (present) vs `nahi` (present)
 
@@ -13610,8 +13817,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `dakit` → "Nik egia dakit."
 - nahi (to want) — substitute: `nahi dut` → "Nik egia nahi dut."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1510. `jakin` (future) vs `nahi` (future)
 
@@ -13619,8 +13827,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `jakingo dut` → "Nik egia jakingo dut."
 - nahi (to want) — substitute: `nahiko dut` → "Nik egia nahiko dut."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1511. `jakin` (present) vs `nahi` (present)
 
@@ -13628,8 +13837,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `dakit` → "Nik erantzuna dakit."
 - nahi (to want) — substitute: `nahi dut` → "Nik erantzuna nahi dut."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1512. `jakin` (future) vs `nahi` (future)
 
@@ -13637,8 +13847,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `jakingo dut` → "Nik erantzuna jakingo dut."
 - nahi (to want) — substitute: `nahiko dut` → "Nik erantzuna nahiko dut."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1513. `jakin` (present) vs `nahi` (present)
 
@@ -13646,8 +13857,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `dakit` → "Nik sekretua dakit."
 - nahi (to want) — substitute: `nahi dut` → "Nik sekretua nahi dut."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1514. `jakin` (future) vs `nahi` (future)
 
@@ -13655,8 +13867,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `jakingo dut` → "Nik sekretua jakingo dut."
 - nahi (to want) — substitute: `nahiko dut` → "Nik sekretua nahiko dut."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1515. `jakin` (present) vs `nahi` (present)
 
@@ -13664,8 +13877,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `daki` → "Txakurrak etxerako bidea daki."
 - nahi (to want) — substitute: `nahi du` → "Txakurrak etxerako bidea nahi du."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1516. `jakin` (future) vs `nahi` (future)
 
@@ -13673,8 +13887,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `jakingo du` → "Txakurrak etxerako bidea jakingo du."
 - nahi (to want) — substitute: `nahiko du` → "Txakurrak etxerako bidea nahiko du."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1517. `jakin` (present) vs `nahi` (present)
 
@@ -13682,8 +13897,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `dakizu` → "Zuk bidea dakizu."
 - nahi (to want) — substitute: `nahi duzu` → "Zuk bidea nahi duzu."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1518. `jakin` (future) vs `nahi` (future)
 
@@ -13691,8 +13907,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `jakingo duzu` → "Zuk bidea jakingo duzu."
 - nahi (to want) — substitute: `nahiko duzu` → "Zuk bidea nahiko duzu."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1519. `jakin` (present) vs `nahi` (present)
 
@@ -13700,8 +13917,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `dakizu` → "Zuk egia dakizu."
 - nahi (to want) — substitute: `nahi duzu` → "Zuk egia nahi duzu."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1520. `jakin` (future) vs `nahi` (future)
 
@@ -13709,8 +13927,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `jakingo duzu` → "Zuk egia jakingo duzu."
 - nahi (to want) — substitute: `nahiko duzu` → "Zuk egia nahiko duzu."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1521. `jakin` (present) vs `nahi` (present)
 
@@ -13718,8 +13937,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `dakizu` → "Zuk erantzuna dakizu."
 - nahi (to want) — substitute: `nahi duzu` → "Zuk erantzuna nahi duzu."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1522. `jakin` (future) vs `nahi` (future)
 
@@ -13727,8 +13947,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `jakingo duzu` → "Zuk erantzuna jakingo duzu."
 - nahi (to want) — substitute: `nahiko duzu` → "Zuk erantzuna nahiko duzu."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1523. `jakin` (present) vs `nahi` (present)
 
@@ -13736,8 +13957,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `dakizu` → "Zuk sekretua dakizu."
 - nahi (to want) — substitute: `nahi duzu` → "Zuk sekretua nahi duzu."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice), unit-5-review-3 (extra candidate), unit-5-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1524. `jakin` (future) vs `nahi` (future)
 
@@ -13745,8 +13967,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jakin (to know (a fact)) — correct: `jakingo duzu` → "Zuk sekretua jakingo duzu."
 - nahi (to want) — substitute: `nahiko duzu` → "Zuk sekretua nahiko duzu."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `nahi` from `jakin`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1525. `jakin` (present) vs `ukan` (present)
 
@@ -13997,8 +14220,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jan (to eat) — correct: `jango du` → "Anek entsalada jango du."
 - erosi (to buy) — substitute: `erosiko du` → "Anek entsalada erosiko du."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1553. `jan` (future) vs `erosi` (future)
 
@@ -14006,8 +14230,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jan (to eat) — correct: `jango dugu` → "Guk arroza jango dugu."
 - erosi (to buy) — substitute: `erosiko dugu` → "Guk arroza erosiko dugu."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1554. `jan` (future) vs `erosi` (future)
 
@@ -14015,8 +14240,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jan (to eat) — correct: `jango dugu` → "Guk ogitartekoa jango dugu."
 - erosi (to buy) — substitute: `erosiko dugu` → "Guk ogitartekoa erosiko dugu."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1555. `jan` (future) vs `erosi` (future)
 
@@ -14024,8 +14250,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jan (to eat) — correct: `jango dute` → "Gurasoek arroza jango dute."
 - erosi (to buy) — substitute: `erosiko dute` → "Gurasoek arroza erosiko dute."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1556. `jan` (future) vs `erosi` (future)
 
@@ -14033,8 +14260,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jan (to eat) — correct: `jango dute` → "Haiek pastela jango dute."
 - erosi (to buy) — substitute: `erosiko dute` → "Haiek pastela erosiko dute."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1557. `jan` (future) vs `erosi` (future)
 
@@ -14042,8 +14270,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jan (to eat) — correct: `jango du` → "Hark taloa jango du."
 - erosi (to buy) — substitute: `erosiko du` → "Hark taloa erosiko du."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1558. `jan` (future) vs `erosi` (future)
 
@@ -14051,8 +14280,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jan (to eat) — correct: `jango du` → "Mikelek pizza jango du."
 - erosi (to buy) — substitute: `erosiko du` → "Mikelek pizza erosiko du."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1559. `jan` (future) vs `erosi` (future)
 
@@ -14060,8 +14290,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jan (to eat) — correct: `jango du` → "Umeak gaztaina jango du."
 - erosi (to buy) — substitute: `erosiko du` → "Umeak gaztaina erosiko du."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1560. `jan` (future) vs `erosi` (future)
 
@@ -14069,8 +14300,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jan (to eat) — correct: `jango duzue` → "Zuek fruta jango duzue?"
 - erosi (to buy) — substitute: `erosiko duzue` → "Zuek fruta erosiko duzue?"
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1561. `jan` (future) vs `erosi` (future)
 
@@ -14078,8 +14310,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jan (to eat) — correct: `jango duzue` → "Zuek taloa jango duzue."
 - erosi (to buy) — substitute: `erosiko duzue` → "Zuek taloa erosiko duzue."
 - Found in: unit-9-review-3-plural (extra candidate), unit-9-review-3-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1562. `jan` (future) vs `erosi` (future)
 
@@ -14087,8 +14320,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jan (to eat) — correct: `jango duzu` → "Zuk arroza jango duzu."
 - erosi (to buy) — substitute: `erosiko duzu` → "Zuk arroza erosiko duzu."
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1563. `jan` (future) vs `erosi` (future)
 
@@ -14096,8 +14330,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - jan (to eat) — correct: `jango duzu` → "Zuk fruta jango duzu?"
 - erosi (to buy) — substitute: `erosiko duzu` → "Zuk fruta erosiko duzu?"
 - Found in: unit-9-review-3 (extra candidate), unit-9-review-3 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `erosi` from `jan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `erosi`/`jan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1564. `joan` (present) vs `ari` (present)
 
@@ -14573,8 +14808,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `doa` → "Ane unibertsitatera doa."
 - etorri (to come) — substitute: `dator` → "Ane unibertsitatera dator."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-2 (extra candidate), unit-5-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1617. `joan` (future) vs `etorri` (future)
 
@@ -14582,8 +14818,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango da` → "Ane unibertsitatera joango da."
 - etorri (to come) — substitute: `etorriko da` → "Ane unibertsitatera etorriko da."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1618. `joan` (present) vs `etorri` (present)
 
@@ -14591,8 +14828,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `goaz` → "Gu dendara goaz."
 - etorri (to come) — substitute: `gatoz` → "Gu dendara gatoz."
 - Found in: unit-6-review-2 (extra candidate), unit-6-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1619. `joan` (future) vs `etorri` (future)
 
@@ -14600,8 +14838,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango gara` → "Gu dendara joango gara."
 - etorri (to come) — substitute: `etorriko gara` → "Gu dendara etorriko gara."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1620. `joan` (present) vs `etorri` (present)
 
@@ -14609,8 +14848,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `goaz` → "Gu eskolara goaz."
 - etorri (to come) — substitute: `gatoz` → "Gu eskolara gatoz."
 - Found in: unit-6-review-2 (extra candidate), unit-6-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1621. `joan` (future) vs `etorri` (future)
 
@@ -14618,8 +14858,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango gara` → "Gu eskolara joango gara."
 - etorri (to come) — substitute: `etorriko gara` → "Gu eskolara etorriko gara."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1622. `joan` (present) vs `etorri` (present)
 
@@ -14627,8 +14868,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `goaz` → "Gu hondartzara goaz."
 - etorri (to come) — substitute: `gatoz` → "Gu hondartzara gatoz."
 - Found in: unit-6-review-2 (extra candidate), unit-6-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1623. `joan` (future) vs `etorri` (future)
 
@@ -14636,8 +14878,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango gara` → "Gu hondartzara joango gara."
 - etorri (to come) — substitute: `etorriko gara` → "Gu hondartzara etorriko gara."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1624. `joan` (present) vs `etorri` (present)
 
@@ -14645,8 +14888,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `goaz` → "Gu lanera goaz."
 - etorri (to come) — substitute: `gatoz` → "Gu lanera gatoz."
 - Found in: unit-6-review-2 (extra candidate), unit-6-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1625. `joan` (future) vs `etorri` (future)
 
@@ -14654,8 +14898,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango gara` → "Gu lanera joango gara."
 - etorri (to come) — substitute: `etorriko gara` → "Gu lanera etorriko gara."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1626. `joan` (present) vs `etorri` (present)
 
@@ -14663,8 +14908,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `doaz` → "Haiek eskolara doaz."
 - etorri (to come) — substitute: `datoz` → "Haiek eskolara datoz."
 - Found in: unit-6-review-2 (extra candidate), unit-6-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1627. `joan` (future) vs `etorri` (future)
 
@@ -14672,8 +14918,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango dira` → "Haiek eskolara joango dira."
 - etorri (to come) — substitute: `etorriko dira` → "Haiek eskolara etorriko dira."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1628. `joan` (present) vs `etorri` (present)
 
@@ -14681,8 +14928,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `doaz` → "Haiek hondartzara doaz."
 - etorri (to come) — substitute: `datoz` → "Haiek hondartzara datoz."
 - Found in: unit-6-review-2 (extra candidate), unit-6-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1629. `joan` (future) vs `etorri` (future)
 
@@ -14690,8 +14938,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango dira` → "Haiek hondartzara joango dira."
 - etorri (to come) — substitute: `etorriko dira` → "Haiek hondartzara etorriko dira."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1630. `joan` (present) vs `etorri` (present)
 
@@ -14699,8 +14948,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `doaz` → "Haiek lanera doaz."
 - etorri (to come) — substitute: `datoz` → "Haiek lanera datoz."
 - Found in: unit-6-review-2 (extra candidate), unit-6-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1631. `joan` (future) vs `etorri` (future)
 
@@ -14708,8 +14958,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango dira` → "Haiek lanera joango dira."
 - etorri (to come) — substitute: `etorriko dira` → "Haiek lanera etorriko dira."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1632. `joan` (present) vs `etorri` (present)
 
@@ -14717,8 +14968,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `doa` → "Hura eskolara doa."
 - etorri (to come) — substitute: `dator` → "Hura eskolara dator."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-2 (extra candidate), unit-5-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1633. `joan` (future) vs `etorri` (future)
 
@@ -14726,8 +14978,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango da` → "Hura eskolara joango da."
 - etorri (to come) — substitute: `etorriko da` → "Hura eskolara etorriko da."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1634. `joan` (present) vs `etorri` (present)
 
@@ -14735,8 +14988,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `doa` → "Hura hondartzara doa."
 - etorri (to come) — substitute: `dator` → "Hura hondartzara dator."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-2 (extra candidate), unit-5-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1635. `joan` (future) vs `etorri` (future)
 
@@ -14744,8 +14998,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango da` → "Hura hondartzara joango da."
 - etorri (to come) — substitute: `etorriko da` → "Hura hondartzara etorriko da."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1636. `joan` (present) vs `etorri` (present)
 
@@ -14753,8 +15008,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `doa` → "Hura lanera doa."
 - etorri (to come) — substitute: `dator` → "Hura lanera dator."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-2 (extra candidate), unit-5-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1637. `joan` (future) vs `etorri` (future)
 
@@ -14762,8 +15018,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango da` → "Hura lanera joango da."
 - etorri (to come) — substitute: `etorriko da` → "Hura lanera etorriko da."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1638. `joan` (present) vs `etorri` (present)
 
@@ -14771,8 +15028,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `doa` → "Mikel dendara doa."
 - etorri (to come) — substitute: `dator` → "Mikel dendara dator."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-2 (extra candidate), unit-5-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1639. `joan` (future) vs `etorri` (future)
 
@@ -14780,8 +15038,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango da` → "Mikel dendara joango da."
 - etorri (to come) — substitute: `etorriko da` → "Mikel dendara etorriko da."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1640. `joan` (present) vs `etorri` (present)
 
@@ -14789,8 +15048,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `doaz` → "Mikel eta Ane dendara doaz."
 - etorri (to come) — substitute: `datoz` → "Mikel eta Ane dendara datoz."
 - Found in: unit-6-review-2 (extra candidate), unit-6-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1641. `joan` (future) vs `etorri` (future)
 
@@ -14798,8 +15058,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango dira` → "Mikel eta Ane dendara joango dira."
 - etorri (to come) — substitute: `etorriko dira` → "Mikel eta Ane dendara etorriko dira."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1642. `joan` (present) vs `etorri` (present)
 
@@ -14807,8 +15068,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `doa` → "Txakurra parkera doa."
 - etorri (to come) — substitute: `dator` → "Txakurra parkera dator."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-2 (extra candidate), unit-5-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1643. `joan` (future) vs `etorri` (future)
 
@@ -14816,8 +15078,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango da` → "Txakurra parkera joango da."
 - etorri (to come) — substitute: `etorriko da` → "Txakurra parkera etorriko da."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1644. `joan` (present) vs `etorri` (present)
 
@@ -14825,8 +15088,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `zoaz` → "Zu eskolara zoaz."
 - etorri (to come) — substitute: `zatoz` → "Zu eskolara zatoz."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-2 (extra candidate), unit-5-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1645. `joan` (future) vs `etorri` (future)
 
@@ -14834,8 +15098,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango zara` → "Zu eskolara joango zara."
 - etorri (to come) — substitute: `etorriko zara` → "Zu eskolara etorriko zara."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1646. `joan` (present) vs `etorri` (present)
 
@@ -14843,8 +15108,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `zoaz` → "Zu hondartzara zoaz."
 - etorri (to come) — substitute: `zatoz` → "Zu hondartzara zatoz."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-2 (extra candidate), unit-5-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1647. `joan` (future) vs `etorri` (future)
 
@@ -14852,8 +15118,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango zara` → "Zu hondartzara joango zara."
 - etorri (to come) — substitute: `etorriko zara` → "Zu hondartzara etorriko zara."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1648. `joan` (present) vs `etorri` (present)
 
@@ -14861,8 +15128,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `zoaz` → "Zu lanera zoaz."
 - etorri (to come) — substitute: `zatoz` → "Zu lanera zatoz."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-2 (extra candidate), unit-5-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1649. `joan` (future) vs `etorri` (future)
 
@@ -14870,8 +15138,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango zara` → "Zu lanera joango zara."
 - etorri (to come) — substitute: `etorriko zara` → "Zu lanera etorriko zara."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1650. `joan` (present) vs `etorri` (present)
 
@@ -14879,8 +15148,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `zoaz` → "Zu liburutegira zoaz."
 - etorri (to come) — substitute: `zatoz` → "Zu liburutegira zatoz."
 - Found in: unit-3-review (extra candidate), unit-3-review (verb-choice), unit-5-review-2 (extra candidate), unit-5-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1651. `joan` (future) vs `etorri` (future)
 
@@ -14888,8 +15158,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango zara` → "Zu liburutegira joango zara."
 - etorri (to come) — substitute: `etorriko zara` → "Zu liburutegira etorriko zara."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1652. `joan` (present) vs `etorri` (present)
 
@@ -14897,8 +15168,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `zoazte` → "Zuek eskolara zoazte."
 - etorri (to come) — substitute: `zatozte` → "Zuek eskolara zatozte."
 - Found in: unit-6-review-2 (extra candidate), unit-6-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1653. `joan` (future) vs `etorri` (future)
 
@@ -14906,8 +15178,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango zarete` → "Zuek eskolara joango zarete."
 - etorri (to come) — substitute: `etorriko zarete` → "Zuek eskolara etorriko zarete."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1654. `joan` (present) vs `etorri` (present)
 
@@ -14915,8 +15188,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `zoazte` → "Zuek hondartzara zoazte."
 - etorri (to come) — substitute: `zatozte` → "Zuek hondartzara zatozte."
 - Found in: unit-6-review-2 (extra candidate), unit-6-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1655. `joan` (future) vs `etorri` (future)
 
@@ -14924,8 +15198,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango zarete` → "Zuek hondartzara joango zarete."
 - etorri (to come) — substitute: `etorriko zarete` → "Zuek hondartzara etorriko zarete."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1656. `joan` (present) vs `etorri` (present)
 
@@ -14933,8 +15208,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `zoazte` → "Zuek lanera zoazte."
 - etorri (to come) — substitute: `zatozte` → "Zuek lanera zatozte."
 - Found in: unit-6-review-2 (extra candidate), unit-6-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1657. `joan` (future) vs `etorri` (future)
 
@@ -14942,8 +15218,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango zarete` → "Zuek lanera joango zarete."
 - etorri (to come) — substitute: `etorriko zarete` → "Zuek lanera etorriko zarete."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1658. `joan` (present) vs `etorri` (present)
 
@@ -14951,8 +15228,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `zoazte` → "Zuek parkera zoazte."
 - etorri (to come) — substitute: `zatozte` → "Zuek parkera zatozte."
 - Found in: unit-6-review-2 (extra candidate), unit-6-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1659. `joan` (future) vs `etorri` (future)
 
@@ -14960,8 +15238,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - joan (to go) — correct: `joango zarete` → "Zuek parkera joango zarete."
 - etorri (to come) — substitute: `etorriko zarete` → "Zuek parkera etorriko zarete."
 - Found in: unit-9-review-2-plural (extra candidate), unit-9-review-2-plural (verb-choice)
-- [ ] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `etorri` from `joan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `etorri`/`joan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1660. `joan` (present) vs `ikusi` (present)
 
@@ -16499,8 +16778,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahi du` → "Anek liburu bat nahi du."
 - jakin (to know (a fact)) — substitute: `daki` → "Anek liburu bat daki."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1831. `nahi` (future) vs `jakin` (future)
 
@@ -16508,8 +16788,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahiko du` → "Anek liburu bat nahiko du."
 - jakin (to know (a fact)) — substitute: `jakingo du` → "Anek liburu bat jakingo du."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1832. `nahi` (present) vs `jakin` (present)
 
@@ -16517,8 +16798,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahi du` → "Hark opari bat nahi du."
 - jakin (to know (a fact)) — substitute: `daki` → "Hark opari bat daki."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1833. `nahi` (future) vs `jakin` (future)
 
@@ -16526,8 +16808,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahiko du` → "Hark opari bat nahiko du."
 - jakin (to know (a fact)) — substitute: `jakingo du` → "Hark opari bat jakingo du."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1834. `nahi` (present) vs `jakin` (present)
 
@@ -16535,8 +16818,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahi du` → "Katuak esne pixka bat nahi du."
 - jakin (to know (a fact)) — substitute: `daki` → "Katuak esne pixka bat daki."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1835. `nahi` (future) vs `jakin` (future)
 
@@ -16544,8 +16828,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahiko du` → "Katuak esne pixka bat nahiko du."
 - jakin (to know (a fact)) — substitute: `jakingo du` → "Katuak esne pixka bat jakingo du."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1836. `nahi` (present) vs `jakin` (present)
 
@@ -16553,8 +16838,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahi du` → "Mikelek kafe bat nahi du."
 - jakin (to know (a fact)) — substitute: `daki` → "Mikelek kafe bat daki."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1837. `nahi` (future) vs `jakin` (future)
 
@@ -16562,8 +16848,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahiko du` → "Mikelek kafe bat nahiko du."
 - jakin (to know (a fact)) — substitute: `jakingo du` → "Mikelek kafe bat jakingo du."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1838. `nahi` (present) vs `jakin` (present)
 
@@ -16571,8 +16858,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahi dut` → "Nik kafe bat nahi dut."
 - jakin (to know (a fact)) — substitute: `dakit` → "Nik kafe bat dakit."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1839. `nahi` (future) vs `jakin` (future)
 
@@ -16580,8 +16868,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahiko dut` → "Nik kafe bat nahiko dut."
 - jakin (to know (a fact)) — substitute: `jakingo dut` → "Nik kafe bat jakingo dut."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1840. `nahi` (future) vs `jakin` (future)
 
@@ -16589,8 +16878,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahiko dut` → "Nik liburu bat nahiko dut."
 - jakin (to know (a fact)) — substitute: `jakingo dut` → "Nik liburu bat jakingo dut."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1841. `nahi` (present) vs `jakin` (present)
 
@@ -16598,8 +16888,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahi dut` → "Nik opari bat nahi dut."
 - jakin (to know (a fact)) — substitute: `dakit` → "Nik opari bat dakit."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1842. `nahi` (future) vs `jakin` (future)
 
@@ -16607,8 +16898,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahiko dut` → "Nik opari bat nahiko dut."
 - jakin (to know (a fact)) — substitute: `jakingo dut` → "Nik opari bat jakingo dut."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1843. `nahi` (present) vs `jakin` (present)
 
@@ -16616,8 +16908,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahi dut` → "Nik ur bat nahi dut."
 - jakin (to know (a fact)) — substitute: `dakit` → "Nik ur bat dakit."
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1844. `nahi` (future) vs `jakin` (future)
 
@@ -16625,8 +16918,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahiko dut` → "Nik ur bat nahiko dut."
 - jakin (to know (a fact)) — substitute: `jakingo dut` → "Nik ur bat jakingo dut."
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1845. `nahi` (present) vs `jakin` (present)
 
@@ -16634,8 +16928,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahi duzu` → "Zuk etorri nahi duzu?"
 - jakin (to know (a fact)) — substitute: `dakizu` → "Zuk etorri dakizu?"
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1846. `nahi` (future) vs `jakin` (future)
 
@@ -16643,8 +16938,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahiko duzu` → "Zuk etorri nahiko duzu?"
 - jakin (to know (a fact)) — substitute: `jakingo duzu` → "Zuk etorri jakingo duzu?"
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1847. `nahi` (present) vs `jakin` (present)
 
@@ -16652,8 +16948,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahi duzu` → "Zuk kafe bat nahi duzu?"
 - jakin (to know (a fact)) — substitute: `dakizu` → "Zuk kafe bat dakizu?"
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1848. `nahi` (future) vs `jakin` (future)
 
@@ -16661,8 +16958,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahiko duzu` → "Zuk kafe bat nahiko duzu?"
 - jakin (to know (a fact)) — substitute: `jakingo duzu` → "Zuk kafe bat jakingo duzu?"
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1849. `nahi` (present) vs `jakin` (present)
 
@@ -16670,8 +16968,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahi duzu` → "Zuk liburu bat nahi duzu?"
 - jakin (to know (a fact)) — substitute: `dakizu` → "Zuk liburu bat dakizu?"
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1850. `nahi` (future) vs `jakin` (future)
 
@@ -16679,8 +16978,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahiko duzu` → "Zuk liburu bat nahiko duzu?"
 - jakin (to know (a fact)) — substitute: `jakingo duzu` → "Zuk liburu bat jakingo duzu?"
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1851. `nahi` (present) vs `jakin` (present)
 
@@ -16688,8 +16988,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahi duzu` → "Zuk sagar bat nahi duzu?"
 - jakin (to know (a fact)) — substitute: `dakizu` → "Zuk sagar bat dakizu?"
 - Found in: unit-2-review (extra candidate), unit-2-review (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1852. `nahi` (future) vs `jakin` (future)
 
@@ -16697,8 +16998,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - nahi (to want) — correct: `nahiko duzu` → "Zuk sagar bat nahiko duzu?"
 - jakin (to know (a fact)) — substitute: `jakingo duzu` → "Zuk sagar bat jakingo duzu?"
 - Found in: unit-9-review-2 (extra candidate), unit-9-review-2 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `jakin` from `nahi`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `jakin`/`nahi` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1853. `nahi` (future) vs `joan` (future)
 
@@ -17740,8 +18042,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `du` → "Anek auto bat du."
 - ikusi (to see) — substitute: `ikusten du` → "Anek auto bat ikusten du."
 - Found in: unit-5-review-1 (extra candidate), unit-5-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1968. `ukan` (present) vs `ikusi` (present)
 
@@ -17749,8 +18052,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `du` → "Berak etxe bat du."
 - ikusi (to see) — substitute: `ikusten du` → "Berak etxe bat ikusten du."
 - Found in: unit-5-review-1 (extra candidate), unit-5-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1969. `ukan` (present) vs `ikusi` (present)
 
@@ -17758,8 +18062,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `du` → "Berak seme bat du."
 - ikusi (to see) — substitute: `ikusten du` → "Berak seme bat ikusten du."
 - Found in: unit-5-review-1 (extra candidate), unit-5-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1970. `ukan` (present) vs `ikusi` (present)
 
@@ -17767,8 +18072,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `du` → "Etxeak lorategi bat du."
 - ikusi (to see) — substitute: `ikusten du` → "Etxeak lorategi bat ikusten du."
 - Found in: unit-5-review-1 (extra candidate), unit-5-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1971. `ukan` (present) vs `ikusi` (present)
 
@@ -17776,8 +18082,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `dugu` → "Guk auto bat dugu."
 - ikusi (to see) — substitute: `ikusten dugu` → "Guk auto bat ikusten dugu."
 - Found in: unit-6-review-1 (extra candidate), unit-6-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1972. `ukan` (present) vs `ikusi` (present)
 
@@ -17785,8 +18092,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `dugu` → "Guk bilera bat dugu."
 - ikusi (to see) — substitute: `ikusten dugu` → "Guk bilera bat ikusten dugu."
 - Found in: unit-6-review-1 (extra candidate), unit-6-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1973. `ukan` (present) vs `ikusi` (present)
 
@@ -17794,8 +18102,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `dugu` → "Guk etxe bat dugu."
 - ikusi (to see) — substitute: `ikusten dugu` → "Guk etxe bat ikusten dugu."
 - Found in: unit-6-review-1 (extra candidate), unit-6-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1974. `ukan` (present) vs `ikusi` (present)
 
@@ -17803,8 +18112,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `dugu` → "Guk txartel bat dugu."
 - ikusi (to see) — substitute: `ikusten dugu` → "Guk txartel bat ikusten dugu."
 - Found in: unit-6-review-1 (extra candidate), unit-6-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1975. `ukan` (present) vs `ikusi` (present)
 
@@ -17812,8 +18122,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `dute` → "Gurasoek etxe bat dute."
 - ikusi (to see) — substitute: `ikusten dute` → "Gurasoek etxe bat ikusten dute."
 - Found in: unit-6-review-1 (extra candidate), unit-6-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1976. `ukan` (present) vs `ikusi` (present)
 
@@ -17821,8 +18132,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `dute` → "Haiek pasaporte bat dute."
 - ikusi (to see) — substitute: `ikusten dute` → "Haiek pasaporte bat ikusten dute."
 - Found in: unit-6-review-1 (extra candidate), unit-6-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1977. `ukan` (present) vs `ikusi` (present)
 
@@ -17830,8 +18142,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `dute` → "Haiek seme bat dute."
 - ikusi (to see) — substitute: `ikusten dute` → "Haiek seme bat ikusten dute."
 - Found in: unit-6-review-1 (extra candidate), unit-6-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1978. `ukan` (present) vs `ikusi` (present)
 
@@ -17839,8 +18152,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `du` → "Hark arkatz bat du."
 - ikusi (to see) — substitute: `ikusten du` → "Hark arkatz bat ikusten du."
 - Found in: unit-5-review-1 (extra candidate), unit-5-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1979. `ukan` (present) vs `ikusi` (present)
 
@@ -17848,8 +18162,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `du` → "Hark pasaporte bat du."
 - ikusi (to see) — substitute: `ikusten du` → "Hark pasaporte bat ikusten du."
 - Found in: unit-5-review-1 (extra candidate), unit-5-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1980. `ukan` (present) vs `ikusi` (present)
 
@@ -17857,8 +18172,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `dute` → "Ikasleek liburu bat dute."
 - ikusi (to see) — substitute: `ikusten dute` → "Ikasleek liburu bat ikusten dute."
 - Found in: unit-6-review-1 (extra candidate), unit-6-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1981. `ukan` (present) vs `ikusi` (present)
 
@@ -17866,8 +18182,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `du` → "Mikelek liburu bat du."
 - ikusi (to see) — substitute: `ikusten du` → "Mikelek liburu bat ikusten du."
 - Found in: unit-5-review-1 (extra candidate), unit-5-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1982. `ukan` (present) vs `ikusi` (present)
 
@@ -17875,8 +18192,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `dut` → "Nik arreba bat dut."
 - ikusi (to see) — substitute: `ikusten dut` → "Nik arreba bat ikusten dut."
 - Found in: unit-5-review-1 (extra candidate), unit-5-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1983. `ukan` (present) vs `ikusi` (present)
 
@@ -17884,8 +18202,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `dut` → "Nik bilera bat dut."
 - ikusi (to see) — substitute: `ikusten dut` → "Nik bilera bat ikusten dut."
 - Found in: unit-5-review-1 (extra candidate), unit-5-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1984. `ukan` (present) vs `ikusi` (present)
 
@@ -17893,8 +18212,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `dut` → "Nik liburu bat dut."
 - ikusi (to see) — substitute: `ikusten dut` → "Nik liburu bat ikusten dut."
 - Found in: unit-5-review-1 (extra candidate), unit-5-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1985. `ukan` (present) vs `ikusi` (present)
 
@@ -17902,8 +18222,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `dut` → "Nik txartel bat dut."
 - ikusi (to see) — substitute: `ikusten dut` → "Nik txartel bat ikusten dut."
 - Found in: unit-5-review-1 (extra candidate), unit-5-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1986. `ukan` (present) vs `ikusi` (present)
 
@@ -17911,8 +18232,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `du` → "Txakurrak hezur bat du."
 - ikusi (to see) — substitute: `ikusten du` → "Txakurrak hezur bat ikusten du."
 - Found in: unit-5-review-1 (extra candidate), unit-5-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1987. `ukan` (present) vs `ikusi` (present)
 
@@ -17920,8 +18242,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `duzue` → "Zuek arkatz bat duzue."
 - ikusi (to see) — substitute: `ikusten duzue` → "Zuek arkatz bat ikusten duzue."
 - Found in: unit-6-review-1 (extra candidate), unit-6-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1988. `ukan` (present) vs `ikusi` (present)
 
@@ -17929,8 +18252,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `duzue` → "Zuek koaderno bat duzue."
 - ikusi (to see) — substitute: `ikusten duzue` → "Zuek koaderno bat ikusten duzue."
 - Found in: unit-6-review-1 (extra candidate), unit-6-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1989. `ukan` (present) vs `ikusi` (present)
 
@@ -17938,8 +18262,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `duzue` → "Zuek liburu bat duzue."
 - ikusi (to see) — substitute: `ikusten duzue` → "Zuek liburu bat ikusten duzue."
 - Found in: unit-6-review-1 (extra candidate), unit-6-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1990. `ukan` (present) vs `ikusi` (present)
 
@@ -17947,8 +18272,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `duzue` → "Zuek mapa bat duzue."
 - ikusi (to see) — substitute: `ikusten duzue` → "Zuek mapa bat ikusten duzue."
 - Found in: unit-6-review-1 (extra candidate), unit-6-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1991. `ukan` (present) vs `ikusi` (present)
 
@@ -17956,8 +18282,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `duzu` → "Zuk anaia bat duzu."
 - ikusi (to see) — substitute: `ikusten duzu` → "Zuk anaia bat ikusten duzu."
 - Found in: unit-5-review-1 (extra candidate), unit-5-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1992. `ukan` (present) vs `ikusi` (present)
 
@@ -17965,8 +18292,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `duzu` → "Zuk auto bat duzu."
 - ikusi (to see) — substitute: `ikusten duzu` → "Zuk auto bat ikusten duzu."
 - Found in: unit-5-review-1 (extra candidate), unit-5-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1993. `ukan` (present) vs `ikusi` (present)
 
@@ -17974,8 +18302,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `duzu` → "Zuk koaderno bat duzu."
 - ikusi (to see) — substitute: `ikusten duzu` → "Zuk koaderno bat ikusten duzu."
 - Found in: unit-5-review-1 (extra candidate), unit-5-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1994. `ukan` (present) vs `ikusi` (present)
 
@@ -17983,8 +18312,9 @@ pairs are most/least likely to need a "both valid" tick) before diving in.
 - ukan (to have) — correct: `duzu` → "Zuk mapa bat duzu."
 - ikusi (to see) — substitute: `ikusten duzu` → "Zuk mapa bat ikusten duzu."
 - Found in: unit-5-review-1 (extra candidate), unit-5-review-1 (verb-choice)
-- [ ] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
+- [x] Both readings are valid Basque — exclude `ikusi` from `ukan`'s pool (and consider the reverse direction too)
 - [ ] Substitution reads as wrong/ungrammatical — keep as a distractor
+- Resolved by #114: `CROSS_CANDIDATE_EXCLUSIONS` now excludes `ikusi`/`ukan` from each other's pools in both directions (src/lessonLogic.js).
 
 ### 1995. `ukan` (present) vs `izan` (present)
 

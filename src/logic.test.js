@@ -1426,9 +1426,29 @@ describe('isCrossCandidateExcluded', () => {
     expect(isCrossCandidateExcluded('nahi', 'ukan', 'verb-choice')).toBe(true)
   })
 
-  it('does not exclude pairs with no entry', () => {
+  it('excludes the other pairs confirmed "both valid" in docs/DECISIONS.md, in both directions', () => {
+    const confirmedPairs = [
+      ['eduki', 'ukan'],
+      ['eduki', 'ikusi'],
+      ['ukan', 'ikusi'],
+      ['jakin', 'ikusi'],
+      ['ikusi', 'nahi'],
+      ['jakin', 'nahi'],
+      ['eduki', 'nahi'],
+      ['jan', 'erosi'],
+      ['edan', 'erosi'],
+      ['joan', 'etorri'],
+    ]
+    for (const [a, b] of confirmedPairs) {
+      expect(isCrossCandidateExcluded(a, b, 'extra-candidates')).toBe(true)
+      expect(isCrossCandidateExcluded(b, a, 'verb-choice')).toBe(true)
+    }
+  })
+
+  it('does not exclude pairs with no entry, or pairs checked and found not "both valid"', () => {
     expect(isCrossCandidateExcluded('ukan', 'jakin', 'extra-candidates')).toBe(false)
-    expect(isCrossCandidateExcluded('ukan', 'eduki', 'verb-choice')).toBe(false)
+    expect(isCrossCandidateExcluded('eduki', 'jakin', 'verb-choice')).toBe(false)
+    expect(isCrossCandidateExcluded('jan', 'edan', 'extra-candidates')).toBe(false)
   })
 })
 
@@ -1713,6 +1733,30 @@ describe('cross-verb sentence-template collisions (real VERBS)', () => {
         const options = new Set(question.options)
         if (question.correct === 'du') expect(options.has('nahi du')).toBe(false)
         if (question.correct === 'nahi du') expect(options.has('du')).toBe(false)
+      })
+      vi.restoreAllMocks()
+    }
+  })
+
+  // #114: joan ("Ane etxera doa", "Ane is going home") and etorri ("Ane
+  // etxera dator", "Ane is coming home") share the same allative adjunct but
+  // opposite direction — both grammatical, different-meaning sentences, so
+  // CROSS_CANDIDATE_EXCLUSIONS' joan<->etorri entry should keep each out of
+  // the other's verb-choice options.
+  it('never offers etorri\'s "dator" as a distractor for joan\'s present-hura question, or vice versa', () => {
+    const joanReal = VERBS.find((v) => v.id === 'joan')
+    const etorriReal = VERBS.find((v) => v.id === 'etorri')
+    const norSources = [
+      { verb: joanReal, tense: 'present' },
+      { verb: etorriReal, tense: 'present' },
+    ]
+    for (let roll = 0; roll < 1; roll += 0.1) {
+      vi.spyOn(Math, 'random').mockReturnValue(roll)
+      const questions = generateCrossVerbQuestions(norSources, { persons: ['hura'], count: 10 })
+      questions.forEach((question) => {
+        const options = new Set(question.options)
+        if (question.correct === 'doa') expect(options.has('dator')).toBe(false)
+        if (question.correct === 'dator') expect(options.has('doa')).toBe(false)
       })
       vi.restoreAllMocks()
     }
